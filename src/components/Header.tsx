@@ -58,18 +58,18 @@ const Header = () => {
         </div>
         
         <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
-          <div className="nav-item-with-dropdown">
+          <div 
+            className="nav-item-with-dropdown"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
             <Link 
               href="/services" 
               className={`has-dropdown ${pathname === '/services' ? 'active' : ''}`}
-              onMouseEnter={() => setServicesOpen(true)}
             >
               Services
             </Link>
-            <div 
-              className={`dropdown-menu ${servicesOpen ? 'show' : ''}`}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
+            <div className={`dropdown-menu ${servicesOpen ? 'show' : ''}`}>
               <Link href="/services/microblading">Microblading</Link>
               <Link href="/services/microneedling">Microneedling</Link>
               <Link href="/services/cosmetic-tattooing">Cosmetic Tattooing</Link>
@@ -83,18 +83,18 @@ const Header = () => {
           <Link href="/gallery" className={pathname === '/gallery' ? 'active' : ''}>
             Gallery
           </Link>
-          <div className="nav-item-with-dropdown">
+          <div 
+            className="nav-item-with-dropdown"
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
+          >
             <Link 
               href="/about" 
               className={`has-dropdown ${pathname === '/about' ? 'active' : ''}`}
-              onMouseEnter={() => setAboutOpen(true)}
             >
               About Us
             </Link>
-            <div 
-              className={`dropdown-menu ${aboutOpen ? 'show' : ''}`}
-              onMouseLeave={() => setAboutOpen(false)}
-            >
+            <div className={`dropdown-menu ${aboutOpen ? 'show' : ''}`}>
               <Link href="/contact">Contact Us</Link>
             </div>
           </div>
