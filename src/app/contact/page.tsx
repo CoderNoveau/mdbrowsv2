@@ -13,7 +13,7 @@ export default function Contact() {
     <div className="page-content">
       <h2 className="page-section-heading">CONTACT US</h2>
       
-      <div className="contact-grid">
+      <div className="contact-grid" style={{ marginBottom: '3rem' }}>
         <div className="contact-info">
           <div className="contact-section">
             <h3 className="contact-heading">Contact Details</h3>
@@ -24,33 +24,14 @@ export default function Contact() {
               <strong>Email:</strong> <a href="mailto:info@mdbrows.com.au" className="footer-link">info@mdbrows.com.au</a>
             </p>
           </div>
-          
-          <div className="contact-section">
-            <h3 className="contact-heading">Richmond Location</h3>
-            <p className="contact-detail">
-              Level 1, 382A Bridge Rd<br />
-              RICHMOND VIC 3122
-            </p>
-            <div className="map-placeholder" style={{ height: "200px", backgroundColor: "#f5f5f5", marginTop: "1rem" }}>
-              {/* Map would go here */}
-            </div>
-          </div>
-          
-          <div className="contact-section">
-            <h3 className="contact-heading">Springvale Location</h3>
-            <p className="contact-detail">
-              Shop 4, 218 Springvale Rd<br />
-              SPRINGVALE VIC 3171
-            </p>
-            <div className="map-placeholder" style={{ height: "200px", backgroundColor: "#f5f5f5", marginTop: "1rem" }}>
-              {/* Map would go here */}
-            </div>
-          </div>
         </div>
         
         <div className="contact-social">
-          <h3 className="contact-heading">Follow Us</h3>
-          <div className="contact-social-links">
+          <h3 className="contact-heading">Connect With Us</h3>
+          <p className="contact-detail">
+            Follow us on social media for the latest work, tips, and special offers.
+          </p>
+          <div className="contact-social-links" style={{ marginTop: '1rem' }}>
             <a href="https://www.facebook.com/mdbrowsau/" target="_blank" rel="noopener noreferrer" className="social-link">
               Facebook
             </a>
@@ -61,16 +42,50 @@ export default function Contact() {
         </div>
       </div>
       
+      {/* Location Section */}
+      <div className="location-section" style={{ marginBottom: '4rem' }}>
+        <h2 className="page-section-heading">OUR LOCATIONS</h2>
+        
+        <div className="location-container" style={{ display: 'flex', justifyContent: 'center', gap: '3rem', marginBottom: '2rem' }}>
+          <div className="location" style={{ textAlign: 'center', padding: '1.5rem', borderRadius: '8px', backgroundColor: '#f9f7f3', minWidth: '250px' }}>
+            <h3 className="contact-heading">Richmond Branch</h3>
+            <p className="contact-detail">
+              Level 1, 382A Bridge Rd<br />RICHMOND VIC 3122
+            </p>
+          </div>
+          
+          <div className="location" style={{ textAlign: 'center', padding: '1.5rem', borderRadius: '8px', backgroundColor: '#f9f7f3', minWidth: '250px' }}>
+            <h3 className="contact-heading">Springvale Branch</h3>
+            <p className="contact-detail">
+              Shop 4, 218 Springvale Rd<br />SPRINGVALE VIC 3171
+            </p>
+          </div>
+        </div>
+        
+        {/* Elfsight Google Maps Widget */}
+        <div className="location-map" style={{ borderRadius: '8px', overflow: 'hidden', height: '400px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
+          <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
+          <div className="elfsight-app-b28e1104-b9c6-4171-9f26-e2562ecd3ae2" data-elfsight-app-lazy></div>
+        </div>
+      </div>
+      
       {/* Contact Form Section */}
-      <div className="contact-form-section" style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+      <div className="contact-form-section" style={{ marginBottom: '4rem', maxWidth: '800px', margin: '0 auto 4rem' }}>
         <h2 className="page-section-heading">SEND US A MESSAGE</h2>
+        <p className="page-text" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          Have a question about our services or want to inquire about availability? Fill out the form below and we'll get back to you as soon as possible.
+        </p>
         {/* Elfsight Contact Form Widget */}
         <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
         <div className="elfsight-app-e8769bfb-7e99-494d-af08-72fc95114045" data-elfsight-app-lazy></div>
       </div>
       
-      <div className="booking-section">
+      <div className="booking-section" style={{ backgroundColor: '#f9f7f3', padding: '3rem', borderRadius: '8px' }}>
         <h2 className="page-section-heading">READY TO BOOK YOUR APPOINTMENT?</h2>
+        <p className="page-text" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 2rem' }}>
+          For fastest service, you can book your appointment directly through our online booking system. 
+          Select your preferred location, service, and time.
+        </p>
         <a 
           href={freshaLink} 
           target="_blank" 

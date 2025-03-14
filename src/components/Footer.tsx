@@ -24,17 +24,14 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Elfsight Google Maps Widget */}
-        <div className="location-map">
-          <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-          <div className="elfsight-app-b28e1104-b9c6-4171-9f26-e2562ecd3ae2" data-elfsight-app-lazy></div>
-        </div>
-        
         <p>
           <strong>Phone:</strong> <a href="tel:+61418188277" className="footer-link">0418 188 277</a>
         </p>
         <p>
           <strong>Email:</strong> <a href="mailto:info@mdbrows.com.au" className="footer-link">info@mdbrows.com.au</a>
+        </p>
+        <p>
+          <Link href="/contact" className="footer-link">More details on our Contact page</Link>
         </p>
       </div>
 
