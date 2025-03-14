@@ -8,7 +8,7 @@ export const metadata = {
 export default function Gallery() {
   return (
     <div className="page-content">
-      <h1 className="page-heading">Our Work Gallery</h1>
+      <h2 className="page-section-heading">OUR WORK GALLERY</h2>
       
       <p className="page-text">
         Browse our portfolio of real client results. From microblading to cosmetic tattooing and brow corrections, 
@@ -18,7 +18,7 @@ export default function Gallery() {
       <div className="gallery-container">
         {/* Elfsight Instagram Feed Widget */}
         <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-        <div className="elfsight-app-84b79773-a065-4117-a575-67123d886124" data-elfsight-app-lazy></div>
+        <div className="elfsight-app-4af60247-4320-4f4c-8fbe-1fc3d78f633f" data-elfsight-app-lazy></div>
       </div>
       
       <div className="gallery-info" style={{ marginTop: '2rem', textAlign: 'center' }}>

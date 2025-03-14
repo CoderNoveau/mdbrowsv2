@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const pathname = usePathname();
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
@@ -15,6 +16,7 @@ const Header = () => {
   useEffect(() => {
     setMenuOpen(false);
     setServicesOpen(false);
+    setAboutOpen(false);
   }, [pathname]);
 
   // Close menu when viewport expands beyond mobile
@@ -81,15 +83,32 @@ const Header = () => {
           <Link href="/gallery" className={pathname === '/gallery' ? 'active' : ''}>
             Gallery
           </Link>
-          <Link href="/about" className={pathname === '/about' ? 'active' : ''}>
-            About Us
-          </Link>
-          <Link href="/faq" className={`has-dropdown ${pathname === '/faq' ? 'active' : ''}`}>
+          <div className="nav-item-with-dropdown">
+            <Link 
+              href="/about" 
+              className={`has-dropdown ${pathname === '/about' ? 'active' : ''}`}
+              onMouseEnter={() => setAboutOpen(true)}
+            >
+              About Us
+            </Link>
+            <div 
+              className={`dropdown-menu ${aboutOpen ? 'show' : ''}`}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <Link href="/contact">Contact Us</Link>
+            </div>
+          </div>
+          <Link href="/faq" className={pathname === '/faq' ? 'active' : ''}>
             FAQ
           </Link>
-          <Link href="/bookings" className={pathname === '/bookings' ? 'active' : ''}>
+          <a 
+            href={freshaLink}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={pathname === '/bookings' ? 'active' : ''}
+          >
             Bookings
-          </Link>
+          </a>
         </nav>
 
         <div className="header-actions">
