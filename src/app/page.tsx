@@ -197,7 +197,7 @@ export default function Home() {
                   Enjoy waking up with perfect brows every day.
                 </p>
                 <div className="beauty-service-footer">
-                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href="/services/microblading" className="service-details-link">View Details</a>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function Home() {
                   results that enhance your natural beauty.
                 </p>
                 <div className="beauty-service-footer">
-                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href="/services/cosmetic-tattooing" className="service-details-link">View Details</a>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function Home() {
                   the benefits of younger, firmer, and more radiant skin.
                 </p>
                 <div className="beauty-service-footer">
-                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href="/services/microneedling" className="service-details-link">View Details</a>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function Home() {
                   correction techniques to achieve optimal results.
                 </p>
                 <div className="beauty-service-footer">
-                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href="/services/brow-corrections" className="service-details-link">View Details</a>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export default function Home() {
                   results for your skin.
                 </p>
                 <div className="beauty-service-footer">
-                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href="/services/tattoo-removal" className="service-details-link">View Details</a>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
