@@ -8,6 +8,8 @@ import Script from 'next/script';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [animating, setAnimating] = useState(false);
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   // Prevent hydration errors with react-slick
@@ -18,12 +20,28 @@ export default function Home() {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 7000,
     arrows: false,
+    fade: true,
+    cssEase: 'ease-in-out',
+    beforeChange: (oldIndex: number, newIndex: number) => {
+      // Set animating flag to true when slide transition starts
+      setAnimating(true);
+      // Pre-emptively update the current slide for smoother content transition
+      setCurrentSlide(newIndex);
+    },
+    afterChange: (index: number) => {
+      // Update current slide and reset animating flag after transition completes
+      setCurrentSlide(index);
+      // Short delay to ensure slide is fully visible before starting animations
+      setTimeout(() => {
+        setAnimating(false);
+      }, 50);
+    }
   };
 
   const slides = [
@@ -48,6 +66,11 @@ export default function Home() {
     },
   ];
 
+  // CSS class names for animated elements based on current state
+  const getAnimationClass = (baseClass: string) => {
+    return animating ? `${baseClass} hide-animation` : `${baseClass} show-animation`;
+  };
+
   const reviews = [
     {
       name: "Clodagh Lynch",
@@ -68,38 +91,64 @@ export default function Home() {
 
   return (
     <>
-      <div className="hero">
+      <div className="hero" style={{ position: 'relative' }}>
         {mounted && (
-          <Slider {...sliderSettings}>
-            {slides.map((slide, index) => (
-              <div key={index} className="slide">
-                <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
-                  <Image
-                    src={slide.image}
-                    alt={slide.alt}
-                    fill
-                    priority={true}
-                    className="slide-image"
-                    sizes="100vw"
-                  />
-                  <div 
-                    className="slide-side-overlay" 
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '40%',
-                      height: '100%',
-                      background: 'linear-gradient(to right, rgba(203, 192, 165, 0.7) 60%, transparent 100%)',
-                      zIndex: 2
-                    }}
-                  />
-                </div>
-                <div className="slide-overlay">
-                  <h1 className="slide-heading">{slide.heading}</h1>
-                  {slide.subheading && <h2 className="slide-subheading">{slide.subheading}</h2>}
-                  {slide.price && <div className="slide-price">{slide.price}</div>}
-                  <div className="slide-buttons">
+          <>
+            {/* Slider containing ONLY images */}
+            <div className="hero-slider-container">
+              <Slider {...sliderSettings} className="hero-slider">
+                {slides.map((slide, index) => (
+                  <div key={index} className="slide">
+                    <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
+                      <Image
+                        src={slide.image}
+                        alt={slide.alt}
+                        fill
+                        priority={true}
+                        className="slide-image"
+                        sizes="100vw"
+                      />
+                      <div 
+                        className="slide-side-overlay" 
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '40%',
+                          height: '100%',
+                          background: 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)',
+                          zIndex: 2
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+
+            {/* Content overlay - no separate background */}
+            <div className="hero-content-overlay">
+              {slides.map((slide, index) => (
+                <div 
+                  key={`content-${index}`} 
+                  className={`hero-content ${index === currentSlide ? 'hero-content-visible' : 'hero-content-hidden'}`}
+                >
+                  <div className="slide-text-container">
+                    <h1 className={getAnimationClass('slide-heading')}>
+                      {slide.heading}
+                    </h1>
+                    {slide.subheading && (
+                      <h2 className={getAnimationClass('slide-subheading')}>
+                        {slide.subheading}
+                      </h2>
+                    )}
+                    {slide.price && (
+                      <div className={getAnimationClass('slide-price')}>
+                        {slide.price}
+                      </div>
+                    )}
+                  </div>
+                  <div className={getAnimationClass('slide-buttons')}>
                     <a 
                       href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429" 
                       target="_blank" 
@@ -109,7 +158,7 @@ export default function Home() {
                       BOOK APPOINTMENT
                     </a>
                   </div>
-                  <div className="slide-phone">
+                  <div className={getAnimationClass('slide-phone')}>
                     <a href="tel:+61418188277" className="hero-phone-link">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px' }}>
                         <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/>
@@ -118,9 +167,9 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </div>
+          </>
         )}
       </div>
 
@@ -131,123 +180,108 @@ export default function Home() {
         <div className="elfsight-app-84b79773-a065-4117-a575-67123d886124" data-elfsight-app-lazy></div>
       </section>
 
-      <section className="services-section container">
-        <h2 className="section-heading">SERVICES</h2>
-        
-        <div className="services-grid">
-          <div className="service-card">
-            <h3 className="service-title">Microblading | Eyebrow Tattooing</h3>
-            <p className="service-description">
-              Also known as eyebrow feathering, microblading is a semi-permanent eyebrow tattoo procedure that is carried out by our expert technicians using a special handheld microblade. Each eyebrow stroke is manually shaped and blended into the client's existing eyebrow hair which results in a more natural look.
-            </p>
-            <div className="service-actions">
-              <Link 
-                href="/services/microblading"
-                className="service-link"
-              >
-                Learn More
-              </Link>
-              <a 
-                href={freshaLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                BOOK APPOINTMENT
-              </a>
+      <section id="services" className="page-section">
+        <div className="page-section-inner">
+          <h2 className="page-section-heading">OUR SERVICES</h2>
+          <div className="beauty-services">
+            <div className="beauty-service">
+              <div className="service-image-wrapper">
+                <div className="service-image service-image-microblading"></div>
+              </div>
+              <div className="service-content">
+                <h3 className="beauty-service-title">Microblading</h3>
+                <p className="beauty-service-description">
+                  Transform your eyebrows with our precision microblading technique. 
+                  This semi-permanent procedure creates natural-looking, hair-like strokes
+                  that enhance your features and create the perfect brow shape for your face.
+                  Enjoy waking up with perfect brows every day.
+                </p>
+                <div className="beauty-service-footer">
+                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="beauty-service">
+              <div className="service-image-wrapper">
+                <div className="service-image service-image-cosmetic"></div>
+              </div>
+              <div className="service-content">
+                <h3 className="beauty-service-title">Cosmetic Tattooing</h3>
+                <p className="beauty-service-description">
+                  From eyeliner to lips, our cosmetic tattooing services offer 
+                  long-lasting enhancement with minimal maintenance. Our expert technicians
+                  use state-of-the-art equipment and techniques to create subtle, natural-looking
+                  results that enhance your natural beauty.
+                </p>
+                <div className="beauty-service-footer">
+                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="beauty-service">
+              <div className="service-image-wrapper">
+                <div className="service-image service-image-microneedling"></div>
+              </div>
+              <div className="service-content">
+                <h3 className="beauty-service-title">Microneedling</h3>
+                <p className="beauty-service-description">
+                  Rejuvenate your skin with our advanced microneedling treatments. 
+                  This minimally invasive procedure stimulates collagen production to reduce
+                  fine lines, acne scars, and improve overall skin texture and tone. Experience
+                  the benefits of younger, firmer, and more radiant skin.
+                </p>
+                <div className="beauty-service-footer">
+                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="beauty-service">
+              <div className="service-image-wrapper">
+                <div className="service-image service-image-correction"></div>
+              </div>
+              <div className="service-content">
+                <h3 className="beauty-service-title">Brow Corrections</h3>
+                <p className="beauty-service-description">
+                  Not happy with a previous microblading or tattooing experience? Our correction
+                  services can help transform uneven, discolored, or poorly shaped brows into
+                  the beautiful eyebrows you deserve. Our specialists are trained in the latest
+                  correction techniques to achieve optimal results.
+                </p>
+                <div className="beauty-service-footer">
+                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="beauty-service">
+              <div className="service-image-wrapper">
+                <div className="service-image service-image-removal"></div>
+              </div>
+              <div className="service-content">
+                <h3 className="beauty-service-title">Tattoo Removal</h3>
+                <p className="beauty-service-description">
+                  Our specialized tattoo removal services use the latest techniques to safely
+                  and effectively fade or remove unwanted cosmetic tattoos and microblading.
+                  Our gentle approach minimizes discomfort while achieving the best possible
+                  results for your skin.
+                </p>
+                <div className="beauty-service-footer">
+                  <a href="/pricing" className="service-details-link">View Details</a>
+                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="service-card">
-            <h3 className="service-title">Microneedling</h3>
-            <p className="service-description">
-              For those looking to improve the look of wrinkles, scars or simply boost collagen for great looking skin, microneedling might can help.
-            </p>
-            <div className="service-actions">
-              <Link 
-                href="/services/microneedling"
-                className="service-link"
-              >
-                Learn More
-              </Link>
-              <a 
-                href={freshaLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                BOOK APPOINTMENT
-              </a>
-            </div>
-          </div>
-
-          <div className="service-card">
-            <h3 className="service-title">Cosmetic Tattooing</h3>
-            <p className="service-description">
-              Cosmetic Tattooing is sometimes also referred to as semi-permanent makeup, it is a beauty treatment that involves the controlled insertion of safe colour pigments into the skin instantly improving appearance.
-            </p>
-            <div className="service-actions">
-              <Link 
-                href="/services/cosmetic-tattooing"
-                className="service-link"
-              >
-                Learn More
-              </Link>
-              <a 
-                href={freshaLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                BOOK APPOINTMENT
-              </a>
-            </div>
-          </div>
-
-          <div className="service-card">
-            <h3 className="service-title">Tattoo Removal</h3>
-            <p className="service-description">
-              Our advanced tattoo removal techniques help fade or completely remove unwanted tattoos, including old cosmetic tattoos and microblading. Using state-of-the-art methods, we safely break down pigment particles for your body to naturally eliminate.
-            </p>
-            <div className="service-actions">
-              <Link 
-                href="/services/tattoo-removal"
-                className="service-link"
-              >
-                Learn More
-              </Link>
-              <a 
-                href={freshaLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                BOOK APPOINTMENT
-              </a>
-            </div>
-          </div>
-
-          <div className="service-card">
-            <h3 className="service-title">Brow Corrections</h3>
-            <p className="service-description">
-              Unhappy with previous brow work? Our correction services can fix asymmetry, color issues, or poorly shaped brows. Our specialists will assess your current brows and develop a personalized plan to achieve your desired look through specialized techniques.
-            </p>
-            <div className="service-actions">
-              <Link 
-                href="/services"
-                className="service-link"
-              >
-                Learn More
-              </Link>
-              <a 
-                href={freshaLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-              >
-                BOOK APPOINTMENT
-              </a>
-            </div>
+          
+          <div className="view-all-services">
+            <Link href="/services" className="btn btn-outline" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>VIEW ALL SERVICES</Link>
           </div>
         </div>
       </section>
@@ -269,9 +303,9 @@ export default function Home() {
             <strong>Email:</strong> <a href="mailto:info@mdbrows.com.au" className="footer-link">info@mdbrows.com.au</a>
           </p>
         </div>
-        <a 
+        <a
           href={freshaLink} 
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary center-btn"
         >

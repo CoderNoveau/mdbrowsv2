@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-:root {
+  :root {
   /* Color Palette - updated to match actual site */
   --primary-bg: #ffffff;
   --accent: #c0a669; /* Updated to gold/bronze color */
@@ -247,33 +247,61 @@ ul {
 /* Hero Section Updates */
 .slide-heading {
   color: var(--white);
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  letter-spacing: 2px;
+  padding-bottom: 1rem;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   font-family: var(--serif);
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px solid var(--accent);
 }
 
 .slide-subheading {
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  margin-bottom: 0.8rem;
-  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-family: var(--serif);
 }
 
 .slide-price {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--accent);
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-family: var(--serif);
+  letter-spacing: 1px;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(0, -50%);
+  text-align: left;
+  z-index: 5;
+  width: 90%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+/* Updated transition rules for slide visibility */
+.slide-overlay > div {
+  transition: all 0.7s ease-in-out;
+  width: 100%;
 }
 
 /* Dropdown Navigation Styles */
@@ -511,24 +539,22 @@ ul {
   object-fit: cover;
 }
 
-.slide-overlay {
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  transform: translate(0, -50%);
-  text-align: left;
-  z-index: 5;
-  width: 90%;
-  max-width: 600px;
-  background-color: rgba(255, 255, 255, 0);
-  padding: 2rem;
-  border-radius: 4px;
+.slide-text-container {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 2rem;
+  background-color: transparent;
 }
 
 .slide-buttons {
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 /* Button Styles */
@@ -599,6 +625,42 @@ ul {
 }
 
 .section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+/* Page Section Styles */
+.page-section {
+  padding: 3rem 0;
+  width: 100%;
+  background-color: var(--white);
+}
+
+.page-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-section-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  color: var(--accent);
+  font-family: var(--serif);
+}
+
+.page-section-heading::after {
   content: "";
   position: absolute;
   bottom: -15px;
@@ -853,16 +915,54 @@ ul {
     font-size: 1.8rem;
   }
   
-  .slide-subheading {
-    font-size: 1rem;
-  }
-  
   .slide-price {
     font-size: 1.5rem;
   }
   
-  .section-heading {
+  .section-heading, .page-section-heading {
     font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .page-heading {
+    font-size: 1.3rem;
+  }
+  
+  .beauty-service-title {
+    font-size: 1.3rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .beauty-services {
+    margin: 2rem 0;
+  }
+  
+  .beauty-service {
+    margin-bottom: 2.5rem;
+  }
+  
+  .service-content {
+    padding: 1.5rem;
+  }
+  
+  .beauty-service-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .beauty-service-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .service-details-link {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-book-now {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -1144,24 +1244,29 @@ ul {
   .slide-overlay {
     left: 5%;
     width: 90%;
-    padding: 1rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   .slide-heading {
     font-size: 2rem;
+    padding-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
   }
 
   .slide-subheading {
     font-size: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .slide-price {
     font-size: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   .slide-side-overlay {
     width: 100% !important;
-    background: linear-gradient(to right, rgba(203, 192, 165, 0.7) 0%, rgba(203, 192, 165, 0.4) 100%) !important;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%) !important;
   }
 }
 
@@ -1400,4 +1505,447 @@ ul {
 
 .faq-answer li {
   margin-bottom: 0.5rem;
+}
+
+/* Beauty Services - Elegant Redesign */
+.beauty-services {
+  margin: 3rem 0 4rem;
+}
+
+.beauty-service {
+  display: flex;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: var(--white);
+  position: relative;
+}
+
+.beauty-service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.beauty-service:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service-image-wrapper {
+  flex: 0 0 40%;
+  position: relative;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.service-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.beauty-service:nth-child(even) .service-image::after {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+.service-image-microblading {
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero1.webp');
+}
+
+.service-image-cosmetic {
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero2.webp');
+}
+
+.service-image-microneedling {
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero3.webp');
+}
+
+.service-image-correction {
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero1.webp');
+}
+
+.service-image-removal {
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero2.webp');
+}
+
+.service-content {
+  flex: 0 0 60%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.beauty-service-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  font-family: var(--serif);
+  position: relative;
+  padding-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.beauty-service-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.beauty-service-description {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.beauty-service-footer {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.service-details-link {
+  font-weight: 500;
+  color: var(--text);
+  position: relative;
+  margin-right: 2rem;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.service-details-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.service-details-link:hover {
+  color: var(--accent);
+}
+
+.service-details-link:hover::after {
+  width: 100%;
+}
+
+.btn-book-now {
+  background: linear-gradient(135deg, var(--accent) 0%, #a08b4d 100%);
+  color: var(--white);
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-family: var(--sans);
+  box-shadow: 0 3px 10px rgba(192, 166, 105, 0.2);
+}
+
+.btn-book-now:hover {
+  background: linear-gradient(135deg, #a08b4d 0%, var(--accent) 100%);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(192, 166, 105, 0.3);
+}
+
+.view-all-services {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.view-all-services .btn-outline {
+  border-color: var(--accent);
+  color: var(--accent);
+  padding: 0.8rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+
+.view-all-services .btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+@media (max-width: 991px) {
+  .beauty-service, .beauty-service:nth-child(even) {
+    flex-direction: column;
+  }
+  
+  .service-image-wrapper, .service-content {
+    flex: 0 0 100%;
+  }
+  
+  .service-image {
+    min-height: 220px;
+  }
+  
+  .service-content {
+    padding: 2rem;
+  }
+  
+  .beauty-service-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .beauty-services {
+    margin: 2rem 0;
+  }
+  
+  .beauty-service {
+    margin-bottom: 2.5rem;
+  }
+  
+  .service-content {
+    padding: 1.5rem;
+  }
+  
+  .beauty-service-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .beauty-service-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .beauty-service-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .service-details-link {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-book-now {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Hero heading animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* New animation classes for slider transitions */
+.hide-animation {
+  opacity: 0;
+}
+
+/* Slide content wrapper - new container to fix transition issues */
+.slide-content-wrapper {
+  width: 100%;
+  position: relative;
+  transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+}
+
+/* Visibility classes for slide content - improved for fixed overlay approach */
+.visible-slide-content {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  z-index: 10;
+  transition: opacity 1s ease-in-out, visibility 0s linear 0s;
+}
+
+.hidden-slide-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transition: opacity 1s ease-in-out, visibility 0s linear 1s;
+  pointer-events: none;
+}
+
+/* Animation classes for slide elements */
+.slide-heading.show-animation {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.slide-subheading.show-animation {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.slide-price.show-animation {
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.slide-buttons.show-animation {
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.slide-phone.show-animation {
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* 
+  Removing default animations since we're handling them with inline styles
+  to enable animations on slide changes 
+*/
+.slide-heading {
+  /* animation removed */
+}
+
+.slide-subheading {
+  /* animation removed */
+}
+
+.slide-price {
+  /* animation removed */
+}
+
+.slide-buttons {
+  /* animation removed */
+}
+
+.slide-phone {
+  /* animation removed */
+}
+
+/* Ensure consistent appearance during transitions */
+.slide-heading, .slide-subheading, .slide-price, .slide-buttons, .slide-phone {
+  transform: translateZ(0); /* Force hardware acceleration */
+  will-change: opacity, transform; /* Hint to the browser about what will change */
+}
+
+/* Fixed slide overlay styles - prevents the jerky rectangle issue */
+.fixed-slide-overlay {
+  /* This class is no longer used */
+}
+
+.slide-content {
+  /* This class is no longer used */
+}
+
+/* Ensure the hero slider doesn't have pointer events to avoid double clickthroughs */
+.hero-slider .slick-track, 
+.hero-slider .slick-list, 
+.hero-slider .slick-slide {
+  pointer-events: none;
+}
+
+/* New Hero Structure - Completely separated slider and content */
+.hero-slider-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let clicks pass through to the slider */
+  z-index: 10;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(0, -50%);
+  width: 90%;
+  max-width: 600px;
+  padding: 2.5rem;
+  z-index: 2;
+  pointer-events: auto; /* Make sure buttons and links are clickable */
+  border-radius: 4px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.15);
+  transition: opacity 1s ease-in-out, visibility 0s linear 1s;
+}
+
+.hero-content-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-content-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Mobile adjustments for hero content */
+@media (max-width: 767px) {
+  .hero-content {
+    left: 5%;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Remove old classes that caused deformation */
+.fixed-slide-overlay,
+.slide-content,
+.visible-slide-content,
+.hidden-slide-content,
+.slide-content-wrapper {
+  /* These classes are no longer used */
 }
