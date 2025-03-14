@@ -100,7 +100,7 @@ export default function Home() {
                 {slides.map((slide, index) => (
                   <div key={index} className="slide">
                     <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
-                      <Image
+        <Image
                         src={slide.image}
                         alt={slide.alt}
                         fill
@@ -151,8 +151,8 @@ export default function Home() {
                   <div className={getAnimationClass('slide-buttons')}>
                     <a 
                       href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                       className="btn btn-primary"
                     >
                       BOOK APPOINTMENT
