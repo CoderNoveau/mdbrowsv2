@@ -1,9 +1,72 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, memo, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+
+// Memoized navigation links component
+const NavigationLinks = memo(({ 
+  handleLinkClick, 
+  pathname, 
+  freshaLink 
+}: { 
+  handleLinkClick: () => void;
+  pathname: string;
+  freshaLink: string;
+}) => (
+  <>
+    <Link 
+      href="/pricing" 
+      className={pathname === '/pricing' ? 'active' : ''}
+      onClick={handleLinkClick}
+    >
+      Pricing
+    </Link>
+    <Link 
+      href="/gallery" 
+      className={pathname === '/gallery' ? 'active' : ''}
+      onClick={handleLinkClick}
+    >
+      Gallery
+    </Link>
+    <Link 
+      href="/faq" 
+      className={pathname === '/faq' ? 'active' : ''}
+      onClick={handleLinkClick}
+    >
+      FAQ
+    </Link>
+    <a 
+      href={freshaLink}
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="mobile-nav-book"
+      onClick={handleLinkClick}
+    >
+      Book Now
+    </a>
+  </>
+));
+
+// Memoized dropdown component
+const DropdownMenu = memo(({ 
+  isOpen, 
+  items, 
+  handleLinkClick 
+}: { 
+  isOpen: boolean;
+  items: Array<{ href: string; label: string; }>;
+  handleLinkClick: () => void;
+}) => (
+  <div className={`dropdown-menu ${isOpen ? 'show' : ''}`}>
+    {items.map((item, index) => (
+      <Link key={index} href={item.href} onClick={handleLinkClick}>
+        {item.label}
+      </Link>
+    ))}
+  </div>
+));
 
 const Header = () => {
   const [mounted, setMounted] = useState(false);
@@ -14,6 +77,46 @@ const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
+  // Memoize dropdown items
+  const serviceItems = useMemo(() => [
+    { href: '/services/microblading', label: 'Microblading' },
+    { href: '/services/microneedling', label: 'Microneedling' },
+    { href: '/services/cosmetic-tattooing', label: 'Cosmetic Tattooing' },
+    { href: '/services/tattoo-removal', label: 'Tattoo Removal' },
+    { href: '/services/brow-corrections', label: 'Brow Corrections' }
+  ], []);
+
+  const aboutItems = useMemo(() => [
+    { href: '/contact', label: 'Contact Us' },
+    { href: '/locations', label: 'Our Locations' }
+  ], []);
+
+  // Memoized click handler
+  const handleLinkClick = useCallback(() => {
+    if (mounted) {
+      setMenuOpen(false);
+      setServicesOpen(false);
+      setAboutOpen(false);
+    }
+  }, [mounted]);
+
+  // Memoized toggle handlers
+  const toggleServices = useCallback((e: React.MouseEvent) => {
+    if (!mounted) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setServicesOpen(prev => !prev);
+    setAboutOpen(false);
+  }, [mounted]);
+
+  const toggleAbout = useCallback((e: React.MouseEvent) => {
+    if (!mounted) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setAboutOpen(prev => !prev);
+    setServicesOpen(false);
+  }, [mounted]);
+
   // Handle mounting and click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -23,7 +126,6 @@ const Header = () => {
       }
     };
 
-    // Only add listeners after component is mounted
     setMounted(true);
     document.addEventListener('click', handleClickOutside);
     
@@ -35,37 +137,9 @@ const Header = () => {
   // Close menus on route change
   useEffect(() => {
     if (mounted) {
-      setMenuOpen(false);
-      setServicesOpen(false);
-      setAboutOpen(false);
+      handleLinkClick();
     }
-  }, [pathname, mounted]);
-
-  // Function to handle link clicks
-  const handleLinkClick = () => {
-    if (mounted) {
-      setMenuOpen(false);
-      setServicesOpen(false);
-      setAboutOpen(false);
-    }
-  };
-
-  // Function to toggle dropdowns
-  const toggleServices = (e: React.MouseEvent) => {
-    if (!mounted) return;
-    e.preventDefault();
-    e.stopPropagation();
-    setServicesOpen(!servicesOpen);
-    setAboutOpen(false);
-  };
-
-  const toggleAbout = (e: React.MouseEvent) => {
-    if (!mounted) return;
-    e.preventDefault();
-    e.stopPropagation();
-    setAboutOpen(!aboutOpen);
-    setServicesOpen(false);
-  };
+  }, [pathname, mounted, handleLinkClick]);
 
   return (
     <header className="header" ref={headerRef}>
@@ -106,29 +180,18 @@ const Header = () => {
             >
               Services
             </button>
-            <div className={`dropdown-menu ${servicesOpen ? 'show' : ''}`}>
-              <Link href="/services/microblading" onClick={handleLinkClick}>Microblading</Link>
-              <Link href="/services/microneedling" onClick={handleLinkClick}>Microneedling</Link>
-              <Link href="/services/cosmetic-tattooing" onClick={handleLinkClick}>Cosmetic Tattooing</Link>
-              <Link href="/services/tattoo-removal" onClick={handleLinkClick}>Tattoo Removal</Link>
-              <Link href="/services/brow-corrections" onClick={handleLinkClick}>Brow Corrections</Link>
-            </div>
+            <DropdownMenu 
+              isOpen={servicesOpen}
+              items={serviceItems}
+              handleLinkClick={handleLinkClick}
+            />
           </div>
 
-          <Link 
-            href="/pricing" 
-            className={pathname === '/pricing' ? 'active' : ''}
-            onClick={handleLinkClick}
-          >
-            Pricing
-          </Link>
-          <Link 
-            href="/gallery" 
-            className={pathname === '/gallery' ? 'active' : ''}
-            onClick={handleLinkClick}
-          >
-            Gallery
-          </Link>
+          <NavigationLinks 
+            handleLinkClick={handleLinkClick}
+            pathname={pathname}
+            freshaLink={freshaLink}
+          />
 
           {/* About dropdown */}
           <div className="nav-item-with-dropdown">
@@ -140,32 +203,16 @@ const Header = () => {
             >
               About Us
             </button>
-            <div className={`dropdown-menu ${aboutOpen ? 'show' : ''}`}>
-              <Link href="/contact" onClick={handleLinkClick}>Contact Us</Link>
-              <Link href="/locations" onClick={handleLinkClick}>Our Locations</Link>
-            </div>
+            <DropdownMenu 
+              isOpen={aboutOpen}
+              items={aboutItems}
+              handleLinkClick={handleLinkClick}
+            />
           </div>
-
-          <Link 
-            href="/faq" 
-            className={pathname === '/faq' ? 'active' : ''}
-            onClick={handleLinkClick}
-          >
-            FAQ
-          </Link>
-          <a 
-            href={freshaLink}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="mobile-nav-book"
-            onClick={handleLinkClick}
-          >
-            Book Now
-          </a>
         </nav>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default memo(Header);
