@@ -19,6 +19,13 @@ const Header = () => {
     setAboutOpen(false);
   }, [pathname]);
 
+  // Function to handle link clicks
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setServicesOpen(false);
+    setAboutOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="header-inner">
@@ -33,7 +40,7 @@ const Header = () => {
         </button>
 
         <div className="logo-container">
-          <Link href="/" className="logo-link">
+          <Link href="/" className="logo-link" onClick={handleLinkClick}>
             <Image 
               src="/images/goldlogo-full.jpg" 
               alt="Melbourne Designer Brows Logo" 
@@ -54,21 +61,30 @@ const Header = () => {
             <Link 
               href="/services" 
               className={`has-dropdown ${pathname === '/services' ? 'active' : ''}`}
+              onClick={handleLinkClick}
             >
               Services
             </Link>
             <div className={`dropdown-menu ${servicesOpen ? 'show' : ''}`}>
-              <Link href="/services/microblading">Microblading</Link>
-              <Link href="/services/microneedling">Microneedling</Link>
-              <Link href="/services/cosmetic-tattooing">Cosmetic Tattooing</Link>
-              <Link href="/services/tattoo-removal">Tattoo Removal</Link>
-              <Link href="/services/brow-corrections">Brow Corrections</Link>
+              <Link href="/services/microblading" onClick={handleLinkClick}>Microblading</Link>
+              <Link href="/services/microneedling" onClick={handleLinkClick}>Microneedling</Link>
+              <Link href="/services/cosmetic-tattooing" onClick={handleLinkClick}>Cosmetic Tattooing</Link>
+              <Link href="/services/tattoo-removal" onClick={handleLinkClick}>Tattoo Removal</Link>
+              <Link href="/services/brow-corrections" onClick={handleLinkClick}>Brow Corrections</Link>
             </div>
           </div>
-          <Link href="/pricing" className={pathname === '/pricing' ? 'active' : ''}>
+          <Link 
+            href="/pricing" 
+            className={pathname === '/pricing' ? 'active' : ''}
+            onClick={handleLinkClick}
+          >
             Pricing
           </Link>
-          <Link href="/gallery" className={pathname === '/gallery' ? 'active' : ''}>
+          <Link 
+            href="/gallery" 
+            className={pathname === '/gallery' ? 'active' : ''}
+            onClick={handleLinkClick}
+          >
             Gallery
           </Link>
           <div 
@@ -79,14 +95,19 @@ const Header = () => {
             <Link 
               href="/about" 
               className={`has-dropdown ${pathname === '/about' ? 'active' : ''}`}
+              onClick={handleLinkClick}
             >
               About Us
             </Link>
             <div className={`dropdown-menu ${aboutOpen ? 'show' : ''}`}>
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact" onClick={handleLinkClick}>Contact Us</Link>
             </div>
           </div>
-          <Link href="/faq" className={pathname === '/faq' ? 'active' : ''}>
+          <Link 
+            href="/faq" 
+            className={pathname === '/faq' ? 'active' : ''}
+            onClick={handleLinkClick}
+          >
             FAQ
           </Link>
           <a 
@@ -94,6 +115,7 @@ const Header = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="mobile-nav-book"
+            onClick={handleLinkClick}
           >
             Book Now
           </a>
