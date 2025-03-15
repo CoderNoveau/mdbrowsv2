@@ -142,6 +142,7 @@ const Header = () => {
             </button>
             <div className={`dropdown-menu ${aboutOpen ? 'show' : ''}`}>
               <Link href="/contact" onClick={handleLinkClick}>Contact Us</Link>
+              <Link href="/locations" onClick={handleLinkClick}>Our Locations</Link>
             </div>
           </div>
 

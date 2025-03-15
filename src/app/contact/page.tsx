@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 export const metadata = {
   title: 'Contact Us | Melbourne Designer Brows',
-  description: 'Get in touch with Melbourne Designer Brows. Contact our Richmond and Springvale locations for bookings, inquiries, or more information.',
+  description: 'Get in touch with Melbourne Designer Brows. Contact us for bookings, inquiries, or more information.',
 };
 
 export default function Contact() {
@@ -39,33 +39,6 @@ export default function Contact() {
               Instagram
             </a>
           </div>
-        </div>
-      </div>
-      
-      {/* Location Section */}
-      <div className="location-section" style={{ marginBottom: '4rem' }}>
-        <h2 className="page-section-heading">OUR LOCATIONS</h2>
-        
-        <div className="location-container" style={{ display: 'flex', justifyContent: 'center', gap: '3rem', marginBottom: '2rem' }}>
-          <div className="location" style={{ textAlign: 'center', padding: '1.5rem', borderRadius: '8px', backgroundColor: '#f9f7f3', minWidth: '250px' }}>
-            <h3 className="contact-heading">Richmond Branch</h3>
-            <p className="contact-detail">
-              Level 1, 382A Bridge Rd<br />RICHMOND VIC 3122
-            </p>
-          </div>
-          
-          <div className="location" style={{ textAlign: 'center', padding: '1.5rem', borderRadius: '8px', backgroundColor: '#f9f7f3', minWidth: '250px' }}>
-            <h3 className="contact-heading">Springvale Branch</h3>
-            <p className="contact-detail">
-              Shop 4, 218 Springvale Rd<br />SPRINGVALE VIC 3171
-            </p>
-          </div>
-        </div>
-        
-        {/* Elfsight Google Maps Widget */}
-        <div className="location-map" style={{ borderRadius: '8px', overflow: 'hidden', height: '400px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
-          <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-          <div className="elfsight-app-b28e1104-b9c6-4171-9f26-e2562ecd3ae2" data-elfsight-app-lazy></div>
         </div>
       </div>
       
