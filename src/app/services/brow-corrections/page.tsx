@@ -13,12 +13,13 @@ export default function BrowCorrections() {
     <div className="page-content">
       <h1 className="page-heading">Brow Corrections</h1>
       
-      <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', height: '300px' }}>
+      <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
-          src="/images/gold-logoonly.png"
-          alt="Brow Corrections service" 
+          src="/images/placeholder-brow-correction.webp"
+          alt="Brow Correction procedure" 
           fill
-          style={{ objectFit: 'contain' }}
+          style={{ objectFit: 'cover' }}
+          priority
         />
       </div>
       
