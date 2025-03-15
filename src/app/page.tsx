@@ -4,12 +4,30 @@ import React from 'react';
 import Script from 'next/script';
 import Hero from '@/components/Hero';
 import ElfsightWidget from '@/components/ElfsightWidget';
+import PageSeo from '@/components/PageSeo';
 
 export default function Home() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
     <>
+      <PageSeo
+        title="Melbourne Designer Brows | Premier Microblading & Cosmetic Tattooing"
+        description="Melbourne's premier microblading and cosmetic tattooing salon. Expert services including eyebrow microblading, permanent makeup, and tattoo removal."
+        canonical="https://mdbrows.com.au/"
+        openGraph={{
+          type: 'website',
+          images: [
+            {
+              url: 'https://mdbrows.com.au/images/hero1.webp',
+              width: 1200,
+              height: 630,
+              alt: 'Melbourne Designer Brows - Premium Eyebrow Services',
+            },
+          ],
+        }}
+      />
+      
       <Hero />
 
       <section className="gallery-section container" style={{ paddingTop: '0.5rem' }}>

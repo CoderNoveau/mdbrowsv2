@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import PageSeo from '@/components/PageSeo';
 
 export const metadata = {
   title: 'Services | Melbourne Designer Brows',
@@ -68,6 +71,23 @@ export default function Services() {
   
   return (
     <div className="page-content">
+      <PageSeo
+        title="Services | Melbourne Designer Brows"
+        description="Explore our range of professional brow and beauty services including microblading, microneedling, cosmetic tattooing, and tattoo removal."
+        canonical="https://mdbrows.com.au/services"
+        openGraph={{
+          type: 'website',
+          images: [
+            {
+              url: 'https://mdbrows.com.au/images/service-microblading.webp',
+              width: 1200,
+              height: 630,
+              alt: 'Beauty services at Melbourne Designer Brows',
+            },
+          ],
+        }}
+      />
+      
       <h2 className="page-section-heading">Our Services</h2>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>

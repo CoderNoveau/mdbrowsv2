@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import PageSeo from '@/components/PageSeo';
 
 export const metadata = {
   title: 'Microneedling | Melbourne Designer Brows',
@@ -11,6 +14,23 @@ export default function Microneedling() {
 
   return (
     <div className="page-content">
+      <PageSeo
+        title="Microneedling | Melbourne Designer Brows"
+        description="Professional microneedling services in Melbourne. Improve skin texture, reduce scars, and boost collagen for younger-looking skin."
+        canonical="https://mdbrows.com.au/services/microneedling"
+        openGraph={{
+          type: 'article',
+          images: [
+            {
+              url: 'https://mdbrows.com.au/images/service-microneedling.webp',
+              width: 1200,
+              height: 630,
+              alt: 'Microneedling procedure at Melbourne Designer Brows',
+            },
+          ],
+        }}
+      />
+      
       <h2 className="page-section-heading">Microneedling</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
