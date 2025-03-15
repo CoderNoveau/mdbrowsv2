@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { OrganizationJsonLd } from 'next-seo';
+import Script from 'next/script';
 
 interface LocalBusinessSchemaProps {
   name?: string;
@@ -30,7 +30,7 @@ interface LocalBusinessSchemaProps {
   sameAs?: string[];
 }
 
-const LocalBusinessSchema = ({
+const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
   name = 'Melbourne Designer Brows',
   description = 'Melbourne Designer Brows offers premium microblading, cosmetic tattooing and eyebrow services. Located in Richmond and Springvale.',
   image = 'https://mdbrows.com.au/images/goldlogo-full.jpg',
@@ -85,34 +85,43 @@ const LocalBusinessSchema = ({
     'https://www.facebook.com/mdbrowsau',
     'https://www.instagram.com/mdbrowsau',
   ],
-}: LocalBusinessSchemaProps) => {
+}) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BeautySalon',
+    name,
+    description,
+    image,
+    telephone,
+    email,
+    url,
+    priceRange,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: address.streetAddress,
+      addressLocality: address.addressLocality,
+      addressRegion: address.addressRegion,
+      postalCode: address.postalCode,
+      addressCountry: address.addressCountry,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: geo.latitude,
+      longitude: geo.longitude,
+    },
+    openingHoursSpecification: openingHours.map((hours) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: `https://schema.org/${hours.dayOfWeek}`,
+      opens: hours.opens,
+      closes: hours.closes,
+    })),
+    sameAs,
+  };
+
   return (
-    <OrganizationJsonLd
-      type="BeautySalon"
-      id="https://mdbrows.com.au"
-      name={name}
-      description={description}
-      url={url}
-      telephone={telephone}
-      logo={image}
-      sameAs={sameAs}
-      address={{
-        streetAddress: address.streetAddress,
-        addressLocality: address.addressLocality,
-        addressRegion: address.addressRegion,
-        postalCode: address.postalCode,
-        addressCountry: address.addressCountry,
-      }}
-      geo={{
-        latitude: geo.latitude,
-        longitude: geo.longitude,
-      }}
-      openingHours={openingHours.map((hours) => ({
-        opens: hours.opens,
-        closes: hours.closes,
-        dayOfWeek: [hours.dayOfWeek],
-      }))}
-    />
+    <Script id="local-business-schema" type="application/ld+json">
+      {JSON.stringify(jsonLd)}
+    </Script>
   );
 };
 
