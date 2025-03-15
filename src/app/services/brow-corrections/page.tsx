@@ -53,7 +53,7 @@ export default function BrowCorrections() {
         
         <h3 className="page-section-subheading">Pricing</h3>
         <div className="service-price">
-          <span className="price-amount">$250 - $450</span>
+          <span className="price-amount">From $595</span>
           <span className="price-description"> - Based on correction needs</span>
         </div>
         
