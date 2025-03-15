@@ -17,6 +17,13 @@ export default function Home() {
         <ElfsightWidget widgetId="84b79773-a065-4117-a575-67123d886124" />
       </section>
 
+      <section className="reviews-section">
+        <div className="reviews-section-inner">
+          <h2 className="section-heading">WHAT OUR CLIENTS SAY</h2>
+          <ElfsightWidget widgetId="afd7ee50-4343-4814-9241-4e0645a154b7" />
+        </div>
+      </section>
+
       <section id="services" className="page-section">
         <div className="page-section-inner">
           <h2 className="page-section-heading">OUR SERVICES</h2>
@@ -121,33 +128,6 @@ export default function Home() {
             <a href="/services" className="btn btn-outline" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>VIEW ALL SERVICES</a>
           </div>
         </div>
-      </section>
-
-      <section className="reviews-section">
-        <div className="reviews-section-inner">
-          <h2 className="section-heading">WHAT OUR CLIENTS SAY</h2>
-          <ElfsightWidget widgetId="e8769bfb-7e99-494d-af08-72fc95114045" />
-        </div>
-      </section>
-
-      <section className="contact-section container">
-        <h2 className="section-heading">GET IN TOUCH</h2>
-        <div className="contact-info-home">
-          <p className="contact-phone">
-            <strong>Call us:</strong> <a href="tel:+61418188277" className="footer-link">0418 188 277</a>
-          </p>
-          <p className="contact-email">
-            <strong>Email:</strong> <a href="mailto:info@mdbrows.com.au" className="footer-link">info@mdbrows.com.au</a>
-          </p>
-        </div>
-        <a
-          href={freshaLink} 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary center-btn"
-        >
-          BOOK APPOINTMENT
-        </a>
       </section>
     </>
   );
