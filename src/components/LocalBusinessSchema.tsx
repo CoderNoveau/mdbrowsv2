@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { NextSeo, OrganizationJsonLd } from 'next-seo';
+import { OrganizationJsonLd } from 'next-seo';
 
 interface LocalBusinessSchemaProps {
   name?: string;
@@ -86,34 +86,34 @@ const LocalBusinessSchema = ({
     'https://www.instagram.com/mdbrowsau',
   ],
 }: LocalBusinessSchemaProps) => {
-  const organizationData = {
-    '@context': 'https://schema.org',
-    '@type': 'BeautySalon',
-    name,
-    description,
-    image,
-    telephone,
-    email,
-    url,
-    priceRange,
-    address: {
-      '@type': 'PostalAddress',
-      ...address,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      ...geo,
-    },
-    openingHoursSpecification: openingHours.map((hours) => ({
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: `https://schema.org/${hours.dayOfWeek}`,
-      opens: hours.opens,
-      closes: hours.closes,
-    })),
-    sameAs,
-  };
-
-  return <OrganizationJsonLd {...organizationData} />;
+  return (
+    <OrganizationJsonLd
+      type="BeautySalon"
+      id="https://mdbrows.com.au"
+      name={name}
+      description={description}
+      url={url}
+      telephone={telephone}
+      logo={image}
+      sameAs={sameAs}
+      address={{
+        streetAddress: address.streetAddress,
+        addressLocality: address.addressLocality,
+        addressRegion: address.addressRegion,
+        postalCode: address.postalCode,
+        addressCountry: address.addressCountry,
+      }}
+      geo={{
+        latitude: geo.latitude,
+        longitude: geo.longitude,
+      }}
+      openingHours={openingHours.map((hours) => ({
+        opens: hours.opens,
+        closes: hours.closes,
+        dayOfWeek: [hours.dayOfWeek],
+      }))}
+    />
+  );
 };
 
 export default LocalBusinessSchema; 
