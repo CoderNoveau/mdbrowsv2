@@ -6,11 +6,18 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
+  // Initialize all state with explicit false values
+  const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const pathname = usePathname();
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
+
+  // Add mounted state to ensure client-side only rendering for interactive elements
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close menu when changing pages
   useEffect(() => {
@@ -29,15 +36,18 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-inner">
-        <button 
-          className="hamburger" 
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-        >
-          <div></div>
-          <div></div>
-          <div></div>
-        </button>
+        {/* Only render interactive elements after mounting */}
+        {mounted && (
+          <button 
+            className={`hamburger ${menuOpen ? 'active' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </button>
+        )}
 
         <div className="logo-container">
           <Link href="/" className="logo-link" onClick={handleLinkClick}>
@@ -53,10 +63,11 @@ const Header = () => {
         </div>
         
         <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
+          {/* Wrap dropdown interactions in mounted check */}
           <div 
             className="nav-item-with-dropdown"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
+            onMouseEnter={mounted ? () => setServicesOpen(true) : undefined}
+            onMouseLeave={mounted ? () => setServicesOpen(false) : undefined}
           >
             <Link 
               href="/services" 
@@ -89,8 +100,8 @@ const Header = () => {
           </Link>
           <div 
             className="nav-item-with-dropdown"
-            onMouseEnter={() => setAboutOpen(true)}
-            onMouseLeave={() => setAboutOpen(false)}
+            onMouseEnter={mounted ? () => setAboutOpen(true) : undefined}
+            onMouseLeave={mounted ? () => setAboutOpen(false) : undefined}
           >
             <Link 
               href="/about" 

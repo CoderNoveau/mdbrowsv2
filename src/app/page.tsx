@@ -10,11 +10,17 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const [sliderInitialized, setSliderInitialized] = useState(false);
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   // Prevent hydration errors with react-slick
   useEffect(() => {
     setMounted(true);
+    // Short delay to ensure DOM is fully ready before initializing slider
+    const timer = setTimeout(() => {
+      setSliderInitialized(true);
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const sliderSettings = {
@@ -23,21 +29,19 @@ export default function Home() {
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: mounted, // Only autoplay after mounting
     autoplaySpeed: 7000,
     arrows: false,
     fade: true,
     cssEase: 'ease-in-out',
     beforeChange: (oldIndex: number, newIndex: number) => {
-      // Set animating flag to true when slide transition starts
+      if (!mounted) return; // Prevent state updates before mounting
       setAnimating(true);
-      // Pre-emptively update the current slide for smoother content transition
       setCurrentSlide(newIndex);
     },
     afterChange: (index: number) => {
-      // Update current slide and reset animating flag after transition completes
+      if (!mounted) return; // Prevent state updates before mounting
       setCurrentSlide(index);
-      // Short delay to ensure slide is fully visible before starting animations
       setTimeout(() => {
         setAnimating(false);
       }, 50);
@@ -92,7 +96,7 @@ export default function Home() {
   return (
     <>
       <div className="hero" style={{ position: 'relative' }}>
-        {mounted && (
+        {mounted && sliderInitialized && (
           <>
             {/* Slider containing ONLY images */}
             <div className="hero-slider-container">
@@ -175,9 +179,12 @@ export default function Home() {
 
       <section className="gallery-section container" style={{ paddingTop: '0.5rem' }}>
         <h2 className="section-heading">OUR WORK GALLERY</h2>
-        {/* Elfsight Instagram Feed Widget */}
-        <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-        <div className="elfsight-app-84b79773-a065-4117-a575-67123d886124" data-elfsight-app-lazy></div>
+        {mounted && (
+          <>
+            <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
+            <div className="elfsight-app-84b79773-a065-4117-a575-67123d886124" data-elfsight-app-lazy></div>
+          </>
+        )}
       </section>
 
       <section id="services" className="page-section">
