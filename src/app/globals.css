@@ -1602,23 +1602,23 @@ ul {
 }
 
 .service-image-microblading {
-  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero1.webp');
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/service-microblading.webp');
 }
 
 .service-image-cosmetic {
-  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero2.webp');
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/service-cosmetic-tattooing.webp');
 }
 
 .service-image-microneedling {
-  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero3.webp');
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/service-microneedling.webp');
 }
 
 .service-image-correction {
-  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero1.webp');
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/service-brow-correction.webp');
 }
 
 .service-image-removal {
-  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/hero2.webp');
+  background-image: linear-gradient(to right, rgba(203, 192, 165, 0.3), rgba(203, 192, 165, 0.1)), url('/images/service-tattoo-removal.webp');
 }
 
 .service-content {
