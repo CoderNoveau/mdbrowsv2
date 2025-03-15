@@ -38,6 +38,16 @@ export default function CosmeticTattooing() {
         <h3 className="page-section-subheading">Our Cosmetic Tattooing Services</h3>
         
         <div className="cosmetic-service-item">
+          <h4>Lip Blushing</h4>
+          <p>Enhance the natural color and shape of your lips with this subtle tattooing technique.</p>
+        </div>
+        
+        <div className="cosmetic-service-item">
+          <h4>Eyeliner Enhancement</h4>
+          <p>Create a stunning, always-perfect eyeliner look with eyeliner tattooing. This treatment enhances your eye shape, creates the appearance of fuller lashes, and eliminates the daily struggle with traditional eyeliner. Available in classic or smokey styles to suit your preferred look.</p>
+        </div>
+
+        <div className="cosmetic-service-item">
           <h4>Ombré Brows</h4>
           <p>A soft shading technique that creates a powdered effect, similar to brow powder. Perfect for those wanting a more defined, filled-in look.</p>
         </div>
@@ -47,10 +57,7 @@ export default function CosmeticTattooing() {
           <p>Our signature treatment combines both microblading and shading techniques for the most natural and dimensional look.</p>
         </div>
         
-        <div className="cosmetic-service-item">
-          <h4>Lip Blushing</h4>
-          <p>Enhance the natural color and shape of your lips with this subtle tattooing technique.</p>
-        </div>
+
         
         <h3 className="page-section-subheading">The Process</h3>
         <p className="page-text">

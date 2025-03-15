@@ -1,7 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Link from 'next/link';
-import Script from 'next/script';
+import ElfsightWidget from '@/components/ElfsightWidget';
 
 export const metadata: Metadata = {
   title: 'Our Locations | Melbourne Designer Brows',
@@ -23,7 +22,7 @@ export default function Locations() {
             </p>
           </div>
           <div className="location-map" style={{ borderRadius: '8px', overflow: 'hidden', height: '400px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
-            <div className="elfsight-app-b28e1104-b9c6-4171-9f26-e2562ecd3ae2" data-elfsight-app-lazy></div>
+            <ElfsightWidget widgetId="b28e1104-b9c6-4171-9f26-e2562ecd3ae2" />
           </div>
         </div>
 
@@ -36,13 +35,10 @@ export default function Locations() {
             </p>
           </div>
           <div className="location-map" style={{ borderRadius: '8px', overflow: 'hidden', height: '400px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
-            <div className="elfsight-app-4c5fa5e7-825f-41ca-aab1-bdd16c9c092d" data-elfsight-app-lazy></div>
+            <ElfsightWidget widgetId="4c5fa5e7-825f-41ca-aab1-bdd16c9c092d" />
           </div>
         </div>
       </div>
-
-      {/* Single Script for both widgets */}
-      <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
     </div>
   );
 }
