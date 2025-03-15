@@ -1,11 +1,6 @@
 {
   "name": "Melbourne Designer Brows",
   "short_name": "MDBrows",
-  "description": "Premier eyebrow studio in Melbourne offering microblading, ombré brows, and cosmetic tattooing services.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#CBC0A5",
   "icons": [
     {
       "src": "/images/android-chrome-192x192.png",
@@ -17,5 +12,8 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
 } 

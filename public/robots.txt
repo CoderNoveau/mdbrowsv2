@@ -1,5 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://mdbrows.com.au
 
 # Sitemaps
 Sitemap: https://mdbrows.com.au/sitemap.xml 

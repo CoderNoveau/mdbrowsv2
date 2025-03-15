@@ -1,63 +1,118 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
   images: {
-    domains: ['mdbrows.com.au'],
+    domains: [],
     unoptimized: process.env.NODE_ENV === 'development', // Disable optimization in dev for faster build
   },
   async redirects() {
     return [
-      // WordPress blog URLs to new Next.js URLs
+      // WordPress specific paths to Next.js paths
       {
-        source: '/blog/:slug',
-        destination: '/posts/:slug',
+        source: '/oxy/microblading',
+        destination: '/services/microblading',
         permanent: true,
       },
-      // WordPress category URLs
       {
-        source: '/category/:slug',
-        destination: '/services/:slug',
+        source: '/microblading',
+        destination: '/services/microblading',
         permanent: true,
       },
-      // WordPress author pages
       {
-        source: '/author/:slug',
+        source: '/oxy/cosmetic-tattooing',
+        destination: '/services/cosmetic-tattooing',
+        permanent: true,
+      },
+      {
+        source: '/cosmetic-tattooing',
+        destination: '/services/cosmetic-tattooing',
+        permanent: true,
+      },
+      {
+        source: '/oxy/microneedling',
+        destination: '/services/microneedling',
+        permanent: true,
+      },
+      {
+        source: '/microneedling',
+        destination: '/services/microneedling',
+        permanent: true,
+      },
+      {
+        source: '/oxy/tattoo-removal',
+        destination: '/services/tattoo-removal',
+        permanent: true,
+      },
+      {
+        source: '/tattoo-removal',
+        destination: '/services/tattoo-removal',
+        permanent: true,
+      },
+      {
+        source: '/oxy/brow-corrections',
+        destination: '/services/brow-corrections',
+        permanent: true,
+      },
+      {
+        source: '/brow-corrections',
+        destination: '/services/brow-corrections',
+        permanent: true,
+      },
+      {
+        source: '/oxy/richmond',
+        destination: '/locations/richmond',
+        permanent: true,
+      },
+      {
+        source: '/oxy/springvale',
+        destination: '/locations/springvale',
+        permanent: true,
+      },
+      {
+        source: '/our-locations',
+        destination: '/locations',
+        permanent: true,
+      },
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/about-us',
         destination: '/about',
         permanent: true,
       },
-      // WordPress tag pages
       {
-        source: '/tag/:slug',
+        source: '/frequently-asked-questions',
+        destination: '/faq',
+        permanent: true,
+      },
+      // WordPress pagination patterns
+      {
+        source: '/page/:page',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/category/:category',
         destination: '/services',
         permanent: true,
       },
-      // WordPress search
       {
-        source: '/search/:query',
-        destination: '/search?q=:query',
+        source: '/tag/:tag',
+        destination: '/services',
         permanent: true,
       },
-      // WordPress feed
+      // WordPress archive patterns
       {
-        source: '/feed',
-        destination: '/rss.xml',
-        permanent: true,
-      },
-      // WordPress common URLs
-      {
-        source: '/wp-content/:path*',
-        destination: '/images/:path*',
-        permanent: true,
-      },
-      {
-        source: '/wp-admin',
+        source: '/:year/:month',
         destination: '/',
         permanent: true,
       },
       {
-        source: '/wp-login.php',
-        destination: '/',
+        source: '/author/:author',
+        destination: '/about',
         permanent: true,
       },
     ];

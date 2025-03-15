@@ -1,57 +1,61 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://mdbrows.com.au',
-  generateRobotsTxt: false, // We've already created a custom robots.txt
-  changefreq: 'weekly',
-  priority: 0.7,
+  siteUrl: process.env.SITE_URL || 'https://mdbrows.com.au',
+  generateRobotsTxt: true,
   sitemapSize: 7000,
-  exclude: ['/404', '/500'],
-  generateIndexSitemap: false,
-  additionalPaths: async (config) => {
-    const result = [];
-
-    // Add custom URLs with specific priorities
-    result.push({
-      loc: '/',
+  exclude: ['/server-sitemap.xml'], // Exclude server-side generated pages if any
+  robotsTxtOptions: {
+    additionalSitemaps: [
+      'https://mdbrows.com.au/server-sitemap.xml', // Add dynamic sitemap if needed in the future
+    ],
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/private/', '/api/'],
+      },
+    ],
+  },
+  transform: async (config, path) => {
+    // Custom transform function for changing priority and changefreq
+    // Set default values for all URLs
+    const defaultValues = {
       changefreq: 'weekly',
-      priority: 1.0,
+      priority: 0.7,
       lastmod: new Date().toISOString(),
-    });
+    };
 
-    // Services pages with high priority
-    const servicePages = [
-      '/services',
-      '/services/microblading',
-      '/services/cosmetic-tattooing',
-      '/services/microneedling',
-      '/services/brow-corrections',
-      '/services/tattoo-removal',
-    ];
+    // Set higher priority for important pages
+    if (path === '/') {
+      return {
+        ...defaultValues,
+        priority: 1.0,
+        changefreq: 'daily',
+      };
+    }
 
-    servicePages.forEach((path) => {
-      result.push({
-        loc: path,
-        changefreq: 'weekly',
+    if (path.startsWith('/services/')) {
+      return {
+        ...defaultValues,
         priority: 0.9,
-        lastmod: new Date().toISOString(),
-      });
-    });
+        changefreq: 'weekly',
+      };
+    }
 
-    // Location pages
-    const locationPages = [
-      '/locations',
-      '/contact',
-    ];
-
-    locationPages.forEach((path) => {
-      result.push({
-        loc: path,
-        changefreq: 'monthly',
+    if (
+      path === '/services' ||
+      path === '/locations' ||
+      path === '/gallery' ||
+      path === '/contact'
+    ) {
+      return {
+        ...defaultValues,
         priority: 0.8,
-        lastmod: new Date().toISOString(),
-      });
-    });
+        changefreq: 'weekly',
+      };
+    }
 
-    return result;
+    // For all other pages
+    return defaultValues;
   },
 }; 
