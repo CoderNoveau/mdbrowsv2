@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import { DefaultSeo } from 'next-seo';
+import SEO from '../../next-seo.config';
 
 export const metadata: Metadata = {
   title: "Melbourne Designer Brows | Professional Eyebrow Services",
@@ -33,6 +35,7 @@ export default function RootLayout({
         src="https://static.elfsight.com/platform/platform.js"
         strategy="afterInteractive"
       />
+      <DefaultSeo {...SEO} />
       <body>
         <Header />
         <main>{children}</main>
