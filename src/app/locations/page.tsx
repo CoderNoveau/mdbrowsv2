@@ -1,9 +1,6 @@
-'use client';
-
 import React from 'react';
 import { Metadata } from 'next';
 import ElfsightWidget from '@/components/ElfsightWidget';
-import PageSeo from '@/components/PageSeo';
 
 export const metadata: Metadata = {
   title: 'Our Locations | Melbourne Designer Brows',
@@ -13,23 +10,6 @@ export const metadata: Metadata = {
 export default function Locations() {
   return (
     <div className="page-content">
-      <PageSeo
-        title="Our Locations | Melbourne Designer Brows"
-        description="Visit our convenient locations in Richmond and Springvale. Melbourne Designer Brows offers premium microblading and cosmetic tattooing services."
-        canonical="https://mdbrows.com.au/locations"
-        openGraph={{
-          type: 'website',
-          images: [
-            {
-              url: 'https://mdbrows.com.au/images/goldlogo-full.jpg',
-              width: 1200,
-              height: 630,
-              alt: 'Melbourne Designer Brows locations',
-            },
-          ],
-        }}
-      />
-      
       <h2 className="page-section-heading">OUR LOCATIONS</h2>
       
       <div className="locations-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>

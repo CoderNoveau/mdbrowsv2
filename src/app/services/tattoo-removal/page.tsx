@@ -1,8 +1,6 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
-import PageSeo from '@/components/PageSeo';
+import ServiceSeo from '@/components/ServiceSeo';
 
 export const metadata = {
   title: 'Tattoo Removal | Melbourne Designer Brows',
@@ -14,21 +12,11 @@ export default function TattooRemoval() {
 
   return (
     <div className="page-content">
-      <PageSeo
+      <ServiceSeo
         title="Tattoo Removal | Melbourne Designer Brows"
         description="Professional tattoo and cosmetic tattoo removal services in Melbourne. Safe and effective removal techniques for unwanted tattoos and microblading."
-        canonical="https://mdbrows.com.au/services/tattoo-removal"
-        openGraph={{
-          type: 'article',
-          images: [
-            {
-              url: 'https://mdbrows.com.au/images/service-tattoo-removal.webp',
-              width: 1200,
-              height: 630,
-              alt: 'Tattoo removal service at Melbourne Designer Brows',
-            },
-          ],
-        }}
+        serviceName="tattoo-removal"
+        imageUrl="/images/service-tattoo-removal.webp"
       />
       
       <h2 className="page-section-heading">Tattoo Removal</h2>

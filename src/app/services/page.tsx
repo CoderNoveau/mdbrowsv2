@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import PageSeo from '@/components/PageSeo';
@@ -82,7 +80,7 @@ export default function Services() {
               url: 'https://mdbrows.com.au/images/service-microblading.webp',
               width: 1200,
               height: 630,
-              alt: 'Beauty services at Melbourne Designer Brows',
+              alt: 'Melbourne Designer Brows Services',
             },
           ],
         }}

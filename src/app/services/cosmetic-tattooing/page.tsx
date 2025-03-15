@@ -1,8 +1,6 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
-import PageSeo from '@/components/PageSeo';
+import ServiceSeo from '@/components/ServiceSeo';
 
 export const metadata = {
   title: 'Cosmetic Tattooing | Melbourne Designer Brows',
@@ -14,21 +12,11 @@ export default function CosmeticTattooing() {
 
   return (
     <div className="page-content">
-      <PageSeo
+      <ServiceSeo
         title="Cosmetic Tattooing | Melbourne Designer Brows"
         description="Professional cosmetic tattooing services in Melbourne. Semi-permanent makeup solutions for brows, lips, and eyeliner."
-        canonical="https://mdbrows.com.au/services/cosmetic-tattooing"
-        openGraph={{
-          type: 'article',
-          images: [
-            {
-              url: 'https://mdbrows.com.au/images/placeholder-cosmetic-tattooing.webp',
-              width: 1200,
-              height: 630,
-              alt: 'Cosmetic Tattooing at Melbourne Designer Brows',
-            },
-          ],
-        }}
+        serviceName="cosmetic-tattooing"
+        imageUrl="/images/placeholder-cosmetic-tattooing.webp"
       />
       
       <h2 className="page-section-heading">Cosmetic Tattooing</h2>

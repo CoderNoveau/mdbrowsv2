@@ -4,9 +4,9 @@ import React from 'react';
 import { NextSeo } from 'next-seo';
 
 interface PageSeoProps {
-  title?: string;
-  description?: string;
-  canonical?: string;
+  title: string;
+  description: string;
+  canonical: string;
   openGraph?: {
     title?: string;
     description?: string;
