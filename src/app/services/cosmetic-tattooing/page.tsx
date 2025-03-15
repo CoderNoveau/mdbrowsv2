@@ -15,7 +15,7 @@ export default function CosmeticTattooing() {
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
-          src="/images/service-cosmetic-tattooing.webp"
+          src="/images/placeholder-cosmetic-tattooing.webp"
           alt="Cosmetic Tattooing procedure" 
           fill
           style={{ objectFit: 'cover' }}
