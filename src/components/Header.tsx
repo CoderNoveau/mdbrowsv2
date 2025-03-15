@@ -1,46 +1,79 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
-  // Initialize all state with explicit false values
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
-  // Add mounted state to ensure client-side only rendering for interactive elements
+  // Handle mounting and click outside
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+        setAboutOpen(false);
+      }
+    };
+
+    // Only add listeners after component is mounted
     setMounted(true);
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, []);
 
-  // Close menu when changing pages
+  // Close menus on route change
   useEffect(() => {
-    setMenuOpen(false);
-    setServicesOpen(false);
-    setAboutOpen(false);
-  }, [pathname]);
+    if (mounted) {
+      setMenuOpen(false);
+      setServicesOpen(false);
+      setAboutOpen(false);
+    }
+  }, [pathname, mounted]);
 
   // Function to handle link clicks
   const handleLinkClick = () => {
-    setMenuOpen(false);
-    setServicesOpen(false);
+    if (mounted) {
+      setMenuOpen(false);
+      setServicesOpen(false);
+      setAboutOpen(false);
+    }
+  };
+
+  // Function to toggle dropdowns
+  const toggleServices = (e: React.MouseEvent) => {
+    if (!mounted) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setServicesOpen(!servicesOpen);
     setAboutOpen(false);
   };
 
+  const toggleAbout = (e: React.MouseEvent) => {
+    if (!mounted) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setAboutOpen(!aboutOpen);
+    setServicesOpen(false);
+  };
+
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="header-inner">
-        {/* Only render interactive elements after mounting */}
         {mounted && (
           <button 
             className={`hamburger ${menuOpen ? 'active' : ''}`}
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => mounted && setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation menu"
           >
             <div></div>
@@ -63,19 +96,16 @@ const Header = () => {
         </div>
         
         <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
-          {/* Wrap dropdown interactions in mounted check */}
-          <div 
-            className="nav-item-with-dropdown"
-            onMouseEnter={mounted ? () => setServicesOpen(true) : undefined}
-            onMouseLeave={mounted ? () => setServicesOpen(false) : undefined}
-          >
-            <Link 
-              href="/services" 
-              className={`has-dropdown ${pathname === '/services' ? 'active' : ''}`}
-              onClick={handleLinkClick}
+          {/* Services dropdown */}
+          <div className="nav-item-with-dropdown">
+            <button 
+              className={`dropdown-toggle ${pathname === '/services' ? 'active' : ''}`}
+              onClick={toggleServices}
+              aria-expanded={servicesOpen}
+              disabled={!mounted}
             >
               Services
-            </Link>
+            </button>
             <div className={`dropdown-menu ${servicesOpen ? 'show' : ''}`}>
               <Link href="/services/microblading" onClick={handleLinkClick}>Microblading</Link>
               <Link href="/services/microneedling" onClick={handleLinkClick}>Microneedling</Link>
@@ -84,6 +114,7 @@ const Header = () => {
               <Link href="/services/brow-corrections" onClick={handleLinkClick}>Brow Corrections</Link>
             </div>
           </div>
+
           <Link 
             href="/pricing" 
             className={pathname === '/pricing' ? 'active' : ''}
@@ -98,22 +129,22 @@ const Header = () => {
           >
             Gallery
           </Link>
-          <div 
-            className="nav-item-with-dropdown"
-            onMouseEnter={mounted ? () => setAboutOpen(true) : undefined}
-            onMouseLeave={mounted ? () => setAboutOpen(false) : undefined}
-          >
-            <Link 
-              href="/about" 
-              className={`has-dropdown ${pathname === '/about' ? 'active' : ''}`}
-              onClick={handleLinkClick}
+
+          {/* About dropdown */}
+          <div className="nav-item-with-dropdown">
+            <button 
+              className={`dropdown-toggle ${pathname === '/about' ? 'active' : ''}`}
+              onClick={toggleAbout}
+              aria-expanded={aboutOpen}
+              disabled={!mounted}
             >
               About Us
-            </Link>
+            </button>
             <div className={`dropdown-menu ${aboutOpen ? 'show' : ''}`}>
               <Link href="/contact" onClick={handleLinkClick}>Contact Us</Link>
             </div>
           </div>
+
           <Link 
             href="/faq" 
             className={pathname === '/faq' ? 'active' : ''}
@@ -136,4 +167,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;
