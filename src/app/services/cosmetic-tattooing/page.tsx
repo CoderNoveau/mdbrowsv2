@@ -11,11 +11,11 @@ export default function CosmeticTattooing() {
 
   return (
     <div className="page-content">
-      <h1 className="page-heading">Cosmetic Tattooing</h1>
+      <h2 className="page-section-heading">Cosmetic Tattooing</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
-          src="/images/placeholder-cosmetic-tattooing.webp"
+          src="/images/service-cosmetic-tattooing.webp"
           alt="Cosmetic Tattooing procedure" 
           fill
           style={{ objectFit: 'cover' }}
@@ -35,31 +35,31 @@ export default function CosmeticTattooing() {
           while ensuring they still look authentic and suit your unique face.
         </p>
         
-        <h2 className="service-subtitle">Our Cosmetic Tattooing Services</h2>
+        <h3 className="page-section-subheading">Our Cosmetic Tattooing Services</h3>
         
         <div className="cosmetic-service-item">
-          <h3>Ombré Brows</h3>
+          <h4>Ombré Brows</h4>
           <p>A soft shading technique that creates a powdered effect, similar to brow powder. Perfect for those wanting a more defined, filled-in look.</p>
         </div>
         
         <div className="cosmetic-service-item">
-          <h3>Signature Combo Brows</h3>
+          <h4>Signature Combo Brows</h4>
           <p>Our signature treatment combines both microblading and shading techniques for the most natural and dimensional look.</p>
         </div>
         
         <div className="cosmetic-service-item">
-          <h3>Lip Blushing</h3>
+          <h4>Lip Blushing</h4>
           <p>Enhance the natural color and shape of your lips with this subtle tattooing technique.</p>
         </div>
         
-        <h2 className="service-subtitle">The Process</h2>
+        <h3 className="page-section-subheading">The Process</h3>
         <p className="page-text">
           Each procedure begins with a thorough consultation to understand your desired results. 
           We then create a customized shape and color match that complements your natural features. 
           A topical anesthetic is applied for comfort during the procedure, which typically takes 2-3 hours.
         </p>
         
-        <h2 className="service-subtitle">Benefits of Cosmetic Tattooing</h2>
+        <h3 className="page-section-subheading">Benefits of Cosmetic Tattooing</h3>
         <ul className="service-benefits">
           <li>Wake up with makeup already applied</li>
           <li>Save time on your daily makeup routine</li>
@@ -69,7 +69,7 @@ export default function CosmeticTattooing() {
           <li>Perfect for active lifestyles and those with makeup allergies</li>
         </ul>
         
-        <h2 className="service-subtitle">Pricing</h2>
+        <h3 className="page-section-subheading">Pricing</h3>
         <div className="service-price">
           <span className="price-amount">$495 - $695</span>
           <span className="price-description"> - Varies by treatment</span>

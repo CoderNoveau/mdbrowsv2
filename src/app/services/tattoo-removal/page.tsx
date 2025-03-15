@@ -11,11 +11,11 @@ export default function TattooRemoval() {
 
   return (
     <div className="page-content">
-      <h1 className="page-heading">Tattoo Removal</h1>
+      <h2 className="page-section-heading">Tattoo Removal</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
-          src="/images/placeholder-tattoo-removal.webp"
+          src="/images/service-tattoo-removal.webp"
           alt="Tattoo Removal procedure" 
           fill
           style={{ objectFit: 'cover' }}
@@ -25,35 +25,36 @@ export default function TattooRemoval() {
       
       <div className="service-description">
         <p className="page-text">
-          Our advanced tattoo removal techniques help fade or completely remove unwanted tattoos, including old cosmetic tattoos 
-          and microblading. Using state-of-the-art methods, we safely break down pigment particles for your body to naturally eliminate.
+          Our advanced tattoo removal service helps you safely and effectively remove unwanted tattoos, 
+          including old cosmetic tattoos and microblading. Using state-of-the-art technology, we can 
+          significantly fade or completely remove your unwanted ink.
         </p>
         
         <p className="page-text">
-          Whether you regret an old cosmetic procedure or simply want to refresh your appearance, our tattoo removal services provide 
-          an effective solution to unwanted pigmentation.
+          Whether you're looking to remove an old cosmetic procedure or prepare for a new one, our 
+          experienced technicians will create a customized treatment plan to achieve your desired results.
         </p>
         
-        <h2 className="service-subtitle">The Removal Process</h2>
+        <h3 className="page-section-subheading">The Removal Process</h3>
         <p className="page-text">
-          Our specialists begin with a thorough consultation to assess your tattoo and determine the best approach. 
-          Treatment sessions are spaced several weeks apart to allow your body to process and remove the broken-down pigment. 
-          The number of sessions required depends on factors like tattoo size, ink type, colors, and depth.
+          The treatment uses advanced technology to break down tattoo pigments, which are then naturally 
+          eliminated by your body. Multiple sessions may be required depending on the size, color, and age 
+          of your tattoo.
         </p>
         
-        <h2 className="service-subtitle">Benefits of Our Removal Techniques</h2>
+        <h3 className="page-section-subheading">What We Can Remove</h3>
         <ul className="service-benefits">
-          <li>Minimal discomfort with topical numbing</li>
-          <li>Effective on both body tattoos and cosmetic tattoos</li>
-          <li>Suitable for sensitive facial areas</li>
-          <li>Progressive fading with each session</li>
-          <li>Can prepare the area for future treatments</li>
+          <li>Old cosmetic tattoos</li>
+          <li>Previous microblading work</li>
+          <li>Unwanted permanent makeup</li>
+          <li>Traditional tattoos</li>
+          <li>Various ink colors and pigments</li>
         </ul>
         
-        <h2 className="service-subtitle">Pricing</h2>
+        <h3 className="page-section-subheading">Pricing</h3>
         <div className="service-price">
           <span className="price-amount">From $195</span>
-          <span className="price-description"> - Consultation required for exact quote</span>
+          <span className="price-description"> - Per session</span>
         </div>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
@@ -63,7 +64,7 @@ export default function TattooRemoval() {
             rel="noopener noreferrer"
             className="btn btn-primary" 
           >
-            BOOK CONSULTATION
+            BOOK APPOINTMENT
           </a>
         </div>
       </div>

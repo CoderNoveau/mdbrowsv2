@@ -11,11 +11,11 @@ export default function Microneedling() {
 
   return (
     <div className="page-content">
-      <h1 className="page-heading">Microneedling</h1>
+      <h2 className="page-section-heading">Microneedling</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
-          src="/images/placeholder-microneedling.webp"
+          src="/images/service-microneedling.webp"
           alt="Microneedling procedure" 
           fill
           style={{ objectFit: 'cover' }}
@@ -25,34 +25,31 @@ export default function Microneedling() {
       
       <div className="service-description">
         <p className="page-text">
-          Microneedling is a minimally invasive cosmetic procedure that creates tiny punctures in the top layer of the skin using 
-          micro-fine needles. These micro-injuries trigger the body's natural wound healing processes, resulting in increased cell turnover 
-          and collagen production.
+          Microneedling is a minimally invasive cosmetic procedure that uses fine needles to create tiny punctures 
+          in the skin, which triggers the body's natural healing process and stimulates collagen production.
         </p>
         
         <p className="page-text">
-          For those looking to improve the look of wrinkles, scars, or simply boost collagen for great looking skin, 
-          microneedling can help achieve a more youthful, radiant appearance.
+          This treatment is highly effective for improving skin texture, reducing fine lines, and minimizing the 
+          appearance of scars and pores.
         </p>
         
-        <h2 className="service-subtitle">The Microneedling Process</h2>
+        <h3 className="page-section-subheading">The Microneedling Process</h3>
         <p className="page-text">
-          The treatment begins with cleansing and applying a numbing cream to ensure comfort during the procedure. 
-          Then, using a specialized device, microscopic needles create controlled micro-injuries to the skin. 
-          The process typically takes 30-60 minutes depending on the treatment area.
+          During the treatment, a specialized device with fine needles creates controlled micro-injuries to the skin. 
+          This process stimulates the production of collagen and elastin, leading to rejuvenated, firmer skin.
         </p>
         
-        <h2 className="service-subtitle">Benefits of Microneedling</h2>
+        <h3 className="page-section-subheading">Benefits of Microneedling</h3>
         <ul className="service-benefits">
-          <li>Reduces fine lines and wrinkles</li>
           <li>Improves skin texture and tone</li>
-          <li>Minimizes acne scars and stretch marks</li>
-          <li>Reduces pore size</li>
-          <li>Increases product absorption</li>
-          <li>Stimulates collagen and elastin production</li>
+          <li>Reduces appearance of scars and stretch marks</li>
+          <li>Minimizes pore size</li>
+          <li>Enhances product absorption</li>
+          <li>Stimulates natural collagen production</li>
         </ul>
         
-        <h2 className="service-subtitle">Pricing</h2>
+        <h3 className="page-section-subheading">Pricing</h3>
         <div className="service-price">
           <span className="price-amount">$250</span>
           <span className="price-description"> - Per Session</span>

@@ -11,11 +11,11 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
-      <h1 className="page-heading">Microblading</h1>
+      <h2 className="page-section-heading">Microblading</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
-          src="/images/placeholder-microblading.webp"
+          src="/images/service-microblading.webp"
           alt="Microblading service" 
           fill
           style={{ objectFit: 'cover' }}
@@ -35,14 +35,14 @@ export default function Microblading() {
           or patchy eyebrows, microblading can give you perfect, natural-looking brows.
         </p>
         
-        <h2 className="service-subtitle">The Microblading Process</h2>
+        <h3 className="page-section-subheading">The Microblading Process</h3>
         <p className="page-text">
           The procedure typically takes about 2 hours to complete. First, we discuss your desired shape and 
           color. Then, we apply a numbing cream to minimize discomfort. Using the microblade tool, we create 
           fine, hair-like strokes that blend with your natural eyebrows.
         </p>
         
-        <h2 className="service-subtitle">Benefits of Microblading</h2>
+        <h3 className="page-section-subheading">Benefits of Microblading</h3>
         <ul className="service-benefits">
           <li>Save time on your morning makeup routine</li>
           <li>Wake up with perfect brows every day</li>
@@ -51,7 +51,7 @@ export default function Microblading() {
           <li>Natural-looking results</li>
         </ul>
         
-        <h2 className="service-subtitle">Pricing</h2>
+        <h3 className="page-section-subheading">Pricing</h3>
         <div className="service-price">
           <span className="price-amount">$595</span>
           <span className="price-description"> - Special Promotion</span>

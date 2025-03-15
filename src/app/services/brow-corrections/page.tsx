@@ -11,11 +11,11 @@ export default function BrowCorrections() {
 
   return (
     <div className="page-content">
-      <h1 className="page-heading">Brow Corrections</h1>
+      <h2 className="page-section-heading">Brow Corrections</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
-          src="/images/placeholder-brow-correction.webp"
+          src="/images/service-brow-correction.webp"
           alt="Brow Correction procedure" 
           fill
           style={{ objectFit: 'cover' }}
@@ -25,38 +25,36 @@ export default function BrowCorrections() {
       
       <div className="service-description">
         <p className="page-text">
-          Unhappy with previous brow work? Our correction services can fix asymmetry, color issues, or poorly shaped brows. 
-          Our specialists will assess your current brows and develop a personalized plan to achieve your desired look through 
-          specialized techniques.
+          Our brow correction service is designed to fix and improve unsatisfactory results from previous 
+          microblading or cosmetic tattooing procedures. Whether you're dealing with asymmetry, poor color 
+          choice, or unnatural-looking results, our expert technicians can help.
         </p>
         
         <p className="page-text">
-          At Melbourne Designer Brows, we understand the frustration of living with eyebrows you're not happy with. 
-          Our correction services are specifically designed to address problems from previous microblading, tattooing, 
-          or natural asymmetry issues.
+          We understand how frustrating it can be when your brows don't meet your expectations. Our correction 
+          services focus on restoring balance and creating the natural, beautiful look you originally wanted.
         </p>
         
-        <h2 className="service-subtitle">The Correction Process</h2>
+        <h3 className="page-section-subheading">The Correction Process</h3>
         <p className="page-text">
-          Every correction begins with a thorough consultation to understand your concerns and desired outcome. 
-          Depending on your specific issues, we may use a combination of techniques including color correction, 
-          shape adjustment, and strategic pigment application. Some corrections may require multiple sessions 
-          for optimal results.
+          Each correction begins with a thorough consultation to understand your concerns and desired outcome. 
+          We'll assess your current brows and develop a customized plan that may include color correction, 
+          shape adjustment, or complete restoration.
         </p>
         
-        <h2 className="service-subtitle">Common Issues We Correct</h2>
+        <h3 className="page-section-subheading">What We Can Correct</h3>
         <ul className="service-benefits">
-          <li>Asymmetrical or uneven eyebrows</li>
-          <li>Discoloration or undesired pigment color</li>
-          <li>Too-thick or too-thin brows from previous work</li>
-          <li>Blurry or smudged appearances</li>
-          <li>Unnatural arch or shape</li>
+          <li>Asymmetrical brows</li>
+          <li>Unnatural color or fading</li>
+          <li>Poor shape or placement</li>
+          <li>Thick or uneven strokes</li>
+          <li>Previous work from other salons</li>
         </ul>
         
-        <h2 className="service-subtitle">Pricing</h2>
+        <h3 className="page-section-subheading">Pricing</h3>
         <div className="service-price">
-          <span className="price-amount">From $450</span>
-          <span className="price-description"> - Varies based on correction complexity</span>
+          <span className="price-amount">$250 - $450</span>
+          <span className="price-description"> - Based on correction needs</span>
         </div>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
@@ -66,7 +64,7 @@ export default function BrowCorrections() {
             rel="noopener noreferrer"
             className="btn btn-primary" 
           >
-            BOOK CONSULTATION
+            BOOK APPOINTMENT
           </a>
         </div>
       </div>
