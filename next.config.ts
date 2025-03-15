@@ -5,77 +5,18 @@ const nextConfig: NextConfig = {
     domains: [],
     unoptimized: process.env.NODE_ENV === 'development', // Disable optimization in dev for faster build
   },
+  // Adding redirects for WordPress paths
   async redirects() {
     return [
-      // WordPress specific paths to Next.js paths
+      // General page redirects
       {
-        source: '/oxy/microblading',
-        destination: '/services/microblading',
+        source: '/index.php',
+        destination: '/',
         permanent: true,
       },
       {
-        source: '/microblading',
-        destination: '/services/microblading',
-        permanent: true,
-      },
-      {
-        source: '/oxy/cosmetic-tattooing',
-        destination: '/services/cosmetic-tattooing',
-        permanent: true,
-      },
-      {
-        source: '/cosmetic-tattooing',
-        destination: '/services/cosmetic-tattooing',
-        permanent: true,
-      },
-      {
-        source: '/oxy/microneedling',
-        destination: '/services/microneedling',
-        permanent: true,
-      },
-      {
-        source: '/microneedling',
-        destination: '/services/microneedling',
-        permanent: true,
-      },
-      {
-        source: '/oxy/tattoo-removal',
-        destination: '/services/tattoo-removal',
-        permanent: true,
-      },
-      {
-        source: '/tattoo-removal',
-        destination: '/services/tattoo-removal',
-        permanent: true,
-      },
-      {
-        source: '/oxy/brow-corrections',
-        destination: '/services/brow-corrections',
-        permanent: true,
-      },
-      {
-        source: '/brow-corrections',
-        destination: '/services/brow-corrections',
-        permanent: true,
-      },
-      {
-        source: '/oxy/richmond',
-        destination: '/locations/richmond',
-        permanent: true,
-      },
-      {
-        source: '/oxy/springvale',
-        destination: '/locations/springvale',
-        permanent: true,
-      },
-      {
-        source: '/our-locations',
-        destination: '/locations',
-        permanent: true,
-      },
-      {
-        source: '/contact-us',
-        destination: '/contact',
+        source: '/home',
+        destination: '/',
         permanent: true,
       },
       {
@@ -84,35 +25,47 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/frequently-asked-questions',
-        destination: '/faq',
+        source: '/contact-us',
+        destination: '/contact',
         permanent: true,
       },
-      // WordPress pagination patterns
+      // Services redirects
       {
-        source: '/page/:page',
-        destination: '/',
+        source: '/services/eyebrows',
+        destination: '/services/microblading',
         permanent: true,
       },
       {
-        source: '/category/:category',
+        source: '/services/eyebrow-correction',
+        destination: '/services/brow-corrections',
+        permanent: true,
+      },
+      {
+        source: '/services/permanent-makeup',
+        destination: '/services/cosmetic-tattooing',
+        permanent: true,
+      },
+      // WordPress category/tag patterns
+      {
+        source: '/category/:slug*',
         destination: '/services',
         permanent: true,
       },
       {
-        source: '/tag/:tag',
+        source: '/tag/:slug*',
         destination: '/services',
         permanent: true,
       },
-      // WordPress archive patterns
+      // WordPress date archives
       {
-        source: '/:year/:month',
-        destination: '/',
+        source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug',
+        destination: '/services/:slug',
         permanent: true,
       },
+      // Author pages
       {
-        source: '/author/:author',
-        destination: '/about',
+        source: '/author/:slug*',
+        destination: '/',
         permanent: true,
       },
     ];

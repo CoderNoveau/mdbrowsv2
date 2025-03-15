@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import PageSeo from '@/components/PageSeo';
 
 export const metadata = {
   title: 'Cosmetic Tattooing | Melbourne Designer Brows',
@@ -11,6 +14,23 @@ export default function CosmeticTattooing() {
 
   return (
     <div className="page-content">
+      <PageSeo
+        title="Cosmetic Tattooing | Melbourne Designer Brows"
+        description="Professional cosmetic tattooing services in Melbourne. Semi-permanent makeup solutions for brows, lips, and eyeliner."
+        canonical="https://mdbrows.com.au/services/cosmetic-tattooing"
+        openGraph={{
+          type: 'article',
+          images: [
+            {
+              url: 'https://mdbrows.com.au/images/placeholder-cosmetic-tattooing.webp',
+              width: 1200,
+              height: 630,
+              alt: 'Cosmetic Tattooing at Melbourne Designer Brows',
+            },
+          ],
+        }}
+      />
+      
       <h2 className="page-section-heading">Cosmetic Tattooing</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
@@ -56,8 +76,6 @@ export default function CosmeticTattooing() {
           <h4>Signature Combo Brows</h4>
           <p>Our signature treatment combines both microblading and shading techniques for the most natural and dimensional look.</p>
         </div>
-        
-
         
         <h3 className="page-section-subheading">The Process</h3>
         <p className="page-text">

@@ -4,34 +4,12 @@ import React from 'react';
 import Script from 'next/script';
 import Hero from '@/components/Hero';
 import ElfsightWidget from '@/components/ElfsightWidget';
-import { NextSeo } from 'next-seo';
-import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 
 export default function Home() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
     <>
-      <NextSeo
-        title="Melbourne Designer Brows | Expert Cosmetic Tattooing & Microblading"
-        description="Melbourne Designer Brows offers premium microblading, cosmetic tattooing and eyebrow services. Located in Richmond and Springvale."
-        canonical="https://mdbrows.com.au"
-        openGraph={{
-          url: 'https://mdbrows.com.au',
-          title: 'Melbourne Designer Brows | Expert Cosmetic Tattooing & Microblading',
-          description: 'Premium microblading, cosmetic tattooing and eyebrow services in Melbourne.',
-          images: [
-            {
-              url: 'https://mdbrows.com.au/images/goldlogo-full.jpg',
-              width: 1200,
-              height: 630,
-              alt: 'Melbourne Designer Brows',
-            },
-          ],
-        }}
-      />
-      <LocalBusinessSchema />
-      
       <Hero />
 
       <section className="gallery-section container" style={{ paddingTop: '0.5rem' }}>
