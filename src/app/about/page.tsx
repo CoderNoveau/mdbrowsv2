@@ -1,12 +1,25 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
+import ClientSeo from '@/components/ClientSeo';
+
+export const metadata = {
+  title: 'About Us | Melbourne Designer Brows',
+  description: 'Learn about Melbourne Designer Brows, your premier brow studio with locations in Richmond and Springvale. Led by expert technicians with years of experience.',
+};
 
 export default function About() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
     <div className="page-content">
+      <ClientSeo
+        title="About Us | Melbourne Designer Brows"
+        description="Learn about Melbourne Designer Brows, your premier brow studio with locations in Richmond and Springvale. Led by expert technicians with years of experience."
+        canonical="https://mdbrows.com.au/about"
+        ogType="website"
+      />
+      
       <h1 className="section-heading">About Melbourne Designer Brows</h1>
       
       <div className="about-content">
