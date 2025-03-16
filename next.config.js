@@ -20,7 +20,6 @@ const nextConfig = {
   // Performance optimizations
   compress: true, // Enable GZIP compression
   poweredByHeader: false, // Remove X-Powered-By header
-  swcMinify: true, // Use SWC minifier
   // Cache settings
   onDemandEntries: {
     maxInactiveAge: 60 * 60 * 1000, // 1 hour

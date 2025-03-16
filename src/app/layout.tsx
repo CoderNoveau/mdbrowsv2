@@ -18,8 +18,24 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   icons: {
     icon: [
-      { url: '/favicon.ico' }
+      { url: '/images/favicon.ico' },
+      { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/images/safari-pinned-tab.svg', color: '#b8860b' },
+      { rel: 'shortcut icon', url: '/images/favicon.ico' },
+      { rel: 'android-chrome-192x192', url: '/images/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { rel: 'android-chrome-512x512', url: '/images/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ]
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Melbourne Designer Brows',
   }
 };
 
@@ -43,11 +59,6 @@ export default function RootLayout({
         <link 
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
           rel="stylesheet"
-          media="print"
-          onLoad={(e) => {
-            const target = e.target as HTMLLinkElement;
-            target.media = 'all';
-          }}
         />
         <link 
           rel="preload" 
