@@ -127,7 +127,9 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         {/* Elfsight AI Chatbot | Virtual Brow Assistant */}
+        {/* Temporarily commented out for performance testing
         <div className="elfsight-app-8e8727a1-4b36-4b6d-a9e4-b46cbfecae00" data-elfsight-app-lazy></div>
+        */}
       </body>
     </html>
   );
