@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
   title: 'Pricing | Melbourne Designer Brows',
@@ -10,6 +11,13 @@ export default function Pricing() {
 
   return (
     <div className="page-content">
+      <ClientSeo
+        title="Pricing | Melbourne Designer Brows"
+        description="View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne."
+        canonical="https://mdbrows.com.au/pricing"
+        ogType="website"
+      />
+      
       <h1 className="section-heading">Treatment Price List</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>

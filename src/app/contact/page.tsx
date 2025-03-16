@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Script from 'next/script';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
   title: 'Contact Us | Melbourne Designer Brows',
@@ -11,6 +12,13 @@ export default function Contact() {
   
   return (
     <div className="page-content">
+      <ClientSeo
+        title="Contact Us | Melbourne Designer Brows"
+        description="Get in touch with Melbourne Designer Brows. Contact us for bookings, inquiries, or more information."
+        canonical="https://mdbrows.com.au/contact"
+        ogType="website"
+      />
+      
       <h2 className="page-section-heading">CONTACT US</h2>
       
       <div className="contact-grid" style={{ marginBottom: '3rem' }}>

@@ -1,4 +1,5 @@
 import Script from 'next/script';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
   title: 'Gallery | Melbourne Designer Brows',
@@ -8,6 +9,13 @@ export const metadata = {
 export default function Gallery() {
   return (
     <div className="page-content">
+      <ClientSeo
+        title="Gallery | Melbourne Designer Brows"
+        description="View our portfolio of eyebrow microblading, cosmetic tattooing, and brow correction work. See real results from our Melbourne studios."
+        canonical="https://mdbrows.com.au/gallery"
+        ogType="website"
+      />
+      
       <h2 className="page-section-heading">OUR WORK GALLERY</h2>
       
       <p className="page-text">

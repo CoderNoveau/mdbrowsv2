@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
   title: 'Frequently Asked Questions | Microblading, Cosmetic Tattooing & Tattoo Removal | MDB',
@@ -10,6 +11,13 @@ export default function FAQ() {
 
   return (
     <div className="page-content">
+      <ClientSeo
+        title="Frequently Asked Questions | Microblading, Cosmetic Tattooing & Tattoo Removal | MDB"
+        description="Find comprehensive answers about microblading, cosmetic tattooing, tattoo removal, aftercare, and all services at Melbourne Designer Brows. Everything you need to know before your appointment."
+        canonical="https://mdbrows.com.au/faq"
+        ogType="website"
+      />
+      
       <h1 className="section-heading">Frequently Asked Questions</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>
