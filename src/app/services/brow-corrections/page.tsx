@@ -3,8 +3,8 @@ import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
-  title: 'Brow Corrections | Melbourne Designer Brows',
-  description: 'Professional eyebrow correction services in Melbourne. Fix uneven, asymmetrical, or poorly done eyebrows with our specialist correction techniques.',
+  title: 'Eyebrow Corrections & Repair | Melbourne Designer Brows',
+  description: 'Specialized eyebrow correction services in Melbourne. We fix uneven, asymmetrical, or poorly done eyebrow tattoos and microblading with advanced correction techniques. Restore your confidence with natural-looking brows.',
 };
 
 export default function BrowCorrections() {
@@ -13,8 +13,8 @@ export default function BrowCorrections() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Brow Corrections | Melbourne Designer Brows"
-        description="Professional eyebrow correction services in Melbourne. Fix uneven, asymmetrical, or poorly done eyebrows with our specialist correction techniques."
+        title="Eyebrow Corrections & Repair | Melbourne Designer Brows"
+        description="Specialized eyebrow correction services in Melbourne. We fix uneven, asymmetrical, or poorly done eyebrow tattoos and microblading with advanced correction techniques. Restore your confidence with natural-looking brows."
         canonical="https://mdbrows.com.au/services/brow-corrections"
         ogImage="/images/service-brow-correction.webp"
         ogType="article"
@@ -34,33 +34,113 @@ export default function BrowCorrections() {
       
       <div className="service-description">
         <p className="page-text">
-          Our brow correction service is designed to fix and improve unsatisfactory results from previous 
-          microblading or cosmetic tattooing procedures. Whether you're dealing with asymmetry, poor color 
-          choice, or unnatural-looking results, our expert technicians can help.
+          At Melbourne Designer Brows, we specialize in correcting and transforming unsatisfactory eyebrow 
+          tattooing or microblading results into beautiful, natural-looking brows that enhance your features 
+          and restore your confidence.
         </p>
         
-        <p className="page-text">
-          We understand how frustrating it can be when your brows don't meet your expectations. Our correction 
-          services focus on restoring balance and creating the natural, beautiful look you originally wanted.
+        <p className="page-text" style={{ marginBottom: '2.5rem' }}>
+          We understand how frustrating and emotionally distressing it can be when your brows don't meet your 
+          expectations. Our correction services focus on restoring balance and creating the natural, beautiful 
+          look you originally wanted.
         </p>
         
-        <h3 className="page-section-subheading">The Correction Process</h3>
-        <p className="page-text">
-          Each correction begins with a thorough consultation to understand your concerns and desired outcome. 
-          We'll assess your current brows and develop a customized plan that may include color correction, 
-          shape adjustment, or complete restoration.
-        </p>
+        <div className="service-section" style={{ marginBottom: '3rem', padding: '2rem', backgroundColor: '#fff8f5', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+          <h3 className="page-section-subheading" style={{ marginTop: '0' }}>Common Eyebrow Correction Issues We Solve</h3>
+          <p className="page-text">
+            Many clients come to us feeling disappointed with previous eyebrow treatments from other salons. 
+            Our expert correction services address:
+          </p>
+          
+          <ul className="service-benefits" style={{ margin: '1.5rem 0' }}>
+            <li><strong>Uneven or Asymmetrical Brows</strong>: When one eyebrow sits higher, lower, or has a different shape than the other</li>
+            <li><strong>Harsh or Unnatural Color</strong>: Eyebrows that appear too dark, have turned blueish/gray, or have an orange/red undertone</li>
+            <li><strong>Poor Shape Design</strong>: Brows that don't complement your facial features or follow unnatural arches</li>
+            <li><strong>Blurred or Migrated Pigment</strong>: When pigment has spread beyond the intended area, creating a "smudged" appearance</li>
+            <li><strong>Too Thick or Too Thin</strong>: Brows that are disproportionate to your face or don't match your aesthetic preferences</li>
+            <li><strong>Pigment Inconsistency</strong>: Patchy areas or inconsistent color distribution throughout the brow</li>
+          </ul>
+        </div>
         
-        <h3 className="page-section-subheading">What We Can Correct</h3>
-        <ul className="service-benefits">
-          <li>Asymmetrical brows</li>
-          <li>Unnatural color or fading</li>
-          <li>Poor shape or placement</li>
-          <li>Thick or uneven strokes</li>
-          <li>Previous work from other salons</li>
-        </ul>
+        <div className="service-section" style={{ marginBottom: '3rem', borderLeft: '4px solid var(--accent)', paddingLeft: '1.5rem' }}>
+          <h3 className="page-section-subheading">Why Previous Eyebrow Treatments May Have Failed</h3>
+          <p className="page-text">
+            Understanding why your previous treatment didn't meet expectations is crucial for successful correction:
+          </p>
+          
+          <ul className="service-benefits" style={{ margin: '1.5rem 0' }}>
+            <li>Inexperienced technicians lacking proper training</li>
+            <li>Poor pigment quality that changes color over time</li>
+            <li>Incorrect color selection for your skin undertone</li>
+            <li>Inadequate aftercare instructions</li>
+            <li>Improper technique causing pigment migration or scarring</li>
+            <li>One-size-fits-all approach instead of customized design</li>
+          </ul>
+        </div>
         
-        <h3 className="page-section-subheading">Pricing</h3>
+        <div className="service-section" style={{ marginBottom: '3rem' }}>
+          <h3 className="page-section-subheading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Our Correction Process</h3>
+          <p className="page-text">
+            Our approach to eyebrow corrections is methodical and personalized:
+          </p>
+          
+          <ol style={{ margin: '1.5rem 0 2.5rem', paddingLeft: '1.2rem' }}>
+            <li style={{ marginBottom: '1rem', lineHeight: '1.6' }}><strong style={{ color: 'var(--accent)' }}>Comprehensive Consultation</strong>: We begin with a detailed assessment of your current brows, discussing your concerns and desired outcomes.</li>
+            <li style={{ marginBottom: '1rem', lineHeight: '1.6' }}><strong style={{ color: 'var(--accent)' }}>Customized Correction Plan</strong>: Based on your specific issues, we develop a tailored plan that may include color correction, shape refinement, or complete restoration.</li>
+            <li style={{ marginBottom: '1rem', lineHeight: '1.6' }}><strong style={{ color: 'var(--accent)' }}>Advanced Techniques</strong>: We utilize specialized correction methods including pigment neutralization, strategic shading, and precise microblading to transform your brows.</li>
+            <li style={{ marginBottom: '0', lineHeight: '1.6' }}><strong style={{ color: 'var(--accent)' }}>Gradual Transformation</strong>: Some corrections require multiple sessions for optimal results, allowing us to build depth and dimension gradually.</li>
+          </ol>
+        </div>
+        
+        <div className="service-section" style={{ marginBottom: '3rem', backgroundColor: '#f9f9f9', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
+          <h3 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center' }}>Why Choose Melbourne Designer Brows for Corrections</h3>
+
+          <p className="page-text" style={{ marginBottom: '1.5rem' }}>
+            Eyebrow corrections require exceptional skill, knowledge, and expertise that many salons simply don't possess. While other studios may turn away clients with challenging correction cases, we specialize in these transformations:
+          </p>
+
+          <ul className="service-benefits" style={{ margin: '1.5rem 0 0.5rem' }}>
+            <li><strong>Advanced Expertise</strong>: Our artists have undergone extensive specialized training in correction techniques that most technicians haven't mastered</li>
+            <li><strong>Proven Results</strong>: Our portfolio demonstrates our ability to dramatically improve even severely problematic brows that other salons deemed "unfixable"</li>
+            <li><strong>Custom Pigment Formulation</strong>: We create custom color blends specifically designed to neutralize and correct previous work</li>
+            <li><strong>Gentle Approach</strong>: We prioritize skin health during the correction process, using techniques that minimize trauma to already compromised skin</li>
+            <li><strong>Realistic Expectations</strong>: We provide honest assessments about what can be achieved, based on our extensive experience with correction cases</li>
+            <li><strong>Specialized Knowledge</strong>: We understand the complexities of working with previously tattooed skin and how to address pigment migration, color shifts, and scarring</li>
+            <li><strong>Correction-Specific Tools</strong>: We invest in specialized equipment and products specifically designed for brow corrections that standard salons don't have</li>
+          </ul>
+
+          <p className="page-text" style={{ marginTop: '1.5rem', fontWeight: '500' }}>
+            When other salons say "it can't be fixed," that's where our expertise begins. Our advanced training and years of experience with correction cases allow us to take on the challenges that others avoid, giving you the beautiful brows you deserve.
+          </p>
+        </div>
+        
+        <div className="view-gallery" style={{ textAlign: 'center', margin: '2.5rem 0', padding: '1rem 0' }}>
+          <p className="page-text" style={{ marginBottom: '1rem', fontStyle: 'italic' }}>See our transformation gallery for before and after examples</p>
+          <Link href="/gallery" className="btn btn-outline">
+            VIEW GALLERY
+          </Link>
+        </div>
+        
+        <div className="service-section" style={{ marginBottom: '3rem', border: '1px solid #e0e0e0', padding: '2rem', borderRadius: '8px' }}>
+          <h3 className="page-section-subheading" style={{ marginTop: '0' }}>Before Your Correction Appointment</h3>
+          <p className="page-text">
+            If you're considering brow correction:
+          </p>
+          <ul className="service-benefits" style={{ margin: '1rem 0 1.5rem' }}>
+            <li>Allow adequate healing time from your previous procedure (minimum 8-12 weeks)</li>
+            <li>Bring photos of your brows before any previous work if possible</li>
+            <li>Be prepared to discuss your eyebrow history, including all previous procedures</li>
+            <li>Understand that correction is often a journey requiring patience for optimal results</li>
+          </ul>
+          
+          <p className="page-text" style={{ fontWeight: '500', fontSize: '1.05rem', textAlign: 'center', margin: '1.5rem 0 0', padding: '0 1rem' }}>
+            Don't continue hiding behind makeup, hats, or bangs. Whether your eyebrows need subtle refinement or 
+            complete reconstruction, our correction specialists can help you achieve the natural, flattering brows 
+            you deserve.
+          </p>
+        </div>
+        
+        <h3 className="page-section-subheading" style={{ marginTop: '3rem', textAlign: 'center' }}>Pricing</h3>
         <div className="price-section">
           <div className="price-table">
             <div className="price-table-header">
@@ -86,7 +166,7 @@ export default function BrowCorrections() {
             <div className="price-row">
               <div className="price-service">Correction of work done by others*</div>
               <div className="price-amount has-special">$990</div>
-              <div className="price-special">from $595</div>
+              <div className="price-special">from $795</div>
             </div>
             <div className="price-row">
               <div className="price-service">Perfection Visit (Up to 8 weeks)</div>
