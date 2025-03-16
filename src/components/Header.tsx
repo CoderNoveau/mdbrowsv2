@@ -169,7 +169,7 @@ const Header = () => {
           </Link>
         </div>
         
-        <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
+        <nav className={`nav-links ${menuOpen ? 'show' : ''}`} style={{ display: 'flex', flexDirection: 'column' }}>
           {/* Services dropdown */}
           <div className="nav-item-with-dropdown">
             <button 
@@ -187,11 +187,28 @@ const Header = () => {
             />
           </div>
 
-          <NavigationLinks 
-            handleLinkClick={handleLinkClick}
-            pathname={pathname}
-            freshaLink={freshaLink}
-          />
+          {/* Regular navigation links without Book Now */}
+          <Link 
+            href="/pricing" 
+            className={pathname === '/pricing' ? 'active' : ''}
+            onClick={handleLinkClick}
+          >
+            Pricing
+          </Link>
+          <Link 
+            href="/gallery" 
+            className={pathname === '/gallery' ? 'active' : ''}
+            onClick={handleLinkClick}
+          >
+            Gallery
+          </Link>
+          <Link 
+            href="/faq" 
+            className={pathname === '/faq' ? 'active' : ''}
+            onClick={handleLinkClick}
+          >
+            FAQ
+          </Link>
 
           {/* About dropdown */}
           <div className="nav-item-with-dropdown">
@@ -209,6 +226,17 @@ const Header = () => {
               handleLinkClick={handleLinkClick}
             />
           </div>
+          
+          {/* Book Now button at the bottom */}
+          <a 
+            href={freshaLink}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mobile-nav-book"
+            onClick={handleLinkClick}
+          >
+            Book Now
+          </a>
         </nav>
       </div>
     </header>

@@ -283,25 +283,22 @@ ul {
 
   .nav-links {
     position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    width: 100%;
-    height: 0;
+    top: 80px;
+    right: -100%;
     background-color: var(--white);
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 0 4px 4px var(--shadow-light);
-    z-index: 1000;
-    transition: height 0.3s ease-in-out;
-    opacity: 1;
-    visibility: visible;
+    width: 100%;
+    height: calc(100vh - 80px);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    z-index: 100;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .nav-links.show {
-    height: calc(100vh - 70px);
-    overflow-y: auto;
+    right: 0;
   }
 
   .nav-links > * {
@@ -643,17 +640,17 @@ ul {
     margin: 0;
     justify-content: center;
     border-bottom: 1px solid var(--light-gray);
+    color: var(--text);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
   }
 
   .dropdown-toggle::after {
     position: absolute;
     right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .dropdown-toggle[aria-expanded="true"]::after {
-    transform: translateY(-50%) rotate(180deg);
   }
 
   .dropdown-menu {
@@ -1569,21 +1566,12 @@ ul {
   color: var(--accent);
 }
 
-/* Mobile hero adjustments */
+/* Mobile styles for slides and hero */
 @media (max-width: 767px) {
-  .hamburger {
-    display: block;
-  }
-  
-  .nav-links a {
-    padding: 1rem;
-    border-bottom: 1px solid var(--light-gray);
-  }
-  
   .nav-links a:not(:last-child)::after {
     display: none;
   }
-  
+
   .slide-overlay {
     left: 5%;
     width: 90%;
@@ -2337,4 +2325,48 @@ ul {
   font-size: 0.5rem;
   color: #e0e0e0;
   opacity: 0.6;
+}
+
+/* Mobile specific navigation styles */
+@media (max-width: 767px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100vh - 80px);
+  }
+  
+  .mobile-nav-book {
+    margin-top: auto;
+    order: 999;
+    background: var(--accent);
+    color: var(--white) !important;
+    margin: 1rem;
+    padding: 1rem !important;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: none !important;
+  }
+  
+  .mobile-nav-book:hover {
+    background: var(--accent-dark);
+  }
+  
+  .nav-links a, 
+  .dropdown-toggle {
+    color: var(--text);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin: 0;
+    border-bottom: 1px solid var(--light-gray);
+    width: 100%;
+    text-align: center;
+  }
 }
