@@ -199,8 +199,11 @@ export default function Pricing() {
       {/* Tattoo Removal Section */}
       <div className="price-section">
         <h2 className="service-subtitle">Tattoo Removal</h2>
-        <div className="pricing-table-container" style={{ overflowX: 'auto', marginBottom: '2rem' }}>
-          <table className="pricing-table" style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
+        <p className="price-note" style={{ marginBottom: '1.5rem' }}>
+          Our tattoo removal pricing is based on the size of the tattoo. Package deals offer significant savings for multiple sessions.
+        </p>
+        <div className="responsive-table-container" style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
+          <table className="tattoo-price-table" style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
             <thead>
               <tr>
                 <th style={{ padding: '12px 15px', textAlign: 'left', backgroundColor: '#f8f8f8', borderBottom: '2px solid #ddd' }}>Tattoo Size (cm)</th>
@@ -264,7 +267,7 @@ export default function Pricing() {
           </table>
         </div>
         <p className="price-note">
-          Multiple sessions are typically required for complete tattoo removal. Our package deals (3 sessions for 20% off or 6 sessions for 25% off) provide a cost-effective option. We offer free consultations including test patches and personalized quotes.
+          We offer free consultations including test patches and personalized quotes. Multiple sessions are often required for complete removal, making our package deals a cost-effective option.
         </p>
       </div>
       
