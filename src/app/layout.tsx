@@ -1,8 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Melbourne Designer Brows | Professional Eyebrow Services",
@@ -25,7 +32,6 @@ export const metadata: Metadata = {
       { rel: 'android-chrome-512x512', url: '/images/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
   },
-  themeColor: '#ffffff',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
