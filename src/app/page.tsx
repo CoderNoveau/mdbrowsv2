@@ -20,6 +20,7 @@ export default function Home() {
       
       <Hero />
 
+      {/* Temporarily commented out for performance testing
       <section className="gallery-section container" style={{ paddingTop: '0.5rem' }}>
         <h2 className="section-heading">OUR WORK GALLERY</h2>
         <ElfsightWidget widgetId="84b79773-a065-4117-a575-67123d886124" />
@@ -31,6 +32,7 @@ export default function Home() {
           <ElfsightWidget widgetId="afd7ee50-4343-4814-9241-4e0645a154b7" />
         </div>
       </section>
+      */}
 
       <section id="services" className="page-section">
         <div className="page-section-inner">
