@@ -6,20 +6,32 @@ import Slider from 'react-slick';
 
 const slides = [
   {
-    image: '/images/hero1.webp',
+    image: {
+      desktop: '/images/hero1.webp',
+      tablet: '/images/hero1-tablet.webp',
+      mobile: '/images/hero1-mobile.webp',
+    },
     heading: 'MICROBLADING',
     subheading: 'LIMITED TIME ONLY',
     price: '$595',
     alt: 'Microbladed brows close-up',
   },
   {
-    image: '/images/hero2.webp',
+    image: {
+      desktop: '/images/hero2.webp',
+      tablet: '/images/hero2-tablet.webp',
+      mobile: '/images/hero2-mobile.webp',
+    },
     heading: 'WAKE UP WITH PERFECT EYEBROWS',
     subheading: 'EVERY DAY',
     alt: 'Client with tinted brows',
   },
   {
-    image: '/images/hero3.webp',
+    image: {
+      desktop: '/images/hero3.webp',
+      tablet: '/images/hero3-tablet.webp',
+      mobile: '/images/hero3-mobile.webp',
+    },
     heading: 'DESIGNER BROWS AWAIT YOU',
     subheading: 'BOOK TODAY',
     alt: 'Springvale salon interior',
@@ -73,14 +85,35 @@ const SlideContent = memo(({ slide, isVisible, getAnimationClass }: {
 const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
   <div className="slide">
     <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
-      <Image
-        src={slide.image}
-        alt={slide.alt}
-        fill
-        priority={true}
-        className="slide-image"
-        sizes="100vw"
-      />
+      <picture>
+        <source
+          media="(min-width: 1025px)"
+          srcSet={slide.image.desktop}
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 641px)"
+          srcSet={slide.image.tablet}
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 640px)"
+          srcSet={slide.image.mobile}
+          type="image/webp"
+        />
+        <Image
+          src={slide.image.desktop}
+          alt={slide.alt}
+          fill
+          priority={true}
+          className="slide-image"
+          quality={75}
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
+        />
+      </picture>
       <div 
         className="slide-side-overlay" 
         style={{
@@ -108,8 +141,21 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const preloadImages = () => {
       slides.forEach(slide => {
-        const img = new (window.Image as any)();
-        img.src = slide.image;
+        // Preload desktop version
+        const imgDesktop = new (window.Image as any)();
+        imgDesktop.src = slide.image.desktop;
+        
+        // Preload tablet version if viewport matches
+        if (window.innerWidth <= 1024 && window.innerWidth > 640) {
+          const imgTablet = new (window.Image as any)();
+          imgTablet.src = slide.image.tablet;
+        }
+        
+        // Preload mobile version if viewport matches
+        if (window.innerWidth <= 640) {
+          const imgMobile = new (window.Image as any)();
+          imgMobile.src = slide.image.mobile;
+        }
       });
     };
 
