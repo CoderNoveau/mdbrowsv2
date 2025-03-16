@@ -1,3 +1,10 @@
+/* Import Google Fonts with display swap */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap&display=swap');
+
+/* Import slick carousel styles asynchronously */
+@import 'slick-carousel/slick/slick.css' layer(slick);
+@import 'slick-carousel/slick/slick-theme.css' layer(slick);
+
 /* Critical styles first */
 * {
   margin: 0;
@@ -18,13 +25,6 @@
   --serif: 'Playfair Display', serif;
   --sans: 'Montserrat', sans-serif;
 }
-
-/* Import Google Fonts with display swap */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap&display=swap');
-
-/* Import slick carousel styles asynchronously */
-@import 'slick-carousel/slick/slick.css' layer(slick);
-@import 'slick-carousel/slick/slick-theme.css' layer(slick);
 
 /* Base styles */
 html {
