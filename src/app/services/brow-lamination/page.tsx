@@ -74,32 +74,6 @@ export default function BrowLamination() {
           For the first 24-48 hours after treatment, avoid getting your brows wet, applying makeup, or using skincare products on the area. We recommend using a brow conditioning serum to maintain the health of your brow hairs.
         </p>
         
-        <h3 className="page-section-subheading">Pricing</h3>
-        <div className="price-section">
-          <div className="price-table">
-            <div className="price-table-header">
-              <div>Service</div>
-              <div>Regular Price</div>
-              <div>Special Offer</div>
-            </div>
-            <div className="price-row">
-              <div className="price-service">Brow Shaping & Design</div>
-              <div className="price-amount">$90</div>
-              <div className="price-special"></div>
-            </div>
-            <div className="price-row">
-              <div className="price-service">Brow Lamination</div>
-              <div className="price-amount">$120</div>
-              <div className="price-special"></div>
-            </div>
-            <div className="price-row">
-              <div className="price-service">Brow Lamination with Tint</div>
-              <div className="price-amount">$140</div>
-              <div className="price-special"></div>
-            </div>
-          </div>
-        </div>
-        
         <div className="service-cta centered">
           <Link href={freshaLink} className="btn" target="_blank">
             Book Your Brow Lamination

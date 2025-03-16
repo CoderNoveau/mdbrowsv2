@@ -67,6 +67,17 @@ export default function Microblading() {
           encourage you to book an appointment to experience our services firsthand.
         </p>
         
+        <div className="book-appointment" style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <a 
+            href={freshaLink}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn btn-primary" 
+          >
+            BOOK APPOINTMENT
+          </a>
+        </div>
+        
         <h3 className="page-section-subheading">How Long does Microblading Last?</h3>
         <p className="page-text">
           Microblading is a semi-permanent treatment that can last between 12 to 24 months, depending on individual 
@@ -87,7 +98,7 @@ export default function Microblading() {
         
         <p className="page-text">
           While some practitioners may vary the thickness and number of strokes, the fundamental method remains 
-          the same. At Melbourne Designer Brows, we tailor our technique to each client's unique features and preferences.
+          consistent across both terms.
         </p>
         
         <h3 className="page-section-subheading">The Microblading | Eyebrow Tattooing Procedure</h3>
@@ -127,59 +138,75 @@ export default function Microblading() {
         </ul>
         
         <h3 className="page-section-subheading">Pricing</h3>
-        <div className="service-pricing">
-          <div className="price-item">
-            <span className="price-service">Microblading / Eyebrow Feathering</span>
-            <div className="price-details">
-              <span className="price-regular">Regular Price: $795</span>
-              <span className="price-special">Special Offer: $595</span>
+        <div className="price-section">
+          <div className="price-table">
+            <div className="price-table-header">
+              <div>Service</div>
+              <div>Regular Price</div>
+              <div>Special Offer</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Microblading / Eyebrow Feathering</div>
+              <div className="price-amount has-special">$795</div>
+              <div className="price-special">$595</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Eyebrow Shading</div>
+              <div className="price-amount has-special">$795</div>
+              <div className="price-special">$595</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Combo Brow (Microblading & Shading)</div>
+              <div className="price-amount has-special">$990</div>
+              <div className="price-special">$795</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Correction of work done by others*</div>
+              <div className="price-amount has-special">$990</div>
+              <div className="price-special">from $595</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Perfection Visit (Up to 8 weeks)</div>
+              <div className="price-amount">$270</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Touch up within 12 months</div>
+              <div className="price-amount">$350</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Touch up within 18 months</div>
+              <div className="price-amount">$425</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Touch up within 24 months</div>
+              <div className="price-amount">$495</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Brow Shaping & Design</div>
+              <div className="price-amount">$90</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Brow Tattoo Removal (Saline)</div>
+              <div className="price-amount">$200 per visit</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Brow Tattoo Removal (Laser)</div>
+              <div className="price-amount has-special">$200 per visit</div>
+              <div className="price-special">$100</div>
             </div>
           </div>
-          <div className="price-item">
-            <span className="price-service">Eyebrow Shading</span>
-            <div className="price-details">
-              <span className="price-regular">Regular Price: $795</span>
-              <span className="price-special">Special Offer: $595</span>
-            </div>
-          </div>
-          <div className="price-item">
-            <span className="price-service">Combo Brow (Microblading & Shading)</span>
-            <div className="price-details">
-              <span className="price-regular">Regular Price: $990</span>
-              <span className="price-special">Special Offer: $795</span>
-            </div>
-          </div>
-          <div className="price-item">
-            <span className="price-service">Perfection Visit (Up to 8 weeks)</span>
-            <div className="price-details">
-              <span className="price-regular">$270</span>
-            </div>
-          </div>
-          <div className="price-item">
-            <span className="price-service">Touch up within 12 months</span>
-            <div className="price-details">
-              <span className="price-regular">$350</span>
-            </div>
-          </div>
-          <div className="price-item">
-            <span className="price-service">Touch up within 18 months</span>
-            <div className="price-details">
-              <span className="price-regular">$425</span>
-            </div>
-          </div>
-          <div className="price-item">
-            <span className="price-service">Touch up within 24 months</span>
-            <div className="price-details">
-              <span className="price-regular">$495</span>
-            </div>
-          </div>
+          <p className="price-note">
+            * Please contact us to discuss if you require correction of work done by others. We are able to assist in most cases however suitability is on a case by case basis. Corrective work may require removal or lightening procedures performed.
+          </p>
         </div>
         
-        <p className="price-note">
-          For our full pricing list and special offers, please visit our <Link href="/pricing">pricing page</Link>.
-        </p>
-        
-        <div className="book-appointment" style={{ textAlign: 'center', margin: '2rem 0' }}>
+        <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
           <a 
             href={freshaLink}
             target="_blank" 

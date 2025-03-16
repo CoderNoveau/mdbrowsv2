@@ -67,24 +67,21 @@ export default function Microneedling() {
               <div>Special Offer</div>
             </div>
             <div className="price-row">
-              <div className="price-service">Single Session</div>
-              <div className="price-amount">$250</div>
+              <div className="price-service">Face</div>
+              <div className="price-amount">$279/visit</div>
               <div className="price-special"></div>
             </div>
             <div className="price-row">
-              <div className="price-service">Package of 3 Sessions</div>
-              <div className="price-amount has-special">$750</div>
-              <div className="price-special">$600</div>
+              <div className="price-service">Pack of Three (20% off)</div>
+              <div className="price-amount has-special">$837</div>
+              <div className="price-special">$675/$225/visit</div>
             </div>
             <div className="price-row">
-              <div className="price-service">Package of 6 Sessions</div>
-              <div className="price-amount has-special">$1,500</div>
-              <div className="price-special">$1,125</div>
+              <div className="price-service">Pack of Five (30% off)</div>
+              <div className="price-amount has-special">$1395</div>
+              <div className="price-special">$975/$195/visit</div>
             </div>
           </div>
-          <p className="price-note">
-            For best results, we recommend a series of 3-6 treatments spaced 4-6 weeks apart. Package deals offer significant savings.
-          </p>
         </div>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>

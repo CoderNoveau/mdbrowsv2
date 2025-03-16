@@ -69,9 +69,24 @@ export default function BrowCorrections() {
               <div>Special Offer</div>
             </div>
             <div className="price-row">
+              <div className="price-service">Microblading / Eyebrow Feathering</div>
+              <div className="price-amount has-special">$795</div>
+              <div className="price-special">$595</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Eyebrow Shading</div>
+              <div className="price-amount has-special">$795</div>
+              <div className="price-special">$595</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Combo Brow (Microblading & Shading)</div>
+              <div className="price-amount has-special">$990</div>
+              <div className="price-special">$795</div>
+            </div>
+            <div className="price-row">
               <div className="price-service">Correction of work done by others*</div>
               <div className="price-amount has-special">$990</div>
-              <div className="price-special">from $795</div>
+              <div className="price-special">from $595</div>
             </div>
             <div className="price-row">
               <div className="price-service">Perfection Visit (Up to 8 weeks)</div>
@@ -92,6 +107,21 @@ export default function BrowCorrections() {
               <div className="price-service">Touch up within 24 months</div>
               <div className="price-amount">$495</div>
               <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Brow Shaping & Design</div>
+              <div className="price-amount">$90</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Brow Tattoo Removal (Saline)</div>
+              <div className="price-amount">$200 per visit</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Brow Tattoo Removal (Laser)</div>
+              <div className="price-amount has-special">$200 per visit</div>
+              <div className="price-special">$100</div>
             </div>
           </div>
           <p className="price-note">

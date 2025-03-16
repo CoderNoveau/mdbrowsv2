@@ -44,7 +44,7 @@ export default function Pricing() {
           <div className="price-row">
             <div className="price-service">Correction of work done by others*</div>
             <div className="price-amount has-special">$990</div>
-            <div className="price-special">from $795</div>
+            <div className="price-special">from $595</div>
           </div>
           <div className="price-row">
             <div className="price-service">Perfection Visit (Up to 8 weeks)</div>
