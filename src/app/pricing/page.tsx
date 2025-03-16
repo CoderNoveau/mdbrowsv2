@@ -75,7 +75,7 @@ export default function Pricing() {
           </div>
           <div className="price-row">
             <div className="price-service">Brow Shaping & Design</div>
-            <div className="price-amount">$91</div>
+            <div className="price-amount">$90</div>
             <div className="price-special"></div>
           </div>
           <div className="price-row">
