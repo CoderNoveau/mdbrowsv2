@@ -58,11 +58,41 @@ export default function Microneedling() {
           <li>Stimulates natural collagen production</li>
         </ul>
         
+        <h3 className="page-section-subheading">How many treatments do I need?</h3>
+        <p className="page-text">
+          The number of treatments required varies depending on your skin concerns. For general skin rejuvenation, 
+          a series of 3-5 treatments spaced 4-6 weeks apart is recommended. For specific concerns like acne scars 
+          or stretch marks, 6 or more sessions may be necessary. Our skincare professionals will create a 
+          personalized treatment plan based on your skin assessment.
+        </p>
+        
         <h3 className="page-section-subheading">Pricing</h3>
-        <div className="service-price">
-          <span className="price-amount">$250</span>
-          <span className="price-description"> - Per Session</span>
+        <div className="service-pricing">
+          <div className="price-item">
+            <span className="price-service">Face</span>
+            <div className="price-details">
+              <span className="price-regular">$279 per visit</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Pack of Three (20% off)</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $837</span>
+              <span className="price-special">Special Offer: $675 ($225 per visit)</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Pack of Five (30% off)</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $1,395</span>
+              <span className="price-special">Special Offer: $975 ($195 per visit)</span>
+            </div>
+          </div>
         </div>
+        
+        <p className="price-note">
+          For our full pricing list and special offers, please visit our <Link href="/pricing">pricing page</Link>.
+        </p>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
           <a 

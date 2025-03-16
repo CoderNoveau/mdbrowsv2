@@ -67,17 +67,6 @@ export default function Microblading() {
           encourage you to book an appointment to experience our services firsthand.
         </p>
         
-        <div className="book-appointment" style={{ textAlign: 'center', margin: '2rem 0' }}>
-          <a 
-            href={freshaLink}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn btn-primary" 
-          >
-            BOOK APPOINTMENT
-          </a>
-        </div>
-        
         <h3 className="page-section-subheading">How Long does Microblading Last?</h3>
         <p className="page-text">
           Microblading is a semi-permanent treatment that can last between 12 to 24 months, depending on individual 
@@ -98,7 +87,7 @@ export default function Microblading() {
         
         <p className="page-text">
           While some practitioners may vary the thickness and number of strokes, the fundamental method remains 
-          consistent across both terms.
+          the same. At Melbourne Designer Brows, we tailor our technique to each client's unique features and preferences.
         </p>
         
         <h3 className="page-section-subheading">The Microblading | Eyebrow Tattooing Procedure</h3>
@@ -138,12 +127,59 @@ export default function Microblading() {
         </ul>
         
         <h3 className="page-section-subheading">Pricing</h3>
-        <div className="service-price">
-          <span className="price-amount">$595</span>
-          <span className="price-description"> - Special Promotion</span>
+        <div className="service-pricing">
+          <div className="price-item">
+            <span className="price-service">Microblading / Eyebrow Feathering</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $795</span>
+              <span className="price-special">Special Offer: $595</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Eyebrow Shading</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $795</span>
+              <span className="price-special">Special Offer: $595</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Combo Brow (Microblading & Shading)</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $990</span>
+              <span className="price-special">Special Offer: $795</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Perfection Visit (Up to 8 weeks)</span>
+            <div className="price-details">
+              <span className="price-regular">$270</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Touch up within 12 months</span>
+            <div className="price-details">
+              <span className="price-regular">$350</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Touch up within 18 months</span>
+            <div className="price-details">
+              <span className="price-regular">$425</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Touch up within 24 months</span>
+            <div className="price-details">
+              <span className="price-regular">$495</span>
+            </div>
+          </div>
         </div>
         
-        <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
+        <p className="price-note">
+          For our full pricing list and special offers, please visit our <Link href="/pricing">pricing page</Link>.
+        </p>
+        
+        <div className="book-appointment" style={{ textAlign: 'center', margin: '2rem 0' }}>
           <a 
             href={freshaLink}
             target="_blank" 

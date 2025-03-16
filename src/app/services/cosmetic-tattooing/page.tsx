@@ -45,26 +45,11 @@ export default function CosmeticTattooing() {
         </p>
         
         <h3 className="page-section-subheading">Our Cosmetic Tattooing Services</h3>
-        
-        <div className="cosmetic-service-item">
-          <h4>Lip Blushing</h4>
-          <p>Enhance the natural color and shape of your lips with this subtle tattooing technique.</p>
-        </div>
-        
-        <div className="cosmetic-service-item">
-          <h4>Eyeliner Enhancement</h4>
-          <p>Create a stunning, always-perfect eyeliner look with eyeliner tattooing. This treatment enhances your eye shape, creates the appearance of fuller lashes, and eliminates the daily struggle with traditional eyeliner. Available in classic or smokey styles to suit your preferred look.</p>
-        </div>
-
-        <div className="cosmetic-service-item">
-          <h4>Ombré Brows</h4>
-          <p>A soft shading technique that creates a powdered effect, similar to brow powder. Perfect for those wanting a more defined, filled-in look.</p>
-        </div>
-        
-        <div className="cosmetic-service-item">
-          <h4>Signature Combo Brows</h4>
-          <p>Our signature treatment combines both microblading and shading techniques for the most natural and dimensional look.</p>
-        </div>
+        <ul className="service-list">
+          <li><strong>Eyebrows</strong> - Microblading, Shading, and Combination techniques</li>
+          <li><strong>Eyeliner</strong> - Lash Enhancement, Thin Eyeliner, Designer Eyeliner</li>
+          <li><strong>Lips</strong> - Lip Line, Lip Blend, Full Lips</li>
+        </ul>
         
         <h3 className="page-section-subheading">The Process</h3>
         <p className="page-text">
@@ -84,10 +69,108 @@ export default function CosmeticTattooing() {
         </ul>
         
         <h3 className="page-section-subheading">Pricing</h3>
-        <div className="service-price">
-          <span className="price-amount">$495 - $695</span>
-          <span className="price-description"> - Varies by treatment</span>
+        
+        <h4 className="subsection-title">Eyeliner Services</h4>
+        <div className="service-pricing">
+          <div className="price-item">
+            <span className="price-service">Lash Enhancement</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $550</span>
+              <span className="price-special">Special Offer: $450</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Eyeliner Top</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $650</span>
+              <span className="price-special">Special Offer: $550</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Designer Eyeliner (Thick)</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $750</span>
+              <span className="price-special">Special Offer: $650</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Eyeliner Bottom</span>
+            <div className="price-details">
+              <span className="price-regular">$350</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Eyeliner Top and Bottom</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $1,000</span>
+              <span className="price-special">Special Offer: $750</span>
+            </div>
+          </div>
         </div>
+        
+        <h4 className="subsection-title">Lips Services</h4>
+        <div className="service-pricing">
+          <div className="price-item">
+            <span className="price-service">Lip Line</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $750</span>
+              <span className="price-special">Special Offer: $500</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Lip Line and Blend</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $850</span>
+              <span className="price-special">Special Offer: $600</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Lips Full</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $990</span>
+              <span className="price-special">Special Offer: $690</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Lips Neutralisation</span>
+            <div className="price-details">
+              <span className="price-regular">Regular Price: $990</span>
+              <span className="price-special">From $690</span>
+            </div>
+          </div>
+        </div>
+        
+        <h4 className="subsection-title">Touch-Up Services</h4>
+        <div className="service-pricing">
+          <div className="price-item">
+            <span className="price-service">Perfection Visit (Up to 8 weeks)</span>
+            <div className="price-details">
+              <span className="price-regular">$270</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Touch up within 12 months</span>
+            <div className="price-details">
+              <span className="price-regular">$350</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Touch up within 18 months</span>
+            <div className="price-details">
+              <span className="price-regular">$425</span>
+            </div>
+          </div>
+          <div className="price-item">
+            <span className="price-service">Touch up within 24 months</span>
+            <div className="price-details">
+              <span className="price-regular">$495</span>
+            </div>
+          </div>
+        </div>
+        
+        <p className="price-note">
+          For our full pricing list and special offers, please visit our <Link href="/pricing">pricing page</Link>.
+        </p>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
           <a 
