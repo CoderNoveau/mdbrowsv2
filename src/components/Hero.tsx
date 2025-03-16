@@ -89,29 +89,25 @@ const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
         <source
           media="(min-width: 1025px)"
           srcSet={slide.image.desktop}
-          type="image/webp"
         />
         <source
           media="(min-width: 641px)"
           srcSet={slide.image.tablet}
-          type="image/webp"
-        />
-        <source
-          media="(max-width: 640px)"
-          srcSet={slide.image.mobile}
-          type="image/webp"
         />
         <Image
-          src={slide.image.desktop}
+          src={slide.image.mobile}
           alt={slide.alt}
           fill
           priority={true}
           className="slide-image"
           quality={75}
+          sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
           style={{
             objectFit: 'cover',
             objectPosition: 'center',
           }}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qQEBALkE6Oz5DRVlLT0xXY1xbZF9kZ2R5Z1xkY1//2wBDARUXFyAeIBohHh4hRSgkKEVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
         />
       </picture>
       <div 
@@ -137,39 +133,11 @@ const Hero: React.FC = () => {
   const [animating, setAnimating] = useState(false);
   const [sliderInitialized, setSliderInitialized] = useState(false);
 
-  // Preload images
   useEffect(() => {
-    const preloadImages = () => {
-      slides.forEach(slide => {
-        // Preload desktop version
-        const imgDesktop = new (window.Image as any)();
-        imgDesktop.src = slide.image.desktop;
-        
-        // Preload tablet version if viewport matches
-        if (window.innerWidth <= 1024 && window.innerWidth > 640) {
-          const imgTablet = new (window.Image as any)();
-          imgTablet.src = slide.image.tablet;
-        }
-        
-        // Preload mobile version if viewport matches
-        if (window.innerWidth <= 640) {
-          const imgMobile = new (window.Image as any)();
-          imgMobile.src = slide.image.mobile;
-        }
-      });
-    };
-
-    preloadImages();
     setMounted(true);
-    
-    const timer = setTimeout(() => {
-      setSliderInitialized(true);
-    }, 100);
-    
-    return () => clearTimeout(timer);
+    setSliderInitialized(true);
   }, []);
 
-  // Memoize animation class getter
   const getAnimationClass = useCallback((baseClass: string) => {
     return animating ? `${baseClass} hide-animation` : `${baseClass} show-animation`;
   }, [animating]);
@@ -177,14 +145,15 @@ const Hero: React.FC = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: mounted,
     autoplaySpeed: 7000,
     arrows: false,
     fade: true,
-    cssEase: 'ease-in-out',
+    cssEase: 'linear',
+    lazyLoad: 'progressive' as const,
     beforeChange: (_oldIndex: number, newIndex: number) => {
       if (!mounted) return;
       setAnimating(true);
@@ -193,14 +162,25 @@ const Hero: React.FC = () => {
     afterChange: (index: number) => {
       if (!mounted) return;
       setCurrentSlide(index);
-      setTimeout(() => {
-        setAnimating(false);
-      }, 50);
+      setAnimating(false);
     }
   };
 
   if (!mounted || !sliderInitialized) {
-    return null;
+    return (
+      <div className="hero" style={{ position: 'relative' }}>
+        <div className="hero-slider-container">
+          <Slide slide={slides[0]} />
+        </div>
+        <div className="hero-content-overlay">
+          <SlideContent
+            slide={slides[0]}
+            isVisible={true}
+            getAnimationClass={(baseClass) => `${baseClass} show-animation`}
+          />
+        </div>
+      </div>
+    );
   }
 
   return (
