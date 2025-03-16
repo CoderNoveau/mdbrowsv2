@@ -58,41 +58,34 @@ export default function Microneedling() {
           <li>Stimulates natural collagen production</li>
         </ul>
         
-        <h3 className="page-section-subheading">How many treatments do I need?</h3>
-        <p className="page-text">
-          The number of treatments required varies depending on your skin concerns. For general skin rejuvenation, 
-          a series of 3-5 treatments spaced 4-6 weeks apart is recommended. For specific concerns like acne scars 
-          or stretch marks, 6 or more sessions may be necessary. Our skincare professionals will create a 
-          personalized treatment plan based on your skin assessment.
-        </p>
-        
         <h3 className="page-section-subheading">Pricing</h3>
-        <div className="service-pricing">
-          <div className="price-item">
-            <span className="price-service">Face</span>
-            <div className="price-details">
-              <span className="price-regular">$279 per visit</span>
+        <div className="price-section">
+          <div className="price-table">
+            <div className="price-table-header">
+              <div>Service</div>
+              <div>Regular Price</div>
+              <div>Special Offer</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Single Session</div>
+              <div className="price-amount">$250</div>
+              <div className="price-special"></div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Package of 3 Sessions</div>
+              <div className="price-amount has-special">$750</div>
+              <div className="price-special">$600</div>
+            </div>
+            <div className="price-row">
+              <div className="price-service">Package of 6 Sessions</div>
+              <div className="price-amount has-special">$1,500</div>
+              <div className="price-special">$1,125</div>
             </div>
           </div>
-          <div className="price-item">
-            <span className="price-service">Pack of Three (20% off)</span>
-            <div className="price-details">
-              <span className="price-regular">Regular Price: $837</span>
-              <span className="price-special">Special Offer: $675 ($225 per visit)</span>
-            </div>
-          </div>
-          <div className="price-item">
-            <span className="price-service">Pack of Five (30% off)</span>
-            <div className="price-details">
-              <span className="price-regular">Regular Price: $1,395</span>
-              <span className="price-special">Special Offer: $975 ($195 per visit)</span>
-            </div>
-          </div>
+          <p className="price-note">
+            For best results, we recommend a series of 3-6 treatments spaced 4-6 weeks apart. Package deals offer significant savings.
+          </p>
         </div>
-        
-        <p className="price-note">
-          For our full pricing list and special offers, please visit our <Link href="/pricing">pricing page</Link>.
-        </p>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
           <a 
