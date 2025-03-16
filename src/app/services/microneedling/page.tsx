@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ServiceSeo from '@/components/ServiceSeo';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
   title: 'Microneedling | Melbourne Designer Brows',
@@ -12,11 +12,12 @@ export default function Microneedling() {
 
   return (
     <div className="page-content">
-      <ServiceSeo
+      <ClientSeo
         title="Microneedling | Melbourne Designer Brows"
         description="Professional microneedling services in Melbourne. Improve skin texture, reduce scars, and boost collagen for younger-looking skin."
-        serviceName="microneedling"
-        imageUrl="/images/service-microneedling.webp"
+        canonical="https://mdbrows.com.au/services/microneedling"
+        ogImage="/images/service-microneedling.webp"
+        ogType="article"
       />
       
       <h2 className="page-section-heading">Microneedling</h2>

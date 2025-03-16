@@ -20,6 +20,11 @@ const ServiceSeo: React.FC<ServiceSeoProps> = ({
   serviceName,
   imageUrl
 }) => {
+  // Add a check to ensure we're in a browser environment before rendering
+  if (typeof window === 'undefined') {
+    return null; // Return nothing during server-side rendering
+  }
+
   return (
     <NextSeo
       title={title}

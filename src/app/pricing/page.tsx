@@ -212,13 +212,13 @@ export default function Pricing() {
           </div>
           <div className="price-row">
             <div className="price-service">Pack of Three (20% off)</div>
-            <div className="price-amount has-special">$669</div>
-            <div className="price-special">$225/visit</div>
+            <div className="price-amount has-special">$837</div>
+            <div className="price-special">$675/$225/visit</div>
           </div>
           <div className="price-row">
             <div className="price-service">Pack of Five (30% off)</div>
-            <div className="price-amount has-special">$975</div>
-            <div className="price-special">$195/visit</div>
+            <div className="price-amount has-special">$1395</div>
+            <div className="price-special">$975/$195/visit</div>
           </div>
         </div>
       </div>

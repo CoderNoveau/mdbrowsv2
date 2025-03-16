@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ServiceSeo from '@/components/ServiceSeo';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
   title: 'Brow Corrections | Melbourne Designer Brows',
@@ -12,11 +12,12 @@ export default function BrowCorrections() {
 
   return (
     <div className="page-content">
-      <ServiceSeo
+      <ClientSeo
         title="Brow Corrections | Melbourne Designer Brows"
         description="Professional eyebrow correction services in Melbourne. Fix uneven, asymmetrical, or poorly done eyebrows with our specialist correction techniques."
-        serviceName="brow-corrections"
-        imageUrl="/images/service-brow-correction.webp"
+        canonical="https://mdbrows.com.au/services/brow-corrections"
+        ogImage="/images/service-brow-correction.webp"
+        ogType="article"
       />
       
       <h2 className="page-section-heading">Brow Corrections</h2>

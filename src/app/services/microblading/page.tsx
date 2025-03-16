@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ServiceSeo from '@/components/ServiceSeo';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
-  title: 'Microblading | Melbourne Designer Brows',
-  description: 'Professional microblading services in Melbourne. Natural, semi-permanent eyebrows that look real and last longer.',
+  title: 'Microblading & Eyebrow Feathering | Melbourne Designer Brows',
+  description: 'Professional microblading services in Melbourne. Natural, semi-permanent eyebrows with hair-like strokes that look real and last 12-24 months. Book your appointment today.',
 };
 
 export default function Microblading() {
@@ -12,14 +12,15 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
-      <ServiceSeo
-        title="Microblading | Melbourne Designer Brows"
-        description="Professional microblading services in Melbourne. Natural, semi-permanent eyebrows that look real and last longer."
-        serviceName="microblading"
-        imageUrl="/images/service-microblading.webp"
+      <ClientSeo
+        title="Microblading & Eyebrow Feathering | Melbourne Designer Brows"
+        description="Professional microblading services in Melbourne. Natural, semi-permanent eyebrows with hair-like strokes that look real and last 12-24 months. Book your appointment today."
+        canonical="https://mdbrows.com.au/services/microblading"
+        ogImage="/images/service-microblading.webp"
+        ogType="article"
       />
       
-      <h2 className="page-section-heading">Microblading</h2>
+      <h2 className="page-section-heading">Microblading & Eyebrow Feathering</h2>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
@@ -32,22 +33,97 @@ export default function Microblading() {
       </div>
       
       <div className="service-description">
+        <h3 className="page-section-subheading">What is Microblading?</h3>
         <p className="page-text">
-          Also known as eyebrow feathering, microblading is a semi-permanent eyebrow tattoo procedure that is carried out 
-          by our expert technicians using a special handheld microblade. Each eyebrow stroke is manually shaped and blended 
-          into the client's existing eyebrow hair which results in a more natural look.
+          Microblading, also known as Eyebrow Feathering, is a technique in cosmetic tattooing used to create fuller, 
+          natural-looking eyebrows. This method involves the use of a handheld microblade to manually draw delicate 
+          hair strokes. Each stroke is crafted to blend seamlessly with the existing eyebrow hairs, enhancing the 
+          overall look of the brows and giving a realistic and defined shape.
         </p>
         
         <p className="page-text">
-          Microblading is perfect for anyone who wants to enhance their natural brows. Whether you have thin, over-plucked, 
-          or patchy eyebrows, microblading can give you perfect, natural-looking brows.
+          Each eyebrow stroke is manually shaped and blended into the client's existing eyebrow hair which results 
+          in a more natural look. Microblading is perfect for anyone who wants to enhance their natural brows. 
+          Whether you have thin, over-plucked, or patchy eyebrows, microblading can give you perfect, 
+          natural-looking brows.
         </p>
         
-        <h3 className="page-section-subheading">The Microblading Process</h3>
+        <div className="view-gallery" style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <Link href="/gallery" className="btn btn-outline">
+            VIEW GALLERY
+          </Link>
+        </div>
+        
+        <h3 className="page-section-subheading">Why choose Melbourne Designer Brows for Microblading & Eyebrow Feathering?</h3>
         <p className="page-text">
-          The procedure typically takes about 2 hours to complete. First, we discuss your desired shape and 
-          color. Then, we apply a numbing cream to minimize discomfort. Using the microblade tool, we create 
-          fine, hair-like strokes that blend with your natural eyebrows.
+          Melbourne Designer Brows is a leader in the field of Microblading and Eyebrow Feathering. Our lead artist, 
+          Anne Nguyen, is renowned for her precise and detailed approach, producing beautifully natural eyebrows 
+          tailored to each client's features. Anne's techniques, developed through extensive training both in Australia 
+          and internationally, are designed to create the best possible results for our clients.
+        </p>
+        
+        <p className="page-text">
+          We invite you to explore our gallery of previous work to see the exceptional results we achieve and 
+          encourage you to book an appointment to experience our services firsthand.
+        </p>
+        
+        <div className="book-appointment" style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <a 
+            href={freshaLink}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn btn-primary" 
+          >
+            BOOK APPOINTMENT
+          </a>
+        </div>
+        
+        <h3 className="page-section-subheading">How Long does Microblading Last?</h3>
+        <p className="page-text">
+          Microblading is a semi-permanent treatment that can last between 12 to 24 months, depending on individual 
+          factors like skin type and lifestyle. For instance, those with oily skin or who are frequently exposed to 
+          the sun may notice a faster fading of the pigment.
+        </p>
+        
+        <p className="page-text">
+          To maintain the desired eyebrow shape and color intensity, clients can return for periodic touch-ups.
+        </p>
+        
+        <h3 className="page-section-subheading">What is the difference between Microblading & Eyebrow Feathering?</h3>
+        <p className="page-text">
+          Microblading and Eyebrow Feathering are terms often used interchangeably and refer to the same process 
+          of applying semi-permanent pigment using a microblade. The technique focuses on creating thin, hair-like 
+          strokes that blend seamlessly with your natural eyebrows.
+        </p>
+        
+        <p className="page-text">
+          While some practitioners may vary the thickness and number of strokes, the fundamental method remains 
+          consistent across both terms.
+        </p>
+        
+        <h3 className="page-section-subheading">The Microblading | Eyebrow Tattooing Procedure</h3>
+        <p className="page-text">
+          The Microblading procedure typically requires two appointments.
+        </p>
+        
+        <h4 style={{ marginTop: '1.5rem', marginBottom: '0.75rem', fontSize: '1.1rem', fontWeight: '600' }}>First Appointment</h4>
+        <p className="page-text">
+          During your initial visit, our artists will consult with you to determine your ideal eyebrow shape and 
+          color based on your facial features and personal style. We use specialized tools to measure and outline 
+          your brows for approval before proceeding. After the planning phase, the artist will perform the microblading, 
+          followed by providing an aftercare kit and instructions to ensure proper healing.
+        </p>
+        
+        <h4 style={{ marginTop: '1.5rem', marginBottom: '0.75rem', fontSize: '1.1rem', fontWeight: '600' }}>Second Appointment</h4>
+        <p className="page-text">
+          The follow-up session is scheduled about six weeks after the initial treatment. This touch-up appointment 
+          allows the artist to refine your eyebrows and ensure the pigment has settled properly into the skin, making 
+          any necessary adjustments to perfect the appearance of your brows.
+        </p>
+        
+        <p className="page-text">
+          We look forward to helping you achieve your ideal eyebrow look at Melbourne Designer Brows. Contact us 
+          today to schedule your appointment.
         </p>
         
         <h3 className="page-section-subheading">Benefits of Microblading</h3>
@@ -57,6 +133,8 @@ export default function Microblading() {
           <li>Results last 1-3 years with proper aftercare</li>
           <li>Waterproof and smudge-proof</li>
           <li>Natural-looking results</li>
+          <li>Ideal for those with thin or sparse eyebrows</li>
+          <li>Perfect for active lifestyles</li>
         </ul>
         
         <h3 className="page-section-subheading">Pricing</h3>

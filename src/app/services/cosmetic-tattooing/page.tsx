@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ServiceSeo from '@/components/ServiceSeo';
+import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
   title: 'Cosmetic Tattooing | Melbourne Designer Brows',
@@ -12,11 +12,12 @@ export default function CosmeticTattooing() {
 
   return (
     <div className="page-content">
-      <ServiceSeo
+      <ClientSeo
         title="Cosmetic Tattooing | Melbourne Designer Brows"
         description="Professional cosmetic tattooing services in Melbourne. Semi-permanent makeup solutions for brows, lips, and eyeliner."
-        serviceName="cosmetic-tattooing"
-        imageUrl="/images/placeholder-cosmetic-tattooing.webp"
+        canonical="https://mdbrows.com.au/services/cosmetic-tattooing"
+        ogImage="/images/placeholder-cosmetic-tattooing.webp"
+        ogType="article"
       />
       
       <h2 className="page-section-heading">Cosmetic Tattooing</h2>
