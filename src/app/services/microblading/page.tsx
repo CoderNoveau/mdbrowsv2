@@ -46,7 +46,7 @@ export default function Microblading() {
           creating fine, crisp strokes that truly mimic the appearance of natural brow hair. Each eyebrow stroke is 
           individually shaped and artfully blended into your existing eyebrow hair, resulting in a remarkably natural look. 
           Microblading is perfect for anyone wanting to enhance their natural brows, whether you have thin, over-plucked, 
-          or patchy eyebrows, or if you've experienced hair loss due to age, health conditions, or over-styling.
+          or patchy eyebrows, or if you&apos;ve experienced hair loss due to age, health conditions, or over-styling.
         </p>
         
         <div className="view-gallery" style={{ textAlign: 'center', margin: '2.5rem 0', padding: '1rem 0' }}>

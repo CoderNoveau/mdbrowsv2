@@ -8,12 +8,10 @@ import { usePathname } from 'next/navigation';
 // Memoized navigation links component
 const NavigationLinks = memo(({ 
   handleLinkClick, 
-  pathname, 
-  freshaLink 
+  pathname 
 }: { 
   handleLinkClick: () => void;
   pathname: string;
-  freshaLink: string;
 }) => (
   <>
     <Link 
@@ -66,7 +64,6 @@ const Header = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
-  const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   // Memoize dropdown items
   const serviceItems = useMemo(() => [
@@ -181,7 +178,6 @@ const Header = () => {
           <NavigationLinks 
             handleLinkClick={handleLinkClick}
             pathname={pathname}
-            freshaLink={freshaLink}
           />
 
           {/* About dropdown */}
@@ -203,7 +199,7 @@ const Header = () => {
           
           {/* Book Now button at the bottom for mobile */}
           <a 
-            href={freshaLink}
+            href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429"
             target="_blank" 
             rel="noopener noreferrer"
             className="mobile-nav-book"
@@ -216,5 +212,7 @@ const Header = () => {
     </header>
   );
 };
+
+Header.displayName = 'Header';
 
 export default memo(Header);

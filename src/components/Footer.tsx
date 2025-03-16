@@ -1,8 +1,6 @@
 import Link from 'next/link';
-import Script from 'next/script';
 
 const Footer = () => {
-  const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
   const currentYear = new Date().getFullYear();
 
   return (

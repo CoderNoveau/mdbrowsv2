@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-import Script from 'next/script';
 import Link from 'next/link';
-import Image from 'next/image';
 import Hero from '@/components/Hero';
 import ElfsightWidget from '@/components/ElfsightWidget';
 import ClientSeo from '@/components/ClientSeo';

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, memo, useCallback } from 'react';
+import React, { useEffect, useState, memo, useCallback } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 
@@ -70,7 +70,7 @@ const SlideContent = memo(({ slide, isVisible, getAnimationClass }: {
 ));
 
 // Memoized slide component
-const Slide = memo(({ slide }: { slide: typeof slides[0] }) => (
+const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
   <div className="slide">
     <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
       <Image
@@ -95,9 +95,10 @@ const Slide = memo(({ slide }: { slide: typeof slides[0] }) => (
       />
     </div>
   </div>
-));
+);
+Slide.displayName = 'Slide';
 
-export default function Hero() {
+const Hero: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -178,4 +179,7 @@ export default function Hero() {
       </div>
     </div>
   );
-} 
+};
+Hero.displayName = 'Hero';
+
+export default Hero; 

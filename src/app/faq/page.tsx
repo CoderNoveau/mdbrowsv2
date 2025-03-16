@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
@@ -35,7 +34,7 @@ export default function FAQ() {
                 Microblading is a sophisticated semi-permanent cosmetic tattooing technique used to create fuller, natural-looking eyebrows. This precision artistry involves the use of a specialized handheld microblade to manually draw delicate hair-like strokes.
               </p>
               <p>
-                Although microblading is considered a form of eyebrow tattooing, the difference is that every hair stroke is drawn by the artist with a handheld microblade. Each stroke is manually shaped and blended into the client's existing eyebrow hair which results in natural, beautiful eyebrows.
+                Although microblading is considered a form of eyebrow tattooing, the difference is that every hair stroke is drawn by the artist with a handheld microblade. Each stroke is manually shaped and blended into the client&apos;s existing eyebrow hair which results in natural, beautiful eyebrows.
               </p>
             </div>
           </div>
@@ -56,7 +55,7 @@ export default function FAQ() {
             <h3 className="faq-question">Is microblading painful?</h3>
             <div className="faq-answer">
               <p>
-                The pain level for the procedure is considered mild to none. Prior to the procedure we will apply a topical anesthetic to numb the area, and we'll continue to apply anesthetic throughout the entire procedure to ensure your comfort level is maintained.
+                The pain level for the procedure is considered mild to none. Prior to the procedure we will apply a topical anesthetic to numb the area, and we&apos;ll continue to apply anesthetic throughout the entire procedure to ensure your comfort level is maintained.
               </p>
               <p>
                 Unlike many other studios, we prioritize your comfort by continuously reapplying numbing throughout the entire procedure—not just at the beginning. This comprehensive approach to pain management is so effective that many of our clients experience minimal discomfort, with some even falling asleep during their treatment.
@@ -122,7 +121,7 @@ export default function FAQ() {
                 The longevity of your microbladed brows also depends on factors such as:
               </p>
               <ul>
-                <li>Your body's natural metabolism of the pigment</li>
+                <li>Your body&apos;s natural metabolism of the pigment</li>
                 <li>Exposure to environmental factors like sun and pollution</li>
                 <li>Your adherence to aftercare instructions</li>
                 <li>The quality of pigments used (we use only premium, long-lasting pigments)</li>
@@ -135,7 +134,7 @@ export default function FAQ() {
           </div>
           
           <div className="faq-item">
-            <h3 className="faq-question">What's the difference between microblading and machine brows/powder brows?</h3>
+            <h3 className="faq-question">What&apos;s the difference between microblading and machine brows/powder brows?</h3>
             <div className="faq-answer">
               <p>
                 Microblading uses a manual hand tool to create fine, hair-like strokes, resulting in a natural appearance. Machine brows or powder brows (also called Ombré Brows) use a digital machine to implant pigment, creating a softer, shaded effect similar to brow powder makeup.
@@ -261,7 +260,7 @@ export default function FAQ() {
                 <li>Individual factors like skin type and immune system function</li>
               </ul>
               <p>
-                On average, most clients require 6-10 sessions for significant removal, though this can range from 3-15 sessions in total. During your consultation, we'll provide a more specific estimate based on your particular tattoo.
+                On average, most clients require 6-10 sessions for significant removal, though this can range from 3-15 sessions in total. During your consultation, we&apos;ll provide a more specific estimate based on your particular tattoo.
               </p>
             </div>
           </div>
@@ -291,7 +290,7 @@ export default function FAQ() {
                 Our transparent pricing structure provides package deals: 20% discount for three sessions, 25% discount for six sessions. Multiple sessions are often required for complete removal, making our package deals a cost-effective option.
               </p>
               <p>
-                During your consultation, we'll provide a precise quote based on your specific tattoo and treatment plan.
+                During your consultation, we&apos;ll provide a precise quote based on your specific tattoo and treatment plan.
               </p>
             </div>
           </div>
@@ -308,7 +307,7 @@ export default function FAQ() {
                 <li>Some colors may not completely disappear but can be significantly faded</li>
               </ul>
               <p>
-                During your consultation, we'll assess your specific tattoo colors and provide realistic expectations for the removal process.
+                During your consultation, we&apos;ll assess your specific tattoo colors and provide realistic expectations for the removal process.
               </p>
             </div>
           </div>
@@ -337,7 +336,7 @@ export default function FAQ() {
                 <li>People allergic to lidocaine, prilocaine, benzocaine, tetracaine or epinephrine</li>
               </ul>
               <p>
-                During your consultation, we'll discuss your medical history to determine if the procedure is right for you.
+                During your consultation, we&apos;ll discuss your medical history to determine if the procedure is right for you.
               </p>
             </div>
           </div>
@@ -351,7 +350,7 @@ export default function FAQ() {
               <ul>
                 <li>Avoid alcohol, caffeine, and blood thinners like aspirin, vitamin E, and fish oil supplements for 24-48 hours before your appointment (if medically safe for you)</li>
                 <li>Avoid sun exposure or tanning for at least a week before</li>
-                <li>Don't tint, wax, or thread your eyebrows within 3-5 days of your microblading appointment</li>
+                <li>Don&apos;t tint, wax, or thread your eyebrows within 3-5 days of your microblading appointment</li>
                 <li>Avoid chemical peels, Botox, or other facial treatments for 2-3 weeks before</li>
                 <li>Come with clean skin and no makeup on the treatment area</li>
                 <li>If you have a low pain tolerance, you may take Paracetamol one hour before (but avoid aspirin or ibuprofen)</li>

@@ -53,10 +53,8 @@ const ElfsightWidget = ({ widgetId }: ElfsightWidgetProps) => {
       });
 
     return () => {
-      // Cleanup if component unmounts while loading
-      if (isLoading) {
-        setIsLoading(false);
-      }
+      // Cleanup if component unmounts
+      setIsLoading(false);
     };
   }, []);
 
