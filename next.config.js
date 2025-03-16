@@ -16,20 +16,17 @@ const nextConfig = {
   // Image optimization settings
   images: {
     unoptimized: true,
-    minimumCacheTTL: 60,
-    formats: ['image/webp'],
   },
   // Performance optimizations
   compress: true, // Enable GZIP compression
   poweredByHeader: false, // Remove X-Powered-By header
-  reactStrictMode: true,
   swcMinify: true, // Use SWC minifier
   // Cache settings
   onDemandEntries: {
     maxInactiveAge: 60 * 60 * 1000, // 1 hour
     pagesBufferLength: 2,
   },
-  // Static file settings
+  // Static generation settings
   staticPageGenerationTimeout: 120,
   // Asset optimization
   assetPrefix: '',

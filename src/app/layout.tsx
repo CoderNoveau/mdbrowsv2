@@ -18,35 +18,34 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   icons: {
     icon: [
-      { url: '/images/favicon.ico' },
-      { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/images/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      { rel: 'mask-icon', url: '/images/safari-pinned-tab.svg', color: '#b8860b' },
-      { rel: 'shortcut icon', url: '/images/favicon.ico' },
-      { rel: 'android-chrome-192x192', url: '/images/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { rel: 'android-chrome-512x512', url: '/images/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'Melbourne Designer Brows',
-  },
+      { url: '/favicon.ico' }
+    ]
+  }
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
+        <link 
+          rel="preload" 
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+          as="style"
+        />
+        <link 
+          rel="preload" 
+          href="/images/service-microblading.webp"
+          as="image"
+        />
+        <link 
+          rel="preload" 
+          href="/images/logo.webp"
+          as="image"
+        />
         {/* Structured data for business information */}
         <script
           type="application/ld+json"
