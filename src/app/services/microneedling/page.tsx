@@ -38,27 +38,70 @@ export default function Microneedling() {
           in the skin, which triggers the body's natural healing process and stimulates collagen production.
         </p>
         
-        <p className="page-text">
+        <p className="page-text" style={{ marginBottom: '2.5rem' }}>
           This treatment is highly effective for improving skin texture, reducing fine lines, and minimizing the 
           appearance of scars and pores.
         </p>
         
-        <h3 className="page-section-subheading">The Microneedling Process</h3>
-        <p className="page-text">
-          During the treatment, a specialized device with fine needles creates controlled micro-injuries to the skin. 
-          This process stimulates the production of collagen and elastin, leading to rejuvenated, firmer skin.
-        </p>
+        <div className="service-section" style={{ marginBottom: '3rem', padding: '2rem', backgroundColor: '#fff8f5', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+          <h3 className="page-section-subheading" style={{ marginTop: '0' }}>The Microneedling Process</h3>
+          <p className="page-text">
+            During the treatment, a specialized device with fine needles creates controlled micro-injuries to the skin. 
+            This process stimulates the production of collagen and elastin, leading to rejuvenated, firmer skin.
+          </p>
+          
+          <div style={{ margin: '1.5rem 0', padding: '1rem', backgroundColor: 'rgba(255,255,255,0.5)', borderRadius: '6px' }}>
+            <h4 style={{ color: 'var(--accent)', marginBottom: '0.75rem', textAlign: 'center' }}>What to Expect</h4>
+            <ol style={{ paddingLeft: '1.2rem' }}>
+              <li style={{ marginBottom: '0.5rem' }}>A thorough cleansing of your skin</li>
+              <li style={{ marginBottom: '0.5rem' }}>Application of a topical numbing cream for comfort</li>
+              <li style={{ marginBottom: '0.5rem' }}>Controlled application of the microneedling device</li>
+              <li style={{ marginBottom: '0.5rem' }}>Application of soothing serums to maximize benefits</li>
+              <li>Post-treatment care instructions</li>
+            </ol>
+          </div>
+        </div>
         
-        <h3 className="page-section-subheading">Benefits of Microneedling</h3>
-        <ul className="service-benefits">
-          <li>Improves skin texture and tone</li>
-          <li>Reduces appearance of scars and stretch marks</li>
-          <li>Minimizes pore size</li>
-          <li>Enhances product absorption</li>
-          <li>Stimulates natural collagen production</li>
-        </ul>
+        <div className="service-section" style={{ marginBottom: '3rem' }}>
+          <h3 className="page-section-subheading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Benefits of Microneedling</h3>
+          <ul className="service-benefits" style={{ margin: '1.5rem 0' }}>
+            <li><strong>Improves</strong> skin texture and tone</li>
+            <li><strong>Reduces</strong> appearance of scars and stretch marks</li>
+            <li><strong>Minimizes</strong> pore size</li>
+            <li><strong>Enhances</strong> product absorption</li>
+            <li><strong>Stimulates</strong> natural collagen production</li>
+          </ul>
+        </div>
         
-        <h3 className="page-section-subheading">Pricing</h3>
+        <div className="service-section" style={{ marginBottom: '3rem', borderLeft: '4px solid var(--accent)', paddingLeft: '1.5rem' }}>
+          <h3 className="page-section-subheading">Ideal Candidates for Microneedling</h3>
+          <p className="page-text">
+            Microneedling is suitable for most skin types and can address a variety of concerns. You may be an ideal candidate if you have:
+          </p>
+          <ul style={{ paddingLeft: '1.2rem', marginTop: '1rem' }}>
+            <li>Fine lines and early signs of aging</li>
+            <li>Acne scars or surgical scars</li>
+            <li>Uneven skin texture</li>
+            <li>Enlarged pores</li>
+            <li>Sun damage or hyperpigmentation</li>
+          </ul>
+        </div>
+        
+        <div className="service-section" style={{ marginBottom: '3rem', backgroundColor: '#f9f9f9', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
+          <h3 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center' }}>Post-Treatment Care</h3>
+          <p className="page-text" style={{ marginBottom: '1rem' }}>
+            After your microneedling treatment, your skin will need special care to heal properly and maximize results:
+          </p>
+          <ul style={{ paddingLeft: '1.2rem' }}>
+            <li>Avoid sun exposure for at least 48 hours</li>
+            <li>Use gentle, fragrance-free skincare products</li>
+            <li>Stay hydrated and apply recommended serums</li>
+            <li>Avoid makeup for 24 hours post-treatment</li>
+            <li>Follow all specific aftercare instructions provided</li>
+          </ul>
+        </div>
+        
+        <h3 className="page-section-subheading" style={{ marginTop: '3rem', textAlign: 'center' }}>Pricing</h3>
         <div className="price-section">
           <div className="price-table">
             <div className="price-table-header">

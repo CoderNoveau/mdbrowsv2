@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Script from 'next/script';
+import Link from 'next/link';
+import Image from 'next/image';
 import Hero from '@/components/Hero';
 import ElfsightWidget from '@/components/ElfsightWidget';
 import ClientSeo from '@/components/ClientSeo';
@@ -48,8 +50,8 @@ export default function Home() {
                   that enhance your features and create the perfect brow shape for your face.
                   Enjoy waking up with perfect brows every day.
                 </p>
-                <div className="beauty-service-footer">
-                  <a href="/services/microblading" className="service-details-link">View Details</a>
+                <div className="service-actions">
+                  <Link href="/services/microblading" className="service-details-link">View Details</Link>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -67,8 +69,8 @@ export default function Home() {
                   use state-of-the-art equipment and techniques to create subtle, natural-looking
                   results that enhance your natural beauty.
                 </p>
-                <div className="beauty-service-footer">
-                  <a href="/services/cosmetic-tattooing" className="service-details-link">View Details</a>
+                <div className="service-actions">
+                  <Link href="/services/cosmetic-tattooing" className="service-details-link">View Details</Link>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -86,8 +88,8 @@ export default function Home() {
                   fine lines, acne scars, and improve overall skin texture and tone. Experience
                   the benefits of younger, firmer, and more radiant skin.
                 </p>
-                <div className="beauty-service-footer">
-                  <a href="/services/microneedling" className="service-details-link">View Details</a>
+                <div className="service-actions">
+                  <Link href="/services/microneedling" className="service-details-link">View Details</Link>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -105,8 +107,8 @@ export default function Home() {
                   the beautiful eyebrows you deserve. Our specialists are trained in the latest
                   correction techniques to achieve optimal results.
                 </p>
-                <div className="beauty-service-footer">
-                  <a href="/services/brow-corrections" className="service-details-link">View Details</a>
+                <div className="service-actions">
+                  <Link href="/services/brow-corrections" className="service-details-link">View Details</Link>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -124,8 +126,8 @@ export default function Home() {
                   Our gentle approach minimizes discomfort while achieving the best possible
                   results for your skin.
                 </p>
-                <div className="beauty-service-footer">
-                  <a href="/services/tattoo-removal" className="service-details-link">View Details</a>
+                <div className="service-actions">
+                  <Link href="/services/tattoo-removal" className="service-details-link">View Details</Link>
                   <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
                 </div>
               </div>
@@ -133,7 +135,7 @@ export default function Home() {
           </div>
           
           <div className="view-all-services">
-            <a href="/services" className="btn btn-outline" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>VIEW ALL SERVICES</a>
+            <Link href="/services" className="btn btn-outline" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>VIEW ALL SERVICES</Link>
           </div>
         </div>
       </section>

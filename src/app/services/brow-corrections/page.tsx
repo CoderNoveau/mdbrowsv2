@@ -220,6 +220,19 @@ export default function BrowCorrections() {
           </a>
         </div>
       </div>
+
+      <div className="service-hero">
+        <div className="service-hero-content">
+          <h3>Expert Brow Correction Services</h3>
+          <p>
+            Trust our experienced technicians to correct and enhance your brows. We specialize in fixing uneven, asymmetrical, or poorly done eyebrow procedures.
+          </p>
+          <div className="service-hero-buttons">
+            <Link href="/gallery" className="btn btn-outline">View Gallery</Link>
+            <Link href={freshaLink} className="btn" target="_blank">Book Now</Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 } 

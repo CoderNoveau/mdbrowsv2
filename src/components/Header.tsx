@@ -37,15 +37,6 @@ const NavigationLinks = memo(({
     >
       FAQ
     </Link>
-    <a 
-      href={freshaLink}
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="mobile-nav-book"
-      onClick={handleLinkClick}
-    >
-      Book Now
-    </a>
   </>
 ));
 
@@ -169,7 +160,7 @@ const Header = () => {
           </Link>
         </div>
         
-        <nav className={`nav-links ${menuOpen ? 'show' : ''}`} style={{ display: 'flex', flexDirection: 'column' }}>
+        <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
           {/* Services dropdown */}
           <div className="nav-item-with-dropdown">
             <button 
@@ -187,28 +178,11 @@ const Header = () => {
             />
           </div>
 
-          {/* Regular navigation links without Book Now */}
-          <Link 
-            href="/pricing" 
-            className={pathname === '/pricing' ? 'active' : ''}
-            onClick={handleLinkClick}
-          >
-            Pricing
-          </Link>
-          <Link 
-            href="/gallery" 
-            className={pathname === '/gallery' ? 'active' : ''}
-            onClick={handleLinkClick}
-          >
-            Gallery
-          </Link>
-          <Link 
-            href="/faq" 
-            className={pathname === '/faq' ? 'active' : ''}
-            onClick={handleLinkClick}
-          >
-            FAQ
-          </Link>
+          <NavigationLinks 
+            handleLinkClick={handleLinkClick}
+            pathname={pathname}
+            freshaLink={freshaLink}
+          />
 
           {/* About dropdown */}
           <div className="nav-item-with-dropdown">
@@ -227,7 +201,7 @@ const Header = () => {
             />
           </div>
           
-          {/* Book Now button at the bottom */}
+          {/* Book Now button at the bottom for mobile */}
           <a 
             href={freshaLink}
             target="_blank" 
