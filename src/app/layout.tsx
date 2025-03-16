@@ -50,6 +50,7 @@ export default function RootLayout({
         <link 
           rel="preconnect" 
           href="https://fonts.googleapis.com"
+          crossOrigin=""
         />
         <link 
           rel="preconnect" 
@@ -59,18 +60,27 @@ export default function RootLayout({
         <link 
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
           rel="stylesheet"
+          media="print"
+          onLoad={(e) => {
+            const target = e.target as HTMLLinkElement;
+            target.media = 'all';
+          }}
         />
         <link 
           rel="preload" 
           href="/images/service-microblading.webp"
           as="image"
           fetchPriority="high"
+          imageSrcSet="/images/service-microblading.webp 1x, /images/service-microblading@2x.webp 2x"
+          imageSizes="100vw"
         />
         <link 
           rel="preload" 
           href="/images/logo.webp"
           as="image"
           fetchPriority="high"
+          imageSrcSet="/images/logo.webp 1x, /images/logo@2x.webp 2x"
+          imageSizes="(max-width: 768px) 150px, 200px"
         />
         {/* Structured data for business information */}
         <script
@@ -118,10 +128,12 @@ export default function RootLayout({
           }}
         />
       </head>
+      {/* Temporarily commented out for performance testing
       <Script
         src="https://static.elfsight.com/platform/platform.js"
         strategy="afterInteractive"
       />
+      */}
       <body>
         <Header />
         <main>{children}</main>
