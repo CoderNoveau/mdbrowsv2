@@ -202,72 +202,50 @@ export default function Pricing() {
         <p className="price-note" style={{ marginBottom: '1.5rem' }}>
           Our tattoo removal pricing is based on the size of the tattoo. Package deals offer significant savings for multiple sessions.
         </p>
-        <div className="responsive-table-container" style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
-          <table className="tattoo-price-table" style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
-            <thead>
-              <tr>
-                <th style={{ padding: '12px 15px', textAlign: 'left', backgroundColor: '#f8f8f8', borderBottom: '2px solid #ddd' }}>Tattoo Size (cm)</th>
-                <th style={{ padding: '12px 15px', textAlign: 'center', backgroundColor: '#f8f8f8', borderBottom: '2px solid #ddd' }}>Area (cm²)</th>
-                <th style={{ padding: '12px 15px', textAlign: 'center', backgroundColor: '#f8f8f8', borderBottom: '2px solid #ddd' }}>Single Session</th>
-                <th style={{ padding: '12px 15px', textAlign: 'center', backgroundColor: '#f8f8f8', borderBottom: '2px solid #ddd' }}>Three Sessions (20% off)</th>
-                <th style={{ padding: '12px 15px', textAlign: 'center', backgroundColor: '#f8f8f8', borderBottom: '2px solid #ddd' }}>Six Sessions (25% off)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>8cm x 4cm</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>32</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$100</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$240</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$450</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>10cm x 6cm</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>60</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$150</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$360</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$675</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>12cm x 8cm</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>96</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$210</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$504</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$945</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>15cm x 12cm</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>180</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$250</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$600</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$1,125</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>21cm x 15cm</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>315</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$350</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$840</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$1,575</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>21cm x 20cm</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>420</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$400</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$960</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$1,800</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>21cm x 30cm</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>630</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$450</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$1,080</td>
-                <td style={{ padding: '12px 15px', textAlign: 'center', borderBottom: '1px solid #ddd' }}>$2,025</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="price-table">
+          <div className="price-table-header">
+            <div>Tattoo Size</div>
+            <div>Single Session</div>
+            <div>Package Deals</div>
+          </div>
+          <div className="price-row">
+            <div className="price-service">8cm x 4cm (32cm²)</div>
+            <div className="price-amount">$100</div>
+            <div className="price-special">3 sessions: $240<br />6 sessions: $450</div>
+          </div>
+          <div className="price-row">
+            <div className="price-service">10cm x 6cm (60cm²)</div>
+            <div className="price-amount">$150</div>
+            <div className="price-special">3 sessions: $360<br />6 sessions: $675</div>
+          </div>
+          <div className="price-row">
+            <div className="price-service">12cm x 8cm (96cm²)</div>
+            <div className="price-amount">$210</div>
+            <div className="price-special">3 sessions: $504<br />6 sessions: $945</div>
+          </div>
+          <div className="price-row">
+            <div className="price-service">15cm x 12cm (180cm²)</div>
+            <div className="price-amount">$250</div>
+            <div className="price-special">3 sessions: $600<br />6 sessions: $1,125</div>
+          </div>
+          <div className="price-row">
+            <div className="price-service">21cm x 15cm (315cm²)</div>
+            <div className="price-amount">$350</div>
+            <div className="price-special">3 sessions: $840<br />6 sessions: $1,575</div>
+          </div>
+          <div className="price-row">
+            <div className="price-service">21cm x 20cm (420cm²)</div>
+            <div className="price-amount">$400</div>
+            <div className="price-special">3 sessions: $960<br />6 sessions: $1,800</div>
+          </div>
+          <div className="price-row">
+            <div className="price-service">21cm x 30cm (630cm²)</div>
+            <div className="price-amount">$450</div>
+            <div className="price-special">3 sessions: $1,080<br />6 sessions: $2,025</div>
+          </div>
         </div>
         <p className="price-note">
-          We offer free consultations including test patches and personalized quotes. Multiple sessions are often required for complete removal, making our package deals a cost-effective option.
+          Package deals: 20% discount for three sessions, 25% discount for six sessions. We offer free consultations including test patches and personalized quotes.
         </p>
       </div>
       
