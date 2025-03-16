@@ -8,10 +8,14 @@ const nextConfig = {
     // Disable TypeScript checking during production builds
     ignoreBuildErrors: true,
   },
-  experimental: {
-    // Allow errors in static generation
-    skipTrailingSlashRedirect: true,
-    skipMiddlewareUrlNormalize: true,
+  // These were moved from experimental to root level
+  skipTrailingSlashRedirect: true,
+  skipMiddlewareUrlNormalize: true,
+  // Force static export
+  output: 'export',
+  // Disable image optimization for static export
+  images: {
+    unoptimized: true,
   },
   async redirects() {
     return [
