@@ -13,9 +13,21 @@ const nextConfig = {
   skipMiddlewareUrlNormalize: true,
   // Force static export
   output: 'export',
-  // Disable image optimization for static export
+  // Image optimization settings
   images: {
     unoptimized: true,
+    minimumCacheTTL: 60,
+    formats: ['image/webp'],
+  },
+  // Performance optimizations
+  compress: true, // Enable GZIP compression
+  poweredByHeader: false, // Remove X-Powered-By header
+  reactStrictMode: true,
+  swcMinify: true, // Use SWC minifier
+  // Cache settings
+  onDemandEntries: {
+    maxInactiveAge: 60 * 60 * 1000, // 1 hour
+    pagesBufferLength: 2,
   },
   async redirects() {
     return [
