@@ -5,7 +5,11 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=2592000, immutable"
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
         }
       ]
     },
@@ -14,7 +18,11 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=2592000, immutable"
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
         }
       ]
     },
@@ -23,7 +31,11 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=2592000, immutable"
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
         }
       ]
     },
@@ -41,10 +53,15 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
         }
       ]
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "compress": true
 } 

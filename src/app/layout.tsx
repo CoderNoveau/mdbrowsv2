@@ -32,19 +32,34 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link 
-          rel="preload" 
+          rel="preconnect" 
+          href="https://fonts.googleapis.com"
+        />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.gstatic.com" 
+          crossOrigin="anonymous"
+        />
+        <link 
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-          as="style"
+          rel="stylesheet"
+          media="print"
+          onLoad={(e) => {
+            const target = e.target as HTMLLinkElement;
+            target.media = 'all';
+          }}
         />
         <link 
           rel="preload" 
           href="/images/service-microblading.webp"
           as="image"
+          fetchPriority="high"
         />
         <link 
           rel="preload" 
           href="/images/logo.webp"
           as="image"
+          fetchPriority="high"
         />
         {/* Structured data for business information */}
         <script
