@@ -15,7 +15,7 @@ export default function ReviewsPage() {
       />
       
       <div className="reviews-page">
-        <h1 className="page-heading">Reviews</h1>
+        <h1 className="page-heading hide-mobile">Reviews</h1>
         <div className="reviews-page-header">
           <h2 className="section-heading">Client Reviews</h2>
           <p className="reviews-subtitle">See what our clients say about their experience with us</p>
@@ -53,7 +53,13 @@ export default function ReviewsPage() {
         }
         @media (max-width: 768px) {
           .reviews-page {
-            padding: 3rem 1rem;
+            padding: 6rem 1rem 3rem;
+          }
+          .hide-mobile {
+            display: none;
+          }
+          .reviews-page-header {
+            margin-bottom: 2rem;
           }
         }
       `}</style>

@@ -168,6 +168,11 @@ const Reviews = () => {
           height: auto;
           object-fit: contain;
         }
+        @media (max-width: 767px) {
+          .reviews-header :global(.google-reviews-logo) {
+            display: none;
+          }
+        }
         .reviews-slider {
           margin-bottom: 2rem;
           padding: 0 1rem;
