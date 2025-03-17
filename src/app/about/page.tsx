@@ -3,6 +3,7 @@
 import Script from 'next/script';
 import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
+import TrackingAnchor from '@/components/TrackingAnchor';
 import styles from './about.module.css';
 
 export default function About() {
@@ -66,14 +67,14 @@ export default function About() {
       
       <div className="booking-section">
         <h2 className="section-heading">Ready To Transform Your Brows?</h2>
-        <a 
+        <TrackingAnchor 
           href={freshaLink} 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn btn-primary center-btn"
         >
           BOOK APPOINTMENT
-        </a>
+        </TrackingAnchor>
       </div>
     </div>
   );

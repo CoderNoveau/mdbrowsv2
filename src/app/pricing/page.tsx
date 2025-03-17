@@ -1,4 +1,5 @@
 import ClientSeo from '@/components/ClientSeo';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
   title: 'Pricing | Melbourne Designer Brows',
@@ -283,19 +284,16 @@ export default function Pricing() {
         </div>
       </div>
       
-      <div className="pricing-cta" style={{ marginTop: '4rem', textAlign: 'center' }}>
+      <div className="booking-section" style={{ textAlign: 'center', marginTop: '4rem' }}>
         <h2 className="section-heading">Ready to Book Your Treatment?</h2>
-        <p style={{ maxWidth: '600px', margin: '0 auto 1.5rem' }}>
-          For more information about any of our services or to discuss your specific requirements, please contact us.
-        </p>
-        <a 
+        <TrackingAnchor 
           href={freshaLink} 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn btn-primary center-btn"
         >
           BOOK APPOINTMENT
-        </a>
+        </TrackingAnchor>
       </div>
     </div>
   );

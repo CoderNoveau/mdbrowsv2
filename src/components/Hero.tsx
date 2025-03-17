@@ -3,6 +3,7 @@
 import React, { useEffect, useState, memo, useCallback } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 const slides = [
   {
@@ -77,14 +78,14 @@ const SlideContent = memo(({ slide, isVisible, getAnimationClass }: {
       )}
     </div>
     <div className={getAnimationClass('slide-buttons')}>
-      <a 
+      <TrackingAnchor 
         href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429" 
         target="_blank"
         rel="noopener noreferrer"
         className="btn btn-primary"
       >
         BOOK APPOINTMENT
-      </a>
+      </TrackingAnchor>
     </div>
     <div className={getAnimationClass('slide-phone')}>
       <a href="tel:+61418188277" className="hero-phone-link">

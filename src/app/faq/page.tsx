@@ -1,4 +1,5 @@
 import ClientSeo from '@/components/ClientSeo';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
   title: 'Frequently Asked Questions | Microblading, Cosmetic Tattooing & Tattoo Removal | MDB',
@@ -484,20 +485,16 @@ export default function FAQ() {
       </div>
       
       <div className="booking-cta" style={{ marginTop: '4rem', textAlign: 'center' }}>
-        <h2 className="section-heading">Still Have Questions?</h2>
-        <p style={{ maxWidth: '600px', margin: '0 auto 1.5rem' }}>
-          If you have any other questions that weren't answered here, please feel free to contact us directly.
-          We're happy to address any concerns you might have about our services.
-        </p>
-        <a
-          href={freshaLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary center-btn"
-          style={{ display: 'inline-block', padding: '12px 30px' }}
+        <h3 style={{ marginBottom: '1rem' }}>Have More Questions?</h3>
+        <p style={{ marginBottom: '1.5rem' }}>Book a consultation to discuss your specific needs and concerns.</p>
+        <TrackingAnchor 
+          href={freshaLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn btn-primary"
         >
           BOOK A CONSULTATION
-        </a>
+        </TrackingAnchor>
       </div>
     </div>
   );
