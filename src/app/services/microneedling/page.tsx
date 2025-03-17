@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
   title: 'Microneedling | Melbourne Designer Brows',
@@ -128,14 +129,16 @@ export default function Microneedling() {
         </div>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
-          <a 
-            href={freshaLink}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn btn-primary" 
-          >
-            BOOK APPOINTMENT
-          </a>
+          <div className="service-hero-buttons">
+            <TrackingAnchor 
+              href={freshaLink} 
+              className="btn" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Now
+            </TrackingAnchor>
+          </div>
         </div>
       </div>
     </div>

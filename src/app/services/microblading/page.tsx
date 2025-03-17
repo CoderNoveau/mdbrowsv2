@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
   title: 'Microblading & Eyebrow Feathering in Melbourne | Natural-Looking Brows | MDB',
@@ -553,7 +554,14 @@ export default function Microblading() {
           </p>
           <div className="service-hero-buttons">
             <Link href="/gallery" className="btn btn-outline">View Gallery</Link>
-            <Link href={freshaLink} className="btn" target="_blank">Book Now</Link>
+            <TrackingAnchor 
+              href={freshaLink} 
+              className="btn" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Now
+            </TrackingAnchor>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
   title: 'Professional Tattoo Removal in Melbourne | Laser & Saline Removal | MDB',
@@ -343,14 +344,14 @@ export default function TattooRemoval() {
         </p>
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
-          <a 
-            href={freshaLink}
-            target="_blank" 
-            rel="noopener noreferrer"
+          <TrackingAnchor 
+            href={freshaLink} 
             className="btn btn-primary" 
+            target="_blank"
+            rel="noopener noreferrer"
           >
             BOOK APPOINTMENT
-          </a>
+          </TrackingAnchor>
         </div>
       </div>
     </div>

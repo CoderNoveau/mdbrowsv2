@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import GalleryPreview from '@/components/GalleryPreview';
 import ClientSeo from '@/components/ClientSeo';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 export default function Home() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
@@ -43,7 +44,14 @@ export default function Home() {
                 </p>
                 <div className="service-actions">
                   <Link href="/services/microblading" className="service-details-link">View Details</Link>
-                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                  <TrackingAnchor 
+                    href={freshaLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-book-now"
+                  >
+                    Book Now
+                  </TrackingAnchor>
                 </div>
               </div>
             </div>
@@ -62,7 +70,14 @@ export default function Home() {
                 </p>
                 <div className="service-actions">
                   <Link href="/services/cosmetic-tattooing" className="service-details-link">View Details</Link>
-                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                  <TrackingAnchor 
+                    href={freshaLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-book-now"
+                  >
+                    Book Now
+                  </TrackingAnchor>
                 </div>
               </div>
             </div>
@@ -81,7 +96,14 @@ export default function Home() {
                 </p>
                 <div className="service-actions">
                   <Link href="/services/microneedling" className="service-details-link">View Details</Link>
-                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                  <TrackingAnchor 
+                    href={freshaLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-book-now"
+                  >
+                    Book Now
+                  </TrackingAnchor>
                 </div>
               </div>
             </div>
@@ -100,7 +122,14 @@ export default function Home() {
                 </p>
                 <div className="service-actions">
                   <Link href="/services/brow-corrections" className="service-details-link">View Details</Link>
-                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                  <TrackingAnchor 
+                    href={freshaLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-book-now"
+                  >
+                    Book Now
+                  </TrackingAnchor>
                 </div>
               </div>
             </div>
@@ -119,7 +148,14 @@ export default function Home() {
                 </p>
                 <div className="service-actions">
                   <Link href="/services/tattoo-removal" className="service-details-link">View Details</Link>
-                  <a href={freshaLink} target="_blank" rel="noopener noreferrer" className="btn-book-now">Book Now</a>
+                  <TrackingAnchor 
+                    href={freshaLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-book-now"
+                  >
+                    Book Now
+                  </TrackingAnchor>
                 </div>
               </div>
             </div>
