@@ -32,15 +32,20 @@ const TrackingAnchor = ({ href, className, target, rel, children }: TrackingAnch
           return;
         }
 
-        // Send the event
+        // Send the event using GA4's recommended format
         console.log('Attempting to send GA event...');
-        (window as any).gtag('event', 'book_appointment', {
-          event_name: 'book_appointment',
-          category: 'engagement',
-          action: 'click',
-          label: href,
-          value: 1,
-          debug_mode: isDev,
+        (window as any).gtag('event', 'begin_checkout', {
+          currency: 'AUD',
+          items: [{
+            item_name: 'Booking Appointment',
+            item_category: 'Services',
+            item_category2: href.includes('microblading') ? 'Microblading' : 
+                          href.includes('cosmetic-tattooing') ? 'Cosmetic Tattooing' :
+                          href.includes('microneedling') ? 'Microneedling' :
+                          href.includes('brow-corrections') ? 'Brow Corrections' :
+                          href.includes('tattoo-removal') ? 'Tattoo Removal' : 'General Service'
+          }],
+          // Send to your specific GA4 property
           send_to: 'G-Y2NNP8B3YY'
         });
         console.log('GA event sent successfully');
@@ -48,9 +53,17 @@ const TrackingAnchor = ({ href, className, target, rel, children }: TrackingAnch
         // Log in development
         if (isDev) {
           console.log('GA Event details:', {
-            event: 'book_appointment',
-            category: 'engagement',
-            label: href
+            event: 'begin_checkout',
+            currency: 'AUD',
+            items: [{
+              item_name: 'Booking Appointment',
+              item_category: 'Services',
+              item_category2: href.includes('microblading') ? 'Microblading' : 
+                            href.includes('cosmetic-tattooing') ? 'Cosmetic Tattooing' :
+                            href.includes('microneedling') ? 'Microneedling' :
+                            href.includes('brow-corrections') ? 'Brow Corrections' :
+                            href.includes('tattoo-removal') ? 'Tattoo Removal' : 'General Service'
+            }]
           });
         }
       } else {
