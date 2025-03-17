@@ -35,9 +35,13 @@ const TrackingAnchor = ({ href, className, target, rel, children }: TrackingAnch
         // Send the event
         console.log('Attempting to send GA event...');
         (window as any).gtag('event', 'book_appointment', {
-          event_category: 'engagement',
-          event_label: href,
-          debug_mode: isDev
+          event_name: 'book_appointment',
+          category: 'engagement',
+          action: 'click',
+          label: href,
+          value: 1,
+          debug_mode: isDev,
+          send_to: 'G-Y2NNP8B3YY'
         });
         console.log('GA event sent successfully');
 
