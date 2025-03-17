@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
@@ -58,6 +58,29 @@ const reviews = [
   }
 ];
 
+const ReviewText = ({ text }: { text: string }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const maxLength = 250;
+  const needsReadMore = text.length > maxLength;
+  
+  const displayText = isExpanded ? text : text.slice(0, maxLength);
+  
+  return (
+    <p className="review-text">
+      {displayText}
+      {!isExpanded && needsReadMore && '...'}
+      {needsReadMore && (
+        <button 
+          onClick={() => setIsExpanded(!isExpanded)} 
+          className="read-more-btn"
+        >
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </button>
+      )}
+    </p>
+  );
+};
+
 const Reviews = () => {
   const settings = {
     dots: true,
@@ -110,7 +133,7 @@ const Reviews = () => {
                   <div className="review-stars">
                     {"★".repeat(review.rating)}
                   </div>
-                  <p className="review-text">{review.text}</p>
+                  <ReviewText text={review.text} />
                   <p className="review-name">{review.name}</p>
                 </div>
               </div>
@@ -159,6 +182,8 @@ const Reviews = () => {
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
           height: 100%;
           min-height: 200px;
+          display: flex;
+          flex-direction: column;
         }
         .review-stars {
           color: #ffd700;
@@ -170,14 +195,31 @@ const Reviews = () => {
           line-height: 1.5;
           margin-bottom: 1rem;
           color: #333;
+          flex-grow: 1;
+          position: relative;
         }
         .review-name {
           font-weight: 600;
           color: #666;
+          margin-top: auto;
         }
         .reviews-action {
           text-align: center;
           margin-top: 2rem;
+        }
+        :global(.read-more-btn) {
+          background: none;
+          border: none;
+          color: var(--accent);
+          padding: 0;
+          margin-left: 0.5rem;
+          cursor: pointer;
+          font-size: 0.9rem;
+          font-weight: 500;
+          text-decoration: underline;
+        }
+        :global(.read-more-btn:hover) {
+          color: var(--accent-hover);
         }
       `}</style>
       <style jsx global>{`
