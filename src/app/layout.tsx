@@ -67,11 +67,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
         <PreloadHero />
-        <GoogleAnalytics />
         <link
           rel="preload"
           href="/images/hero1.webp"
@@ -107,11 +106,12 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Suspense fallback={null}>
-          <Header />
-        </Suspense>
+        <Header />
         <main>{children}</main>
         <Footer />
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         <script 
           dangerouslySetInnerHTML={{ 
             __html: `
