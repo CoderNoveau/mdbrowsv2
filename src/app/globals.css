@@ -195,6 +195,14 @@ ul {
   color: var(--accent);
 }
 
+/* Desktop styles */
+@media (min-width: 768px) {
+  .nav-links a,
+  .dropdown-toggle {
+    font-family: var(--font-primary);
+  }
+}
+
 /* Mobile styles */
 @media (max-width: 767px) {
   .nav-links a,
@@ -397,10 +405,10 @@ ul {
   padding: 0.5rem 0.9rem;
   margin: 0 0.25rem;
   position: relative;
-  font-weight: 400;
-  letter-spacing: 0.7px;
-  font-family: var(--serif);
-  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: var(--sans);
+  font-size: 1rem;
   text-transform: uppercase;
   background: none;
   border: none;
