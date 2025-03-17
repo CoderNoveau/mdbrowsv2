@@ -80,7 +80,7 @@ export default function BrowCorrections() {
         
         <div className="service-section" style={{ marginBottom: '3rem' }}>
           <h3 className="page-section-subheading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Our Correction Process</h3>
-          <p className="page-text">
+        <p className="page-text">
             Our approach to eyebrow corrections is methodical and personalized:
           </p>
           
@@ -131,7 +131,7 @@ export default function BrowCorrections() {
             <li>Bring photos of your brows before any previous work if possible</li>
             <li>Be prepared to discuss your eyebrow history, including all previous procedures</li>
             <li>Understand that correction is often a journey requiring patience for optimal results</li>
-          </ul>
+        </ul>
           
           <p className="page-text" style={{ fontWeight: '500', fontSize: '1.05rem', textAlign: 'center', margin: '1.5rem 0 0', padding: '0 1rem' }}>
             Don't continue hiding behind makeup, hats, or bangs. Whether your eyebrows need subtle refinement or 
