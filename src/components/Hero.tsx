@@ -90,11 +90,13 @@ const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
           media="(min-width: 1024px)"
           srcSet={slide.image.desktop}
           type="image/webp"
+          sizes="100vw"
         />
         <source
           media="(min-width: 640px)"
           srcSet={slide.image.tablet}
           type="image/webp"
+          sizes="100vw"
         />
         <Image
           src={slide.image.mobile}
@@ -102,14 +104,16 @@ const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
           fill
           priority={true}
           fetchPriority="high"
+          loading="eager"
           className="slide-image"
-          quality={90}
-          sizes="(min-width: 1024px) 100vw, (min-width: 640px) 100vw, 100vw"
+          quality={85}
+          sizes="(min-width: 1024px) 1920px, (min-width: 640px) 1024px, 640px"
           style={{
             objectFit: 'cover',
             objectPosition: 'center',
             transform: 'translateZ(0)',
-            willChange: 'transform'
+            willChange: 'transform',
+            backfaceVisibility: 'hidden'
           }}
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qQEBALkE6Oz5DRVlLT0xXY1xbZF9kZ2R5Z1xkY1//2wBDARUXFyAeIBohHh4hRSgkKEVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
