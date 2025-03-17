@@ -7,54 +7,54 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const reviews = [
   {
-    name: "Sarah M.",
+    name: "Clodagh Lynch",
     rating: 5,
-    text: "Absolutely amazing experience! The microblading results exceeded my expectations. Very professional and attentive to detail.",
+    text: "Just got my brows done and I absolutely love them. Anne is a genius. I'll be back 100%",
   },
   {
-    name: "Emma L.",
+    name: "Andrea Waters",
     rating: 5,
-    text: "Best brow service in Melbourne! The staff is incredibly skilled and made me feel comfortable throughout the whole process.",
+    text: "Absolutely love Anne! She is so kind, patient and considerate. Went in with faded brows and came out looking like a new woman. Thanks Anne! You are a blessing",
   },
   {
-    name: "Jessica W.",
+    name: "M N",
     rating: 5,
-    text: "Fantastic results! My brows look so natural, and the service was impeccable. Highly recommend to anyone looking for perfect brows.",
+    text: "I recently had my eyebrows done by Anne. She has done an absolutely amazing job, and I feel like she has taken at least 10 years off my 'look'. She has given my eyebrows a wonderful shape and I feel so much more confident in my appearance. In addition to being a skilled artist, Anne is warm and engaging, and I have no hesitation in recommending her. Given what she had to work with, she is absolutely brilliant, and I am so grateful to her.",
   },
   {
-    name: "Michelle K.",
+    name: "Kate Piperoglou",
     rating: 5,
-    text: "Outstanding service and results! The attention to detail and professionalism is unmatched. My brows have never looked better.",
+    text: "Anne is wonderful. So talented and takes such care in her work. Very happy with my results over the last 2 years.",
   },
   {
-    name: "Rachel T.",
+    name: "Christiana Lattouf",
     rating: 5,
-    text: "Incredible transformation! The team is highly skilled and professional. So happy with my new brows!",
+    text: "Always leave the salon satisfied with the amazing experience and service provided by beautiful Anne! She pays so much attention to detail and I love her work & her. Thanx beautiful lady love my eyebrows. Xxx",
   },
   {
-    name: "Lauren B.",
+    name: "Leah Cole",
     rating: 5,
-    text: "Amazing attention to detail and such a warm, welcoming environment. The results are exactly what I wanted!",
+    text: "Anne is gorgeous, she has been so patient with me throughout my eyebrow microblading journey. I have not been one to invest in my appearance from a cosmetic perspective and had expected something as drastic as a face tattoo would be quite daunting but Anne ensured it was quite the opposite. She stepped me through each stage at a pace and style I was comfortable with. I have just been for a 12 month touch up and its like catching up with an old friend with a side of eyebrow perfection. Cannot recommend highly enough.",
   },
   {
-    name: "Amy H.",
+    name: "Clare",
     rating: 5,
-    text: "Exceptional service from start to finish. My brows look perfect and so natural. Couldn't be happier!",
+    text: "It takes trust and courage to let someone make changes to your face, but I'm so glad I put my trust in Anne! I've had my brows micro-bladed, they were pretty unsymmetrical to begin with so I'm amazed at how even she's managed to get them, and the colour match is perfect. I never have to do my brows in the morning anymore, and they look more natural!",
   },
   {
-    name: "Sophie R.",
+    name: "Eryn de la Porte",
     rating: 5,
-    text: "The best in the business! Professional, skilled, and amazing results. Worth every penny!",
+    text: "Could not recommend highly enough. You can tell that Anne genuinely cares about her clients getting the best results. She takes the time to get to know you and it feels like you are hanging with a friend. For the first time in years, I feel confident with my eyebrows.",
   },
   {
-    name: "Victoria P.",
+    name: "Racquel MacSweeney",
     rating: 5,
-    text: "Transformed my brows completely! The team is so professional and talented. Highly recommend!",
+    text: "Absolutely amazing experience! Anne is fabulous. I have been very insecure about my eyebrows for years and finally decided to get microblading done. Anne talked me through everything and told me what she would recommend. She made my brows even, a lovely arch, full and designed everything to match my face shape and enhance it. This is hands done the best thing I have decided to do. Anne has boosted my confidence. I honestly can't wait to see her again. Highly recommended!!",
   },
   {
-    name: "Kate M.",
+    name: "Amber Weston",
     rating: 5,
-    text: "Outstanding experience! The results are amazing and the service is top-notch. Will definitely be returning!",
+    text: "Anne is incredible both personably and professionally. She is so talented and knows brows better than anyone! She made my first microblading experience so positive and well worth the long trip from Albury. I couldn't be happier with my brows and I'll definitely be a returning client.",
   }
 ];
 
