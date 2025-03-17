@@ -69,6 +69,24 @@ export default function RootLayout({
       <head>
         <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
         <PreloadHero />
+        <link
+          rel="preload"
+          href="/images/hero1.webp"
+          as="image"
+          media="(min-width: 1024px)"
+        />
+        <link
+          rel="preload"
+          href="/images/hero1-tablet.webp"
+          as="image"
+          media="(min-width: 640px) and (max-width: 1023px)"
+        />
+        <link
+          rel="preload"
+          href="/images/hero1-mobile.webp"
+          as="image"
+          media="(max-width: 639px)"
+        />
       </head>
       <body>
         <Header />
