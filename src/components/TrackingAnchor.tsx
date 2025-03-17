@@ -14,10 +14,6 @@ const TrackingAnchor = ({ href, className, target, rel, children }: TrackingAnch
     e.preventDefault();
     console.log('Click intercepted on TrackingAnchor');
     
-    // Check if we're in development mode
-    const isDev = process.env.NODE_ENV === 'development';
-    console.log('Environment:', isDev ? 'development' : 'production');
-    
     try {
       if (typeof window !== 'undefined') {
         console.log('Window object available');
@@ -25,72 +21,51 @@ const TrackingAnchor = ({ href, className, target, rel, children }: TrackingAnch
         
         if (!(window as any).gtag) {
           console.error('Google Analytics gtag not found. Make sure GA is properly initialized.');
-          console.log('Available window properties:', Object.keys(window));
-          // Continue with navigation even if GA fails
-          console.log('Navigating to:', href);
           window.open(href, target || '_self');
           return;
         }
 
-        // Send the event using GA4's recommended format
-        console.log('Attempting to send GA event...');
-        (window as any).gtag('event', 'begin_checkout', {
-          currency: 'AUD',
-          items: [{
-            item_name: 'Booking Appointment',
-            item_category: 'Services',
-            item_category2: href.includes('microblading') ? 'Microblading' : 
-                          href.includes('cosmetic-tattooing') ? 'Cosmetic Tattooing' :
-                          href.includes('microneedling') ? 'Microneedling' :
-                          href.includes('brow-corrections') ? 'Brow Corrections' :
-                          href.includes('tattoo-removal') ? 'Tattoo Removal' : 'General Service'
-          }],
-          // Send to your specific GA4 property
-          send_to: 'G-Y2NNP8B3YY'
+        // First, ensure measurement ID is configured
+        (window as any).gtag('config', 'G-Y2NNP8B3YY', {
+          debug_mode: true
         });
-        console.log('GA event sent successfully');
 
-        // Log in development
-        if (isDev) {
-          console.log('GA Event details:', {
-            event: 'begin_checkout',
-            currency: 'AUD',
-            items: [{
-              item_name: 'Booking Appointment',
-              item_category: 'Services',
-              item_category2: href.includes('microblading') ? 'Microblading' : 
-                            href.includes('cosmetic-tattooing') ? 'Cosmetic Tattooing' :
-                            href.includes('microneedling') ? 'Microneedling' :
-                            href.includes('brow-corrections') ? 'Brow Corrections' :
-                            href.includes('tattoo-removal') ? 'Tattoo Removal' : 'General Service'
-            }]
-          });
-        }
-      } else {
-        console.log('Window object not available');
+        // Then send a simple conversion event
+        console.log('Attempting to send GA event...');
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'G-Y2NNP8B3YY',
+          event_category: 'booking',
+          event_label: href,
+          value: 1
+        });
+
+        // Also send a standard GA4 event
+        (window as any).gtag('event', 'generate_lead', {
+          send_to: 'G-Y2NNP8B3YY',
+          currency: 'AUD',
+          value: 1,
+          source: 'website',
+          medium: 'booking_button'
+        });
+
+        console.log('GA events sent successfully');
+
+        // Small delay to ensure tracking completes before navigation
+        console.log('Setting navigation timeout...');
+        setTimeout(() => {
+          console.log('Navigating to:', href);
+          window.open(href, target || '_self');
+        }, 200); // Increased timeout slightly
       }
-
-      // Small delay to ensure tracking completes before navigation
-      console.log('Setting navigation timeout...');
-      setTimeout(() => {
-        console.log('Navigating to:', href);
-        window.open(href, target || '_self');
-      }, 100);
-      
     } catch (error) {
       console.error('Error in TrackingAnchor:', error);
-      // Log the full error details
       if (error instanceof Error) {
         console.log('Error details:', {
           message: error.message,
           stack: error.stack,
-          href: href,
-          target: target
+          href: href
         });
-      } else {
-        console.log('Unknown error:', error);
       }
-      // Continue with navigation even if tracking fails
       window.open(href, target || '_self');
     }
   };
