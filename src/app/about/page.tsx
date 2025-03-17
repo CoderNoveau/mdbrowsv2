@@ -1,10 +1,9 @@
-import Script from 'next/script';
-import ClientSeo from '@/components/ClientSeo';
+'use client';
 
-export const metadata = {
-  title: 'About Us | Melbourne Designer Brows',
-  description: 'Learn about Melbourne Designer Brows, your premier brow studio with locations in Richmond and Springvale. Led by expert technicians with years of experience.',
-};
+import Script from 'next/script';
+import Image from 'next/image';
+import ClientSeo from '@/components/ClientSeo';
+import styles from './about.module.css';
 
 export default function About() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
@@ -20,12 +19,19 @@ export default function About() {
       
       <h1 className="section-heading">About Melbourne Designer Brows</h1>
       
-      <div className="about-content">
-        <div className="about-image" style={{ backgroundColor: '#f5f5f5', height: '400px', width: '100%', marginBottom: '2rem' }}>
-          {/* Placeholder for image */}
+      <div className={styles.aboutContent}>
+        <div className={styles.aboutImage}>
+          <Image
+            src="/images/richmond-room.webp"
+            alt="Melbourne Designer Brows Richmond Studio"
+            width={1200}
+            height={800}
+            className={styles.featuredImage}
+            priority
+          />
         </div>
         
-        <div className="about-text">
+        <div className={styles.aboutText}>
           <p className="page-text">
             Melbourne Designer Brows is your premier brow studio with locations in Richmond and Springvale, Melbourne. 
             Led by Anne, a microblading expert with years of experience, we combine Australian and international 

@@ -75,8 +75,10 @@ const Header = () => {
   ], []);
 
   const aboutItems = useMemo(() => [
-    { href: '/contact', label: 'Contact Us' },
-    { href: '/locations', label: 'Our Locations' }
+    { href: '/about', label: 'About Us' },
+    { href: '/locations', label: 'Locations' },
+    { href: '/about/reviews', label: 'Reviews' },
+    { href: '/contact', label: 'Contact' },
   ], []);
 
   // Memoized click handler
@@ -147,7 +149,7 @@ const Header = () => {
         <div className="logo-container">
           <Link href="/" className="logo-link" onClick={handleLinkClick}>
             <Image 
-              src="/images/goldlogo-full.jpg" 
+              src="/images/goldlogo-full.webp" 
               alt="Melbourne Designer Brows Logo" 
               width={180} 
               height={45} 

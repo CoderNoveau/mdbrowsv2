@@ -12,7 +12,7 @@ export const SEO_DEFAULT_CONFIG: DefaultSeoProps = {
     siteName: 'Melbourne Designer Brows',
     images: [
       {
-        url: 'https://mdbrows.com.au/images/goldlogo-full.jpg',
+        url: 'https://mdbrows.com.au/images/goldlogo-full.webp',
         width: 800,
         height: 600,
         alt: 'Melbourne Designer Brows Logo',

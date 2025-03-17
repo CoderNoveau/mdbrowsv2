@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Hero from '@/components/Hero';
-import ElfsightWidget from '@/components/ElfsightWidget';
+import Reviews from '@/components/Reviews';
+import GalleryPreview from '@/components/GalleryPreview';
 import ClientSeo from '@/components/ClientSeo';
 
 export default function Home() {
@@ -15,24 +16,14 @@ export default function Home() {
         title="Melbourne Designer Brows | Microblading & Cosmetic Tattooing Specialists"
         description="Melbourne's premier studio for microblading, cosmetic tattooing, and eyebrow services. Our expert artists create beautiful, natural-looking results tailored to your unique features."
         canonical="https://mdbrows.com.au/"
-        ogImage="/images/goldlogo-full.jpg"
+        ogImage="/images/goldlogo-full.webp"
       />
       
       <Hero />
 
-      {/* Temporarily commented out for performance testing
-      <section className="gallery-section container" style={{ paddingTop: '0.5rem' }}>
-        <h2 className="section-heading">OUR WORK GALLERY</h2>
-        <ElfsightWidget widgetId="84b79773-a065-4117-a575-67123d886124" />
-      </section>
-
-      <section className="reviews-section">
-        <div className="reviews-section-inner">
-          <h2 className="section-heading">WHAT OUR CLIENTS SAY</h2>
-          <ElfsightWidget widgetId="afd7ee50-4343-4814-9241-4e0645a154b7" />
-        </div>
-      </section>
-      */}
+      <GalleryPreview />
+      
+      <Reviews />
 
       <section id="services" className="page-section">
         <div className="page-section-inner">

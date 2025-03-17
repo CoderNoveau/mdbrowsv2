@@ -19,7 +19,7 @@ const ClientSeo: React.FC<ClientSeoProps> = ({
   title, 
   description, 
   canonical,
-  ogImage = '/images/goldlogo-full.jpg',
+  ogImage = '/images/goldlogo-full.webp',
   ogType = 'website'
 }) => {
   const [mounted, setMounted] = useState(false);
