@@ -249,9 +249,9 @@ export default function Microblading() {
           
           <div style={{ margin: '1.5rem 0', padding: '1rem', backgroundColor: 'rgba(250,245,255,0.5)', borderRadius: '6px', borderLeft: '4px solid var(--accent)' }}>
             <p style={{ fontStyle: 'italic', margin: '0' }}>
-              <strong>Important:</strong> The perfection visit is an essential part of the complete microblading process. 
-              This appointment is included in your initial price and ensures the best possible results. Please don't skip 
-              this crucial session!
+              <strong>Important:</strong> The perfection visit is a crucial element of the full microblading process, separate from your initial 
+              appointment, and is key to achieving the best possible results. Though it may not be necessary for everyone,  
+              we strongly recommend this additional session for most clients to ensure perfection. 
             </p>
           </div>
           
