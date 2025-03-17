@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PreloadHero from '@/components/PreloadHero';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
-import GoogleAnalyticsTest from '@/components/GoogleAnalyticsTest';
 import { Suspense } from 'react';
 
 // Font display swap ensures text remains visible during webfont load
@@ -72,6 +71,7 @@ export default function RootLayout({
       <head>
         <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
         <PreloadHero />
+        <GoogleAnalytics />
         <link
           rel="preload"
           href="/images/hero1.webp"
@@ -107,8 +107,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-363899481" />
-        <GoogleAnalyticsTest />
         <Suspense fallback={null}>
           <Header />
         </Suspense>
