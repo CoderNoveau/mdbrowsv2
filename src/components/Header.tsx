@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, memo, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 // Memoized navigation links component
 const NavigationLinks = memo(({ 
@@ -200,15 +201,16 @@ const Header = () => {
           </div>
           
           {/* Book Now button at the bottom for mobile */}
-          <a 
-            href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429"
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="mobile-nav-book"
-            onClick={handleLinkClick}
-          >
-            Book Now
-          </a>
+          <div onClick={handleLinkClick}>
+            <TrackingAnchor 
+              href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mobile-nav-book"
+            >
+              Book Now
+            </TrackingAnchor>
+          </div>
         </nav>
       </div>
     </header>

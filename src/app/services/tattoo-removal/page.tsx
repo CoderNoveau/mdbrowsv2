@@ -345,9 +345,9 @@ export default function TattooRemoval() {
         
         <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
           <TrackingAnchor 
-            href={freshaLink} 
+            href={freshaLink}
             className="btn btn-primary" 
-            target="_blank"
+            target="_blank" 
             rel="noopener noreferrer"
           >
             BOOK APPOINTMENT
