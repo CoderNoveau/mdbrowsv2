@@ -83,46 +83,30 @@ const SlideContent = memo(({ slide, isVisible, getAnimationClass }: {
 
 // Memoized slide component
 const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
-  <div className="slide">
-    <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
+  <div className="hero-slide">
+    <div className="slide-image-container">
       <picture>
         <source
-          media="(min-width: 1025px)"
+          media="(min-width: 1201px)"
           srcSet={slide.image.desktop}
         />
         <source
-          media="(min-width: 641px)"
+          media="(min-width: 769px)"
           srcSet={slide.image.tablet}
         />
         <Image
           src={slide.image.mobile}
           alt={slide.alt}
           fill
-          priority={true}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           className="slide-image"
-          quality={75}
-          sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
-          style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qQEBALkE6Oz5DRVlLT0xXY1xbZF9kZ2R5Z1xkY1//2wBDARUXFyAeIBohHh4hRSgkKEVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+          priority={true}
+          fetchPriority="high"
+          quality={90}
         />
       </picture>
-      <div 
-        className="slide-side-overlay" 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '40%',
-          height: '100%',
-          background: 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)',
-          zIndex: 2
-        }}
-      />
     </div>
+    <div className="slide-overlay"></div>
   </div>
 );
 Slide.displayName = 'Slide';

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PreloadHero from '@/components/PreloadHero';
 
 // Font display swap ensures text remains visible during webfont load
 const fontStylesheet = `
@@ -67,6 +68,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
+        <PreloadHero />
       </head>
       <body>
         <Header />
