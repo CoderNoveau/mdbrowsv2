@@ -38,6 +38,22 @@ const slides = [
   },
 ];
 
+// Preload the first slide's images
+const preloadImages = [
+  {
+    href: '/images/hero1.webp',
+    media: '(min-width: 1024px)',
+  },
+  {
+    href: '/images/hero1-tablet.webp',
+    media: '(min-width: 640px) and (max-width: 1023px)',
+  },
+  {
+    href: '/images/hero1-mobile.webp',
+    media: '(max-width: 639px)',
+  },
+];
+
 // Memoized slide content component
 const SlideContent = memo(({ slide, isVisible, getAnimationClass }: {
   slide: typeof slides[0];
@@ -82,7 +98,7 @@ const SlideContent = memo(({ slide, isVisible, getAnimationClass }: {
 ));
 
 // Memoized slide component
-const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
+const Slide: React.FC<{ slide: typeof slides[0]; isFirst?: boolean }> = ({ slide, isFirst }) => (
   <div className="slide">
     <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
       <picture>
@@ -102,18 +118,19 @@ const Slide: React.FC<{ slide: typeof slides[0] }> = ({ slide }) => (
           src={slide.image.mobile}
           alt={slide.alt}
           fill
-          priority={true}
-          fetchPriority="high"
-          loading="eager"
+          priority={isFirst}
+          fetchPriority={isFirst ? "high" : "auto"}
+          loading={isFirst ? "eager" : "lazy"}
           className="slide-image"
           quality={85}
           sizes="(min-width: 1024px) 1920px, (min-width: 640px) 1024px, 640px"
           style={{
             objectFit: 'cover',
             objectPosition: 'center',
-            transform: 'translateZ(0)',
+            transform: 'translate3d(0, 0, 0)',
             willChange: 'transform',
-            backfaceVisibility: 'hidden'
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden'
           }}
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qQEBALkE6Oz5DRVlLT0xXY1xbZF9kZ2R5Z1xkY1//2wBDARUXFyAeIBohHh4hRSgkKEVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
@@ -143,8 +160,25 @@ const Hero: React.FC = () => {
   const [sliderInitialized, setSliderInitialized] = useState(false);
 
   useEffect(() => {
+    // Add preload links for the first slide's images
+    preloadImages.forEach(({ href, media }) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = href;
+      link.media = media;
+      link.type = 'image/webp';
+      document.head.appendChild(link);
+    });
+
     setMounted(true);
     setSliderInitialized(true);
+
+    // Cleanup preload links on unmount
+    return () => {
+      const links = document.head.querySelectorAll('link[rel="preload"][as="image"]');
+      links.forEach(link => link.remove());
+    };
   }, []);
 
   const getAnimationClass = useCallback((baseClass: string) => {
@@ -179,7 +213,7 @@ const Hero: React.FC = () => {
     return (
       <div className="hero" style={{ position: 'relative' }}>
         <div className="hero-slider-container">
-          <Slide slide={slides[0]} />
+          <Slide slide={slides[0]} isFirst={true} />
         </div>
         <div className="hero-content-overlay">
           <SlideContent
@@ -197,7 +231,7 @@ const Hero: React.FC = () => {
       <div className="hero-slider-container">
         <Slider {...sliderSettings} className="hero-slider">
           {slides.map((slide, index) => (
-            <Slide key={index} slide={slide} />
+            <Slide key={index} slide={slide} isFirst={index === 0} />
           ))}
         </Slider>
       </div>
