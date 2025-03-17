@@ -3,6 +3,9 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PreloadHero from '@/components/PreloadHero';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import GoogleAnalyticsTest from '@/components/GoogleAnalyticsTest';
+import { Suspense } from 'react';
 
 // Font display swap ensures text remains visible during webfont load
 const fontStylesheet = `
@@ -73,25 +76,55 @@ export default function RootLayout({
           rel="preload"
           href="/images/hero1.webp"
           as="image"
+          type="image/webp"
           media="(min-width: 1024px)"
         />
         <link
           rel="preload"
           href="/images/hero1-tablet.webp"
           as="image"
+          type="image/webp"
           media="(min-width: 640px) and (max-width: 1023px)"
         />
         <link
           rel="preload"
           href="/images/hero1-mobile.webp"
           as="image"
+          type="image/webp"
           media="(max-width: 639px)"
+        />
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+          media="print"
+          data-nc-styles
+        />
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+          media="print"
+          data-nc-styles
         />
       </head>
       <body>
-        <Header />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-363899481" />
+        <GoogleAnalyticsTest />
+        <Suspense fallback={null}>
+          <Header />
+        </Suspense>
         <main>{children}</main>
         <Footer />
+        <script 
+          dangerouslySetInnerHTML={{ 
+            __html: `
+              window.addEventListener('load', function() {
+                document.querySelectorAll('[data-nc-styles]').forEach(function(link) {
+                  link.media = 'all';
+                });
+              });
+            `
+          }} 
+        />
       </body>
     </html>
   );
