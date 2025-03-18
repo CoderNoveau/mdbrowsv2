@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PreloadHero from '@/components/PreloadHero';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { Suspense } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Font display swap ensures text remains visible during webfont load
 const fontStylesheet = `
@@ -70,6 +71,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
+        <Suspense>
+          <GoogleAnalytics />
+        </Suspense>
         <PreloadHero />
         <link
           rel="preload"
@@ -109,9 +113,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <Suspense fallback={null}>
-          <GoogleAnalytics />
-        </Suspense>
+        <SpeedInsights />
         <script 
           dangerouslySetInnerHTML={{ 
             __html: `
