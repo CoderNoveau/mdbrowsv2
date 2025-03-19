@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.mdbrows.com.au',
+  siteUrl: 'https://www.mdbrows.com.au',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
@@ -9,9 +9,10 @@ module.exports = {
         allow: '/',
       },
     ],
+    additionalSitemaps: [
+      'https://www.mdbrows.com.au/sitemap.xml',
+    ],
   },
-  changefreq: 'weekly',
-  priority: 0.7,
-  sitemapSize: 5000,
   exclude: ['/server-sitemap.xml'],
+  sitemapSize: 5000,
 }; 
