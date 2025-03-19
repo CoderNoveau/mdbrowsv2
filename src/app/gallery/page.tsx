@@ -2,7 +2,7 @@ import ClientSeo from '@/components/ClientSeo';
 import ElfsightWidget from '@/components/ElfsightWidget';
 
 export const metadata = {
-  title: 'Microblading Before & After Gallery Melbourne | Real Results | Melbourne Designer Brows',
+  title: 'Microblading Results Gallery | Real Transformations | Melbourne Designer Brows',
   description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
   canonical: 'https://mdbrows.com.au/gallery',
   ogImage: '/og-image.jpg',

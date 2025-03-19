@@ -3,7 +3,7 @@ import ClientSeo from '@/components/ClientSeo';
 import ElfsightWidget from '@/components/ElfsightWidget';
 
 export const metadata = {
-  title: 'Contact Melbourne Designer Brows | Book Your Consultation | Melbourne Designer Brows',
+  title: 'Book Your Consultation | Melbourne Designer Brows',
   description: 'Book your microblading or cosmetic tattooing consultation at our Richmond & Springvale locations. Easy online booking available. Get in touch for inquiries or information.',
   canonical: 'https://mdbrows.com.au/contact',
   ogImage: '/images/og-image.jpg',

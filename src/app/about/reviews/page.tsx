@@ -5,13 +5,21 @@ import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
 import ElfsightWidget from '@/components/ElfsightWidget';
 
+export const metadata = {
+  title: 'Client Reviews | Melbourne Designer Brows',
+  description: 'Read what our clients say about their experiences at Melbourne Designer Brows. Real reviews from real clients about our microblading and cosmetic tattooing services.',
+  canonical: 'https://mdbrows.com.au/about/reviews',
+  ogImage: '/images/og-image.jpg'
+};
+
 export default function ReviewsPage() {
   return (
     <>
       <ClientSeo
-        title="Client Reviews | Melbourne Designer Brows"
-        description="Read what our clients say about their experiences at Melbourne Designer Brows. Real reviews from real clients about our microblading and cosmetic tattooing services."
-        canonical="https://mdbrows.com.au/about/reviews"
+        title={metadata.title}
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={metadata.ogImage}
       />
       
       <div className="reviews-page">
