@@ -1,5 +1,6 @@
 import Script from 'next/script';
 import ClientSeo from '@/components/ClientSeo';
+import ElfsightWidget from '@/components/ElfsightWidget';
 
 export const metadata = {
   title: 'Contact Melbourne Designer Brows | Book Your Consultation | Melbourne Designer Brows',
@@ -55,9 +56,7 @@ export default function Contact() {
         <p className="page-text" style={{ textAlign: 'center', marginBottom: '2rem' }}>
           Have a question about our services or want to inquire about availability? Fill out the form below and we'll get back to you as soon as possible.
         </p>
-        {/* Elfsight Contact Form Widget */}
-        <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-        <div className="elfsight-app-e8769bfb-7e99-494d-af08-72fc95114045" data-elfsight-app-lazy></div>
+        <ElfsightWidget widgetId="e8769bfb-7e99-494d-af08-72fc95114045" />
       </div>
       
       <div className="booking-section" style={{ backgroundColor: '#f9f7f3', padding: '3rem', borderRadius: '8px' }}>

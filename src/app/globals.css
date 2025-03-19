@@ -235,14 +235,16 @@ ul {
   .mobile-nav-book {
     background: var(--accent);
     color: var(--white) !important;
-    margin: 1rem;
-    padding: 1rem !important;
+    margin: 0;
+    padding: 1.2rem !important;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    order: 1000; /* Ensure it always appears at the bottom */
+    margin-top: auto;
+    width: 100%;
+    display: block;
   }
 
   .mobile-nav-book:hover {
@@ -2300,6 +2302,7 @@ ul {
   .nav-links.show {
     height: calc(100vh - 70px);
     overflow-y: auto;
+    padding-bottom: 0; /* Remove bottom padding to allow button to be full width */
   }
 
   .nav-links > * {
@@ -2375,14 +2378,16 @@ ul {
   .mobile-nav-book {
     background: var(--accent);
     color: var(--white) !important;
-    margin: 1rem;
-    padding: 1rem !important;
+    margin: 0;
+    padding: 1.2rem !important;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: auto; /* Push to bottom of flex container */
+    margin-top: auto;
+    width: 100%;
+    display: block;
   }
 
   .mobile-nav-book:hover {

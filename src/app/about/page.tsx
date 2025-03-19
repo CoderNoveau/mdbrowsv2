@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import styles from './about.module.css';
+import ElfsightWidget from '@/components/ElfsightWidget';
 
 export default function About() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
@@ -60,9 +61,7 @@ export default function About() {
       
       <div className="testimonial-section">
         <h2 className="section-heading">What Our Clients Say</h2>
-        {/* Elfsight Google Reviews Widget */}
-        <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-        <div className="elfsight-app-afd7ee50-4343-4814-9241-4e0645a154b7" data-elfsight-app-lazy></div>
+        <ElfsightWidget widgetId="afd7ee50-4343-4814-9241-4e0645a154b7" />
       </div>
       
       <div className="booking-section">

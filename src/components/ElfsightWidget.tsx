@@ -1,9 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useElfsightLoaded } from './ElfsightScriptLoader';
 
 interface ElfsightWidgetProps {
   widgetId: string;
+  fallback?: React.ReactNode;
 }
 
 declare global {
@@ -14,55 +17,89 @@ declare global {
   }
 }
 
-const ElfsightWidget = ({ widgetId }: ElfsightWidgetProps) => {
+const ElfsightWidget = ({ widgetId, fallback }: ElfsightWidgetProps) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const isScriptLoaded = useElfsightLoaded();
+  
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '200px',
+    threshold: 0
+  });
 
   useEffect(() => {
-    // Check if the widget is already initialized
-    const widgetContainer = document.querySelector(`.elfsight-app-${widgetId}`);
-    if (widgetContainer && widgetContainer.children.length > 0) {
-      setIsLoading(false);
-      return;
-    }
+    if (!inView || !isScriptLoaded) return;
 
-    // Function to check and initialize widget
+    timeoutRef.current = setTimeout(() => {
+      setError(new Error('Widget failed to load'));
+      setIsLoading(false);
+    }, 10000);
+
     const initializeWidget = () => {
       if (window.eapps?.initialize) {
-        window.eapps.initialize();
-        setIsLoading(false);
+        try {
+          window.eapps.initialize();
+          setIsLoading(false);
+          setError(null);
+        } catch (err) {
+          setError(err instanceof Error ? err : new Error('Failed to initialize widget'));
+          setIsLoading(false);
+        }
       }
     };
 
-    // Try to initialize immediately
     initializeWidget();
 
-    // Set up a mutation observer to watch for widget content
     const observer = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
         if (mutation.addedNodes.length > 0) {
           setIsLoading(false);
+          setError(null);
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
           observer.disconnect();
           break;
         }
       }
     });
 
-    // Start observing the widget container
     const container = document.querySelector(`.elfsight-app-${widgetId}`);
     if (container) {
       observer.observe(container, { childList: true, subtree: true });
     }
 
-    // Cleanup
     return () => {
       observer.disconnect();
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
-  }, [widgetId]);
+  }, [widgetId, inView, isScriptLoaded]);
+
+  if (error) {
+    return fallback || (
+      <div style={{ 
+        padding: '20px',
+        textAlign: 'center',
+        backgroundColor: '#fff8f8',
+        borderRadius: '8px',
+        margin: '1rem 0'
+      }}>
+        <p style={{ margin: '0', color: '#666' }}>
+          Widget failed to load. Please refresh the page or try again later.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <>
+    <div ref={ref}>
       <div 
         className={`elfsight-app-${widgetId}`}
+        data-elfsight-app-lazy
         style={{ 
           minHeight: '200px',
           margin: '1rem 0',
@@ -94,10 +131,10 @@ const ElfsightWidget = ({ widgetId }: ElfsightWidgetProps) => {
               100% { transform: rotate(360deg); }
             }
           `}</style>
-          <p style={{ margin: '0', color: '#666' }}>Loading reviews...</p>
+          <p style={{ margin: '0', color: '#666' }}>Loading content...</p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
-import Script from 'next/script';
 import ClientSeo from '@/components/ClientSeo';
+import ElfsightWidget from '@/components/ElfsightWidget';
 
 export const metadata = {
   title: 'Microblading Before & After Gallery Melbourne | Real Results | Melbourne Designer Brows',
@@ -24,9 +24,7 @@ export default function Gallery() {
       </p>
       
       <div className="gallery-container">
-        {/* Elfsight Instagram Feed Widget */}
-        <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-        <div className="elfsight-app-4af60247-4320-4f4c-8fbe-1fc3d78f633f" data-elfsight-app-lazy></div>
+        <ElfsightWidget widgetId="4af60247-4320-4f4c-8fbe-1fc3d78f633f" />
       </div>
       
       <div className="gallery-info" style={{ marginTop: '2rem', textAlign: 'center' }}>
