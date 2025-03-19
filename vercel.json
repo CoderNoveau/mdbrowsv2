@@ -1,16 +1,5 @@
 {
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "mdbrows.com.au"
-        }
-      ],
-      "destination": "https://www.mdbrows.com.au/:path*",
-      "permanent": true
-    },
     { "source": "/before-care", "destination": "/services/microblading", "permanent": true },
     { "source": "/before-care/", "destination": "/services/microblading", "permanent": true },
     { "source": "/microblading-faq", "destination": "/services/microblading", "permanent": true },
