@@ -4,7 +4,7 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Eyebrow Tattoo Removal Melbourne | Safe & Effective | Melbourne Designer Brows',
+  title: 'Tattoo Removal | Safe & Effective | Melbourne Designer Brows',
   description: 'Specialized tattoo removal for eyebrows and cosmetic tattoos in Melbourne. Expert removal of microblading, permanent makeup, and traditional tattoos using advanced laser technology. Book your consultation.',
 };
 
@@ -21,7 +21,7 @@ export default function TattooRemoval() {
         ogType="article"
       />
       
-      <h2 className="page-section-heading">Tattoo Removal</h2>
+      <h1 className="page-section-heading">Tattoo Removal</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 

@@ -18,7 +18,7 @@ export default function FAQ() {
         ogType="website"
       />
       
-      <h1 className="section-heading">Frequently Asked Questions</h1>
+      <h1 className="section-heading">Microblading & Cosmetic Tattooing FAQs</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>
         Find answers to our most frequently asked questions about our services, aftercare, and what to expect during your appointment at Melbourne Designer Brows.

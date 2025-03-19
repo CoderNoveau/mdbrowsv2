@@ -21,7 +21,7 @@ export default function CosmeticTattooing() {
         ogType="article"
       />
       
-      <h2 className="page-section-heading">Cosmetic Tattooing</h2>
+      <h1 className="page-section-heading">Cosmetic Tattooing</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 

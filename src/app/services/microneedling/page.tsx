@@ -14,14 +14,14 @@ export default function Microneedling() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Microneedling | Melbourne Designer Brows"
-        description="Professional microneedling services in Melbourne. Improve skin texture, reduce scars, and boost collagen for younger-looking skin."
+        title="Skin Microneedling | Collagen Induction Therapy | Melbourne Designer Brows"
+        description="Professional microneedling treatments in Melbourne. Boost collagen production, reduce fine lines, and improve skin texture. Advanced skin rejuvenation with minimal downtime."
         canonical="https://mdbrows.com.au/services/microneedling"
         ogImage="/images/service-microneedling.webp"
         ogType="article"
       />
       
-      <h2 className="page-section-heading">Microneedling</h2>
+      <h1 className="page-section-heading">Skin Microneedling</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 

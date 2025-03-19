@@ -14,14 +14,14 @@ export default function Microblading() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Eyebrow Microblading & Feathering Melbourne | Natural-Looking Brows | Melbourne Designer Brows"
+        title="Eyebrow Microblading & Feathering | Natural-Looking Brows | Melbourne Designer Brows"
         description="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months."
         canonical="https://mdbrows.com.au/services/microblading"
         ogImage="/images/service-microblading.webp"
         ogType="article"
       />
       
-      <h2 className="page-section-heading">Microblading & Eyebrow Feathering</h2>
+      <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 

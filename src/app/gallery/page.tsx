@@ -16,7 +16,7 @@ export default function Gallery() {
         ogType="website"
       />
       
-      <h2 className="page-section-heading">OUR WORK GALLERY</h2>
+      <h1 className="page-section-heading">Microblading Before & After Gallery</h1>
       
       <p className="page-text">
         Browse our portfolio of real client results. From microblading to cosmetic tattooing and brow corrections, 

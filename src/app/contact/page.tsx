@@ -18,12 +18,12 @@ export default function Contact() {
         ogType="website"
       />
       
-      <h2 className="page-section-heading">CONTACT US</h2>
+      <h1 className="page-section-heading">Contact Melbourne Designer Brows</h1>
       
       <div className="contact-grid" style={{ marginBottom: '3rem' }}>
         <div className="contact-info">
           <div className="contact-section">
-            <h3 className="contact-heading">Contact Details</h3>
+            <h2 className="contact-heading">Contact Details</h2>
             <p className="contact-detail">
               <strong>Phone:</strong> <a href="tel:+61418188277" className="footer-link">0418 188 277</a>
             </p>
@@ -34,7 +34,7 @@ export default function Contact() {
         </div>
         
         <div className="contact-social">
-          <h3 className="contact-heading">Connect With Us</h3>
+          <h2 className="contact-heading">Connect With Us</h2>
           <p className="contact-detail">
             Follow us on social media for the latest work, tips, and special offers.
           </p>
