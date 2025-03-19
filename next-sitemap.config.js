@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://mdbrows.com.au',
+  siteUrl: process.env.SITE_URL || 'https://www.mdbrows.com.au',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
