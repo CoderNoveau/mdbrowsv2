@@ -111,6 +111,11 @@ export default function RootLayout({
           media="print"
           data-nc-styles
         />
+        <script 
+          src="https://static.elfsight.com/platform/platform.js" 
+          async
+          data-elfsight-script
+        />
       </head>
       <body>
         <Header />
