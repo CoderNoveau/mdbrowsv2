@@ -2,8 +2,8 @@ import Script from 'next/script';
 import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
-  title: 'Gallery | Melbourne Designer Brows',
-  description: 'View our portfolio of eyebrow microblading, cosmetic tattooing, and brow correction work. See real results from our Melbourne studios.',
+  title: 'Microblading Before & After Gallery Melbourne | Real Results | Melbourne Designer Brows',
+  description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
 };
 
 export default function Gallery() {

@@ -2,8 +2,8 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Frequently Asked Questions | Microblading, Cosmetic Tattooing & Tattoo Removal | MDB',
-  description: 'Find comprehensive answers about microblading, cosmetic tattooing, tattoo removal, aftercare, and all services at Melbourne Designer Brows. Everything you need to know before your appointment.',
+  title: 'Microblading FAQs Melbourne | Common Questions Answered | Melbourne Designer Brows',
+  description: 'Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results.',
 };
 
 export default function FAQ() {
@@ -12,8 +12,8 @@ export default function FAQ() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Frequently Asked Questions | Microblading, Cosmetic Tattooing & Tattoo Removal | MDB"
-        description="Find comprehensive answers about microblading, cosmetic tattooing, tattoo removal, aftercare, and all services at Melbourne Designer Brows. Everything you need to know before your appointment."
+        title="Microblading FAQs Melbourne | Common Questions Answered | Melbourne Designer Brows"
+        description="Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results."
         canonical="https://mdbrows.com.au/faq"
         ogType="website"
       />

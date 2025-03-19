@@ -3,8 +3,8 @@ import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
-  title: 'Services | Melbourne Designer Brows',
-  description: 'Explore our range of professional brow and beauty services including microblading, microneedling, cosmetic tattooing, and tattoo removal.',
+  title: 'Eyebrow & Beauty Services Melbourne | Microblading & More | Melbourne Designer Brows',
+  description: 'Complete range of professional eyebrow and beauty services in Melbourne. Specializing in microblading, cosmetic tattooing, brow corrections, and skin treatments. Two convenient locations in Richmond & Springvale.',
 };
 
 export default function Services() {

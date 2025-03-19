@@ -2,8 +2,8 @@ import Script from 'next/script';
 import ClientSeo from '@/components/ClientSeo';
 
 export const metadata = {
-  title: 'Contact Us | Melbourne Designer Brows',
-  description: 'Get in touch with Melbourne Designer Brows. Contact us for bookings, inquiries, or more information.',
+  title: 'Contact Melbourne Designer Brows | Book Your Consultation | Melbourne Designer Brows',
+  description: 'Book your microblading or cosmetic tattooing consultation at our Richmond & Springvale locations. Easy online booking available. Get in touch for inquiries or information.',
 };
 
 export default function Contact() {

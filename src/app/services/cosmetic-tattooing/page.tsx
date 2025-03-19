@@ -4,8 +4,8 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Cosmetic Tattooing | Lip Blushing & Permanent Eyeliner | Melbourne Designer Brows',
-  description: 'Professional cosmetic tattooing services in Melbourne including lip blushing, permanent eyeliner, and ombré brows. Enhance your natural beauty with long-lasting results using premium pigments.',
+  title: 'Cosmetic Tattooing Melbourne | Lip Blushing & Permanent Makeup | Melbourne Designer Brows',
+  description: 'Expert cosmetic tattooing in Melbourne. Specializing in lip blushing, permanent eyeliner, and ombré powder brows. Professional, long-lasting results with premium pigments. Book your consultation today.',
 };
 
 export default function CosmeticTattooing() {

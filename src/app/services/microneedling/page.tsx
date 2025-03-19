@@ -4,8 +4,8 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Microneedling | Melbourne Designer Brows',
-  description: 'Professional microneedling services in Melbourne. Improve skin texture, reduce scars, and boost collagen for younger-looking skin.',
+  title: 'Skin Microneedling Melbourne | Collagen Induction Therapy | Melbourne Designer Brows',
+  description: 'Professional microneedling treatments in Melbourne. Boost collagen production, reduce fine lines, and improve skin texture. Advanced skin rejuvenation with minimal downtime.',
 };
 
 export default function Microneedling() {

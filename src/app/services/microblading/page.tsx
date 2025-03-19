@@ -4,7 +4,7 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Microblading & Eyebrow Feathering in Melbourne | Natural-Looking Brows | MDB',
+  title: 'Eyebrow Microblading & Feathering Melbourne | Natural-Looking Brows | Melbourne Designer Brows',
   description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
 };
 
@@ -14,8 +14,8 @@ export default function Microblading() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Microblading & Eyebrow Feathering in Melbourne | Natural-Looking Brows | MDB"
-        description="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today."
+        title="Eyebrow Microblading & Feathering Melbourne | Natural-Looking Brows | Melbourne Designer Brows"
+        description="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months."
         canonical="https://mdbrows.com.au/services/microblading"
         ogImage="/images/service-microblading.webp"
         ogType="article"

@@ -4,8 +4,8 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Eyebrow Corrections & Repair | Melbourne Designer Brows',
-  description: 'Specialized eyebrow correction services in Melbourne. We fix uneven, asymmetrical, or poorly done eyebrow tattoos and microblading with advanced correction techniques. Restore your confidence with natural-looking brows.',
+  title: 'Eyebrow Correction & Repair Melbourne | Fix Bad Microblading | Melbourne Designer Brows',
+  description: 'Expert eyebrow correction services in Melbourne. We fix botched microblading, uneven brows, and failed cosmetic tattoos. Restore your confidence with our specialized repair techniques.',
 };
 
 export default function BrowCorrections() {

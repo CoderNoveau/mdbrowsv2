@@ -50,7 +50,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Melbourne Designer Brows | Professional Eyebrow Services",
   description: "Premier eyebrow studio in Melbourne offering microblading, ombré brows, and our signature combo at Richmond and Springvale locations. Book your appointment today!",
-  keywords: "eyebrows, microblading, ombré brows, Melbourne, Richmond, Springvale, beauty salon",
+  keywords: "eyebrow microblading, microblading brow, microblading near me, microblading Melbourne, feathering eyebrows, tattoo eyebrows, microblading eyebrows, cosmetic tattooing Melbourne, lip tattooing Melbourne, eyebrow feathering Melbourne, Richmond microblading, Springvale microblading, Melbourne Designer Brows, ombré brows, powder brows",
   icons: {
     icon: [
       { url: '/images/favicon.ico' },

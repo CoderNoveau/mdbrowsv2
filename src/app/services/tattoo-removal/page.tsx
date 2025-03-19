@@ -4,8 +4,8 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Professional Tattoo Removal in Melbourne | Laser & Saline Removal | MDB',
-  description: 'Advanced tattoo and cosmetic tattoo removal services in Melbourne. Safe, effective removal of unwanted tattoos, microblading, and permanent makeup using state-of-the-art laser technology.',
+  title: 'Eyebrow Tattoo Removal Melbourne | Safe & Effective | Melbourne Designer Brows',
+  description: 'Specialized tattoo removal for eyebrows and cosmetic tattoos in Melbourne. Expert removal of microblading, permanent makeup, and traditional tattoos using advanced laser technology. Book your consultation.',
 };
 
 export default function TattooRemoval() {
@@ -14,7 +14,7 @@ export default function TattooRemoval() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Professional Tattoo Removal in Melbourne | Laser & Saline Removal | MDB"
+        title="Professional Tattoo Removal in Melbourne | Laser & Saline Removal | Melbourne Designer Brows"
         description="Advanced tattoo and cosmetic tattoo removal services in Melbourne. Safe, effective removal of unwanted tattoos, microblading, and permanent makeup using state-of-the-art laser technology."
         canonical="https://mdbrows.com.au/services/tattoo-removal"
         ogImage="/images/service-tattoo-removal.webp"
