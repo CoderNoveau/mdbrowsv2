@@ -7,23 +7,16 @@ import TrackingAnchor from '@/components/TrackingAnchor';
 import styles from './about.module.css';
 import ElfsightWidget from '@/components/ElfsightWidget';
 
-export const metadata = {
-  title: 'About Us | Expert Brow Artists | Melbourne Designer Brows',
-  description: 'Meet our expert brow artists at Melbourne Designer Brows. Specializing in microblading, cosmetic tattooing, and permanent makeup. Two convenient locations in Richmond & Springvale.',
-  canonical: 'https://mdbrows.com.au/about',
-  ogImage: '/images/about-banner.webp',
-};
-
 export default function About() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
     <div className="page-content">
       <ClientSeo
-        title="About Us | Expert Brow Artists | Melbourne Designer Brows"
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
+        title="About Us | Expert Cosmetic Tattoo Artists | Melbourne Designer Brows"
+        description="Meet Melbourne's trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments. Learn about our commitment to excellence."
+        canonical="https://mdbrows.com.au/about"
+        ogImage="/images/about-banner.webp"
       />
       
       <h1 className="section-heading">About Melbourne Designer Brows</h1>

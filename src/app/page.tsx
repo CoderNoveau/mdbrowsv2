@@ -8,23 +8,16 @@ import GalleryPreview from '@/components/GalleryPreview';
 import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
-export const metadata = {
-  title: 'Melbourne Designer Brows | Premium Microblading & Cosmetic Tattooing Studio',
-  description: 'Melbourne\'s leading microblading and cosmetic tattooing studio. Expert artists creating natural, beautiful brows. Locations in Richmond & Springvale. Book your consultation today.',
-  canonical: 'https://mdbrows.com.au',
-  ogImage: '/images/goldlogo-full.webp',
-};
-
 export default function Home() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
-    <div className="page-content">
+    <>
       <ClientSeo
         title="Melbourne Designer Brows | Premium Microblading & Cosmetic Tattooing Studio"
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
+        description="Transform your look with Melbourne's premier microblading and cosmetic tattooing experts. Specializing in natural-looking eyebrows, permanent makeup, and skin treatments in Richmond & Springvale."
+        canonical="https://mdbrows.com.au/"
+        ogImage="/images/goldlogo-full.webp"
       />
       
       <Hero />
@@ -173,6 +166,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
