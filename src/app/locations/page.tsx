@@ -4,16 +4,16 @@ import ElfsightWidget from '@/components/ElfsightWidget';
 import ClientSeo from '@/components/ClientSeo';
 
 export const metadata: Metadata = {
-  title: 'Microblading Near Me Melbourne | Richmond & Springvale | Melbourne Designer Brows',
-  description: 'Visit our convenient microblading studios in Richmond and Springvale, Melbourne. Expert eyebrow services at both locations. Easy booking and free consultations available.',
+  title: 'Our Locations | Melbourne Designer Brows',
+  description: 'Visit our convenient locations in Richmond and Springvale. Melbourne Designer Brows offers premium microblading and cosmetic tattooing services.',
 };
 
 export default function Locations() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Our Locations | Melbourne Designer Brows"
-        description="Visit our convenient locations in Richmond and Springvale. Melbourne Designer Brows offers premium microblading and cosmetic tattooing services."
+        title="Microblading Locations Melbourne | Richmond & Springvale Studios | Melbourne Designer Brows"
+        description="Visit our convenient microblading studios in Richmond and Springvale, Melbourne. Expert eyebrow services at both locations. Easy booking and free consultations available."
         canonical="https://mdbrows.com.au/locations"
         ogType="website"
       />
