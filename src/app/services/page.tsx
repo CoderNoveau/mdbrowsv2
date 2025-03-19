@@ -70,11 +70,10 @@ export default function Services() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Services | Melbourne Designer Brows"
-        description="Explore our range of professional brow and beauty services including microblading, microneedling, cosmetic tattooing, and tattoo removal."
+        title="Microblading & Cosmetic Beauty Services | Melbourne Designer Brows"
+        description={metadata.description}
         canonical="https://mdbrows.com.au/services"
         ogImage="/images/service-microblading.webp"
-        ogType="website"
       />
       
       <h2 className="page-section-heading">Our Services</h2>

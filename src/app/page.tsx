@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <>
       <ClientSeo
-        title="Best Microblading Melbourne | Eyebrow & Cosmetic Tattooing | Melbourne Designer Brows"
-        description="Melbourne's leading microblading and cosmetic tattooing studio. Expert eyebrow specialists in Richmond & Springvale. Natural-looking results with premium techniques. Book your transformation today."
+        title="Melbourne Designer Brows | Premium Microblading & Cosmetic Tattooing Studio"
+        description="Transform your look with Melbourne's premier microblading and cosmetic tattooing experts. Specializing in natural-looking eyebrows, permanent makeup, and skin treatments in Richmond & Springvale."
         canonical="https://mdbrows.com.au/"
         ogImage="/images/goldlogo-full.webp"
       />

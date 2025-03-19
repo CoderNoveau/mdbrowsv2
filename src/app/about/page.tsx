@@ -13,10 +13,10 @@ export default function About() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="About Us | Melbourne Designer Brows"
-        description="Learn about Melbourne Designer Brows, your premier brow studio with locations in Richmond and Springvale. Led by expert technicians with years of experience."
+        title="About Us | Expert Cosmetic Tattoo Artists | Melbourne Designer Brows"
+        description="Meet Melbourne's trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments. Learn about our commitment to excellence."
         canonical="https://mdbrows.com.au/about"
-        ogType="website"
+        ogImage="/images/about-banner.webp"
       />
       
       <h1 className="section-heading">About Melbourne Designer Brows</h1>

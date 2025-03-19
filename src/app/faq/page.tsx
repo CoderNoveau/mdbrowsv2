@@ -2,8 +2,10 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Microblading FAQs Melbourne | Common Questions Answered | Melbourne Designer Brows',
+  title: 'Microblading FAQs | Common Questions | Melbourne Designer Brows',
   description: 'Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results.',
+  canonical: 'https://mdbrows.com.au/faq',
+  ogImage: '/images/og-image.jpg',
 };
 
 export default function FAQ() {
@@ -12,10 +14,10 @@ export default function FAQ() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Microblading FAQs Melbourne | Common Questions Answered | Melbourne Designer Brows"
-        description="Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results."
-        canonical="https://mdbrows.com.au/faq"
-        ogType="website"
+        title="Microblading FAQs | Common Questions | Melbourne Designer Brows"
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={metadata.ogImage}
       />
       
       <h1 className="section-heading">Microblading & Cosmetic Tattooing FAQs</h1>

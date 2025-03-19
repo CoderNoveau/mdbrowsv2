@@ -6,6 +6,8 @@ import TrackingAnchor from '@/components/TrackingAnchor';
 export const metadata = {
   title: 'Eyebrow Microblading & Feathering Melbourne | Natural-Looking Brows | Melbourne Designer Brows',
   description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
+  canonical: 'https://mdbrows.com.au/services/microblading',
+  ogImage: '/images/service-microblading.webp',
 };
 
 export default function Microblading() {
@@ -14,11 +16,10 @@ export default function Microblading() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Eyebrow Microblading & Feathering | Natural-Looking Brows | Melbourne Designer Brows"
-        description="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months."
-        canonical="https://mdbrows.com.au/services/microblading"
-        ogImage="/images/service-microblading.webp"
-        ogType="article"
+        title="Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows"
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>

@@ -14,8 +14,8 @@ export default function Microneedling() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Skin Microneedling | Collagen Induction Therapy | Melbourne Designer Brows"
-        description="Professional microneedling treatments in Melbourne. Boost collagen production, reduce fine lines, and improve skin texture. Advanced skin rejuvenation with minimal downtime."
+        title="Skin Microneedling & Collagen Therapy | Melbourne Designer Brows"
+        description={metadata.description}
         canonical="https://mdbrows.com.au/services/microneedling"
         ogImage="/images/service-microneedling.webp"
         ogType="article"

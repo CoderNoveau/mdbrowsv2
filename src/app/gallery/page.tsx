@@ -4,16 +4,18 @@ import ElfsightWidget from '@/components/ElfsightWidget';
 export const metadata = {
   title: 'Microblading Before & After Gallery Melbourne | Real Results | Melbourne Designer Brows',
   description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
+  canonical: 'https://mdbrows.com.au/gallery',
+  ogImage: '/og-image.jpg',
 };
 
 export default function Gallery() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Gallery | Melbourne Designer Brows"
-        description="View our portfolio of eyebrow microblading, cosmetic tattooing, and brow correction work. See real results from our Melbourne studios."
-        canonical="https://mdbrows.com.au/gallery"
-        ogType="website"
+        title="Microblading Results Gallery | Real Transformations | Melbourne Designer Brows"
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Microblading Before & After Gallery</h1>

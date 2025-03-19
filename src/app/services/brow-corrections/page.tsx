@@ -4,8 +4,10 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Eyebrow Correction & Repair Melbourne | Fix Bad Microblading | Melbourne Designer Brows',
+  title: 'Eyebrow Correction & Repair | Fix Bad Microblading | Melbourne Designer Brows',
   description: 'Expert eyebrow correction services in Melbourne. We fix botched microblading, uneven brows, and failed cosmetic tattoos. Restore your confidence with our specialized repair techniques.',
+  canonical: 'https://mdbrows.com.au/services/brow-corrections',
+  ogImage: '/images/service-brow-corrections.webp',
 };
 
 export default function BrowCorrections() {
@@ -14,11 +16,10 @@ export default function BrowCorrections() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Eyebrow Correction & Repair Melbourne | Fix Bad Microblading | Melbourne Designer Brows"
-        description="Expert eyebrow correction services in Melbourne. We fix botched microblading, uneven brows, and failed cosmetic tattoos. Restore your confidence with our specialized repair techniques."
-        canonical="https://mdbrows.com.au/services/brow-corrections"
-        ogImage="/images/service-brow-corrections.webp"
-        ogType="article"
+        title="Eyebrow Correction & Repair | Fix Bad Microblading | Melbourne Designer Brows"
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Eyebrow Correction & Repair</h1>

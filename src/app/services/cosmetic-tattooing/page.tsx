@@ -14,8 +14,8 @@ export default function CosmeticTattooing() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Cosmetic Tattooing | Lip Blushing & Permanent Eyeliner | Melbourne Designer Brows"
-        description="Professional cosmetic tattooing services in Melbourne including lip blushing, permanent eyeliner, and ombré brows. Enhance your natural beauty with long-lasting results using premium pigments."
+        title="Cosmetic Tattooing & Lip Blushing | Permanent Makeup | Melbourne Designer Brows"
+        description={metadata.description}
         canonical="https://mdbrows.com.au/services/cosmetic-tattooing"
         ogImage="/images/placeholder-cosmetic-tattooing.webp"
         ogType="article"

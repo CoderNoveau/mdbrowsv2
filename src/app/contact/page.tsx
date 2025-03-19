@@ -5,6 +5,8 @@ import ElfsightWidget from '@/components/ElfsightWidget';
 export const metadata = {
   title: 'Contact Melbourne Designer Brows | Book Your Consultation | Melbourne Designer Brows',
   description: 'Book your microblading or cosmetic tattooing consultation at our Richmond & Springvale locations. Easy online booking available. Get in touch for inquiries or information.',
+  canonical: 'https://mdbrows.com.au/contact',
+  ogImage: '/images/og-image.jpg',
 };
 
 export default function Contact() {
@@ -13,10 +15,10 @@ export default function Contact() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Contact Us | Melbourne Designer Brows"
-        description="Get in touch with Melbourne Designer Brows. Contact us for bookings, inquiries, or more information."
-        canonical="https://mdbrows.com.au/contact"
-        ogType="website"
+        title="Book Your Consultation | Melbourne Designer Brows"
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Contact Melbourne Designer Brows</h1>
