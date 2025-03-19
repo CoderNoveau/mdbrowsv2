@@ -4,7 +4,7 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Cosmetic Tattooing Melbourne | Lip Blushing & Permanent Makeup | Melbourne Designer Brows',
+  title: 'Cosmetic Tattooing | Lip Blushing & Permanent Makeup | Melbourne Designer Brows',
   description: 'Expert cosmetic tattooing in Melbourne. Specializing in lip blushing, permanent eyeliner, and ombré powder brows. Professional, long-lasting results with premium pigments. Book your consultation today.',
 };
 
