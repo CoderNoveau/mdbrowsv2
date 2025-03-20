@@ -4,32 +4,22 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
 
-// Define base URL for canonical URLs
-const BASE_URL = 'https://mdbrows.com.au';
+const CANONICAL_URL = 'https://mdbrows.com.au/services/microblading';
+const OG_IMAGE = '/images/service-microblading.webp';
 
-// Export metadata for static generation
 export const metadata: Metadata = {
   title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
   description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
   alternates: {
-    canonical: `${BASE_URL}/services/microblading`,
+    canonical: CANONICAL_URL,
   },
   openGraph: {
     title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
     description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
-    url: `${BASE_URL}/services/microblading`,
-    type: 'article',
-    images: [{
-      url: `${BASE_URL}/images/service-microblading.webp`,
-      width: 1200,
-      height: 630,
-      alt: 'Microblading service at Melbourne Designer Brows',
-    }],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    url: CANONICAL_URL,
+    images: [{ url: OG_IMAGE }],
+    type: 'article'
+  }
 };
 
 export default function Microblading() {
@@ -40,9 +30,8 @@ export default function Microblading() {
       <ClientSeo
         title={metadata.title as string}
         description={metadata.description as string}
-        canonical={metadata.alternates?.canonical as string}
-        ogImage="/images/service-microblading.webp"
-        ogType="article"
+        canonical={CANONICAL_URL}
+        ogImage={OG_IMAGE}
       />
       
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
