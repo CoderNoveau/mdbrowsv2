@@ -6,38 +6,10 @@ module.exports = {
     policies: [
       {
         userAgent: '*',
-        allow: [
-          '/',
-          '/about',
-          '/about/reviews',
-          '/services',
-          '/services/*',
-          '/pricing',
-          '/gallery',
-          '/faq',
-          '/contact',
-          '/locations'
-        ],
-        disallow: [
-          '/api/*',
-          '/_next/*',
-          '/static/*',
-          '/*.js$',
-          '/*.json$'
-        ]
+        allow: '/',
       },
     ],
-    additionalSitemaps: [
-      'https://mdbrows.com.au/sitemap.xml',
-    ],
   },
-  exclude: [
-    '/api/*',
-    '/_next/*',
-    '/static/*',
-    '/server-sitemap.xml',
-    '/*.js',
-    '/*.json'
-  ],
+  exclude: ['/server-sitemap.xml'],
   sitemapSize: 5000,
 }; 

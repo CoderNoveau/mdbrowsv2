@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
-import Head from 'next/head';
 
 export const metadata = {
   title: 'Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows',
@@ -16,11 +15,8 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
-      <Head>
-        <link rel="canonical" href={metadata.canonical} />
-      </Head>
       <ClientSeo
-        title={metadata.title}
+        title="Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows"
         description={metadata.description}
         canonical={metadata.canonical}
         ogImage={metadata.ogImage}
