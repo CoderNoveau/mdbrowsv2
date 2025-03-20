@@ -2,12 +2,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
-import Head from 'next/head';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows',
   description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
-  // Remove all other metadata to avoid conflicts
+  openGraph: {
+    title: 'Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows',
+    description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
+    url: 'https://mdbrows.com.au/services/microblading/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/service-microblading.webp',
+    }],
+    type: 'article',
+  },
 };
 
 export default function Microblading() {
@@ -15,32 +23,19 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
-      {/* Use the direct Head component */}
-      <Head>
-        <title>Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows</title>
-        <meta name="description" content="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today." />
-        <link rel="canonical" href="https://mdbrows.com.au/services/microblading/" />
-        <meta property="og:title" content="Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows" />
-        <meta property="og:description" content="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today." />
-        <meta property="og:url" content="https://mdbrows.com.au/services/microblading/" />
-        <meta property="og:image" content="https://mdbrows.com.au/images/service-microblading.webp" />
-        <meta property="og:type" content="article" />
-      </Head>
-      
-      {/* Also inject directly as raw HTML */}
-      <div className="seo-tags" suppressHydrationWarning style={{display: 'none'}} dangerouslySetInnerHTML={{
-        __html: `
-          <!-- SEO Tags - Inline Version -->
-          <title>Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows</title>
-          <link rel="canonical" href="https://mdbrows.com.au/services/microblading/" />
-          <meta name="description" content="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today." />
-          <meta property="og:title" content="Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows" />
-          <meta property="og:description" content="Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today." />
-          <meta property="og:url" content="https://mdbrows.com.au/services/microblading/" />
-          <meta property="og:image" content="https://mdbrows.com.au/images/service-microblading.webp" />
-          <meta property="og:type" content="article" />
-        `
-      }} />
+      <Script id="canonical-url" strategy="beforeInteractive">
+        {`
+          if (document.head) {
+            const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
+            existingCanonicals.forEach(el => el.remove());
+            
+            const link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = 'https://mdbrows.com.au/services/microblading/';
+            document.head.appendChild(link);
+          }
+        `}
+      </Script>
       
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
       

@@ -19,11 +19,6 @@ export default function Home() {
         dynamicImage="/images/goldlogo-full.webp"
       />
       
-      <div className="seo-links" style={{display: 'none'}}>
-        <a href="/canonical-urls.html">Canonical URLs Reference</a>
-        <a href="/microblading-canonical.html">Microblading Canonical</a>
-      </div>
-      
       <Hero />
 
       <GalleryPreview />
