@@ -30,6 +30,8 @@ const nextConfig = {
   staticPageGenerationTimeout: 120,
   // Asset optimization
   assetPrefix: '',
+  // Ensure metadata is included in static exports
+  generateMetadata: true,
   // Instead of redirects, we'll use client-side navigation
   // or handle redirects through your hosting platform (Vercel)
   trailingSlash: true, // This helps with static hosting
