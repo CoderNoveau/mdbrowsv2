@@ -15,12 +15,30 @@ export default function Microblading() {
         ogImage="/images/service-microblading.webp"
       />
       
-      <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
+      <div className="service-hero" style={{ marginBottom: '2rem' }}>
+        <div className="service-hero-content">
+          <h1>Microblading & Eyebrow Feathering</h1>
+          <p>
+            Experience the art of microblading at Melbourne Designer Brows. Our skilled technicians create natural-looking, perfectly shaped eyebrows that enhance your features.
+          </p>
+          <div className="service-hero-buttons">
+            <Link href="/gallery" className="btn btn-outline">View Gallery</Link>
+            <TrackingAnchor 
+              href={freshaLink} 
+              className="btn" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Now
+            </TrackingAnchor>
+          </div>
+        </div>
+      </div>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 
           src="/images/service-microblading.webp"
-          alt="Microblading service in Melbourne" 
+          alt="Professional microblading service in Melbourne - natural-looking, semi-permanent eyebrows" 
           fill
           style={{ objectFit: 'cover' }}
           priority
@@ -52,7 +70,7 @@ export default function Microblading() {
         </div>
         
         <div className="service-section" style={{ marginBottom: '3rem', padding: '2rem', backgroundColor: '#fff8f5', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-          <h3 className="page-section-subheading" style={{ marginTop: '0' }}>Why choose Melbourne Designer Brows for Microblading & Eyebrow Feathering?</h3>
+          <h2 className="page-section-subheading" style={{ marginTop: '0' }}>Why choose Melbourne Designer Brows for Microblading & Eyebrow Feathering?</h2>
           <p className="page-text">
             Melbourne Designer Brows is a leader in the field of Microblading and Eyebrow Feathering. Our lead artist, 
             Anne Nguyen, is renowned for her precise and detailed approach, producing beautifully natural eyebrows 
@@ -97,7 +115,7 @@ export default function Microblading() {
         </div>
         
         <div className="service-section" style={{ marginBottom: '3rem', padding: '2rem', backgroundColor: '#fff8f5', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-          <h3 className="page-section-subheading" style={{ marginTop: '0' }}>How Long does Microblading Last?</h3>
+          <h2 className="page-section-subheading" style={{ marginTop: '0' }}>How Long does Microblading Last?</h2>
           <p className="page-text">
             Microblading is a semi-permanent treatment that typically lasts between 12 to 24 months, depending on individual 
             factors like skin type, lifestyle, and personal skincare routine. Clients with oily skin may experience 
@@ -126,7 +144,7 @@ export default function Microblading() {
         </div>
         
         <div className="service-section" style={{ marginBottom: '3rem', backgroundColor: '#f9f9f9', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-          <h3 className="page-section-subheading" style={{ marginTop: '0' }}>What is the difference between Microblading & Eyebrow Feathering?</h3>
+          <h2 className="page-section-subheading" style={{ marginTop: '0' }}>What is the difference between Microblading & Eyebrow Feathering?</h2>
           <p className="page-text">
             Microblading and Eyebrow Feathering are terms often used interchangeably in Australia and refer to the same 
             process of applying semi-permanent pigment using a microblade. Both techniques focus on creating thin, 
@@ -168,7 +186,7 @@ export default function Microblading() {
         </div>
         
         <div className="service-section" style={{ marginBottom: '3rem', border: '1px solid #e0e0e0', padding: '2rem', borderRadius: '8px' }}>
-          <h3 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center', marginBottom: '1.5rem' }}>The Microblading | Eyebrow Tattooing Procedure</h3>
+          <h2 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center', marginBottom: '1.5rem' }}>The Microblading Procedure</h2>
           
           <p className="page-text">
             At Melbourne Designer Brows, our microblading process is meticulous and personalized, ensuring beautiful, 
@@ -257,7 +275,7 @@ export default function Microblading() {
         </div>
         
         <div className="service-section" style={{ marginBottom: '3rem' }}>
-          <h3 className="page-section-subheading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Benefits of Microblading</h3>
+          <h2 className="page-section-subheading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Benefits of Microblading</h2>
           <ul className="service-benefits" style={{ margin: '1.5rem 0' }}>
             <li><strong>Save time</strong> on your morning makeup routine</li>
             <li><strong>Wake up</strong> with perfect brows every day</li>
@@ -270,7 +288,7 @@ export default function Microblading() {
         </div>
         
         <div className="service-section" style={{ marginBottom: '3rem', backgroundColor: '#f0f8f5', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-          <h3 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center' }}>Microblading Aftercare Guide</h3>
+          <h2 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center' }}>Microblading Aftercare Guide</h2>
           <p className="page-text">
             Proper aftercare is essential for achieving optimal results from your microblading treatment. Following these 
             instructions will help ensure better pigment retention and minimize the risk of complications during healing.
@@ -470,7 +488,7 @@ export default function Microblading() {
         </div>
 
         <div className="service-section" style={{ marginTop: '3rem', backgroundColor: '#fff5f8', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-          <h3 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center' }}>What Results to Expect</h3>
+          <h2 className="page-section-subheading" style={{ marginTop: '0', textAlign: 'center' }}>What Results to Expect</h2>
           
           <p className="page-text">
             Microblading delivers remarkable results, but it's important to have realistic expectations about the process 
@@ -526,37 +544,6 @@ export default function Microblading() {
             Designer Brows will work with you to achieve the most natural, beautiful results possible for your specific 
             features and preferences.
           </p>
-        </div>
-        
-        <div className="service-cta" style={{ marginTop: '2rem', textAlign: 'center' }}>
-          <a 
-            href={freshaLink}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn btn-primary" 
-          >
-            BOOK APPOINTMENT
-          </a>
-        </div>
-      </div>
-
-      <div className="service-hero">
-        <div className="service-hero-content">
-          <h3>Transform Your Brows with Expert Microblading</h3>
-          <p>
-            Experience the art of microblading at Melbourne Designer Brows. Our skilled technicians create natural-looking, perfectly shaped eyebrows that enhance your features.
-          </p>
-          <div className="service-hero-buttons">
-            <Link href="/gallery" className="btn btn-outline">View Gallery</Link>
-            <TrackingAnchor 
-              href={freshaLink} 
-              className="btn" 
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book Now
-            </TrackingAnchor>
-          </div>
         </div>
       </div>
     </div>
