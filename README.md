@@ -35,7 +35,7 @@ A modern, fast-loading website for Melbourne Designer Brows, a premier eyebrow s
 - Node.js (v20.x or later)
 - npm (v10.x or later)
 
-### Installation
+### Installation -
 
 1. Clone the repository
 ```bash
