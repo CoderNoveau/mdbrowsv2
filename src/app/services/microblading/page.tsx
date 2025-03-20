@@ -2,13 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows',
   description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
-  alternates: {
-    canonical: 'https://mdbrows.com.au/services/microblading/',
-  },
   openGraph: {
     title: 'Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows',
     description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
@@ -25,6 +23,20 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
+      <Script id="canonical-url" strategy="beforeInteractive">
+        {`
+          if (document.head) {
+            const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
+            existingCanonicals.forEach(el => el.remove());
+            
+            const link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = 'https://mdbrows.com.au/services/microblading/';
+            document.head.appendChild(link);
+          }
+        `}
+      </Script>
+      
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
