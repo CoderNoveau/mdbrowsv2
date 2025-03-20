@@ -39,8 +39,6 @@ const ClientSeo: React.FC<ClientSeoProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullOgImageUrl} />
-      <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
     </Head>
   );
 };

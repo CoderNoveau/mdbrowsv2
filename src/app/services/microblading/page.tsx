@@ -5,12 +5,13 @@ import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
 
 const OG_IMAGE = '/images/service-microblading.webp';
+const CANONICAL_URL = 'https://mdbrows.com.au/services/microblading';
 
 export const metadata: Metadata = {
   title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
   description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
   alternates: {
-    canonical: 'https://mdbrows.com.au/services/microblading'
+    canonical: CANONICAL_URL
   },
   robots: {
     index: true,
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
     description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
-    url: 'https://mdbrows.com.au/services/microblading',
+    url: CANONICAL_URL,
     images: [{ url: OG_IMAGE }],
     type: 'article'
   }
