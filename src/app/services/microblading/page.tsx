@@ -2,18 +2,24 @@ import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
+import Script from 'next/script';
+
+// Define canonical URL to maintain consistency
+const CANONICAL_URL = 'https://mdbrows.com.au/services/microblading/';
 
 export const metadata: Metadata = {
   title: "Eyebrow Microblading & Feathering | Natural Brows",
   description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
+  // Standard Next.js metadata approach for canonical URLs
   alternates: {
-    canonical: 'https://mdbrows.com.au/services/microblading'
+    canonical: CANONICAL_URL,
   },
   openGraph: {
     title: "Eyebrow Microblading & Feathering | Natural Brows",
     description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
     images: [{ url: '/images/service-microblading.webp' }],
-    type: 'article'
+    type: 'article',
+    url: CANONICAL_URL,
   }
 };
 
@@ -22,6 +28,18 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
+      {/* Ensure canonical link for static exports */}
+      <Script id="canonical-url" strategy="beforeInteractive">
+        {`
+          if (!document.querySelector('link[rel="canonical"]')) {
+            const link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = '${CANONICAL_URL}';
+            document.head.appendChild(link);
+          }
+        `}
+      </Script>
+      
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
