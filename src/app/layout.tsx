@@ -7,6 +7,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { Suspense } from 'react';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ElfsightScriptLoader } from '@/components/ElfsightScriptLoader';
+import Script from "next/script";
 
 // Font display swap ensures text remains visible during webfont load
 const fontStylesheet = `
@@ -74,64 +75,60 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <body>
         <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
         <Suspense>
           <GoogleAnalytics />
         </Suspense>
         <PreloadHero />
-        <link
-          rel="preload"
-          href="/images/hero1.webp"
-          as="image"
-          type="image/webp"
-          media="(min-width: 1024px)"
-        />
-        <link
-          rel="preload"
-          href="/images/hero1-tablet.webp"
-          as="image"
-          type="image/webp"
-          media="(min-width: 640px) and (max-width: 1023px)"
-        />
-        <link
-          rel="preload"
-          href="/images/hero1-mobile.webp"
-          as="image"
-          type="image/webp"
-          media="(max-width: 639px)"
-        />
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-          media="print"
-          data-nc-styles
-        />
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-          media="print"
-          data-nc-styles
-        />
-      </head>
-      <body>
+        <Script id="preload-hero" strategy="beforeInteractive">
+          {`
+            const link1 = document.createElement('link');
+            link1.rel = 'preload';
+            link1.href = '/images/hero1.webp';
+            link1.as = 'image';
+            link1.type = 'image/webp';
+            link1.media = '(min-width: 1024px)';
+            document.head.appendChild(link1);
+            
+            const link2 = document.createElement('link');
+            link2.rel = 'preload';
+            link2.href = '/images/hero1-tablet.webp';
+            link2.as = 'image';
+            link2.type = 'image/webp';
+            link2.media = '(min-width: 640px) and (max-width: 1023px)';
+            document.head.appendChild(link2);
+            
+            const link3 = document.createElement('link');
+            link3.rel = 'preload';
+            link3.href = '/images/hero1-mobile.webp';
+            link3.as = 'image';
+            link3.type = 'image/webp';
+            link3.media = '(max-width: 639px)';
+            document.head.appendChild(link3);
+          `}
+        </Script>
+        <Script id="slick-style-loader" strategy="afterInteractive">
+          {`
+            window.addEventListener('load', function() {
+              const link1 = document.createElement('link');
+              link1.rel = 'stylesheet';
+              link1.href = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css';
+              document.head.appendChild(link1);
+              
+              const link2 = document.createElement('link');
+              link2.rel = 'stylesheet';
+              link2.href = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css';
+              document.head.appendChild(link2);
+            });
+          `}
+        </Script>
         <ElfsightScriptLoader>
           <Header />
           <main>{children}</main>
           <Footer />
           <SpeedInsights />
         </ElfsightScriptLoader>
-        <script 
-          dangerouslySetInnerHTML={{ 
-            __html: `
-              window.addEventListener('load', function() {
-                document.querySelectorAll('[data-nc-styles]').forEach(function(link) {
-                  link.media = 'all';
-                });
-              });
-            `
-          }} 
-        />
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Eyebrow Microblading & Feathering | Natural Brows",
   description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
   alternates: {
-    canonical: '/services/microblading'
+    canonical: 'https://mdbrows.com.au/services/microblading'
   },
   openGraph: {
     title: "Eyebrow Microblading & Feathering | Natural Brows",
