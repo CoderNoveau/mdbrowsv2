@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
 
 interface ClientSeoProps {
   title: string;
   description: string;
   canonical: string;
-  ogImage?: string;
-  ogType?: string;
+  ogImage: string;
 }
 
 /**
@@ -19,8 +19,7 @@ const ClientSeo: React.FC<ClientSeoProps> = ({
   title, 
   description, 
   canonical,
-  ogImage = '/images/goldlogo-full.webp',
-  ogType = 'website'
+  ogImage
 }) => {
   const [mounted, setMounted] = useState(false);
 
@@ -33,26 +32,20 @@ const ClientSeo: React.FC<ClientSeoProps> = ({
     return null;
   }
 
+  const fullOgImageUrl = ogImage.startsWith('http') ? ogImage : `https://mdbrows.com.au${ogImage}`;
+  
   return (
-    <NextSeo
-      title={title}
-      description={description}
-      canonical={canonical}
-      openGraph={{
-        title,
-        description,
-        url: canonical,
-        type: ogType,
-        images: [
-          {
-            url: `https://mdbrows.com.au${ogImage}`,
-            width: 1200,
-            height: 630,
-            alt: `${title}`,
-          },
-        ],
-      }}
-    />
+    <Head>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonical} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:image" content={fullOgImageUrl} />
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
+    </Head>
   );
 };
 
