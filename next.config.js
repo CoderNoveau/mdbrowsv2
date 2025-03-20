@@ -33,22 +33,6 @@ const nextConfig = {
   // Instead of redirects, we'll use client-side navigation
   // or handle redirects through your hosting platform (Vercel)
   trailingSlash: true, // This helps with static hosting
-  // Generate canonical link tags
-  generateEtags: true,
-  // Include support for custom headers during static export
-  headers: async () => {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Link',
-            value: '', // This will be set by metadata in the pages
-          },
-        ],
-      },
-    ];
-  },
 }
 
 module.exports = nextConfig 
