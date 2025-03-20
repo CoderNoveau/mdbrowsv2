@@ -78,7 +78,7 @@ export default function Services() {
         ogImage={metadata.ogImage}
       />
       
-      <h2 className="page-section-heading">Our Services</h2>
+      <h1 className="page-section-heading">Our Services</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>
         At Melbourne Designer Brows, we offer a range of professional brow and beauty services.
