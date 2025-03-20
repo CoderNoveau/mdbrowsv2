@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import Head from 'next/head';
 
 export const metadata = {
   title: 'Cosmetic Tattooing & Lip Blushing | Permanent Makeup | Melbourne Designer Brows',
@@ -15,12 +16,14 @@ export default function CosmeticTattooing() {
 
   return (
     <div className="page-content">
+      <Head>
+        <link rel="canonical" href={metadata.canonical} />
+      </Head>
       <ClientSeo
-        title="Cosmetic Tattooing | Lip Blushing & Permanent Eyeliner | Melbourne Designer Brows"
-        description="Professional cosmetic tattooing services in Melbourne including lip blushing, permanent eyeliner, and ombré brows. Enhance your natural beauty with long-lasting results using premium pigments."
-        canonical="https://mdbrows.com.au/services/cosmetic-tattooing"
-        ogImage="/images/placeholder-cosmetic-tattooing.webp"
-        ogType="article"
+        title={metadata.title}
+        description={metadata.description}
+        canonical={metadata.canonical}
+        ogImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Cosmetic Tattooing</h1>
