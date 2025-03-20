@@ -13,10 +13,9 @@ export default function About() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="About Us | Expert Cosmetic Tattoo Artists | Melbourne Designer Brows"
-        description="Meet Melbourne's trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments. Learn about our commitment to excellence."
-        canonical="https://mdbrows.com.au/about"
-        ogImage="/images/about-banner.webp"
+        dynamicTitle="About Us | Expert Cosmetic Tattoo Artists | Melbourne Designer Brows"
+        dynamicDescription="Meet Melbourne's trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments. Learn about our commitment to excellence."
+        dynamicImage="/images/about-banner.webp"
       />
       
       <h1 className="section-heading">About Melbourne Designer Brows</h1>

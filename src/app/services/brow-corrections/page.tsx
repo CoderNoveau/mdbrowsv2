@@ -16,10 +16,9 @@ export default function BrowCorrections() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Eyebrow Correction & Repair | Fix Bad Microblading | Melbourne Designer Brows"
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
+        dynamicTitle={metadata.title}
+        dynamicDescription={metadata.description}
+        dynamicImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Eyebrow Correction & Repair</h1>

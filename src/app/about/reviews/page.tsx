@@ -9,9 +9,8 @@ export default function ReviewsPage() {
   return (
     <>
       <ClientSeo
-        title="Client Reviews | Melbourne Designer Brows"
-        description="Read what our clients say about their experiences at Melbourne Designer Brows. Real reviews from real clients about our microblading and cosmetic tattooing services."
-        canonical="https://mdbrows.com.au/about/reviews"
+        dynamicTitle="Client Reviews | Melbourne Designer Brows"
+        dynamicDescription="Read what our clients say about their experiences at Melbourne Designer Brows. Real reviews from real clients about our microblading and cosmetic tattooing services."
       />
       
       <div className="reviews-page">

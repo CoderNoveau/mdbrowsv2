@@ -14,10 +14,9 @@ export default function FAQ() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Microblading FAQs | Common Questions | Melbourne Designer Brows"
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
+        dynamicTitle="Microblading FAQs | Common Questions | Melbourne Designer Brows"
+        dynamicDescription={metadata.description}
+        dynamicImage={metadata.ogImage}
       />
       
       <h1 className="section-heading">Microblading & Cosmetic Tattooing FAQs</h1>

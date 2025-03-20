@@ -12,10 +12,9 @@ export default function Gallery() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Microblading Results Gallery | Real Transformations | Melbourne Designer Brows"
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
+        dynamicTitle="Microblading Results Gallery | Real Transformations | Melbourne Designer Brows"
+        dynamicDescription={metadata.description}
+        dynamicImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Microblading Before & After Gallery</h1>

@@ -4,8 +4,10 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata = {
-  title: 'Tattoo Removal | Safe & Effective | Melbourne Designer Brows',
-  description: 'Specialized tattoo removal for eyebrows and cosmetic tattoos in Melbourne. Expert removal of microblading, permanent makeup, and traditional tattoos using advanced laser technology. Book your consultation.',
+  title: 'Tattoo Removal Melbourne | Safe & Effective | Melbourne Designer Brows',
+  description: 'Professional tattoo removal services in Melbourne. Safe and effective removal of unwanted tattoos, including cosmetic tattoos and microblading. Book your consultation today.',
+  canonical: 'https://mdbrows.com.au/services/tattoo-removal',
+  ogImage: '/images/service-tattoo-removal.webp',
 };
 
 export default function TattooRemoval() {
@@ -14,11 +16,9 @@ export default function TattooRemoval() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Professional Tattoo Removal in Melbourne | Laser & Saline Removal | Melbourne Designer Brows"
-        description="Advanced tattoo and cosmetic tattoo removal services in Melbourne. Safe, effective removal of unwanted tattoos, microblading, and permanent makeup using state-of-the-art laser technology."
-        canonical="https://mdbrows.com.au/services/tattoo-removal"
-        ogImage="/images/service-tattoo-removal.webp"
-        ogType="article"
+        dynamicTitle={metadata.title}
+        dynamicDescription={metadata.description}
+        dynamicImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Tattoo Removal</h1>

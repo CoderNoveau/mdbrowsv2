@@ -15,10 +15,9 @@ export default function Contact() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Book Your Consultation | Melbourne Designer Brows"
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
+        dynamicTitle="Book Your Consultation | Melbourne Designer Brows"
+        dynamicDescription={metadata.description}
+        dynamicImage={metadata.ogImage}
       />
       
       <h1 className="page-section-heading">Contact Melbourne Designer Brows</h1>

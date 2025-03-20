@@ -12,10 +12,8 @@ export default function Pricing() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Pricing | Melbourne Designer Brows"
-        description="View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne."
-        canonical="https://mdbrows.com.au/pricing"
-        ogType="website"
+        dynamicTitle="Pricing | Melbourne Designer Brows"
+        dynamicDescription="View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne."
       />
       
       <h1 className="section-heading">Treatment Price List</h1>
