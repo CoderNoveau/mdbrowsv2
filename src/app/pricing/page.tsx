@@ -3,10 +3,10 @@ import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pricing | Microblading & Beauty Services | Melbourne Designer Brows',
+  title: 'Pricing | Melbourne Designer Brows',
   description: 'View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne.',
   openGraph: {
-    title: 'Pricing | Microblading & Beauty Services | Melbourne Designer Brows',
+    title: 'Pricing | Melbourne Designer Brows',
     description: 'View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne.',
     url: 'https://mdbrows.com.au/pricing/',
     images: [{
@@ -21,11 +21,6 @@ export default function Pricing() {
 
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle="Pricing | Melbourne Designer Brows"
-        dynamicDescription="View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne."
-      />
-      
       <h1 className="page-section-heading">Service Pricing</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>

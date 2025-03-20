@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Services | Microblading & Cosmetic Tattooing | Melbourne Designer Brows',
+  title: 'Beauty & Cosmetic Tattooing Services | MDBrows Melbourne',
   description: 'Explore our range of premium beauty services including microblading, cosmetic tattooing, brow corrections, and skin treatments. Professional artists with years of experience.',
   openGraph: {
-    title: 'Services | Microblading & Cosmetic Tattooing | Melbourne Designer Brows',
+    title: 'Beauty & Cosmetic Tattooing Services | MDBrows Melbourne',
     description: 'Explore our range of premium beauty services including microblading, cosmetic tattooing, brow corrections, and skin treatments. Professional artists with years of experience.',
     url: 'https://mdbrows.com.au/services/',
     images: [{

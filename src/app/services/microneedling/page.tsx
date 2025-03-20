@@ -4,10 +4,10 @@ import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Skin Microneedling & Collagen Therapy | Melbourne Designer Brows',
+  title: 'Microneedling & Collagen Therapy | Melbourne Designer Brows',
   description: 'Professional microneedling treatments in Melbourne. Boost collagen production, reduce fine lines, and improve skin texture. Advanced skin rejuvenation with minimal downtime.',
   openGraph: {
-    title: 'Skin Microneedling & Collagen Therapy | Melbourne Designer Brows',
+    title: 'Microneedling & Collagen Therapy | Melbourne Designer Brows',
     description: 'Professional microneedling treatments in Melbourne. Boost collagen production, reduce fine lines, and improve skin texture. Advanced skin rejuvenation with minimal downtime.',
     url: 'https://mdbrows.com.au/services/microneedling/',
     images: [{

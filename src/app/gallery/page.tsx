@@ -2,10 +2,10 @@ import ElfsightWidget from '@/components/ElfsightWidget';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microblading Results Gallery | Real Transformations | Melbourne Designer Brows',
+  title: 'Before & After Gallery | Melbourne Designer Brows',
   description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
   openGraph: {
-    title: 'Microblading Results Gallery | Real Transformations | Melbourne Designer Brows',
+    title: 'Before & After Gallery | Melbourne Designer Brows',
     description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
     url: 'https://mdbrows.com.au/gallery/',
     images: [{
