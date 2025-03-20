@@ -5,10 +5,10 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Microblading & Eyebrow Feathering | Melbourne Designer Brows',
+  title: 'Microblading Services | Melbourne Designer Brows',
   description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
   openGraph: {
-    title: 'Microblading & Eyebrow Feathering | Melbourne Designer Brows',
+    title: 'Microblading Services | Melbourne Designer Brows',
     description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
     url: 'https://mdbrows.com.au/services/microblading/',
     images: [{
