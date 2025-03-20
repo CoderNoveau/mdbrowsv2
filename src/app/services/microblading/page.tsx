@@ -16,7 +16,7 @@ export default function Microblading() {
   return (
     <div className="page-content">
       <ClientSeo
-        title="Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows"
+        title={metadata.title}
         description={metadata.description}
         canonical={metadata.canonical}
         ogImage={metadata.ogImage}

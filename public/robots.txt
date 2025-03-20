@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /*?*
+
+# Block system files
+Disallow: /_next/static/development/*
+Disallow: /api/*
+
+# Allow sitemap
 Sitemap: https://mdbrows.com.au/sitemap.xml 
