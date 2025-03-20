@@ -8,9 +8,6 @@ import TrackingAnchor from '@/components/TrackingAnchor';
 export const metadata: Metadata = {
   title: 'Our Locations | Melbourne Designer Brows',
   description: 'Visit our premium microblading and cosmetic tattooing studios in Melbourne. Directions and contact information for both our Richmond and Springvale locations.',
-  alternates: {
-    canonical: 'https://mdbrows.com.au/locations/',
-  },
   openGraph: {
     title: 'Our Locations | Melbourne Designer Brows',
     description: 'Visit our premium microblading and cosmetic tattooing studios in Melbourne. Directions and contact information for both our Richmond and Springvale locations.',

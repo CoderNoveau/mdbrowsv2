@@ -75,12 +75,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* We're removing the static canonical link */}
+      </head>
       <body>
         <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
         <Suspense>
           <GoogleAnalytics />
         </Suspense>
         <PreloadHero />
+        {/* Add a script to ensure canonical URLs are properly set */}
+        <Script id="canonical-url" strategy="beforeInteractive">
+          {`
+            (function() {
+              // Create canonical link if it doesn't exist
+              let canonicalLink = document.querySelector('link[rel="canonical"]');
+              if (!canonicalLink) {
+                canonicalLink = document.createElement('link');
+                canonicalLink.rel = 'canonical';
+                const path = window.location.pathname;
+                // Ensure path has trailing slash
+                const normPath = path.endsWith('/') ? path : path + '/';
+                canonicalLink.href = 'https://mdbrows.com.au' + (normPath === '/' ? '' : normPath);
+                document.head.appendChild(canonicalLink);
+              }
+            })();
+          `}
+        </Script>
         <Script id="preload-hero" strategy="beforeInteractive">
           {`
             const link1 = document.createElement('link');

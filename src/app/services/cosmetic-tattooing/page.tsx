@@ -6,9 +6,6 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Cosmetic Tattooing Melbourne | Lips, Eyeliner & More | Melbourne Designer Brows',
   description: 'Professional cosmetic tattooing services in Melbourne. Enhance your features with semi-permanent makeup for lips, eyeliner, and more. Natural-looking results by expert artists.',
-  alternates: {
-    canonical: 'https://mdbrows.com.au/services/cosmetic-tattooing/',
-  },
   openGraph: {
     title: 'Cosmetic Tattooing Melbourne | Lips, Eyeliner & More | Melbourne Designer Brows',
     description: 'Professional cosmetic tattooing services in Melbourne. Enhance your features with semi-permanent makeup for lips, eyeliner, and more. Natural-looking results by expert artists.',

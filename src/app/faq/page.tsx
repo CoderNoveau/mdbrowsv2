@@ -4,9 +4,6 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Microblading FAQs | Common Questions | Melbourne Designer Brows',
   description: 'Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results.',
-  alternates: {
-    canonical: 'https://mdbrows.com.au/faq/',
-  },
   openGraph: {
     title: 'Microblading FAQs | Common Questions | Melbourne Designer Brows',
     description: 'Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results.',

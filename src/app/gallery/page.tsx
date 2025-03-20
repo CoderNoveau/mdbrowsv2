@@ -4,9 +4,6 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Microblading Results Gallery | Real Transformations | Melbourne Designer Brows',
   description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
-  alternates: {
-    canonical: 'https://mdbrows.com.au/gallery/',
-  },
   openGraph: {
     title: 'Microblading Results Gallery | Real Transformations | Melbourne Designer Brows',
     description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
