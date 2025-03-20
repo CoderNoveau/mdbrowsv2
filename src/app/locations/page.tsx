@@ -1,24 +1,33 @@
 import React from 'react';
 import { Metadata } from 'next';
 import ElfsightWidget from '@/components/ElfsightWidget';
-import ClientSeo from '@/components/ClientSeo';
+import Script from 'next/script';
+import Image from 'next/image';
+import TrackingAnchor from '@/components/TrackingAnchor';
 
 export const metadata: Metadata = {
   title: 'Our Locations | Melbourne Designer Brows',
-  description: 'Visit our convenient locations in Richmond and Springvale. Melbourne Designer Brows offers premium microblading and cosmetic tattooing services.',
+  description: 'Visit our premium microblading and cosmetic tattooing studios in Melbourne. Directions and contact information for both our Richmond and Springvale locations.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/locations/',
+  },
+  openGraph: {
+    title: 'Our Locations | Melbourne Designer Brows',
+    description: 'Visit our premium microblading and cosmetic tattooing studios in Melbourne. Directions and contact information for both our Richmond and Springvale locations.',
+    url: 'https://mdbrows.com.au/locations/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/locations-banner.webp',
+    }],
+    type: 'website',
+  },
 };
 
 export default function Locations() {
+  const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
+
   return (
     <div className="page-content">
-      <ClientSeo
-        title="Our Locations | Melbourne Designer Brows"
-        description="Visit our convenient locations in Richmond and Springvale. Melbourne Designer Brows offers premium microblading and cosmetic tattooing services."
-        canonical="https://mdbrows.com.au/locations"
-        ogType="website"
-      />
-      
-      <h1 className="page-section-heading">Melbourne Designer Brows Locations</h1>
+      <h1 className="page-section-heading">Our Studio Locations</h1>
       
       <div className="locations-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
         {/* Richmond Location */}

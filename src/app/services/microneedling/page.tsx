@@ -1,13 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Skin Microneedling & Collagen Therapy | Melbourne Designer Brows',
   description: 'Professional microneedling treatments in Melbourne. Boost collagen production, reduce fine lines, and improve skin texture. Advanced skin rejuvenation with minimal downtime.',
-  canonical: 'https://mdbrows.com.au/services/microneedling',
-  ogImage: '/images/service-microneedling.webp',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/services/microneedling/',
+  },
+  openGraph: {
+    title: 'Skin Microneedling & Collagen Therapy | Melbourne Designer Brows',
+    description: 'Professional microneedling treatments in Melbourne. Boost collagen production, reduce fine lines, and improve skin texture. Advanced skin rejuvenation with minimal downtime.',
+    url: 'https://mdbrows.com.au/services/microneedling/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/service-microneedling.webp',
+    }],
+    type: 'article',
+  },
 };
 
 export default function Microneedling() {
@@ -15,15 +25,7 @@ export default function Microneedling() {
 
   return (
     <div className="page-content">
-      <ClientSeo
-        title="Skin Microneedling & Collagen Therapy | Melbourne Designer Brows"
-        description={metadata.description}
-        canonical="https://mdbrows.com.au/services/microneedling"
-        ogImage="/images/service-microneedling.webp"
-        ogType="article"
-      />
-      
-      <h1 className="page-section-heading">Skin Microneedling</h1>
+      <h1 className="page-section-heading">Microneedling</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
         <Image 

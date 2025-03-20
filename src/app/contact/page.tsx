@@ -1,12 +1,22 @@
 import Script from 'next/script';
-import ClientSeo from '@/components/ClientSeo';
 import ElfsightWidget from '@/components/ElfsightWidget';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Book Your Consultation | Melbourne Designer Brows',
-  description: 'Book your microblading or cosmetic tattooing consultation at our Richmond & Springvale locations. Easy online booking available. Get in touch for inquiries or information.',
-  canonical: 'https://mdbrows.com.au/contact',
-  ogImage: '/images/og-image.jpg',
+  description: 'Book your microblading or cosmetic tattooing consultation at our Melbourne locations. Easy online booking available. Get in touch for inquiries or information.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/contact/',
+  },
+  openGraph: {
+    title: 'Book Your Consultation | Melbourne Designer Brows',
+    description: 'Book your microblading or cosmetic tattooing consultation at our Melbourne locations. Easy online booking available. Get in touch for inquiries or information.',
+    url: 'https://mdbrows.com.au/contact/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/contact-banner.webp',
+    }],
+    type: 'website',
+  },
 };
 
 export default function Contact() {
@@ -14,12 +24,6 @@ export default function Contact() {
   
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle="Book Your Consultation | Melbourne Designer Brows"
-        dynamicDescription={metadata.description}
-        dynamicImage={metadata.ogImage}
-      />
-      
       <h1 className="page-section-heading">Contact Melbourne Designer Brows</h1>
       
       <div className="contact-grid" style={{ marginBottom: '3rem' }}>

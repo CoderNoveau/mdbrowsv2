@@ -1,13 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Eyebrow Correction & Repair | Fix Bad Microblading | Melbourne Designer Brows',
   description: 'Expert eyebrow correction services in Melbourne. We fix botched microblading, uneven brows, and failed cosmetic tattoos. Restore your confidence with our specialized repair techniques.',
-  canonical: 'https://mdbrows.com.au/services/brow-corrections',
-  ogImage: '/images/service-brow-corrections.webp',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/services/brow-corrections/',
+  },
+  openGraph: {
+    title: 'Eyebrow Correction & Repair | Fix Bad Microblading | Melbourne Designer Brows',
+    description: 'Expert eyebrow correction services in Melbourne. We fix botched microblading, uneven brows, and failed cosmetic tattoos. Restore your confidence with our specialized repair techniques.',
+    url: 'https://mdbrows.com.au/services/brow-corrections/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/service-brow-corrections.webp',
+    }],
+    type: 'article',
+  },
 };
 
 export default function BrowCorrections() {
@@ -15,12 +25,6 @@ export default function BrowCorrections() {
 
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle={metadata.title}
-        dynamicDescription={metadata.description}
-        dynamicImage={metadata.ogImage}
-      />
-      
       <h1 className="page-section-heading">Eyebrow Correction & Repair</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

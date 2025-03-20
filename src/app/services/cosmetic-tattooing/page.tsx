@@ -1,13 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cosmetic Tattooing Melbourne | Lips, Eyeliner & More | Melbourne Designer Brows',
   description: 'Professional cosmetic tattooing services in Melbourne. Enhance your features with semi-permanent makeup for lips, eyeliner, and more. Natural-looking results by expert artists.',
-  canonical: 'https://mdbrows.com.au/services/cosmetic-tattooing',
-  ogImage: '/images/service-cosmetic-tattooing.webp',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/services/cosmetic-tattooing/',
+  },
+  openGraph: {
+    title: 'Cosmetic Tattooing Melbourne | Lips, Eyeliner & More | Melbourne Designer Brows',
+    description: 'Professional cosmetic tattooing services in Melbourne. Enhance your features with semi-permanent makeup for lips, eyeliner, and more. Natural-looking results by expert artists.',
+    url: 'https://mdbrows.com.au/services/cosmetic-tattooing/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/service-cosmetic-tattooing.webp',
+    }],
+    type: 'article',
+  },
 };
 
 export default function CosmeticTattooing() {
@@ -15,12 +25,6 @@ export default function CosmeticTattooing() {
 
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle={metadata.title}
-        dynamicDescription={metadata.description}
-        dynamicImage={metadata.ogImage}
-      />
-      
       <h1 className="page-section-heading">Cosmetic Tattooing</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

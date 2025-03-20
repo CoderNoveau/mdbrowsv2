@@ -1,13 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Tattoo Removal Melbourne | Safe & Effective | Melbourne Designer Brows',
   description: 'Professional tattoo removal services in Melbourne. Safe and effective removal of unwanted tattoos, including cosmetic tattoos and microblading. Book your consultation today.',
-  canonical: 'https://mdbrows.com.au/services/tattoo-removal',
-  ogImage: '/images/service-tattoo-removal.webp',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/services/tattoo-removal/',
+  },
+  openGraph: {
+    title: 'Tattoo Removal Melbourne | Safe & Effective | Melbourne Designer Brows',
+    description: 'Professional tattoo removal services in Melbourne. Safe and effective removal of unwanted tattoos, including cosmetic tattoos and microblading. Book your consultation today.',
+    url: 'https://mdbrows.com.au/services/tattoo-removal/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/service-tattoo-removal.webp',
+    }],
+    type: 'article',
+  },
 };
 
 export default function TattooRemoval() {
@@ -15,12 +25,6 @@ export default function TattooRemoval() {
 
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle={metadata.title}
-        dynamicDescription={metadata.description}
-        dynamicImage={metadata.ogImage}
-      />
-      
       <h1 className="page-section-heading">Tattoo Removal</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

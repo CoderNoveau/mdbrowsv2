@@ -1,22 +1,26 @@
-import ClientSeo from '@/components/ClientSeo';
 import ElfsightWidget from '@/components/ElfsightWidget';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Microblading Results Gallery | Real Transformations | Melbourne Designer Brows',
   description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
-  canonical: 'https://mdbrows.com.au/gallery',
-  ogImage: '/og-image.jpg',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/gallery/',
+  },
+  openGraph: {
+    title: 'Microblading Results Gallery | Real Transformations | Melbourne Designer Brows',
+    description: 'Browse our microblading and cosmetic tattooing portfolio. See real client transformations from our Melbourne studios. Natural-looking results by expert artists.',
+    url: 'https://mdbrows.com.au/gallery/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/gallery-banner.webp',
+    }],
+    type: 'website',
+  },
 };
 
 export default function Gallery() {
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle="Microblading Results Gallery | Real Transformations | Melbourne Designer Brows"
-        dynamicDescription={metadata.description}
-        dynamicImage={metadata.ogImage}
-      />
-      
       <h1 className="page-section-heading">Microblading Before & After Gallery</h1>
       
       <p className="page-text">

@@ -1,11 +1,21 @@
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Microblading FAQs | Common Questions | Melbourne Designer Brows',
   description: 'Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results.',
-  canonical: 'https://mdbrows.com.au/faq',
-  ogImage: '/images/og-image.jpg',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/faq/',
+  },
+  openGraph: {
+    title: 'Microblading FAQs | Common Questions | Melbourne Designer Brows',
+    description: 'Everything you need to know about microblading and cosmetic tattooing in Melbourne. Expert answers about procedures, aftercare, pricing, and results.',
+    url: 'https://mdbrows.com.au/faq/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/faq-banner.webp',
+    }],
+    type: 'website',
+  },
 };
 
 export default function FAQ() {
@@ -13,13 +23,7 @@ export default function FAQ() {
 
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle="Microblading FAQs | Common Questions | Melbourne Designer Brows"
-        dynamicDescription={metadata.description}
-        dynamicImage={metadata.ogImage}
-      />
-      
-      <h1 className="section-heading">Microblading & Cosmetic Tattooing FAQs</h1>
+      <h1 className="page-section-heading">Frequently Asked Questions</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>
         Find answers to our most frequently asked questions about our services, aftercare, and what to expect during your appointment at Melbourne Designer Brows.

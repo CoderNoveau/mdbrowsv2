@@ -1,12 +1,22 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Microblading & Cosmetic Beauty Services | Melbourne Designer Brows',
-  description: 'Explore our range of professional brow and beauty services including microblading, microneedling, cosmetic tattooing, and tattoo removal.',
-  canonical: 'https://mdbrows.com.au/services',
-  ogImage: '/images/service-microblading.webp',
+export const metadata: Metadata = {
+  title: 'Services | Microblading & Cosmetic Tattooing | Melbourne Designer Brows',
+  description: 'Explore our range of premium beauty services including microblading, cosmetic tattooing, brow corrections, and skin treatments. Professional artists with years of experience.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/services/',
+  },
+  openGraph: {
+    title: 'Services | Microblading & Cosmetic Tattooing | Melbourne Designer Brows',
+    description: 'Explore our range of premium beauty services including microblading, cosmetic tattooing, brow corrections, and skin treatments. Professional artists with years of experience.',
+    url: 'https://mdbrows.com.au/services/',
+    images: [{
+      url: 'https://mdbrows.com.au/images/services-banner.webp',
+    }],
+    type: 'website',
+  },
 };
 
 export default function Services() {
@@ -71,13 +81,6 @@ export default function Services() {
   
   return (
     <div className="page-content">
-      <ClientSeo
-        title="Microblading & Cosmetic Beauty Services | Melbourne Designer Brows"
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
-      />
-      
       <h1 className="page-section-heading">Our Services</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>
