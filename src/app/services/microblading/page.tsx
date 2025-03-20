@@ -2,13 +2,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import { Metadata } from 'next';
 
-export const metadata = {
+// Define base URL for canonical URLs
+const BASE_URL = 'https://mdbrows.com.au';
+
+// Export metadata for static generation
+export const metadata: Metadata = {
   title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
   description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
-  canonical: "https://mdbrows.com.au/services/microblading",
-  ogImage: "/images/service-microblading.webp",
-  ogType: "article"
+  alternates: {
+    canonical: `${BASE_URL}/services/microblading`,
+  },
+  openGraph: {
+    title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
+    description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
+    url: `${BASE_URL}/services/microblading`,
+    type: 'article',
+    images: [{
+      url: `${BASE_URL}/images/service-microblading.webp`,
+      width: 1200,
+      height: 630,
+      alt: 'Microblading service at Melbourne Designer Brows',
+    }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function Microblading() {
@@ -17,10 +38,11 @@ export default function Microblading() {
   return (
     <div className="page-content">
       <ClientSeo
-        title={metadata.title}
-        description={metadata.description}
-        canonical={metadata.canonical}
-        ogImage={metadata.ogImage}
+        title={metadata.title as string}
+        description={metadata.description as string}
+        canonical={metadata.alternates?.canonical as string}
+        ogImage="/images/service-microblading.webp"
+        ogType="article"
       />
       
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
