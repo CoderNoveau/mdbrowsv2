@@ -7,7 +7,6 @@ import Head from 'next/head';
 interface ClientSeoProps {
   title: string;
   description: string;
-  canonical: string;
   ogImage: string;
 }
 
@@ -17,8 +16,7 @@ interface ClientSeoProps {
  */
 const ClientSeo: React.FC<ClientSeoProps> = ({ 
   title, 
-  description, 
-  canonical,
+  description,
   ogImage
 }) => {
   const [mounted, setMounted] = useState(false);
@@ -38,10 +36,8 @@ const ClientSeo: React.FC<ClientSeoProps> = ({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonical} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonical} />
       <meta property="og:image" content={fullOgImageUrl} />
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />

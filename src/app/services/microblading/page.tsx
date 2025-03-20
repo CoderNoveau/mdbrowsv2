@@ -4,19 +4,19 @@ import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
 
-const CANONICAL_URL = 'https://mdbrows.com.au/services/microblading';
 const OG_IMAGE = '/images/service-microblading.webp';
 
 export const metadata: Metadata = {
   title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
   description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
-  alternates: {
-    canonical: CANONICAL_URL,
+  robots: {
+    index: true,
+    follow: true
   },
   openGraph: {
     title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
     description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
-    url: CANONICAL_URL,
+    url: 'https://mdbrows.com.au/services/microblading',
     images: [{ url: OG_IMAGE }],
     type: 'article'
   }
@@ -30,7 +30,6 @@ export default function Microblading() {
       <ClientSeo
         title={metadata.title as string}
         description={metadata.description as string}
-        canonical={CANONICAL_URL}
         ogImage={OG_IMAGE}
       />
       
