@@ -1,44 +1,52 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 
 interface ClientSeoProps {
-  title: string;
-  description: string;
-  ogImage: string;
+  dynamicTitle?: string;
+  dynamicDescription?: string;
+  dynamicImage?: string;
 }
 
 /**
- * Client-only SEO component that safely handles Next.js App Router integration
- * This component only renders on the client, preventing hydration errors
+ * Client-only SEO component for dynamic meta tags only
+ * Do not use this for static meta tags - use Next.js metadata instead
  */
 const ClientSeo: React.FC<ClientSeoProps> = ({ 
-  title, 
-  description,
-  ogImage
+  dynamicTitle, 
+  dynamicDescription,
+  dynamicImage
 }) => {
   const [mounted, setMounted] = useState(false);
 
-  // Only render the component after hydration to avoid mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
+  if (!mounted || (!dynamicTitle && !dynamicDescription && !dynamicImage)) {
     return null;
   }
 
-  const fullOgImageUrl = ogImage.startsWith('http') ? ogImage : `https://mdbrows.com.au${ogImage}`;
+  const fullImageUrl = dynamicImage?.startsWith('http') ? dynamicImage : `https://mdbrows.com.au${dynamicImage}`;
   
   return (
     <Head>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={fullOgImageUrl} />
+      {dynamicTitle && (
+        <>
+          <title>{dynamicTitle}</title>
+          <meta property="og:title" content={dynamicTitle} />
+        </>
+      )}
+      {dynamicDescription && (
+        <>
+          <meta name="description" content={dynamicDescription} />
+          <meta property="og:description" content={dynamicDescription} />
+        </>
+      )}
+      {dynamicImage && (
+        <meta property="og:image" content={fullImageUrl} />
+      )}
     </Head>
   );
 };

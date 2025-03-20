@@ -1,26 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
 
 const OG_IMAGE = '/images/service-microblading.webp';
-const CANONICAL_URL = 'https://mdbrows.com.au/services/microblading';
 
 export const metadata: Metadata = {
   title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
   description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
   alternates: {
-    canonical: CANONICAL_URL
-  },
-  robots: {
-    index: true,
-    follow: true
+    canonical: 'https://mdbrows.com.au/services/microblading'
   },
   openGraph: {
     title: "Eyebrow Microblading & Feathering | Natural Brows | Melbourne Designer Brows",
     description: "Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.",
-    url: CANONICAL_URL,
     images: [{ url: OG_IMAGE }],
     type: 'article'
   }
@@ -31,12 +24,6 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
-      <ClientSeo
-        title={metadata.title as string}
-        description={metadata.description as string}
-        ogImage={OG_IMAGE}
-      />
-      
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

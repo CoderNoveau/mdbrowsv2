@@ -60,6 +60,11 @@ export const metadata: Metadata = {
     apple: [
       { url: '/images/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ]
+  },
+  metadataBase: new URL('https://mdbrows.com.au'),
+  robots: {
+    index: true,
+    follow: true,
   }
 };
 
