@@ -22,6 +22,11 @@ export default function Microblading() {
 
   return (
     <div className="page-content">
+      {/* Hardcoded canonical URL */}
+      <div dangerouslySetInnerHTML={{ 
+        __html: `<link rel="canonical" href="https://mdbrows.com.au/services/microblading/" />` 
+      }} />
+      
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
