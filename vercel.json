@@ -1,5 +1,7 @@
 {
   "redirects": [
+    { "source": "/oxy", "destination": "/services/microblading", "permanent": true },
+    { "source": "/oxy/", "destination": "/services/microblading", "permanent": true },
     { "source": "/before-care", "destination": "/services/microblading", "permanent": true },
     { "source": "/before-care/", "destination": "/services/microblading", "permanent": true },
     { "source": "/microblading-faq", "destination": "/services/microblading", "permanent": true },
