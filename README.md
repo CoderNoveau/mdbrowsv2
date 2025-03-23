@@ -1,8 +1,8 @@
 # Melbourne Designer Brows Website
 
-A modern, fast-loading website for Melbourne Designer Brows, a premier eyebrow studio with locations in Richmond and Springvale, Melbourne.
+A modern, fast-loading website for Melbourne Designer Brows, a premier eyebrow studio with locations in Richmond and Springvale, Melbourne. Coded in Next.JS
 
-## Features
+## Features - 
 
 - Built with Next.js for optimal performance
 - Static site generation for fast loading times
