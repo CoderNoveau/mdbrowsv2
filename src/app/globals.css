@@ -2183,6 +2183,8 @@ ul {
   font-size: 0.8rem;
   text-align: center;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: all 0.2s ease;
   margin: 0;
   width: 100%;
@@ -2554,4 +2556,104 @@ ul {
 }
 .prose a:hover {
   color: var(--accent-hover);
+}
+
+/* Blog Grid and Card Styles */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(192,166,105,0.10);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+  border: 1px solid #f0f0f0;
+  text-decoration: none;
+  min-height: 420px;
+}
+.blog-card:hover {
+  box-shadow: 0 8px 32px rgba(192,166,105,0.18);
+  transform: translateY(-6px) scale(1.012);
+}
+.blog-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+}
+.blog-card-image {
+  object-fit: cover;
+  transition: transform 0.35s cubic-bezier(.4,1.7,.7,1.1);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+.blog-card:hover .blog-card-image {
+  transform: scale(1.06);
+}
+.blog-card-content {
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.blog-card-title {
+  color: #b3a16b;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  font-family: var(--serif);
+}
+.blog-card-excerpt {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  line-height: 1.6;
+}
+.blog-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.98rem;
+  margin-top: 0.5rem;
+}
+.blog-card-date {
+  color: #b3a16b;
+  background: #f9f6ef;
+  padding: 0.25em 0.9em;
+  border-radius: 6px;
+  font-size: 0.98em;
+  font-weight: 500;
+}
+.blog-card-readmore {
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 0.2s;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.blog-card-readmore:hover {
+  color: var(--accent-hover);
+}
+@media (max-width: 767px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .blog-card-content {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .blog-card-image-wrapper {
+    height: 170px;
+  }
+  .blog-card {
+    min-height: 0;
+  }
 }
