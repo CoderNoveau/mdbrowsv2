@@ -8,9 +8,6 @@ const nextConfig = {
     // Disable TypeScript checking during production builds
     ignoreBuildErrors: true,
   },
-  // These were moved from experimental to root level
-  skipTrailingSlashRedirect: true,
-  skipMiddlewareUrlNormalize: true,
   // Force static export
   output: 'export',
   // Image optimization settings
@@ -30,11 +27,8 @@ const nextConfig = {
   staticPageGenerationTimeout: 120,
   // Asset optimization
   assetPrefix: '',
-  // Ensure metadata is included in static exports
-  generateMetadata: true,
-  // Instead of redirects, we'll use client-side navigation
-  // or handle redirects through your hosting platform (Vercel)
-  trailingSlash: true, // This helps with static hosting
+  // This helps with static hosting
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
