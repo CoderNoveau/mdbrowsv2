@@ -9,10 +9,12 @@ import TrackingAnchor from '@/components/TrackingAnchor';
 // Memoized navigation links component
 const NavigationLinks = memo(({ 
   handleLinkClick, 
-  pathname 
+  pathname,
+  mounted
 }: { 
   handleLinkClick: () => void;
   pathname: string;
+  mounted: boolean;
 }) => (
   <>
     <Link 
@@ -36,6 +38,15 @@ const NavigationLinks = memo(({
     >
       FAQ
     </Link>
+    {mounted && (
+      <Link 
+        href="/blog" 
+        className={pathname === '/blog' ? 'active' : ''}
+        onClick={handleLinkClick}
+      >
+        Brow Blog
+      </Link>
+    )}
   </>
 ));
 
@@ -161,56 +172,61 @@ const Header = () => {
         </div>
         
         <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
-          {/* Services dropdown */}
-          <div className="nav-item-with-dropdown">
-            <button 
-              className={`dropdown-toggle ${pathname === '/services' ? 'active' : ''}`}
-              onClick={toggleServices}
-              aria-expanded={servicesOpen}
-              disabled={!mounted}
-            >
-              Services
-            </button>
-            <DropdownMenu 
-              isOpen={servicesOpen}
-              items={serviceItems}
-              handleLinkClick={handleLinkClick}
-            />
-          </div>
+          {mounted && (
+            <>
+              {/* Services dropdown */}
+              <div className="nav-item-with-dropdown">
+                <button 
+                  className={`dropdown-toggle ${pathname === '/services' ? 'active' : ''}`}
+                  onClick={toggleServices}
+                  aria-expanded={servicesOpen}
+                  disabled={!mounted}
+                >
+                  Services
+                </button>
+                <DropdownMenu 
+                  isOpen={servicesOpen}
+                  items={serviceItems}
+                  handleLinkClick={handleLinkClick}
+                />
+              </div>
 
-          <NavigationLinks 
-            handleLinkClick={handleLinkClick}
-            pathname={pathname}
-          />
+              <NavigationLinks 
+                handleLinkClick={handleLinkClick}
+                pathname={pathname}
+                mounted={mounted}
+              />
 
-          {/* About dropdown */}
-          <div className="nav-item-with-dropdown">
-            <button 
-              className={`dropdown-toggle ${pathname === '/about' ? 'active' : ''}`}
-              onClick={toggleAbout}
-              aria-expanded={aboutOpen}
-              disabled={!mounted}
-            >
-              About Us
-            </button>
-            <DropdownMenu 
-              isOpen={aboutOpen}
-              items={aboutItems}
-              handleLinkClick={handleLinkClick}
-            />
-          </div>
-          
-          {/* Book Now button at the bottom for mobile */}
-          <div onClick={handleLinkClick}>
-            <TrackingAnchor 
-              href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="mobile-nav-book"
-            >
-              Book Now
-            </TrackingAnchor>
-          </div>
+              {/* About dropdown */}
+              <div className="nav-item-with-dropdown">
+                <button 
+                  className={`dropdown-toggle ${pathname === '/about' ? 'active' : ''}`}
+                  onClick={toggleAbout}
+                  aria-expanded={aboutOpen}
+                  disabled={!mounted}
+                >
+                  About Us
+                </button>
+                <DropdownMenu 
+                  isOpen={aboutOpen}
+                  items={aboutItems}
+                  handleLinkClick={handleLinkClick}
+                />
+              </div>
+              
+              {/* Book Now button at the bottom for mobile */}
+              <div onClick={handleLinkClick}>
+                <TrackingAnchor 
+                  href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mobile-nav-book"
+                >
+                  Book Now
+                </TrackingAnchor>
+              </div>
+            </>
+          )}
         </nav>
       </div>
     </header>

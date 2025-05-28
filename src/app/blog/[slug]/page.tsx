@@ -17,7 +17,9 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug)
+  const resolvedParams = await params
+  const { slug } = resolvedParams
+  const post = await getPostBySlug(slug)
   
   if (!post) {
     return {
@@ -40,7 +42,8 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = params
+  const resolvedParams = await params
+  const { slug } = resolvedParams
   const filePath = path.join(process.cwd(), 'src/content/blog', `${slug}.mdx`)
   if (!fs.existsSync(filePath)) notFound()
 
