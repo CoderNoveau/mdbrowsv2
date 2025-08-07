@@ -1,22 +1,32 @@
-'use client';
-
 import Script from 'next/script';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import styles from './about.module.css';
 import ElfsightWidget from '@/components/ElfsightWidget';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us | Expert Cosmetic Tattoo Artists | Melbourne Designer Brows',
+  description: 'Meet Melbourne\'s trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments. Learn about our commitment to excellence.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/about',
+  },
+  openGraph: {
+    title: 'About Us | Melbourne Designer Brows',
+    description: 'Meet Melbourne\'s trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments.',
+    url: 'https://mdbrows.com.au/about',
+    images: [{
+      url: 'https://mdbrows.com.au/images/about-banner.webp',
+    }],
+    type: 'website',
+  },
+};
 
 export default function About() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
     <div className="page-content">
-      <ClientSeo
-        dynamicTitle="About Us | Expert Cosmetic Tattoo Artists | Melbourne Designer Brows"
-        dynamicDescription="Meet Melbourne's trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments. Learn about our commitment to excellence."
-        dynamicImage="/images/about-banner.webp"
-      />
       
       <h1 className="section-heading">About Melbourne Designer Brows</h1>
       

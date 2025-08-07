@@ -1,17 +1,28 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
-import ClientSeo from '@/components/ClientSeo';
 import ElfsightWidget from '@/components/ElfsightWidget';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Client Reviews | Melbourne Designer Brows',
+  description: 'Read what our clients say about their experiences at Melbourne Designer Brows. Real reviews from real clients about our microblading and cosmetic tattooing services.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/about/reviews',
+  },
+  openGraph: {
+    title: 'Client Reviews | Melbourne Designer Brows',
+    description: 'Read what our clients say about their experiences at Melbourne Designer Brows. Real reviews from real clients about our microblading and cosmetic tattooing services.',
+    url: 'https://mdbrows.com.au/about/reviews',
+    images: [{
+      url: 'https://mdbrows.com.au/images/reviews-banner.webp',
+    }],
+    type: 'website',
+  },
+};
 
 export default function ReviewsPage() {
   return (
     <>
-      <ClientSeo
-        dynamicTitle="Client Reviews | Melbourne Designer Brows"
-        dynamicDescription="Read what our clients say about their experiences at Melbourne Designer Brows. Real reviews from real clients about our microblading and cosmetic tattooing services."
-      />
       
       <div className="reviews-page">
         <h1 className="page-heading hide-mobile">Reviews</h1>

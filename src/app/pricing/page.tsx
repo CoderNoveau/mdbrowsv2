@@ -1,4 +1,3 @@
-import ClientSeo from '@/components/ClientSeo';
 import TrackingAnchor from '@/components/TrackingAnchor';
 import { Metadata } from 'next';
 
