@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Eyebrow Shapes Guide 2024 | Find Your Perfect Brow Shape',
   description: 'Complete guide to eyebrow shapes for every face. Learn which brow shape suits you best - arch, straight, rounded, or S-shaped. Expert advice from Melbourne Designer Brows.',
   alternates: {
-    canonical: 'https://mdbrows.com.au/eyebrow-shapes-guide/',
+    canonical: 'https://mdbrows.com.au/eyebrow-shapes-guide',
   },
   openGraph: {
     title: 'Ultimate Eyebrow Shapes Guide | Find Your Perfect Match',
     description: 'Discover which eyebrow shape complements your face shape. Complete guide with examples and expert tips from Melbourne\'s leading brow artists.',
-    url: 'https://mdbrows.com.au/eyebrow-shapes-guide/',
+    url: 'https://mdbrows.com.au/eyebrow-shapes-guide',
     type: 'article',
     images: [{
       url: 'https://mdbrows.com.au/images/eyebrow-shapes-guide.webp',

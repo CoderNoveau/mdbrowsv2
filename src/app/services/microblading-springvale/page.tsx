@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Microblading Springvale | Professional Eyebrow Services',
   description: 'Expert microblading services in Springvale Melbourne. Natural-looking eyebrows by skilled artists. Serving Springvale, Glen Waverley, Clayton & south-east suburbs. Book from $595.',
   alternates: {
-    canonical: 'https://mdbrows.com.au/services/microblading-springvale/',
+    canonical: 'https://mdbrows.com.au/services/microblading-springvale',
   },
   openGraph: {
     title: 'Microblading Springvale | Melbourne Designer Brows',
     description: 'Transform your brows with microblading in Springvale. Professional artists, natural results, convenient south-east Melbourne location.',
-    url: 'https://mdbrows.com.au/services/microblading-springvale/',
+    url: 'https://mdbrows.com.au/services/microblading-springvale',
     images: [{
       url: 'https://mdbrows.com.au/images/springvale-microblading.webp',
     }],

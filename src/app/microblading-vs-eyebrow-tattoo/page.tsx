@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Microblading vs Eyebrow Tattoo 2024 | Key Differences Explained',
   description: 'Complete comparison of microblading vs eyebrow tattoo. Learn the differences in technique, longevity, cost, and results. Expert guide from Melbourne Designer Brows.',
   alternates: {
-    canonical: 'https://mdbrows.com.au/microblading-vs-eyebrow-tattoo/',
+    canonical: 'https://mdbrows.com.au/microblading-vs-eyebrow-tattoo',
   },
   openGraph: {
     title: 'Microblading vs Eyebrow Tattoo | Complete Comparison Guide',
     description: 'Detailed comparison between microblading and eyebrow tattoos. Understand which technique is right for you with expert advice from Melbourne.',
-    url: 'https://mdbrows.com.au/microblading-vs-eyebrow-tattoo/',
+    url: 'https://mdbrows.com.au/microblading-vs-eyebrow-tattoo',
     type: 'article',
   },
 };

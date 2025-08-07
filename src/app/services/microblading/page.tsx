@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Microblading Melbourne | From $595',
   description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
   alternates: {
-    canonical: 'https://mdbrows.com.au/services/microblading/',
+    canonical: 'https://mdbrows.com.au/services/microblading',
   },
   openGraph: {
     title: 'Microblading Services | Melbourne Designer Brows',
     description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
-    url: 'https://mdbrows.com.au/services/microblading/',
+    url: 'https://mdbrows.com.au/services/microblading',
     images: [{
       url: 'https://mdbrows.com.au/images/service-microblading.webp',
     }],
@@ -37,9 +37,9 @@ export default function Microblading() {
       />
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://mdbrows.com.au/" },
-          { name: "Services", url: "https://mdbrows.com.au/services/" },
-          { name: "Microblading", url: "https://mdbrows.com.au/services/microblading/" }
+          { name: "Home", url: "https://mdbrows.com.au" },
+          { name: "Services", url: "https://mdbrows.com.au/services" },
+          { name: "Microblading", url: "https://mdbrows.com.au/services/microblading" }
         ]}
       />
       

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Microblading Healing Stages 2024 | Day-by-Day Recovery Guide',
   description: 'Complete guide to microblading healing stages with photos. Learn what to expect each day, how to care for your brows, and ensure perfect healing. Expert advice from Melbourne Designer Brows.',
   alternates: {
-    canonical: 'https://mdbrows.com.au/microblading-healing-stages/',
+    canonical: 'https://mdbrows.com.au/microblading-healing-stages',
   },
   openGraph: {
     title: 'Microblading Healing Process | Complete Recovery Timeline',
     description: 'Detailed day-by-day guide to microblading healing. Understand each stage, see real photos, and get expert aftercare tips for perfect results.',
-    url: 'https://mdbrows.com.au/microblading-healing-stages/',
+    url: 'https://mdbrows.com.au/microblading-healing-stages',
     type: 'article',
     images: [{
       url: 'https://mdbrows.com.au/images/microblading-healing-stages.webp',

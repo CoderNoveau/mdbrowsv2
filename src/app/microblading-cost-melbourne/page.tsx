@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Microblading Cost Melbourne 2024 | Price Guide & Comparison',
   description: 'Complete microblading cost guide for Melbourne 2024. Compare prices, understand what affects cost, payment plans available. Melbourne Designer Brows transparent pricing from $595.',
   alternates: {
-    canonical: 'https://mdbrows.com.au/microblading-cost-melbourne/',
+    canonical: 'https://mdbrows.com.au/microblading-cost-melbourne',
   },
   openGraph: {
     title: 'Microblading Cost Melbourne 2024 | Complete Price Guide',
     description: 'Detailed microblading pricing for Melbourne. Compare costs, payment options, and what\'s included. Transparent pricing from Melbourne Designer Brows.',
-    url: 'https://mdbrows.com.au/microblading-cost-melbourne/',
+    url: 'https://mdbrows.com.au/microblading-cost-melbourne',
     type: 'article',
   },
 };
