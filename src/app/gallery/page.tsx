@@ -26,10 +26,10 @@ export default function Gallery() {
         our gallery showcases the quality and precision of our work at Melbourne Designer Brows.
       </p>
       
-      {/* Our Gallery Component with actual images */}
-      <div className="gallery-showcase" style={{ marginBottom: '4rem' }}>
+      {/* Our Gallery Component with actual images - TEMPORARILY DISABLED */}
+      {/* <div className="gallery-showcase" style={{ marginBottom: '4rem' }}>
         <GalleryGrid />
-      </div>
+      </div> */}
       
       {/* Elfsight Widget for additional gallery */}
       <div className="gallery-container">
