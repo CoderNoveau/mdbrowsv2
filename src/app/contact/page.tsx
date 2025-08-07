@@ -5,10 +5,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Book Your Consultation | Melbourne Designer Brows',
   description: 'Book your microblading or cosmetic tattooing consultation at our Melbourne locations. Easy online booking available. Get in touch for inquiries or information.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/contact',
+  },
   openGraph: {
     title: 'Book Your Consultation | Melbourne Designer Brows',
     description: 'Book your microblading or cosmetic tattooing consultation at our Melbourne locations. Easy online booking available. Get in touch for inquiries or information.',
-    url: 'https://mdbrows.com.au/contact/',
+    url: 'https://mdbrows.com.au/contact',
     images: [{
       url: 'https://mdbrows.com.au/images/contact-banner.webp',
     }],

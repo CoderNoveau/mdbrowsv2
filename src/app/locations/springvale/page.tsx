@@ -7,10 +7,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Springvale Location | Melbourne Designer Brows | Professional Microblading Springvale',
   description: 'Visit our Springvale microblading studio for expert eyebrow services. Convenient location serving Springvale, Glen Waverley, and surrounding areas with professional microblading and cosmetic tattooing.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/locations/springvale',
+  },
   openGraph: {
     title: 'Springvale Location | Melbourne Designer Brows',
     description: 'Visit our Springvale microblading studio for expert eyebrow services. Convenient location serving Springvale, Glen Waverley, and surrounding areas with professional microblading and cosmetic tattooing.',
-    url: 'https://mdbrows.com.au/locations/springvale/',
+    url: 'https://mdbrows.com.au/locations/springvale',
     images: [{
       url: 'https://mdbrows.com.au/images/springvale-studio.webp',
     }],

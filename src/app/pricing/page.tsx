@@ -5,10 +5,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Pricing | Melbourne Designer Brows',
   description: 'View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/pricing',
+  },
   openGraph: {
     title: 'Pricing | Melbourne Designer Brows',
     description: 'View our comprehensive price list for microblading, cosmetic tattooing, microneedling, and other brow and beauty services in Melbourne.',
-    url: 'https://mdbrows.com.au/pricing/',
+    url: 'https://mdbrows.com.au/pricing',
     images: [{
       url: 'https://mdbrows.com.au/images/pricing-banner.webp',
     }],

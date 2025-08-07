@@ -6,6 +6,15 @@ import { getAllPosts, BlogPost } from '@/lib/blog'
 export const metadata: Metadata = {
   title: 'Brow Blog | Latest News and Updates',
   description: 'Stay updated with the latest news, tips, and trends in the beauty industry.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/blog',
+  },
+  openGraph: {
+    title: 'Brow Blog | Melbourne Designer Brows',
+    description: 'Stay updated with the latest news, tips, and trends in the beauty industry.',
+    url: 'https://mdbrows.com.au/blog',
+    type: 'website',
+  },
 }
 
 export default async function BlogPage() {

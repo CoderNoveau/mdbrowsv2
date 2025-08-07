@@ -7,10 +7,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Richmond Location | Melbourne Designer Brows | Professional Microblading Richmond',
   description: 'Visit our Richmond microblading studio for expert eyebrow services. Convenient location with professional artists specializing in microblading, cosmetic tattooing, and brow corrections in Richmond Melbourne.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/locations/richmond',
+  },
   openGraph: {
     title: 'Richmond Location | Melbourne Designer Brows',
     description: 'Visit our Richmond microblading studio for expert eyebrow services. Convenient location with professional artists specializing in microblading, cosmetic tattooing, and brow corrections in Richmond Melbourne.',
-    url: 'https://mdbrows.com.au/locations/richmond/',
+    url: 'https://mdbrows.com.au/locations/richmond',
     images: [{
       url: 'https://mdbrows.com.au/images/richmond-studio.webp',
     }],
