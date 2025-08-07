@@ -455,11 +455,21 @@ ul {
   transform: translateX(-50%);
   min-width: 220px;
   background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   padding: 0.5rem;
   z-index: 9999;
   animation: dropdownFadeIn 0.2s ease;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .dropdown-menu .nav-link {
@@ -469,11 +479,19 @@ ul {
   padding: 0.75rem 1rem;
   border-radius: 8px;
   transition: all var(--transition-fast);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .dropdown-menu .nav-link:hover {
-  background: var(--light-gray);
+  background: rgba(196, 161, 109, 0.1);
   color: var(--accent);
+}
+
+.dropdown-menu .nav-link.active {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 @keyframes dropdownFadeIn {
@@ -1124,6 +1142,7 @@ ul {
   color: var(--accent);
 }
 
+/* Commented out duplicate dropdown styles that were hiding the menu
 .dropdown-menu {
   position: absolute;
   top: calc(100% + 5px);
@@ -1141,6 +1160,7 @@ ul {
   display: flex;
   flex-direction: column;
 }
+*/
 
 /* Arrow indicator for dropdown */
 .dropdown-menu::before {
@@ -1155,13 +1175,15 @@ ul {
   z-index: 1;
 }
 
+/* Commented out - not needed with new dropdown styles
 .dropdown-menu.show {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+*/
 
-/* Dropdown menu items */
+/* Dropdown menu items - commented out duplicate styles
 .dropdown-menu a {
   padding: 0.7rem 1.2rem;
   color: var(--text);
@@ -1183,6 +1205,7 @@ ul {
 .dropdown-menu a + a {
   border-top: 1px solid var(--light-gray);
 }
+*/
 
 /* Mobile styles for dropdowns */
 @media (max-width: 767px) {
