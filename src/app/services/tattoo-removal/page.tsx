@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import ServiceSchema from '@/components/ServiceSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,6 +23,13 @@ export default function TattooRemoval() {
 
   return (
     <div className="page-content">
+      <ServiceSchema 
+        serviceName="Tattoo Removal"
+        description="Professional tattoo removal services using advanced techniques to safely and effectively remove unwanted tattoos including cosmetic tattoos and microblading"
+        price="350"
+        duration="PT1H"
+        category="Tattoo Removal"
+      />
       <h1 className="page-section-heading">Tattoo Removal</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

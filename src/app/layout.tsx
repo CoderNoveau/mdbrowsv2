@@ -1,71 +1,102 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from 'react';
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PreloadHero from '@/components/PreloadHero';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
-import { Suspense } from 'react';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ElfsightScriptLoader } from '@/components/ElfsightScriptLoader';
-import Script from "next/script";
+import StructuredData from '@/components/StructuredData';
+import SkipToContent from '@/components/SkipToContent';
+import CookieConsent from '@/components/CookieConsent';
 
-// Font display swap ensures text remains visible during webfont load
-const fontStylesheet = `
-  /* latin */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXp-p7K4KLg.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qO0g.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtXK-F2qO0g.woff2) format('woff2');
-  }
-`;
-
+// Optimized viewport configuration
 export const viewport: Viewport = {
-  themeColor: '#ffffff',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#1a1a1a' }
+  ],
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5, // Allow zoom for accessibility
+  userScalable: true,
 };
 
+// Enhanced metadata with all SEO essentials
 export const metadata: Metadata = {
   metadataBase: new URL('https://mdbrows.com.au'),
   title: {
-    template: '%s',
-    default: 'Melbourne Designer Brows | Professional Eyebrow Services'
+    template: '%s | Melbourne Designer Brows - Microblading & Cosmetic Tattooing',
+    default: 'Melbourne Designer Brows | #1 Microblading & Cosmetic Tattooing Melbourne'
   },
-  description: 'Premier eyebrow studio in Melbourne offering microblading, ombré brows, and our signature combo at Richmond and Springvale locations. Book your appointment today!',
-  keywords: 'eyebrow microblading, microblading brow, microblading near me, microblading Melbourne, feathering eyebrows, tattoo eyebrows, microblading eyebrows, cosmetic tattooing Melbourne, lip tattooing Melbourne, eyebrow feathering Melbourne, Richmond microblading, Springvale microblading, Melbourne Designer Brows, ombré brows, powder brows',
+  description: 'Award-winning microblading & cosmetic tattooing in Melbourne. Professional eyebrow tattoo, ombré brows & corrections at Richmond & Springvale. 5-star rated, 10+ years experience. Book today from $595.',
+  keywords: 'microblading Melbourne, eyebrow tattoo Melbourne, cosmetic tattooing Melbourne, microblading Richmond, microblading Springvale, ombré brows Melbourne, powder brows, eyebrow feathering, permanent makeup Melbourne, brow corrections Melbourne, microblading near me, eyebrow microblading cost, best microblading Melbourne, eyebrow tattoo near me, semi permanent eyebrows',
+  authors: [{ name: 'Melbourne Designer Brows', url: 'https://mdbrows.com.au' }],
+  creator: 'Melbourne Designer Brows',
+  publisher: 'Melbourne Designer Brows',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://mdbrows.com.au',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_AU',
+    url: 'https://mdbrows.com.au',
+    siteName: 'Melbourne Designer Brows',
+    title: 'Melbourne Designer Brows | Professional Microblading & Cosmetic Tattooing',
+    description: 'Transform your brows with Melbourne\'s premier microblading experts. Professional cosmetic tattooing at Richmond & Springvale locations.',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Melbourne Designer Brows - Professional Microblading Services',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Melbourne Designer Brows | Microblading & Cosmetic Tattooing',
+    description: 'Award-winning microblading & cosmetic tattooing in Melbourne. Book your consultation today.',
+    images: ['/images/twitter-card.jpg'],
+  },
   icons: {
     icon: [
-      { url: '/images/favicon.ico' },
-      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/images/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#c0a669' },
     ]
-  }
+  },
+  manifest: '/site.webmanifest',
+  verification: {
+    google: 'your-google-verification-code',
+    other: {
+      'facebook-domain-verification': 'your-facebook-verification',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -74,82 +105,158 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-AU" suppressHydrationWarning>
       <head>
-        {/* We're removing the static canonical link */}
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        
+        {/* Inline critical fonts for faster loading */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+          }
+          @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXp-p7K4KLg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+          }
+          @font-face {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qO0g.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+          }
+          @font-face {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtXK-F2qO0g.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+          }
+        ` }} />
+        
+        {/* Preload critical images */}
+        <link rel="preload" as="image" href="/images/hero-desktop.webp" media="(min-width: 1024px)" />
+        <link rel="preload" as="image" href="/images/hero-tablet.webp" media="(min-width: 640px) and (max-width: 1023px)" />
+        <link rel="preload" as="image" href="/images/hero-mobile.webp" media="(max-width: 639px)" />
       </head>
-      <body>
-        <style dangerouslySetInnerHTML={{ __html: fontStylesheet }} />
-        <Suspense>
+      <body className="antialiased">
+        {/* Skip to content link for accessibility */}
+        <SkipToContent />
+        
+        {/* Google Analytics */}
+        <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
-        <PreloadHero />
-        {/* Add a script to ensure canonical URLs are properly set */}
-        <Script id="canonical-url" strategy="beforeInteractive">
-          {`
-            (function() {
-              // Create canonical link if it doesn't exist
-              let canonicalLink = document.querySelector('link[rel="canonical"]');
-              if (!canonicalLink) {
-                canonicalLink = document.createElement('link');
-                canonicalLink.rel = 'canonical';
-                const path = window.location.pathname;
-                // Ensure path has trailing slash
-                const normPath = path.endsWith('/') ? path : path + '/';
-                canonicalLink.href = 'https://mdbrows.com.au' + (normPath === '/' ? '' : normPath);
-                document.head.appendChild(canonicalLink);
-              }
-            })();
-          `}
-        </Script>
-        <Script id="preload-hero" strategy="beforeInteractive">
-          {`
-            const link1 = document.createElement('link');
-            link1.rel = 'preload';
-            link1.href = '/images/hero1.webp';
-            link1.as = 'image';
-            link1.type = 'image/webp';
-            link1.media = '(min-width: 1024px)';
-            document.head.appendChild(link1);
-            
-            const link2 = document.createElement('link');
-            link2.rel = 'preload';
-            link2.href = '/images/hero1-tablet.webp';
-            link2.as = 'image';
-            link2.type = 'image/webp';
-            link2.media = '(min-width: 640px) and (max-width: 1023px)';
-            document.head.appendChild(link2);
-            
-            const link3 = document.createElement('link');
-            link3.rel = 'preload';
-            link3.href = '/images/hero1-mobile.webp';
-            link3.as = 'image';
-            link3.type = 'image/webp';
-            link3.media = '(max-width: 639px)';
-            document.head.appendChild(link3);
-          `}
-        </Script>
-        <Script id="slick-style-loader" strategy="afterInteractive">
-          {`
-            window.addEventListener('load', function() {
-              const link1 = document.createElement('link');
-              link1.rel = 'stylesheet';
-              link1.href = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css';
-              document.head.appendChild(link1);
-              
-              const link2 = document.createElement('link');
-              link2.rel = 'stylesheet';
-              link2.href = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css';
-              document.head.appendChild(link2);
-            });
-          `}
-        </Script>
+        
+        {/* Structured Data for SEO */}
+        <StructuredData />
+        
+        {/* Main App Structure */}
         <ElfsightScriptLoader>
           <Header />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
-          <SpeedInsights />
         </ElfsightScriptLoader>
+        
+        {/* Cookie Consent */}
+        <Suspense fallback={null}>
+          <CookieConsent />
+        </Suspense>
+        
+        {/* Performance Monitoring */}
+        <SpeedInsights />
+        
+        {/* Schema.org LocalBusiness structured data */}
+        <Script
+          id="schema-local-business"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BeautySalon",
+              "@id": "https://mdbrows.com.au/#organization",
+              "name": "Melbourne Designer Brows",
+              "image": "https://mdbrows.com.au/images/logo.png",
+              "logo": "https://mdbrows.com.au/images/logo.png",
+              "telephone": "+61-3-9XXX-XXXX",
+              "email": "info@mdbrows.com.au",
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Richmond Location",
+                  "addressLocality": "Richmond",
+                  "addressRegion": "VIC",
+                  "postalCode": "3121",
+                  "addressCountry": "AU"
+                },
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Springvale Location",
+                  "addressLocality": "Springvale",
+                  "addressRegion": "VIC",
+                  "postalCode": "3171",
+                  "addressCountry": "AU"
+                }
+              ],
+              "geo": [
+                {
+                  "@type": "GeoCoordinates",
+                  "latitude": -37.8199,
+                  "longitude": 144.9923
+                },
+                {
+                  "@type": "GeoCoordinates",
+                  "latitude": -37.9514,
+                  "longitude": 145.1526
+                }
+              ],
+              "url": "https://mdbrows.com.au",
+              "sameAs": [
+                "https://www.facebook.com/melbournedesignerbrows",
+                "https://www.instagram.com/melbournedesignerbrows"
+              ],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "18:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "09:00",
+                  "closes": "16:00"
+                }
+              ],
+              "priceRange": "$$$",
+              "servesCuisine": "Australian",
+              "acceptsReservations": true,
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "150"
+              }
+            })
+          }}
+        />
       </body>
     </html>
   );

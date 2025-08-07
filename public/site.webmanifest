@@ -1,19 +1,85 @@
 {
   "name": "Melbourne Designer Brows",
-  "short_name": "MDBrows",
+  "short_name": "MD Brows",
+  "description": "Professional microblading & cosmetic tattooing in Melbourne. Award-winning services at Richmond & Springvale locations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c0a669",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-AU",
+  "dir": "ltr",
+  "categories": ["beauty", "lifestyle", "health"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
   "icons": [
     {
-      "src": "/images/android-chrome-192x192.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/images/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
-} 
+  "screenshots": [
+    {
+      "src": "/screenshots/home-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Homepage on Desktop"
+    },
+    {
+      "src": "/screenshots/home-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Homepage on Mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Appointment",
+      "short_name": "Book",
+      "description": "Book your microblading appointment",
+      "url": "/book",
+      "icons": [{ "src": "/icons/book-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "View Gallery",
+      "short_name": "Gallery",
+      "description": "See our work",
+      "url": "/gallery",
+      "icons": [{ "src": "/icons/gallery-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Pricing",
+      "short_name": "Prices",
+      "description": "View our service prices",
+      "url": "/pricing",
+      "icons": [{ "src": "/icons/pricing-icon.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import ServiceSchema from '@/components/ServiceSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,6 +23,13 @@ export default function CosmeticTattooing() {
 
   return (
     <div className="page-content">
+      <ServiceSchema 
+        serviceName="Cosmetic Tattooing"
+        description="Professional cosmetic tattooing services including lip tattooing, eyeliner tattooing, and permanent makeup applications for natural-looking enhancement"
+        price="450"
+        duration="PT2H"
+        category="Permanent Makeup"
+      />
       <h1 className="page-section-heading">Cosmetic Tattooing</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

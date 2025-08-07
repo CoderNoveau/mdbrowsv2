@@ -1,9 +1,98 @@
-# *
+# Melbourne Designer Brows - Robots.txt
+# Advanced crawl budget optimization for optimal SEO performance
+
+# Default User-agent rules
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*utm_
+Disallow: /*?*ref=
+Disallow: /*?*session=
+Disallow: /*?*token=
+Crawl-delay: 0
 
-# Host
-Host: https://mdbrows.com.au
+# Googlebot specific (no crawl delay for better indexing)
+User-agent: Googlebot
+Allow: /
+Allow: /_next/static/
+Allow: /_next/image
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?*utm_
+Disallow: /*?*ref=
+Crawl-delay: 0
 
-# Sitemaps
+# Googlebot Images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /_next/image
+Disallow: /api/
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 1
+
+# Social Media Bots (allow for rich previews)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# Block bad bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# AI/ML Crawlers (control as needed)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /api/
+
+# Sitemap location
 Sitemap: https://mdbrows.com.au/sitemap.xml
+Sitemap: https://mdbrows.com.au/sitemap-0.xml
+
+# Host preference (helps with canonicalization)
+Host: https://mdbrows.com.au

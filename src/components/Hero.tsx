@@ -1,255 +1,248 @@
 'use client';
 
-import React, { useEffect, useState, memo, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import Image from 'next/image';
-import Slider from 'react-slick';
-import TrackingAnchor from '@/components/TrackingAnchor';
+import Link from 'next/link';
+import TrackingAnchor from './TrackingAnchor';
+import './Hero.css';
 
-const slides = [
-  {
-    image: {
-      desktop: '/images/hero1.webp',
-      tablet: '/images/hero1-tablet.webp',
-      mobile: '/images/hero1-mobile.webp',
-    },
-    heading: 'MICROBLADING',
-    subheading: 'LIMITED TIME ONLY',
-    price: '$595',
-    alt: 'Microbladed brows close-up',
-  },
-  {
-    image: {
-      desktop: '/images/hero2.webp',
-      tablet: '/images/hero2-tablet.webp',
-      mobile: '/images/hero2-mobile.webp',
-    },
-    heading: 'WAKE UP WITH PERFECT EYEBROWS',
-    subheading: 'EVERY DAY',
-    alt: 'Client with tinted brows',
-  },
-  {
-    image: {
-      desktop: '/images/hero3.webp',
-      tablet: '/images/hero3-tablet.webp',
-      mobile: '/images/hero3-mobile.webp',
-    },
-    heading: 'DESIGNER BROWS AWAIT YOU',
-    subheading: 'BOOK TODAY',
-    alt: 'Springvale salon interior',
-  },
-];
-
-// Preload the first slide's images
-const preloadImages = [
-  {
-    href: '/images/hero1.webp',
-    media: '(min-width: 1024px)',
-  },
-  {
-    href: '/images/hero1-tablet.webp',
-    media: '(min-width: 640px) and (max-width: 1023px)',
-  },
-  {
-    href: '/images/hero1-mobile.webp',
-    media: '(max-width: 639px)',
-  },
-];
-
-// Memoized slide content component
-const SlideContent = memo(({ slide, isVisible, getAnimationClass }: {
-  slide: typeof slides[0];
-  isVisible: boolean;
-  getAnimationClass: (baseClass: string) => string;
-}) => (
-  <div className={`hero-content ${isVisible ? 'hero-content-visible' : 'hero-content-hidden'}`}>
-    <div className="slide-text-container">
-      <h1 className={getAnimationClass('slide-heading')}>
-        {slide.heading}
-      </h1>
-      {slide.subheading && (
-        <h2 className={getAnimationClass('slide-subheading')}>
-          {slide.subheading}
-        </h2>
-      )}
-      {slide.price && (
-        <div className={getAnimationClass('slide-price')}>
-          {slide.price}
-        </div>
-      )}
-    </div>
-    <div className={getAnimationClass('slide-buttons')}>
-      <TrackingAnchor 
-        href="https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429" 
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn btn-primary"
-      >
-        BOOK APPOINTMENT
-      </TrackingAnchor>
-    </div>
-    <div className={getAnimationClass('slide-phone')}>
-      <a href="tel:+61418188277" className="hero-phone-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px' }}>
-          <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/>
-        </svg>
-        Call us: 0418 188 277
-      </a>
-    </div>
-  </div>
-));
-
-// Memoized slide component
-const Slide: React.FC<{ slide: typeof slides[0]; isFirst?: boolean }> = ({ slide, isFirst }) => (
-  <div className="slide">
-    <div style={{ position: 'relative', width: '100%', height: '80vh', backgroundColor: '#f9ebeb' }}>
-      <picture>
-        <source
-          media="(min-width: 1024px)"
-          srcSet={slide.image.desktop}
-          type="image/webp"
-          sizes="100vw"
-        />
-        <source
-          media="(min-width: 640px)"
-          srcSet={slide.image.tablet}
-          type="image/webp"
-          sizes="100vw"
-        />
-        <Image
-          src={slide.image.mobile}
-          alt={slide.alt}
-          fill
-          priority={isFirst}
-          fetchPriority={isFirst ? "high" : "auto"}
-          loading={isFirst ? "eager" : "lazy"}
-          className="slide-image"
-          quality={85}
-          sizes="(min-width: 1024px) 1920px, (min-width: 640px) 1024px, 640px"
-          style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
-            transform: 'translate3d(0, 0, 0)',
-            willChange: 'transform',
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden'
-          }}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qQEBALkE6Oz5DRVlLT0xXY1xbZF9kZ2R5Z1xkY1//2wBDARUXFyAeIBohHh4hRSgkKEVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-        />
-      </picture>
-      <div 
-        className="slide-side-overlay" 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '40%',
-          height: '100%',
-          background: 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)',
-          zIndex: 2
-        }}
-      />
-    </div>
-  </div>
-);
-Slide.displayName = 'Slide';
-
-const Hero: React.FC = () => {
-  const [mounted, setMounted] = useState(false);
+const Hero = memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [animating, setAnimating] = useState(false);
-  const [sliderInitialized, setSliderInitialized] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
+  const slides = [
+    {
+      id: 1,
+      title: 'Perfect Brows,',
+      subtitle: 'Every Day',
+      description: 'Award-winning microblading & cosmetic tattooing in Melbourne',
+      cta: 'Book Consultation',
+      ctaLink: 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429',
+      image: {
+        desktop: '/images/hero1.webp',
+        tablet: '/images/hero1-tablet.webp',
+        mobile: '/images/hero1-mobile.webp',
+      }
+    },
+    {
+      id: 2,
+      title: 'Natural Looking',
+      subtitle: 'Microblading',
+      description: 'Wake up with perfect eyebrows that last up to 2 years',
+      cta: 'View Services',
+      ctaLink: '/services',
+      image: {
+        desktop: '/images/hero2.webp',
+        tablet: '/images/hero2-tablet.webp',
+        mobile: '/images/hero2-mobile.webp',
+      }
+    },
+    {
+      id: 3,
+      title: 'Expert Artists',
+      subtitle: '10+ Years Experience',
+      description: 'Melbourne\'s most trusted cosmetic tattoo specialists',
+      cta: 'Meet Our Team',
+      ctaLink: '/about',
+      image: {
+        desktop: '/images/hero3.webp',
+        tablet: '/images/hero3-tablet.webp',
+        mobile: '/images/hero3-mobile.webp',
+      }
+    }
+  ];
+
+  // Auto-advance slides
   useEffect(() => {
-    // Add preload links for the first slide's images
-    preloadImages.forEach(({ href, media }) => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = href;
-      link.media = media;
-      link.type = 'image/webp';
-      document.head.appendChild(link);
-    });
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
 
-    setMounted(true);
-    setSliderInitialized(true);
+    return () => clearInterval(interval);
+  }, [slides.length, isPaused]);
 
-    // Cleanup preload links on unmount
-    return () => {
-      const links = document.head.querySelectorAll('link[rel="preload"][as="image"]');
-      links.forEach(link => link.remove());
-    };
+  // Mark as loaded for animations
+  useEffect(() => {
+    setIsLoaded(true);
   }, []);
 
-  const getAnimationClass = useCallback((baseClass: string) => {
-    return animating ? `${baseClass} hide-animation` : `${baseClass} show-animation`;
-  }, [animating]);
+  const handleSlideChange = useCallback((index: number) => {
+    setCurrentSlide(index);
+    setIsPaused(true);
+    // Resume auto-advance after 10 seconds
+    setTimeout(() => setIsPaused(false), 10000);
+  }, []);
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: mounted,
-    autoplaySpeed: 7000,
-    arrows: false,
-    fade: true,
-    cssEase: 'linear',
-    lazyLoad: 'progressive' as const,
-    beforeChange: (_oldIndex: number, newIndex: number) => {
-      if (!mounted) return;
-      setAnimating(true);
-      setCurrentSlide(newIndex);
-    },
-    afterChange: (index: number) => {
-      if (!mounted) return;
-      setCurrentSlide(index);
-      setAnimating(false);
-    }
-  };
+  const goToPrevious = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 10000);
+  }, [slides.length]);
 
-  if (!mounted || !sliderInitialized) {
-    return (
-      <div className="hero" style={{ position: 'relative' }}>
-        <div className="hero-slider-container">
-          <Slide slide={slides[0]} isFirst={true} />
-        </div>
-        <div className="hero-content-overlay">
-          <SlideContent
-            slide={slides[0]}
-            isVisible={true}
-            getAnimationClass={(baseClass) => `${baseClass} show-animation`}
-          />
-        </div>
-      </div>
-    );
-  }
+  const goToNext = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 10000);
+  }, [slides.length]);
+
+  const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
-    <div className="hero" style={{ position: 'relative' }}>
-      <div className="hero-slider-container">
-        <Slider {...sliderSettings} className="hero-slider">
+    <section className={`hero-section ${isLoaded ? 'loaded' : ''}`} aria-label="Hero carousel">
+      <div className="hero-container">
+        {/* Slides */}
+        <div className="hero-slides">
           {slides.map((slide, index) => (
-            <Slide key={index} slide={slide} isFirst={index === 0} />
-          ))}
-        </Slider>
-      </div>
+            <div
+              key={slide.id}
+              className={`hero-slide-item ${index === currentSlide ? 'active' : ''} ${
+                index < currentSlide ? 'prev' : index > currentSlide ? 'next' : ''
+              }`}
+              aria-hidden={index !== currentSlide}
+            >
+              {/* Background Image */}
+              <div className="hero-bg-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={slide.image.desktop}
+                  />
+                  <source
+                    media="(min-width: 640px)"
+                    srcSet={slide.image.tablet}
+                  />
+                  <Image
+                    src={slide.image.mobile}
+                    alt={`${slide.title} ${slide.subtitle}`}
+                    fill
+                    priority={index === 0}
+                    quality={90}
+                    className="hero-bg-image"
+                    sizes="100vw"
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                </picture>
+                <div className="hero-gradient-overlay" />
+              </div>
 
-      <div className="hero-content-overlay">
-        {slides.map((slide, index) => (
-          <SlideContent
-            key={`content-${index}`}
-            slide={slide}
-            isVisible={index === currentSlide}
-            getAnimationClass={getAnimationClass}
-          />
-        ))}
+              {/* Content */}
+              <div className="hero-content-wrapper">
+                <div className="hero-content-box">
+                  <h1 className="hero-heading">
+                    <span className="hero-heading-main">{slide.title}</span>
+                    <span className="hero-heading-accent">{slide.subtitle}</span>
+                  </h1>
+                  <p className="hero-text">{slide.description}</p>
+                  
+                  <div className="hero-buttons">
+                    {slide.ctaLink.startsWith('http') ? (
+                      <TrackingAnchor
+                        href={slide.ctaLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-primary btn-hero"
+                        trackingCategory="hero"
+                        trackingLabel={`hero-slide-${index + 1}`}
+                      >
+                        {slide.cta}
+                        <svg className="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                          <path d="M7 13L13 7M13 7H7M13 7V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </TrackingAnchor>
+                    ) : (
+                      <Link href={slide.ctaLink} className="btn btn-primary btn-hero">
+                        {slide.cta}
+                        <svg className="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                          <path d="M7 13L13 7M13 7H7M13 7V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </Link>
+                    )}
+                    <Link href="/gallery" className="btn btn-glass btn-hero">
+                      View Gallery
+                      <svg className="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 7L14 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
+                  </div>
+
+                  {/* Trust Badges */}
+                  <div className="hero-badges">
+                    <div className="badge-item">
+                      <svg className="badge-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <span>5.0 Rating</span>
+                    </div>
+                    <div className="badge-item">
+                      <svg className="badge-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm5 7.59l-6.5 6.5a.75.75 0 01-1.06 0l-3-3a.75.75 0 111.06-1.06l2.47 2.47 5.97-5.97a.75.75 0 011.06 1.06z"/>
+                      </svg>
+                      <span>150+ Reviews</span>
+                    </div>
+                    <div className="badge-item">
+                      <svg className="badge-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2l2.39 4.84 5.34.78-3.86 3.77.91 5.33L10 14.18l-4.78 2.54.91-5.33L2.27 7.62l5.34-.78L10 2z"/>
+                      </svg>
+                      <span>10+ Years</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          className="hero-nav hero-nav-prev"
+          onClick={goToPrevious}
+          aria-label="Previous slide"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <button
+          className="hero-nav hero-nav-next"
+          onClick={goToNext}
+          aria-label="Next slide"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        {/* Dots Indicator */}
+        <div className="hero-dots" role="tablist">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`hero-dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => handleSlideChange(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-selected={index === currentSlide}
+              role="tab"
+            >
+              <span className="dot-progress" />
+            </button>
+          ))}
+        </div>
+
+        {/* Scroll Indicator */}
+        <a href="#services" className="hero-scroll" aria-label="Scroll to services">
+          <span className="scroll-label">Scroll</span>
+          <svg className="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </a>
       </div>
-    </div>
+    </section>
   );
-};
+});
+
 Hero.displayName = 'Hero';
 
-export default Hero; 
+export default Hero;

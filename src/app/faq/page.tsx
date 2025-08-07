@@ -1,4 +1,5 @@
 import TrackingAnchor from '@/components/TrackingAnchor';
+import FAQSchema from '@/components/FAQSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,8 +19,44 @@ export const metadata: Metadata = {
 export default function FAQ() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
+  const faqData = [
+    {
+      question: "What is Microblading?",
+      answer: "Microblading is a sophisticated semi-permanent cosmetic tattooing technique used to create fuller, natural-looking eyebrows. This precision artistry involves the use of a specialized handheld microblade to manually draw delicate hair-like strokes that blend into your existing eyebrow hair for natural, beautiful results."
+    },
+    {
+      question: "How long does the procedure take?",
+      answer: "For the first Microblading session, the entire procedure usually takes about 2-3 hours. This includes consultation, brow mapping, numbing, and the actual microblading process."
+    },
+    {
+      question: "How long does microblading last?",
+      answer: "Microblading typically lasts 12-24 months, depending on your skin type, lifestyle, and aftercare. Oily skin types may fade faster, while dry skin tends to retain the pigment longer."
+    },
+    {
+      question: "Does microblading hurt?",
+      answer: "Most clients experience minimal discomfort during microblading. We use topical numbing cream to ensure your comfort throughout the procedure. Many describe the sensation as similar to eyebrow plucking."
+    },
+    {
+      question: "What is the healing process like?",
+      answer: "The healing process takes about 4-6 weeks. Initially, brows will appear darker and more defined, then gradually lighten as they heal. Proper aftercare is crucial for optimal results."
+    },
+    {
+      question: "How much does microblading cost?",
+      answer: "Our microblading starts from $595, which includes the initial treatment and complimentary touch-up session within 6-8 weeks. We offer package deals and payment plans for your convenience."
+    },
+    {
+      question: "Am I a good candidate for microblading?",
+      answer: "Most people are good candidates for microblading. However, we don't recommend the procedure for pregnant or breastfeeding women, those on blood-thinning medications, or people with certain skin conditions. A consultation will determine your suitability."
+    },
+    {
+      question: "What should I avoid before my appointment?",
+      answer: "Avoid alcohol, caffeine, blood-thinning medications, and sun exposure 24-48 hours before your appointment. Don't pluck, wax, or tint your eyebrows for at least one week prior to your session."
+    }
+  ];
+
   return (
     <div className="page-content">
+      <FAQSchema faqs={faqData} pageUrl="https://mdbrows.com.au/faq/" />
       <h1 className="page-section-heading">Frequently Asked Questions</h1>
       
       <p className="page-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>

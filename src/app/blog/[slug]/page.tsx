@@ -11,9 +11,9 @@ import matter from 'gray-matter'
 import { compileMDX } from 'next-mdx-remote/rsc'
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

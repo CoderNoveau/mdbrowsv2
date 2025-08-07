@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import ServiceSchema from '@/components/ServiceSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,6 +23,13 @@ export default function BrowCorrections() {
 
   return (
     <div className="page-content">
+      <ServiceSchema 
+        serviceName="Brow Corrections"
+        description="Expert eyebrow correction and repair services to fix botched microblading, uneven brows, and failed cosmetic tattoos using specialized techniques"
+        price="750"
+        duration="PT3H"
+        category="Corrective Cosmetic Tattooing"
+      />
       <h1 className="page-section-heading">Eyebrow Correction & Repair</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

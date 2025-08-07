@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,11 +9,11 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const GalleryPreview = () => {
   const previewImages = [
-    { src: '/images/prev1.webp', alt: 'Microblading Preview 1' },
-    { src: '/images/prev2.webp', alt: 'Microblading Preview 2' },
-    { src: '/images/prev3.webp', alt: 'Microblading Preview 3' },
-    { src: '/images/prev4.webp', alt: 'Microblading Preview 4' },
-    { src: '/images/prev5.webp', alt: 'Microblading Preview 5' },
+    { src: '/images/prev1.webp', alt: 'Before and after microblading transformation Melbourne Designer Brows natural hair stroke technique' },
+    { src: '/images/prev2.webp', alt: 'Professional microblading results Richmond studio eyebrow feathering cosmetic tattooing Melbourne' },
+    { src: '/images/prev3.webp', alt: 'Ombré powder brows Melbourne Designer Brows semi-permanent makeup eyebrow transformation' },
+    { src: '/images/prev4.webp', alt: 'Microblading brow correction Melbourne sparse eyebrow reconstruction cosmetic tattooing results' },
+    { src: '/images/prev5.webp', alt: 'Perfect eyebrow shape microblading Melbourne Designer Brows professional cosmetic tattooing before after' },
   ];
 
   const settings = {

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import ServiceSchema from '@/components/ServiceSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,6 +23,13 @@ export default function Microneedling() {
 
   return (
     <div className="page-content">
+      <ServiceSchema 
+        serviceName="Microneedling"
+        description="Advanced microneedling therapy to boost collagen production, reduce fine lines, improve skin texture, and promote natural skin rejuvenation"
+        price="280"
+        duration="PT1H30M"
+        category="Skin Treatment"
+      />
       <h1 className="page-section-heading">Microneedling</h1>
       
       <div className="service-image-container" style={{ marginBottom: '2rem', position: 'relative', width: '100%', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>

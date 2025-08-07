@@ -1,7 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
+import ReviewSchema from '@/components/ReviewSchema';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -10,6 +13,7 @@ const reviews = [
     name: "Clodagh Lynch",
     rating: 5,
     text: "Just got my brows done and I absolutely love them. Anne is a genius. I'll be back 100%",
+    datePublished: "2024-01-15"
   },
   {
     name: "Andrea Waters",
@@ -112,8 +116,24 @@ const Reviews = () => {
     ]
   };
 
+  const reviewData = reviews.map(review => ({
+    author: review.name,
+    rating: review.rating,
+    text: review.text,
+    datePublished: review.datePublished || "2024-01-01"
+  }));
+
+  const aggregateRating = {
+    ratingValue: 5.0,
+    reviewCount: reviews.length
+  };
+
   return (
     <section className="reviews-section">
+      <ReviewSchema 
+        reviews={reviewData} 
+        aggregateRating={aggregateRating}
+      />
       <div className="reviews-section-inner">
         <div className="reviews-header">
           <Image

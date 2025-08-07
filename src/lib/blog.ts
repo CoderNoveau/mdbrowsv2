@@ -22,14 +22,15 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const { data, content } = matter(fileContents);
       return {
-        slug: data.slug,
-        title: data.title,
-        date: data.date,
-        excerpt: data.excerpt,
-        image: data.image,
+        slug: data.slug || filename.replace(/\.(mdx?|md)$/, ''),
+        title: data.title || 'Untitled',
+        date: data.date || new Date().toISOString().split('T')[0],
+        excerpt: data.excerpt || 'No excerpt available.',
+        image: data.image || '/images/prev1.webp',
         content,
       };
     })
+    .filter((post) => post.slug && post.title && post.date)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
   return posts;
 }

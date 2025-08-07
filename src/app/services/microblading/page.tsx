@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import TrackingAnchor from '@/components/TrackingAnchor';
+import ServiceSchema from '@/components/ServiceSchema';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import { Metadata } from 'next';
-import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Microblading Services | Melbourne Designer Brows',
+  title: 'Microblading Melbourne | From $595',
   description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
+  alternates: {
+    canonical: 'https://mdbrows.com.au/services/microblading/',
+  },
   openGraph: {
     title: 'Microblading Services | Melbourne Designer Brows',
     description: 'Professional microblading and eyebrow feathering in Melbourne. Our skilled artists create natural, semi-permanent eyebrows with hair-like strokes. Experience perfect brows that last 12-24 months. Book your consultation today.',
@@ -22,20 +26,22 @@ export default function Microblading() {
   const freshaLink = 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429';
 
   return (
-    <div className="page-content">
-      <Script id="canonical-url" strategy="beforeInteractive">
-        {`
-          if (document.head) {
-            const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
-            existingCanonicals.forEach(el => el.remove());
-            
-            const link = document.createElement('link');
-            link.rel = 'canonical';
-            link.href = 'https://mdbrows.com.au/services/microblading/';
-            document.head.appendChild(link);
-          }
-        `}
-      </Script>
+    <>
+      <div className="page-content">
+        <ServiceSchema 
+        serviceName="Microblading"
+        description="Professional microblading and eyebrow feathering technique creating natural, semi-permanent eyebrows with precision hair-like strokes"
+        price="595"
+        duration="PT2H30M"
+        category="Cosmetic Tattooing"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mdbrows.com.au/" },
+          { name: "Services", url: "https://mdbrows.com.au/services/" },
+          { name: "Microblading", url: "https://mdbrows.com.au/services/microblading/" }
+        ]}
+      />
       
       <h1 className="page-section-heading">Microblading & Eyebrow Feathering</h1>
       
@@ -49,7 +55,7 @@ export default function Microblading() {
         />
       </div>
       
-      <div className="service-description">
+      <article className="service-description">
         <p className="page-text">
           Microblading, also known as Eyebrow Feathering, is a sophisticated semi-permanent cosmetic tattooing technique 
           used to create fuller, natural-looking eyebrows. This precision artistry involves the use of a specialized handheld 
@@ -560,7 +566,7 @@ export default function Microblading() {
             BOOK APPOINTMENT
           </a>
         </div>
-      </div>
+      </article>
 
       <div className="service-hero">
         <div className="service-hero-content">
@@ -582,5 +588,6 @@ export default function Microblading() {
         </div>
       </div>
     </div>
+    </>
   );
 } 
