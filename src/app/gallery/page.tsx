@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 export default function Gallery() {
   return (
     <div className="page-content">
-      <h1 className="page-section-heading">Microblading Before & After Gallery</h1>
+      <h1 className="page-section-heading">Our Work Gallery</h1>
       
       <p className="page-text" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>
         Browse our portfolio of real client results. From microblading to cosmetic tattooing and brow corrections, 
-        our gallery showcases the quality and precision of our work at Melbourne Designer Brows.
+        see the quality and precision of our work at Melbourne Designer Brows.
       </p>
       
       {/* Our Gallery Component with actual images - TEMPORARILY DISABLED */}
@@ -40,7 +40,7 @@ export default function Gallery() {
           color: 'var(--accent)',
           fontSize: 'var(--text-2xl)'
         }}>
-          Instagram Gallery
+          Latest Transformations
         </h2>
         <ElfsightWidget widgetId="4af60247-4320-4f4c-8fbe-1fc3d78f633f" />
       </div>
