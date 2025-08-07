@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Melbourne Designer Brows - Microblading & Cosmetic Tattooing',
     default: 'Melbourne Designer Brows | #1 Microblading & Cosmetic Tattooing Melbourne'
   },
-  description: 'Award-winning microblading & cosmetic tattooing in Melbourne. Professional eyebrow tattoo, ombré brows & corrections at Richmond & Springvale. 5-star rated, 10+ years experience. Book today from $595.',
+  description: 'Professional microblading & cosmetic tattooing in Melbourne. Expert eyebrow tattoo, ombré brows & corrections at Richmond & Springvale. 5-star rated, 8+ years experience. Book today from $595.',
   keywords: 'microblading Melbourne, eyebrow tattoo Melbourne, cosmetic tattooing Melbourne, microblading Richmond, microblading Springvale, ombré brows Melbourne, powder brows, eyebrow feathering, permanent makeup Melbourne, brow corrections Melbourne, microblading near me, eyebrow microblading cost, best microblading Melbourne, eyebrow tattoo near me, semi permanent eyebrows',
   authors: [{ name: 'Melbourne Designer Brows', url: 'https://mdbrows.com.au' }],
   creator: 'Melbourne Designer Brows',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Melbourne Designer Brows | Microblading & Cosmetic Tattooing',
-    description: 'Award-winning microblading & cosmetic tattooing in Melbourne. Book your consultation today.',
+    description: 'Professional microblading & cosmetic tattooing in Melbourne. Book your consultation today.',
     images: ['/images/twitter-card.jpg'],
   },
   icons: {

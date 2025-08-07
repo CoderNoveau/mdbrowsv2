@@ -16,7 +16,7 @@ const Hero = memo(() => {
       id: 1,
       title: 'Perfect Brows,',
       subtitle: 'Every Day',
-      description: 'Award-winning microblading & cosmetic tattooing in Melbourne',
+      description: 'Professional microblading & cosmetic tattooing in Melbourne',
       cta: 'Book Consultation',
       ctaLink: 'https://www.fresha.com/providers/melbourne-designer-brows-y0m3n797?pId=469429',
       image: {
@@ -41,7 +41,7 @@ const Hero = memo(() => {
     {
       id: 3,
       title: 'Expert Artists',
-      subtitle: '10+ Years Experience',
+      subtitle: '8+ Years Experience',
       description: 'Melbourne\'s most trusted cosmetic tattoo specialists',
       cta: 'Meet Our Team',
       ctaLink: '/about',
@@ -186,7 +186,7 @@ const Hero = memo(() => {
                       <svg className="badge-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M10 2l2.39 4.84 5.34.78-3.86 3.77.91 5.33L10 14.18l-4.78 2.54.91-5.33L2.27 7.62l5.34-.78L10 2z"/>
                       </svg>
-                      <span>10+ Years</span>
+                      <span>8+ Years</span>
                     </div>
                   </div>
                 </div>

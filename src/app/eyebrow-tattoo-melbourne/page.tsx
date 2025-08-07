@@ -8,7 +8,7 @@ import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Eyebrow Tattoo Melbourne | Permanent Makeup Artists | Melbourne Designer Brows',
-  description: 'Professional eyebrow tattoo in Melbourne. Cosmetic tattooing experts with 10+ years experience. Natural results using premium pigments. Book your consultation today.',
+  description: 'Professional eyebrow tattoo in Melbourne. Cosmetic tattooing experts with 8+ years experience. Natural results using premium pigments. Book your consultation today.',
   keywords: 'eyebrow tattoo Melbourne, cosmetic tattooing Melbourne, permanent makeup Melbourne, eyebrow feathering Melbourne, powder brows Melbourne, ombre brows Melbourne, eyebrow tattoo Richmond, eyebrow tattoo Springvale',
   openGraph: {
     title: 'Eyebrow Tattoo Melbourne - Expert Cosmetic Tattooing',
@@ -75,7 +75,7 @@ export default function EyebrowTattooMelbourne() {
             <span className="hero-subtitle">Cosmetic Tattooing Specialists Since 2014</span>
           </h1>
           <p className="hero-landing-description">
-            Award-winning eyebrow tattoo artists creating natural, beautiful brows. 
+            Professional eyebrow tattoo artists creating natural, beautiful brows. 
             Certified professionals, premium pigments, 150+ happy clients.
           </p>
           <div className="hero-landing-actions">
@@ -98,13 +98,13 @@ export default function EyebrowTattooMelbourne() {
               <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
               </svg>
-              <span>Award Winning</span>
+              <span>Professional Artists</span>
             </div>
             <div className="feature-item">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10 2C5.03 2 1 6.03 1 11c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.97-4.03-9-9-9zm3.59 4L10 9.59 6.41 6 5 7.41 8.59 11 5 14.59 6.41 16 10 12.41 13.59 16 15 14.59 11.41 11 15 7.41 13.59 6z"/>
               </svg>
-              <span>10+ Years Experience</span>
+              <span>8+ Years Experience</span>
             </div>
             <div className="feature-item">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">

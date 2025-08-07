@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Melbourne Designer Brows | #1 Microblading & Cosmetic Tattooing Melbourne',
-  description: 'Award-winning microblading & cosmetic tattooing in Melbourne. Professional eyebrow tattoo, ombré brows & corrections at Richmond & Springvale. 5-star rated, 10+ years experience. Book today from $595.',
+  description: 'Professional microblading & cosmetic tattooing in Melbourne. Expert eyebrow tattoo, ombré brows & corrections at Richmond & Springvale. 5-star rated, 8+ years experience. Book today from $595.',
   openGraph: {
     title: 'Melbourne Designer Brows - Professional Microblading & Cosmetic Tattooing',
     description: 'Transform your brows with Melbourne\'s premier microblading experts. Professional cosmetic tattooing at Richmond & Springvale locations.',

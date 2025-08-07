@@ -8,7 +8,7 @@ import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Microblading Melbourne | Best Eyebrow Tattoo Melbourne | From $595',
-  description: 'Award-winning microblading in Melbourne. Natural eyebrow tattoo by certified artists with 10+ years experience. Richmond & Springvale locations. Book your free consultation.',
+  description: 'Professional microblading in Melbourne. Natural eyebrow tattoo by certified artists with 8+ years experience. Richmond & Springvale locations. Book your free consultation.',
   keywords: 'microblading Melbourne, eyebrow tattoo Melbourne, best microblading Melbourne, microblading near me, eyebrow feathering Melbourne, semi permanent eyebrows Melbourne, microblading cost Melbourne, microblading Richmond, microblading Springvale',
   openGraph: {
     title: 'Microblading Melbourne - Professional Eyebrow Tattoo Services',
@@ -72,7 +72,7 @@ export default function MicrobladingMelbourne() {
           </h1>
           <p className="hero-landing-description">
             Transform your brows with Melbourne's most trusted microblading specialists. 
-            10+ years experience, 150+ 5-star reviews, 2 convenient locations.
+            8+ years experience, 150+ 5-star reviews, 2 convenient locations.
           </p>
           <div className="hero-landing-actions">
             <TrackingAnchor
