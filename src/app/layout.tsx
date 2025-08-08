@@ -10,6 +10,7 @@ import { ElfsightScriptLoader } from '@/components/ElfsightScriptLoader';
 import StructuredData from '@/components/StructuredData';
 import SkipToContent from '@/components/SkipToContent';
 import CookieConsent from '@/components/CookieConsent';
+import SessionProvider from '@/components/SessionProvider';
 
 // Optimized viewport configuration
 export const viewport: Viewport = {
@@ -131,28 +132,13 @@ export default function RootLayout({
             src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXp-p7K4KLg.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
           }
-          @font-face {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qO0g.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
-          @font-face {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 600;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtXK-F2qO0g.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
         ` }} />
         
-        {/* Preload critical images */}
-        <link rel="preload" as="image" href="/images/hero-desktop.webp" media="(min-width: 1024px)" />
-        <link rel="preload" as="image" href="/images/hero-tablet.webp" media="(min-width: 640px) and (max-width: 1023px)" />
-        <link rel="preload" as="image" href="/images/hero-mobile.webp" media="(max-width: 639px)" />
+        {/* Preload critical images - only on homepage */}
+        <link rel="preload" as="image" href="/images/hero1.webp" media="(min-width: 1024px)" />
+        <link rel="preload" as="image" href="/images/hero1-tablet.webp" media="(min-width: 640px) and (max-width: 1023px)" />
+        <link rel="preload" as="image" href="/images/hero1-mobile.webp" media="(max-width: 639px)" />
       </head>
       <body className="antialiased">
         {/* Skip to content link for accessibility */}
@@ -167,13 +153,15 @@ export default function RootLayout({
         <StructuredData />
         
         {/* Main App Structure */}
-        <ElfsightScriptLoader>
-          <Header />
-          <main id="main-content" tabIndex={-1}>
-            {children}
-          </main>
-          <Footer />
-        </ElfsightScriptLoader>
+        <SessionProvider>
+          <ElfsightScriptLoader>
+            <Header />
+            <main id="main-content" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </ElfsightScriptLoader>
+        </SessionProvider>
         
         {/* Cookie Consent */}
         <Suspense fallback={null}>

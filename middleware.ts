@@ -5,6 +5,32 @@ export function middleware(request: NextRequest) {
   // Clone the request headers
   const requestHeaders = new Headers(request.headers);
   
+  // Check admin routes protection
+  if (request.nextUrl.pathname.startsWith('/admin') && 
+      !request.nextUrl.pathname.startsWith('/admin/login') &&
+      !request.nextUrl.pathname.startsWith('/api/admin/auth/login')) {
+    
+    const sessionCookie = request.cookies.get('mdbrows_admin_session');
+    
+    if (!sessionCookie) {
+      return NextResponse.redirect(new URL('/admin/login', request.url));
+    }
+    
+    // Validate session
+    try {
+      const [sessionId, encodedData] = sessionCookie.value.split('.');
+      const sessionData = JSON.parse(Buffer.from(encodedData, 'base64').toString());
+      
+      if (sessionData.expiresAt < Date.now()) {
+        const response = NextResponse.redirect(new URL('/admin/login', request.url));
+        response.cookies.delete('mdbrows_admin_session');
+        return response;
+      }
+    } catch {
+      return NextResponse.redirect(new URL('/admin/login', request.url));
+    }
+  }
+  
   // Create response
   const response = NextResponse.next({
     request: {

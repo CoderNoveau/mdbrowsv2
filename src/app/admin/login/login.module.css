@@ -1,0 +1,123 @@
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.loginBox {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem;
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.loginHeader h1 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.loginHeader p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.errorMessage {
+  background: #fee;
+  color: #c33;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.securityNotice {
+  background: #f0f8ff;
+  border: 1px solid #4a90e2;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.securityNotice p {
+  font-weight: 600;
+  color: #2c5282;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.securityNotice ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #2c5282;
+}
+
+.securityNotice li {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.formGroup input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.loginButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.loginButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.loginButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}

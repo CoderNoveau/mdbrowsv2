@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Remove static export for production auth to work
+  // output: 'export', // Commented out to enable API routes
   images: {
     domains: ['images.unsplash.com'],
     formats: ['image/avif', 'image/webp'],
