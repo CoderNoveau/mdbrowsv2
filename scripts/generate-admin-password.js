@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const bcrypt = require('bcryptjs');
-const crypto = require('crypto');
 
 // Generate secure password and hash
 function generateSecurePassword() {
@@ -16,30 +15,35 @@ function generateSecurePassword() {
   return password;
 }
 
-function generateNextAuthSecret() {
-  return crypto.randomBytes(32).toString('base64');
-}
-
 async function main() {
   const password = generateSecurePassword();
   const hash = await bcrypt.hash(password, 12);
-  const secret = generateNextAuthSecret();
   
-  console.log('🔐 Generated Admin Credentials');
-  console.log('================================');
-  console.log('Add these to your .env.local file:');
+  console.log('🔐 Generated Admin Credentials (Static Export Mode)');
+  console.log('=====================================================');
+  console.log('For production use, update src/lib/client-auth.ts:');
   console.log('');
-  console.log(`NEXTAUTH_SECRET="${secret}"`);
-  console.log(`NEXTAUTH_URL="https://mdbrows.com.au"`);
-  console.log(`ADMIN_USERNAME="admin"`);
-  console.log(`ADMIN_EMAIL="admin@mdbrows.com.au"`);
-  console.log(`ADMIN_PASSWORD_HASH="${hash}"`);
+  console.log(`const ADMIN_USERS = [`);
+  console.log(`  {`);
+  console.log(`    username: 'admin',`);
+  console.log(`    email: 'admin@mdbrows.com.au',`);
+  console.log(`    passwordHash: '${hash}',`);
+  console.log(`    role: 'admin'`);
+  console.log(`  }`);
+  console.log(`];`);
   console.log('');
   console.log('🔑 Your admin password is:');
   console.log(`PASSWORD: ${password}`);
   console.log('');
+  console.log('✨ Features included:');
+  console.log('• bcrypt password hashing (12 rounds)');
+  console.log('• Rate limiting (5 attempts/minute)'); 
+  console.log('• 8-hour session expiration');
+  console.log('• Secure session storage');
+  console.log('• Static export compatibility');
+  console.log('');
   console.log('⚠️  IMPORTANT: Save this password securely! It cannot be recovered.');
-  console.log('⚠️  Change the NEXTAUTH_URL to your production domain.');
+  console.log('⚠️  Update the passwordHash in client-auth.ts before deploying.');
 }
 
 main().catch(console.error);

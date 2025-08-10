@@ -1,19 +1,22 @@
 'use client';
 
-import { useState } from 'react';
-import { signIn, getSession } from 'next-auth/react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { ClientAuth } from '@/lib/client-auth';
 import styles from './login.module.css';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Get error from URL params (NextAuth error handling)
-  const urlError = searchParams.get('error');
+  // Check if already authenticated
+  useEffect(() => {
+    if (ClientAuth.isAuthenticated()) {
+      router.push('/admin');
+    }
+  }, [router]);
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,21 +24,13 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      const result = await signIn('credentials', {
-        username: credentials.username,
-        password: credentials.password,
-        redirect: false,
-      });
+      const result = await ClientAuth.login(credentials.username, credentials.password);
 
-      if (result?.error) {
-        setError(result.error);
-      } else if (result?.ok) {
-        // Wait for session to be established
-        const session = await getSession();
-        if (session) {
-          router.push('/admin');
-          router.refresh();
-        }
+      if (result.success) {
+        router.push('/admin');
+        router.refresh();
+      } else {
+        setError(result.error || 'Login failed');
       }
     } catch (err: any) {
       setError(err.message || 'An error occurred. Please try again.');
@@ -53,9 +48,9 @@ export default function AdminLoginPage() {
         </div>
         
         <form onSubmit={handleSubmit} className={styles.loginForm}>
-          {(error || urlError) && (
+          {error && (
             <div className={styles.errorMessage}>
-              {error || urlError}
+              {error}
             </div>
           )}
           

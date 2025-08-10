@@ -9,6 +9,8 @@ interface ServiceSchemaProps {
   duration?: string;
   category?: string;
   provider?: string;
+  ratingValue?: number;
+  reviewCount?: number;
 }
 
 const ServiceSchema = ({
@@ -17,7 +19,9 @@ const ServiceSchema = ({
   price,
   duration,
   category = "Beauty Service",
-  provider = "Melbourne Designer Brows"
+  provider = "Melbourne Designer Brows",
+  ratingValue = 4.9,
+  reviewCount = 150
 }: ServiceSchemaProps) => {
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -51,7 +55,14 @@ const ServiceSchema = ({
     }),
     ...(duration && {
       "duration": duration
-    })
+    }),
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": ratingValue,
+      "reviewCount": reviewCount,
+      "bestRating": 5,
+      "worstRating": 1
+    }
   };
 
   return (

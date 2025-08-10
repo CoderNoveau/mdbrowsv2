@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { ClientAuth } from '@/lib/client-auth';
 import styles from './admin.module.css';
 
 type TabType = 'overview' | 'api' | 'blog' | 'gallery' | 'social' | 'reviews' | 'analytics';
@@ -11,11 +11,9 @@ export default function AdminDashboard({ session }: { session: any }) {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabType>('overview');
 
-  const handleLogout = async () => {
-    await signOut({ 
-      callbackUrl: '/admin/login',
-      redirect: true 
-    });
+  const handleLogout = () => {
+    ClientAuth.logout();
+    router.push('/admin/login');
   };
 
   return (
@@ -24,7 +22,7 @@ export default function AdminDashboard({ session }: { session: any }) {
       <aside className={styles.sidebar}>
         <div className={styles.sidebarHeader}>
           <h2>MDB Admin</h2>
-          <p>Welcome, {session.username}</p>
+          <p>Welcome, {session.user?.username || 'Admin'}</p>
         </div>
         
         <nav className={styles.sidebarNav}>

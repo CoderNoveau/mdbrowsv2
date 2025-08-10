@@ -10,7 +10,6 @@ import { ElfsightScriptLoader } from '@/components/ElfsightScriptLoader';
 import StructuredData from '@/components/StructuredData';
 import SkipToContent from '@/components/SkipToContent';
 import CookieConsent from '@/components/CookieConsent';
-import SessionProvider from '@/components/SessionProvider';
 
 // Optimized viewport configuration
 export const viewport: Viewport = {
@@ -153,15 +152,13 @@ export default function RootLayout({
         <StructuredData />
         
         {/* Main App Structure */}
-        <SessionProvider>
-          <ElfsightScriptLoader>
-            <Header />
-            <main id="main-content" tabIndex={-1}>
-              {children}
-            </main>
-            <Footer />
-          </ElfsightScriptLoader>
-        </SessionProvider>
+        <ElfsightScriptLoader>
+          <Header />
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
+          <Footer />
+        </ElfsightScriptLoader>
         
         {/* Cookie Consent */}
         <Suspense fallback={null}>
