@@ -138,6 +138,7 @@ const Hero = memo(() => {
                   <p className="hero-text">{slide.description}</p>
                   
                   <div className="hero-buttons">
+                    {/* Primary CTA or Book Now for all slides */}
                     {slide.ctaLink.startsWith('http') ? (
                       <TrackingAnchor
                         href={slide.ctaLink}
@@ -153,19 +154,29 @@ const Hero = memo(() => {
                         </svg>
                       </TrackingAnchor>
                     ) : (
-                      <Link href={slide.ctaLink} className="btn btn-primary btn-hero">
-                        {slide.cta}
-                        <svg className="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M7 13L13 7M13 7H7M13 7V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </Link>
+                      <>
+                        {/* For non-booking slides, show both the primary CTA and Book Now */}
+                        <Link href={slide.ctaLink} className="btn btn-glass btn-hero">
+                          {slide.cta}
+                          <svg className="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 7L14 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Link>
+                        <TrackingAnchor
+                          href={freshaLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-primary btn-hero"
+                          trackingCategory="hero"
+                          trackingLabel={`hero-book-slide-${index + 1}`}
+                        >
+                          Book Now
+                          <svg className="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 13L13 7M13 7H7M13 7V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </TrackingAnchor>
+                      </>
                     )}
-                    <Link href="/gallery" className="btn btn-glass btn-hero">
-                      View Gallery
-                      <svg className="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M10 7L14 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </Link>
                   </div>
 
                   {/* Trust Badges */}

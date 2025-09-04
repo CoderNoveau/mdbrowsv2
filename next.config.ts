@@ -26,7 +26,9 @@ const nextConfig: NextConfig = {
   compress: true,
   // SEO: Enforce no trailing slashes
   trailingSlash: false,
-  // Adding redirects for WordPress paths and SEO
+  // Redirects and headers don't work with static export
+  // Use client-side routing or hosting-level redirects instead
+  /*
   async redirects() {
     return [
       // General page redirects
@@ -91,7 +93,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // SEO and Security Headers
+  /*
   async headers() {
     return [
       {
@@ -129,6 +131,7 @@ const nextConfig: NextConfig = {
       }
     ];
   },
+  */
 };
 
 export default nextConfig;
