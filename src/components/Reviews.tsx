@@ -142,7 +142,7 @@ const Reviews = () => {
             width={200}
             height={50}
             className="google-reviews-logo"
-            priority
+            loading="lazy"
           />
         </div>
         <div className="reviews-slider">
