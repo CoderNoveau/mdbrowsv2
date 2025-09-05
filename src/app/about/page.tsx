@@ -68,6 +68,19 @@ export default function About() {
         </div>
       </div>
       
+      <div className={styles.mediaSection}>
+        <h2 className="section-heading">Industry Expertise</h2>
+        <p className="page-text">
+          Our founder Anne Nguyen recently shared her professional insights on <strong>A Current Affair</strong>, 
+          discussing important factors to consider when choosing a microblading practitioner.
+        </p>
+        <p className="page-text">
+          <a href="/blog/featured-current-affair-microblading-expert" className={styles.mediaLink}>
+            Watch the segment →
+          </a>
+        </p>
+      </div>
+      
       <div className="testimonial-section">
         <h2 className="section-heading">What Our Clients Say</h2>
         <ElfsightWidget widgetId="afd7ee50-4343-4814-9241-4e0645a154b7" />

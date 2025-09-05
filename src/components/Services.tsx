@@ -107,6 +107,7 @@ const Services = memo(() => {
                     height={300}
                     className="service-image"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
                   />
                   <div className="service-image-overlay">
                     <span className="service-view-more">Learn More</span>

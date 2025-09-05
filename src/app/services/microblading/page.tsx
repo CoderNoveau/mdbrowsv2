@@ -84,8 +84,7 @@ export default function Microblading() {
           <p className="page-text">
             Melbourne Designer Brows is a leader in the field of Microblading and Eyebrow Feathering. Our lead artist, 
             Anne Nguyen, is renowned for her precise and detailed approach, producing beautifully natural eyebrows 
-            tailored to each client's features. Anne's techniques, developed through extensive training both in Australia 
-            and internationally, are designed to create the best possible results for our clients.
+            tailored to each client's features. Anne's techniques, developed through extensive training and years of experience, are designed to create the best possible results for our clients.
           </p>
           
           <p className="page-text">

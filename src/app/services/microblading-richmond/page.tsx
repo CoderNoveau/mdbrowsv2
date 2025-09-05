@@ -288,7 +288,7 @@ export default function MicrobladingRichmond() {
               Do you offer consultations at the Richmond location?
             </h3>
             <p style={{ lineHeight: '1.6' }}>
-              Yes! We offer free consultations at our Richmond studio. This allows you to 
+              Yes! We offer comprehensive consultations at our Richmond studio. This allows you to 
               meet your artist, discuss your goals, and see our facilities before committing.
             </p>
           </div>

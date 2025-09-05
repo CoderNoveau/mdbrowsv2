@@ -351,7 +351,7 @@ export default function TattooRemoval() {
         
         <h3 className="page-section-subheading">Additional Services</h3>
         <p className="page-text">
-          We offer free consultations including test patches and personalized quotes to help you understand 
+          We offer comprehensive consultations including test patches and personalized quotes to help you understand 
           the removal process and expected results before committing to treatment.
         </p>
         

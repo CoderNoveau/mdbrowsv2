@@ -424,7 +424,7 @@ export default function MicrobladingVsEyebrowTattoo() {
             then decide if they want to move to permanent tattoo later.
           </p>
           <p style={{ fontWeight: '600' }}>
-            Book a free consultation - our experts will assess your brows and lifestyle 
+            Book a consultation - our experts will assess your brows and lifestyle 
             to recommend the best option for you.
           </p>
         </div>
@@ -619,7 +619,7 @@ export default function MicrobladingVsEyebrowTattoo() {
           margin: '0 auto 2rem',
           fontSize: '1.1rem' 
         }}>
-          Book a free consultation with our brow experts. We'll help you understand which 
+          Book a consultation with our brow experts. We'll help you understand which 
           technique - microblading or eyebrow tattoo - will give you the results you're dreaming of.
         </p>
         
@@ -631,7 +631,7 @@ export default function MicrobladingVsEyebrowTattoo() {
             className="btn btn-primary"
             style={{ fontSize: '1.1rem', padding: '15px 30px' }}
           >
-            Book Free Consultation
+            Book Professional Consultation
           </TrackingAnchor>
           
           <Link 
@@ -644,7 +644,7 @@ export default function MicrobladingVsEyebrowTattoo() {
         </div>
         
         <p style={{ marginTop: '2rem', fontStyle: 'italic' }}>
-          💬 Free consultations • Expert guidance • No pressure recommendations
+          💬 Professional consultations • Expert guidance • No pressure recommendations
         </p>
       </section>
     </div>

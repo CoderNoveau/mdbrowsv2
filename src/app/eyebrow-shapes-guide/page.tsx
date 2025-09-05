@@ -652,7 +652,7 @@ export default function EyebrowShapesGuide() {
           margin: '0 auto 2rem',
           fontSize: '1.1rem' 
         }}>
-          Book a free consultation with our brow experts. We'll analyze your face shape, 
+          Book a consultation with our brow experts. We'll analyze your face shape, 
           discuss your preferences, and design the perfect brows just for you.
         </p>
         
@@ -664,7 +664,7 @@ export default function EyebrowShapesGuide() {
             className="btn btn-primary"
             style={{ fontSize: '1.1rem', padding: '15px 30px' }}
           >
-            Book Free Consultation
+            Book Professional Consultation
           </TrackingAnchor>
           
           <Link 

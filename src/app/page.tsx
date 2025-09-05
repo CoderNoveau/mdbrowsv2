@@ -6,12 +6,24 @@ import CTASection from '@/components/CTASection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Melbourne Designer Brows | #1 Microblading & Cosmetic Tattooing Melbourne',
-  description: 'Professional microblading & cosmetic tattooing in Melbourne. Expert eyebrow tattoo, ombré brows & corrections at Richmond & Springvale. 5-star rated, 8+ years experience. Book today from $595.',
+  title: 'Microblading Melbourne | Expert Eyebrow Tattoo from $595 | Melbourne Designer Brows',
+  description: '⭐ 5-Star Rated Microblading Melbourne. Professional eyebrow tattoo & cosmetic tattooing by Anne Nguyen. 8+ years experience, 2000+ happy clients. Richmond & Springvale studios. Book your FREE consultation today!',
+  keywords: 'microblading melbourne, eyebrow tattoo melbourne, cosmetic tattooing melbourne, microblading near me, eyebrow microblading melbourne, best microblading melbourne, microblading richmond, microblading springvale, ombre brows melbourne, powder brows melbourne, eyebrow feathering melbourne, anne nguyen microblading',
   openGraph: {
-    title: 'Melbourne Designer Brows - Professional Microblading & Cosmetic Tattooing',
-    description: 'Transform your brows with Melbourne\'s premier microblading experts. Professional cosmetic tattooing at Richmond & Springvale locations.',
+    title: 'Microblading Melbourne | #1 Eyebrow Tattoo Studio - Melbourne Designer Brows',
+    description: 'Transform your brows with Melbourne\'s most trusted microblading experts. 5-star rated, 2000+ happy clients. Book your FREE consultation at Richmond or Springvale.',
     images: ['/images/og-home.jpg'],
+    type: 'website',
+    locale: 'en_AU',
+    siteName: 'Melbourne Designer Brows',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Microblading Melbourne | Expert Eyebrow Tattoo from $595',
+    description: 'Professional microblading & cosmetic tattooing in Melbourne. Book your FREE consultation today!',
+  },
+  alternates: {
+    canonical: 'https://mdbrows.com.au',
   },
 };
 

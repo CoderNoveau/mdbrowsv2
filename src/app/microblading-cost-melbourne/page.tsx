@@ -306,7 +306,7 @@ export default function MicrobladingCostMelbourne() {
               padding: 0,
               lineHeight: '2'
             }}>
-              <li>✓ Free consultation</li>
+              <li>✓ Professional consultation</li>
               <li>✓ Custom brow mapping</li>
               <li>✓ Premium organic pigments</li>
               <li>✓ Numbing cream included</li>
@@ -577,7 +577,7 @@ export default function MicrobladingCostMelbourne() {
             className="btn btn-primary"
             style={{ fontSize: '1.1rem', padding: '15px 30px' }}
           >
-            Book Free Consultation
+            Book Professional Consultation
           </TrackingAnchor>
           
           <Link 
@@ -590,7 +590,7 @@ export default function MicrobladingCostMelbourne() {
         </div>
         
         <p style={{ marginTop: '2rem', fontStyle: 'italic' }}>
-          💳 Afterpay & Zip Pay Available • Free Consultations • Price Match Guarantee*
+          💳 Afterpay & Zip Pay Available • Professional Consultations • Price Match Guarantee*
         </p>
       </section>
     </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Suspense } from 'react';
 import Script from "next/script";
 import "./globals.css";
+import "./mobile-fixes.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from '@/components/GoogleAnalytics';

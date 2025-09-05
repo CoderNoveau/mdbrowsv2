@@ -300,7 +300,7 @@ export default function RichmondLocation() {
             color: '#888', 
             fontStyle: 'italic' 
           }}>
-            Free consultations available • Complimentary touch-up included • Flexible payment plans
+            Professional consultations available • Complimentary touch-up included • Flexible payment plans
           </p>
         </div>
       </section>

@@ -8,7 +8,7 @@ import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Microblading Melbourne | Best Eyebrow Tattoo Melbourne | From $595',
-  description: 'Professional microblading in Melbourne. Natural eyebrow tattoo by certified artists with 8+ years experience. Richmond & Springvale locations. Book your free consultation.',
+  description: 'Professional microblading in Melbourne. Natural eyebrow tattoo by certified artists with 8+ years experience. Richmond & Springvale locations. Book your consultation today.',
   keywords: 'microblading Melbourne, eyebrow tattoo Melbourne, best microblading Melbourne, microblading near me, eyebrow feathering Melbourne, semi permanent eyebrows Melbourne, microblading cost Melbourne, microblading Richmond, microblading Springvale',
   openGraph: {
     title: 'Microblading Melbourne - Professional Eyebrow Tattoo Services',
@@ -83,7 +83,7 @@ export default function MicrobladingMelbourne() {
               trackingCategory="landing"
               trackingLabel="microblading-melbourne-hero"
             >
-              Book Free Consultation
+              Book Professional Consultation
             </TrackingAnchor>
             <Link href="/gallery" className="btn btn-outline btn-lg">
               View Before & After
@@ -178,7 +178,7 @@ export default function MicrobladingMelbourne() {
             <aside className="content-sidebar">
               <div className="sidebar-widget booking-widget">
                 <h3>Book Your Consultation</h3>
-                <p>Free 30-minute consultation to discuss your perfect brow shape and color.</p>
+                <p>Comprehensive 30-minute consultation to discuss your perfect brow shape and color.</p>
                 <TrackingAnchor
                   href={freshaLink}
                   target="_blank"
@@ -187,7 +187,7 @@ export default function MicrobladingMelbourne() {
                   trackingCategory="landing"
                   trackingLabel="microblading-melbourne-sidebar"
                 >
-                  Book Now - It's Free
+                  Book Your Consultation
                 </TrackingAnchor>
                 <p className="widget-note">No deposit required for consultation</p>
               </div>
@@ -251,7 +251,7 @@ export default function MicrobladingMelbourne() {
           <h2 className="cta-title">Ready for Perfect Brows?</h2>
           <p className="cta-description">
             Join thousands of Melbourne women who wake up with flawless eyebrows every day.
-            Book your free consultation today and discover the perfect brow shape for your face.
+            Book your consultation today and discover the perfect brow shape for your face.
           </p>
           <div className="cta-buttons">
             <TrackingAnchor
@@ -262,7 +262,7 @@ export default function MicrobladingMelbourne() {
               trackingCategory="landing"
               trackingLabel="microblading-melbourne-cta"
             >
-              Book Free Consultation
+              Book Professional Consultation
             </TrackingAnchor>
             <Link href="/pricing" className="btn btn-outline cta-secondary">
               View Full Pricing

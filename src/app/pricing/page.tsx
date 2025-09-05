@@ -258,7 +258,7 @@ export default function Pricing() {
           </div>
         </div>
         <p className="price-note">
-          Package deals: 20% discount for three sessions, 25% discount for six sessions. We offer free consultations including test patches and personalized quotes.
+          Package deals: 20% discount for three sessions, 25% discount for six sessions. Test patches available and personalized quotes provided.
         </p>
       </div>
       

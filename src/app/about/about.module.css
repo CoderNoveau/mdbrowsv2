@@ -19,4 +19,27 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-} 
+}
+
+.mediaSection {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f5dc 0%, #fff 100%);
+  border-radius: 12px;
+  border-left: 4px solid #d4af37;
+}
+
+.mediaLink {
+  color: #d4af37;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.mediaLink:hover {
+  color: #b8941f;
+  transform: translateX(5px);
+}

@@ -358,7 +358,7 @@ export default function SpringvaleLocation() {
           }}>
             <h3 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>Special Offers for Springvale Clients</h3>
             <p style={{ color: '#666', lineHeight: '1.6' }}>
-              New clients receive a <strong>free consultation</strong> and <strong>complimentary touch-up</strong> within 6-8 weeks. 
+              New clients receive a <strong>detailed consultation</strong> and <strong>complimentary touch-up</strong> within 6-8 weeks. 
               Ask about our payment plans and package deals for multiple services.
             </p>
           </div>

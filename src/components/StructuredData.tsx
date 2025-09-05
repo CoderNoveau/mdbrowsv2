@@ -23,7 +23,7 @@ interface LocalBusinessSchemaProps {
 
 const StructuredData = ({
   name = "Melbourne Designer Brows",
-  telephone = "+61-XXX-XXX-XXX",
+  telephone = "+61418188277",
   address = {
     streetAddress: "Richmond & Springvale Locations",
     addressLocality: "Melbourne",

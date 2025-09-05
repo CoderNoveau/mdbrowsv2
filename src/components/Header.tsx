@@ -141,8 +141,8 @@ const Header = () => {
           <Image
             src="/images/goldlogo-full.webp"
             alt="Melbourne Designer Brows"
-            width={220}
-            height={60}
+            width={280}
+            height={75}
             priority
             className="logo-image"
             style={{ objectFit: 'contain' }}

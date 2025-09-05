@@ -317,7 +317,7 @@ export default function MicrobladingVsCosmeticTattooing() {
           margin: '0 auto 2rem',
           fontSize: '1.1rem' 
         }}>
-          Book a free consultation with our experts to discuss which technique is best for your 
+          Book a personalized consultation with our experts to discuss which technique is best for your 
           unique features, skin type, and lifestyle. We'll help you achieve your perfect brows!
         </p>
         
@@ -329,7 +329,7 @@ export default function MicrobladingVsCosmeticTattooing() {
             className="btn btn-primary"
             style={{ fontSize: '1.1rem', padding: '15px 30px' }}
           >
-            Book Free Consultation
+            Book Your Consultation
           </TrackingAnchor>
           
           <Link 

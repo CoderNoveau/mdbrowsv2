@@ -227,7 +227,7 @@ export default function EyebrowTattooMelbourne() {
             <aside className="content-sidebar">
               <div className="sidebar-widget booking-widget">
                 <h3>Ready to Transform Your Brows?</h3>
-                <p>Book your free consultation to discuss your perfect eyebrow tattoo.</p>
+                <p>Book your personalized consultation to discuss your perfect eyebrow tattoo.</p>
                 <TrackingAnchor
                   href={freshaLink}
                   target="_blank"
@@ -236,7 +236,7 @@ export default function EyebrowTattooMelbourne() {
                   trackingCategory="landing"
                   trackingLabel="eyebrow-tattoo-melbourne-sidebar"
                 >
-                  Book Free Consultation
+                  Book Your Consultation
                 </TrackingAnchor>
                 <p className="widget-note">No obligation, no deposit required</p>
               </div>
@@ -322,7 +322,7 @@ export default function EyebrowTattooMelbourne() {
               trackingCategory="landing"
               trackingLabel="eyebrow-tattoo-melbourne-cta"
             >
-              Book Your Free Consultation
+              Book Your Professional Consultation
             </TrackingAnchor>
             <Link href="/services" className="btn btn-outline cta-secondary">
               Explore All Services

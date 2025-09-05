@@ -256,9 +256,9 @@ export default function MicrobladingSpringvale() {
             }}>
               1
             </div>
-            <h4 style={{ marginBottom: '0.5rem' }}>Free Consultation</h4>
+            <h4 style={{ marginBottom: '0.5rem' }}>Initial Consultation</h4>
             <p style={{ fontSize: '0.95rem', lineHeight: '1.6' }}>
-              Visit our Springvale studio for a complimentary consultation to discuss your goals
+              Visit our Springvale studio for a comprehensive consultation to discuss your goals
             </p>
           </div>
 

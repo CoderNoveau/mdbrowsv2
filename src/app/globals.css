@@ -1918,7 +1918,10 @@ ul {
   font-size: 0.75rem; /* Smaller text */
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.25px; /* Increased letter spacing for elegance */
   font-family: var(--serif);
@@ -2984,7 +2987,10 @@ ul {
 .service-details-btn,
 .service-book-btn {
   flex: 1;
+  display: inline-flex !important;
+  align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: var(--text-sm);
   padding: 0.625rem 1rem;
 }
