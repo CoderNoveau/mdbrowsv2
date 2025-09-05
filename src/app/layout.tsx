@@ -9,6 +9,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ElfsightScriptLoader } from '@/components/ElfsightScriptLoader';
 import StructuredData from '@/components/StructuredData';
+import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 import SkipToContent from '@/components/SkipToContent';
 import CookieConsent from '@/components/CookieConsent';
 
@@ -177,6 +178,7 @@ export default function RootLayout({
         
         {/* Structured Data for SEO */}
         <StructuredData />
+        <LocalBusinessSchema />
         
         {/* Main App Structure */}
         <ElfsightScriptLoader>
