@@ -119,11 +119,11 @@ const Hero = memo(() => {
                     alt={`${slide.title} ${slide.subtitle}`}
                     fill
                     priority={index === 0}
-                    quality={90}
+                    quality={75}
                     className="hero-bg-image"
                     sizes="100vw"
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
-                    {...(index === 0 ? { fetchPriority: 'high' as any } : {})}
+                    loading={index === 0 ? "eager" : "lazy"}
                   />
                 </picture>
                 <div className="hero-gradient-overlay" />
