@@ -5,7 +5,7 @@ import FAQSchema from '@/components/FAQSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microblading Cost Melbourne 2024 | Price Guide & Comparison',
+  title: 'Microblading Cost Melbourne 2024 | MDBrows',
   description: 'Complete microblading cost guide for Melbourne 2024. Compare prices, understand what affects cost, payment plans available. Melbourne Designer Brows transparent pricing from $595.',
   alternates: {
     canonical: 'https://mdbrows.com.au/microblading-cost-melbourne',

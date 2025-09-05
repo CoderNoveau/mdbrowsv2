@@ -6,7 +6,7 @@ import ElfsightWidget from '@/components/ElfsightWidget';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Expert Cosmetic Tattoo Artists | Melbourne Designer Brows',
+  title: 'About Us | Expert Cosmetic Tattoo Artists',
   description: 'Meet Melbourne\'s trusted cosmetic tattoo artists. Our skilled team brings years of experience in microblading, permanent makeup, and advanced beauty treatments. Learn about our commitment to excellence.',
   alternates: {
     canonical: 'https://mdbrows.com.au/about',

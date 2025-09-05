@@ -5,7 +5,7 @@ import FAQSchema from '@/components/FAQSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microblading vs Eyebrow Tattoo 2024 | Key Differences Explained',
+  title: 'Microblading vs Eyebrow Tattoo | MDBrows',
   description: 'Complete comparison of microblading vs eyebrow tattoo. Learn the differences in technique, longevity, cost, and results. Expert guide from Melbourne Designer Brows.',
   alternates: {
     canonical: 'https://mdbrows.com.au/microblading-vs-eyebrow-tattoo',

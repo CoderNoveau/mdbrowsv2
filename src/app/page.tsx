@@ -6,11 +6,11 @@ import CTASection from '@/components/CTASection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microblading Melbourne | Expert Eyebrow Tattoo from $595 | Melbourne Designer Brows',
+  title: 'Microblading Melbourne | From $595 | MDBrows',
   description: '⭐ 5-Star Rated Microblading Melbourne. Professional eyebrow tattoo & cosmetic tattooing by Anne Nguyen. 8+ years experience, 2000+ happy clients. Richmond & Springvale studios. Book your FREE consultation today!',
   keywords: 'microblading melbourne, eyebrow tattoo melbourne, cosmetic tattooing melbourne, microblading near me, eyebrow microblading melbourne, best microblading melbourne, microblading richmond, microblading springvale, ombre brows melbourne, powder brows melbourne, eyebrow feathering melbourne, anne nguyen microblading',
   openGraph: {
-    title: 'Microblading Melbourne | #1 Eyebrow Tattoo Studio - Melbourne Designer Brows',
+    title: 'Microblading Melbourne | #1 Eyebrow Tattoo | MDBrows',
     description: 'Transform your brows with Melbourne\'s most trusted microblading experts. 5-star rated, 2000+ happy clients. Book your FREE consultation at Richmond or Springvale.',
     images: ['/images/og-home.jpg'],
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Microblading Melbourne | Expert Eyebrow Tattoo from $595',
+    title: 'Microblading Melbourne | From $595',
     description: 'Professional microblading & cosmetic tattooing in Melbourne. Book your FREE consultation today!',
   },
   alternates: {

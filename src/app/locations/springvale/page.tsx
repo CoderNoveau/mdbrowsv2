@@ -5,7 +5,7 @@ import StructuredData from '@/components/StructuredData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Springvale Location | Melbourne Designer Brows | Professional Microblading Springvale',
+  title: 'Microblading Springvale | Melbourne Designer Brows',
   description: 'Visit our Springvale microblading studio for expert eyebrow services. Convenient location serving Springvale, Glen Waverley, and surrounding areas with professional microblading and cosmetic tattooing.',
   alternates: {
     canonical: 'https://mdbrows.com.au/locations/springvale',

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: 'https://mdbrows.com.au/services/microblading-vs-cosmetic-tattooing',
   },
   openGraph: {
-    title: 'Microblading vs Cosmetic Tattooing Comparison | Melbourne Designer Brows',
+    title: 'Microblading vs Cosmetic Tattooing | MDBrows',
     description: 'Compare microblading and cosmetic tattooing to find the best eyebrow solution for you. Expert advice from Melbourne Designer Brows.',
     url: 'https://mdbrows.com.au/services/microblading-vs-cosmetic-tattooing',
     type: 'article',

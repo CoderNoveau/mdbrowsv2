@@ -7,7 +7,7 @@ import FAQSchema from '@/components/FAQSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Eyebrow Tattoo Melbourne | Permanent Makeup Artists | Melbourne Designer Brows',
+  title: 'Eyebrow Tattoo Melbourne | MDBrows',
   description: 'Professional eyebrow tattoo in Melbourne. Cosmetic tattooing experts with 8+ years experience. Natural results using premium pigments. Book your consultation today.',
   keywords: 'eyebrow tattoo Melbourne, cosmetic tattooing Melbourne, permanent makeup Melbourne, eyebrow feathering Melbourne, powder brows Melbourne, ombre brows Melbourne, eyebrow tattoo Richmond, eyebrow tattoo Springvale',
   openGraph: {

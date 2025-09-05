@@ -6,7 +6,7 @@ import HowToSchema from '@/components/HowToSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microblading Healing Stages 2024 | Day-by-Day Recovery Guide',
+  title: 'Microblading Healing Stages | Recovery Guide',
   description: 'Complete guide to microblading healing stages with photos. Learn what to expect each day, how to care for your brows, and ensure perfect healing. Expert advice from Melbourne Designer Brows.',
   alternates: {
     canonical: 'https://mdbrows.com.au/microblading-healing-stages',

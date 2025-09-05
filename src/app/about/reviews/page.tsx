@@ -4,7 +4,7 @@ import { getGoogleReviews, calculateAggregateRating, getGoogleReviewCounts } fro
 import ClientReviewsPage from './ClientReviewsPage';
 
 export const metadata: Metadata = {
-  title: 'Client Reviews | 5-Star Microblading Reviews | Melbourne Designer Brows',
+  title: '5-Star Microblading Reviews | MDBrows',
   description: 'Read 150+ authentic 5-star reviews from our happy clients. Real transformations, real results. Melbourne\'s most trusted microblading and cosmetic tattooing studio.',
   alternates: {
     canonical: 'https://mdbrows.com.au/about/reviews',

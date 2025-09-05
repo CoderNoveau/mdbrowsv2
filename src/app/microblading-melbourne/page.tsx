@@ -7,7 +7,7 @@ import FAQSchema from '@/components/FAQSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Microblading Melbourne | Best Eyebrow Tattoo Melbourne | From $595',
+  title: 'Microblading Melbourne | From $595 | MDBrows',
   description: 'Professional microblading in Melbourne. Natural eyebrow tattoo by certified artists with 8+ years experience. Richmond & Springvale locations. Book your consultation today.',
   keywords: 'microblading Melbourne, eyebrow tattoo Melbourne, best microblading Melbourne, microblading near me, eyebrow feathering Melbourne, semi permanent eyebrows Melbourne, microblading cost Melbourne, microblading Richmond, microblading Springvale',
   openGraph: {

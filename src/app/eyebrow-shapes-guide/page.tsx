@@ -5,7 +5,7 @@ import WebPageSchema from '@/components/WebPageSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Eyebrow Shapes Guide 2024 | Find Your Perfect Brow Shape',
+  title: 'Eyebrow Shapes Guide | Find Your Perfect Brow',
   description: 'Complete guide to eyebrow shapes for every face. Learn which brow shape suits you best - arch, straight, rounded, or S-shaped. Expert advice from Melbourne Designer Brows.',
   alternates: {
     canonical: 'https://mdbrows.com.au/eyebrow-shapes-guide',
