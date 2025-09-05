@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://mdbrows.com.au'),
   title: {
-    template: '%s | Melbourne Designer Brows - Microblading & Cosmetic Tattooing',
+    template: '%s | MDBrows',
     default: 'MDBrows | Professional Microblading Melbourne'
   },
   description: 'Professional microblading & cosmetic tattooing in Melbourne. Expert eyebrow tattoo, ombré brows & corrections at Richmond & Springvale. 5-star rated, 8+ years experience. Book today from $595.',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     locale: 'en_AU',
     url: 'https://mdbrows.com.au',
     siteName: 'Melbourne Designer Brows',
-    title: 'Melbourne Designer Brows | Professional Microblading & Cosmetic Tattooing',
+    title: 'MDBrows | Professional Microblading Melbourne',
     description: 'Transform your brows with Melbourne\'s premier microblading experts. Professional cosmetic tattooing at Richmond & Springvale locations.',
     images: [
       {
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Melbourne Designer Brows | Microblading & Cosmetic Tattooing',
+    title: 'MDBrows | Professional Microblading Melbourne',
     description: 'Professional microblading & cosmetic tattooing in Melbourne. Book your consultation today.',
     images: ['/images/twitter-card.jpg'],
   },
