@@ -5,13 +5,13 @@ import ServiceSchema from '@/components/ServiceSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Tattoo Removal Melbourne | Melbourne Designer Brows',
+  title: 'Tattoo Removal Melbourne',
   description: 'Professional tattoo removal services in Melbourne. Safe and effective removal of unwanted tattoos, including cosmetic tattoos and microblading. Book your consultation today.',
   alternates: {
     canonical: 'https://mdbrows.com.au/services/tattoo-removal',
   },
   openGraph: {
-    title: 'Tattoo Removal Melbourne | Melbourne Designer Brows',
+    title: 'Tattoo Removal Melbourne',
     description: 'Professional tattoo removal services in Melbourne. Safe and effective removal of unwanted tattoos, including cosmetic tattoos and microblading. Book your consultation today.',
     url: 'https://mdbrows.com.au/services/tattoo-removal',
     images: [{

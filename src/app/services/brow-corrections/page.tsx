@@ -5,13 +5,13 @@ import ServiceSchema from '@/components/ServiceSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Eyebrow Correction & Repair | Melbourne Designer Brows',
+  title: 'Eyebrow Corrections Melbourne',
   description: 'Expert eyebrow correction services in Melbourne. We fix botched microblading, uneven brows, and failed cosmetic tattoos. Restore your confidence with our specialized repair techniques.',
   alternates: {
     canonical: 'https://mdbrows.com.au/services/brow-corrections',
   },
   openGraph: {
-    title: 'Eyebrow Correction & Repair | Melbourne Designer Brows',
+    title: 'Eyebrow Corrections Melbourne',
     description: 'Expert eyebrow correction services in Melbourne. We fix botched microblading, uneven brows, and failed cosmetic tattoos. Restore your confidence with our specialized repair techniques.',
     url: 'https://mdbrows.com.au/services/brow-corrections',
     images: [{

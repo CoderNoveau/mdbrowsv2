@@ -6,13 +6,13 @@ import FAQSchema from '@/components/FAQSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microblading vs Cosmetic Tattooing | Which is Best?',
+  title: 'Microblading vs Cosmetic Tattooing',
   description: 'Compare microblading and cosmetic tattooing to find the best eyebrow solution for you. Learn about differences in technique, results, longevity, and cost at Melbourne Designer Brows.',
   alternates: {
     canonical: 'https://mdbrows.com.au/services/microblading-vs-cosmetic-tattooing',
   },
   openGraph: {
-    title: 'Microblading vs Cosmetic Tattooing | MDBrows',
+    title: 'Microblading vs Cosmetic Tattooing',
     description: 'Compare microblading and cosmetic tattooing to find the best eyebrow solution for you. Expert advice from Melbourne Designer Brows.',
     url: 'https://mdbrows.com.au/services/microblading-vs-cosmetic-tattooing',
     type: 'article',

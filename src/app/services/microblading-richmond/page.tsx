@@ -7,13 +7,13 @@ import StructuredData from '@/components/StructuredData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Microblading Richmond | Expert Eyebrow Services',
+  title: 'Microblading Richmond',
   description: 'Professional microblading services in Richmond Melbourne. Transform your brows with our expert artists. Natural-looking results, convenient Richmond location. Book today from $595.',
   alternates: {
     canonical: 'https://mdbrows.com.au/services/microblading-richmond',
   },
   openGraph: {
-    title: 'Microblading Richmond | Melbourne Designer Brows',
+    title: 'Microblading Richmond',
     description: 'Get perfect eyebrows with microblading in Richmond. Expert artists, natural results, convenient location near Richmond Station.',
     url: 'https://mdbrows.com.au/services/microblading-richmond',
     images: [{
