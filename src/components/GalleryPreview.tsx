@@ -70,6 +70,7 @@ const GalleryPreview = () => {
                     height={300}
                     className="gallery-preview-image"
                     priority={index === 0}
+                    loading={index <= 2 ? "eager" : "lazy"}
                   />
                 </div>
               </div>

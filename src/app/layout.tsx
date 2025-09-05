@@ -111,8 +111,12 @@ export default function RootLayout({
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://static.elfsight.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://analytics.google.com" />
+        <link rel="dns-prefetch" href="https://apps.elfsight.com" />
+        <link rel="dns-prefetch" href="https://core.service.elfsight.com" />
         
         {/* Inline critical fonts for faster loading */}
         <style dangerouslySetInnerHTML={{ __html: `

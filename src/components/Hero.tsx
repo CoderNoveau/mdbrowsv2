@@ -123,6 +123,7 @@ const Hero = memo(() => {
                     className="hero-bg-image"
                     sizes="100vw"
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    {...(index === 0 ? { fetchPriority: 'high' as any } : {})}
                   />
                 </picture>
                 <div className="hero-gradient-overlay" />

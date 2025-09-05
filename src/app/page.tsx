@@ -1,9 +1,23 @@
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
-import Reviews from '@/components/Reviews';
-import GalleryPreview from '@/components/GalleryPreview';
-import CTASection from '@/components/CTASection';
 import { Metadata } from 'next';
+
+// Lazy load below-the-fold components to reduce initial bundle size
+const Reviews = dynamic(() => import('@/components/Reviews'), {
+  loading: () => <div style={{ height: '400px' }} />,
+  ssr: true
+});
+
+const GalleryPreview = dynamic(() => import('@/components/GalleryPreview'), {
+  loading: () => <div style={{ height: '500px' }} />,
+  ssr: true
+});
+
+const CTASection = dynamic(() => import('@/components/CTASection'), {
+  loading: () => <div style={{ height: '300px' }} />,
+  ssr: true
+});
 
 export const metadata: Metadata = {
   title: 'Microblading Melbourne | From $595 | MDBrows',

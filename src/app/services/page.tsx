@@ -97,6 +97,8 @@ export default function Services() {
                 alt={service.title}
                 fill
                 style={{ objectFit: 'cover' }}
+                priority={index === 0}
+                loading={index <= 2 ? "eager" : "lazy"}
               />
             </div>
             
